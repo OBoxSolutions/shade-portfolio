@@ -39,6 +39,10 @@
   .pr-#{$space} {
     padding-right: $space + $measure-unit !important;
   }
+  .py-#{$space} {
+    padding-top: $space + $measure-unit !important;
+    padding-bottom: $space + $measure-unit !important;
+  }
   .px-#{$space} {
     padding-right: $space + $measure-unit !important;
     padding-left: $space + $measure-unit !important;
