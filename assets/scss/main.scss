@@ -1,0 +1,23 @@
+@import '../css/normalize.css';
+
+@import './variables';
+@import './container';
+@import './general-styles';
+@import './social-links';
+@import './grids';
+
+.color-primary {
+  color: var(--color-primary);
+}
+
+.bg-primary {
+  background-color: var(--color-primary) !important;
+}
+
+.bg-secondary {
+  background-color: var(--bg-color-primary) !important;
+}
+
+.no-outline {
+  outline: none !important;
+}

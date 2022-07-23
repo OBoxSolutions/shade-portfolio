@@ -1,0 +1,20 @@
+body {
+  font-family: 'Lato', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  background-color: var(--bg-color-primary);
+  color: var(--text-color-secondary);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: 'Patua One', 'Lato', 'Lucida Sans', 'Lucida Sans Regular',
+    'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: var(--text-color-primary);
+}
+
+h2 {
+  font-size: 1.4rem;
+}
