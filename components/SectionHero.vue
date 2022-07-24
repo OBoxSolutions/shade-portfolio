@@ -22,7 +22,7 @@ export default {
 }
 
 .navbar-wrapper {
-  position: relative;
+  position: absolute;
   top: 3em;
 }
 </style>
