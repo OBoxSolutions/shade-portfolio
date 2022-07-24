@@ -6,7 +6,9 @@
       </div>
     </div>
     <div class="content">
-      <div class="resume"></div>
+      <div class="resume">
+        <img src="/logo.png" class="mt-8" alt="" />
+      </div>
       <div class="sunset-picture"></div>
     </div>
   </div>
