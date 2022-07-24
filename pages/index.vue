@@ -1,5 +1,7 @@
 <template>
-  <Tutorial />
+  <div>
+    <section-hero></section-hero>
+  </div>
 </template>
 
 <script>
