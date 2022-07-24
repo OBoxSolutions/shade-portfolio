@@ -6,6 +6,7 @@
         {{ link.text }}
         <span class="separator"> | </span>
       </li>
+      <div class="location-line"></div>
     </ul>
   </div>
 </template>
@@ -27,15 +28,30 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .nav-bar {
   display: flex;
   list-style: none;
   background-color: #5a55f8;
   color: white;
   width: fit-content;
-  padding: 0.2em 0;
+  padding: 0.4em 0;
   text-transform: uppercase;
+  position: relative;
+  border: 1px solid #222940;
+
+  .location-line {
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    height: 10px;
+    bottom: -10px;
+    left: -1px;
+    background-color: #ffac06;
+    width: 100%;
+    border: 1px solid #222940;
+    border-top: 0px;
+  }
 }
 
 .separator {
