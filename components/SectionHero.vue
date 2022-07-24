@@ -1,10 +1,14 @@
 <template>
   <div class="section-hero">
     <div class="navbar-wrapper mx-auto">
-      <section-hero-navbar></section-hero-navbar>
+      <div class="navbar-content">
+        <section-hero-navbar></section-hero-navbar>
+      </div>
     </div>
-    <div class="resume"></div>
-    <div class="sunset-picture"></div>
+    <div class="content">
+      <div class="resume"></div>
+      <div class="sunset-picture"></div>
+    </div>
   </div>
 </template>
 
@@ -14,11 +18,24 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .section-hero {
   position: relative;
   height: 100vh;
-  display: flex;
+
+  .content {
+    display: flex;
+    width: 100%;
+    height: 100%;
+
+    .resume {
+      flex-basis: 25%;
+      background-color: #15aaaa;
+    }
+    .sunset-picture {
+      flex-basis: 75%;
+    }
+  }
 }
 
 .navbar-wrapper {
