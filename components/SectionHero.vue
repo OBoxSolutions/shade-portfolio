@@ -8,6 +8,7 @@
     <div class="content">
       <div class="resume">
         <img src="/logo.png" class="mt-8" alt="" />
+        <p>Every pixel delivered with care</p>
       </div>
       <div class="sunset-picture"></div>
     </div>
@@ -33,6 +34,10 @@ export default {
     .resume {
       flex-basis: 25%;
       background-color: #15aaaa;
+
+      p {
+        text-align: center;
+      }
     }
     .sunset-picture {
       flex-basis: 75%;
