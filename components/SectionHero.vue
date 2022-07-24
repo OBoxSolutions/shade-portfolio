@@ -17,7 +17,9 @@
           </p>
         </div>
       </div>
-      <div class="sunset-picture"></div>
+      <div class="sunset-picture">
+        <img src="/sunset.png" alt="" />
+      </div>
     </div>
   </div>
 </template>
@@ -56,6 +58,11 @@ export default {
     }
     .sunset-picture {
       flex-basis: 75%;
+
+      img {
+        height: 100%;
+        width: 100%;
+      }
     }
   }
 }
