@@ -9,6 +9,13 @@
       <div class="resume">
         <img src="/logo.png" class="mt-8" alt="" />
         <p>Every pixel delivered with care</p>
+        <div class="description p-1 mr-1 mt-2">
+          <p>
+            We are a website design company, WebDo. The sole purpose of our
+            existence is to create something you like. Truth be told, we just
+            love making websites!
+          </p>
+        </div>
       </div>
       <div class="sunset-picture"></div>
     </div>
@@ -37,6 +44,14 @@ export default {
 
       p {
         text-align: center;
+      }
+
+      .description {
+        background-color: #0d6666;
+        border-radius: 0 15px;
+        p {
+          text-align: left;
+        }
       }
     }
     .sunset-picture {
