@@ -4,6 +4,9 @@
 }
 
 @mixin spacing-margin($space, $measure-unit: '') {
+  .m-#{$space} {
+    margin: $space + $measure-unit !important;
+  }
   .mt-#{$space} {
     margin-top: $space + $measure-unit !important;
   }
@@ -27,6 +30,9 @@
 }
 
 @mixin spacing-padding($space, $measure-unit: '') {
+  .p-#{$space} {
+    padding: $space + $measure-unit !important;
+  }
   .pt-#{$space} {
     padding-top: $space + $measure-unit !important;
   }
