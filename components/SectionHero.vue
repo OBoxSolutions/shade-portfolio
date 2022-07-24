@@ -48,12 +48,14 @@ export default {
 .navbar-wrapper {
   position: absolute;
   top: 3em;
-  left: 50%;
+  width: 100%;
+  left: 0;
+  right: 0;
 
   .navbar-content {
     position: relative;
     width: fit-content;
-    left: -50%;
+    margin: auto;
   }
 }
 </style>
