@@ -24,5 +24,12 @@ export default {
 .navbar-wrapper {
   position: absolute;
   top: 3em;
+  left: 50%;
+
+  .navbar-content {
+    position: relative;
+    width: fit-content;
+    left: -50%;
+  }
 }
 </style>
