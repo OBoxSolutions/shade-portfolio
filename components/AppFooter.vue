@@ -1,22 +1,24 @@
 <template>
   <footer class="footer">
     <div class="section-change-marker"></div>
-    <div class="nav-bar-wrapper">
-      <ul class="nav-bar my-0 mx-auto">
-        <li
-          v-for="(link, index) in links"
-          :key="`navbar-${index}`"
-          class="nav-bar__link"
-        >
-          {{ link.text }}
-        </li>
-      </ul>
-      <div class="perspective-square-left"></div>
-      <div class="perspective-square-right"></div>
-    </div>
-    <div class="footer-content">
-      <div class="img-wrapper mx-auto py-4">
-        <img src="/logo.svg" alt="" />
+    <div class="content mx-auto">
+      <div class="nav-bar-wrapper">
+        <ul class="nav-bar my-0 mx-auto">
+          <li
+            v-for="(link, index) in links"
+            :key="`navbar-${index}`"
+            class="nav-bar__link"
+          >
+            {{ link.text }}
+          </li>
+        </ul>
+        <div class="perspective-square-left"></div>
+        <div class="perspective-square-right"></div>
+      </div>
+      <div class="footer-content">
+        <div class="img-wrapper mx-auto py-4">
+          <img src="/logo.svg" alt="" />
+        </div>
       </div>
     </div>
   </footer>
@@ -42,6 +44,10 @@ export default {
 <style scoped lang="scss">
 .footer {
   position: relative;
+}
+
+.content {
+  width: 1200px;
 }
 
 .section-change-marker {
@@ -102,7 +108,7 @@ export default {
   text-transform: uppercase;
   position: relative;
   border: 2px solid #222940;
-  width: 1200px;
+  width: 100%;
   z-index: 20;
 
   .nav-bar__link {
