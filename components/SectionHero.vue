@@ -18,7 +18,7 @@
         </div>
       </div>
       <div class="sunset-picture">
-        <img src="/sunset.png" alt="" />
+        <img src="/sunset.gif" alt="" />
       </div>
     </div>
   </div>
