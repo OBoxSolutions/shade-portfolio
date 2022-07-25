@@ -11,6 +11,9 @@
       </li>
       <div class="location-line"></div>
     </ul>
+    <div class="img-w">
+      <img src="/logo.svg" alt="" />
+    </div>
   </footer>
 </template>
 
