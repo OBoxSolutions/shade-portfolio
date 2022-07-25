@@ -1,7 +1,9 @@
 <template>
   <div>
     <section-hero></section-hero>
-    <div class="content-sections"></div>
+    <div class="content-sections">
+      <div class="content-sections__img"></div>
+    </div>
   </div>
 </template>
 
@@ -14,5 +16,8 @@ export default {
 <style scoped>
 .content-sections {
   background-color: #d6932f;
+}
+.content-sections__img {
+  background: url('/principal-page-background.svg');
 }
 </style>
