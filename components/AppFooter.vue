@@ -45,10 +45,11 @@ export default {
   padding: 0.4em 0.2em;
   text-transform: uppercase;
   position: relative;
-  border: 1px solid #222940;
+  border: 2px solid #222940;
   width: 1200px;
 
   .nav-bar__link {
+    padding: 0.8em 0;
     display: flex;
     justify-content: center;
     flex-grow: 1;
