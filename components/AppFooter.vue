@@ -1,7 +1,7 @@
 <template>
   <footer class="footer">
     <div class="section-change-marker"></div>
-    <ul class="nav-bar">
+    <ul class="nav-bar mt-0">
       <li
         v-for="(link, index) in links"
         :key="`navbar-${index}`"
