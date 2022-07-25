@@ -44,10 +44,35 @@ export default {
 <style scoped lang="scss">
 .footer {
   position: relative;
+  overflow-x: hidden;
 }
 
 .content {
   width: 1200px;
+  position: relative;
+  border: 2px solid #222940;
+
+  &::before,
+  &::after {
+    content: '';
+    border: 2px solid #222940;
+    background-color: #ffac06;
+    position: absolute;
+    width: 200px;
+    top: -2px;
+    height: 100%;
+    z-index: -1;
+  }
+
+  &::before {
+    border-right: 0;
+    left: -204px;
+  }
+
+  &::after {
+    border-left: 0;
+    right: -104px;
+  }
 }
 
 .section-change-marker {
@@ -73,29 +98,29 @@ export default {
 .nav-bar-wrapper {
   position: relative;
 
-  .perspective-square-left,
-  .perspective-square-right {
-    content: '';
-    border: 2px solid #222940;
-    background-color: #5a55f8;
-    position: absolute;
-    width: 200px;
-    top: -22px;
-    height: 100px;
-    z-index: 10;
-  }
+  // .perspective-square-left,
+  // .perspective-square-right {
+  //   content: '';
+  //   border: 2px solid #222940;
+  //   background-color: #5a55f8;
+  //   position: absolute;
+  //   width: 200px;
+  //   top: -22px;
+  //   height: 100px;
+  //   z-index: 10;
+  // }
 
-  .perspective-square-left {
-    border-right: 0;
-    left: -104px;
-    transform: skewY(15deg);
-  }
+  // .perspective-square-left {
+  //   border-right: 0;
+  //   left: -104px;
+  //   transform: skewY(15deg);
+  // }
 
-  .perspective-square-right {
-    border-left: 0;
-    right: -104px;
-    transform: skewY(-15deg);
-  }
+  // .perspective-square-right {
+  //   border-left: 0;
+  //   right: -104px;
+  //   transform: skewY(-15deg);
+  // }
 }
 
 .nav-bar {
@@ -107,9 +132,8 @@ export default {
   padding: 0.4em 0.2em;
   text-transform: uppercase;
   position: relative;
-  border: 2px solid #222940;
-  width: 100%;
-  z-index: 20;
+  border-bottom: 2px solid #222940;
+  width: calc(100% - 0.4em);
 
   .nav-bar__link {
     padding: 0.8em 0;
