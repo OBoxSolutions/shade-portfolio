@@ -7,7 +7,7 @@
     </div>
     <div class="content">
       <div class="resume">
-        <img src="/logo.png" class="mt-8" alt="" />
+        <img src="/logo.svg" class="mt-8" alt="" />
         <p>Every pixel delivered with care</p>
         <div class="description p-1 mr-1 mt-2">
           <p>
