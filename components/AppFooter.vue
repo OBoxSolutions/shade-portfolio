@@ -1,7 +1,7 @@
 <template>
   <footer class="footer">
     <div class="section-change-marker"></div>
-    <ul class="nav-bar mt-0">
+    <ul class="nav-bar my-0 mx-auto">
       <li
         v-for="(link, index) in links"
         :key="`navbar-${index}`"
@@ -12,7 +12,7 @@
       <div class="location-line"></div>
     </ul>
     <div class="footer-content">
-      <div class="img-wrapper mx-auto">
+      <div class="img-wrapper mx-auto py-4">
         <img src="/logo.svg" alt="" />
       </div>
     </div>
