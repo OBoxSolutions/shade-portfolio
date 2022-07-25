@@ -57,7 +57,7 @@ export default {
   z-index: 10;
 
   .img-wrapper {
-    width: 30%;
+    width: 44%;
   }
 }
 
