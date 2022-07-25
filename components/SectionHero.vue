@@ -7,8 +7,8 @@
     </div>
     <div class="content">
       <div class="resume">
-        <img src="/logo.svg" class="mt-8" alt="" />
-        <p>Every pixel delivered with care</p>
+        <img src="/logo.svg" class="mt-9 mx-1" alt="" />
+        <p class="mx-2">Every pixel delivered with care</p>
         <div class="description p-1 mr-1 mt-2">
           <p>
             We are a website design company, WebDo. The sole purpose of our
