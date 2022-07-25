@@ -11,8 +11,10 @@
       </li>
       <div class="location-line"></div>
     </ul>
-    <div class="img-w">
-      <img src="/logo.svg" alt="" />
+    <div class="footer-content">
+      <div class="img-wrapper mx-auto">
+        <img src="/logo.svg" alt="" />
+      </div>
     </div>
   </footer>
 </template>
@@ -37,6 +39,26 @@ export default {
 <style scoped lang="scss">
 .footer {
   position: relative;
+}
+
+.section-change-marker {
+  background-color: #15aaaa;
+  width: 100%;
+  height: 200px;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 5;
+}
+
+.footer-content {
+  position: relative;
+  background-color: #ffac06;
+  z-index: 10;
+
+  .img-wrapper {
+    width: 30%;
+  }
 }
 
 .nav-bar {
@@ -68,14 +90,5 @@ export default {
       border-width: 0 4px 0 2px;
     }
   }
-}
-
-.section-change-marker {
-  background-color: #15aaaa;
-  width: 100%;
-  height: 200px;
-  position: absolute;
-  top: 0;
-  left: 0;
 }
 </style>
