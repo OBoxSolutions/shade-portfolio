@@ -1,16 +1,19 @@
 <template>
   <footer class="footer">
     <div class="section-change-marker"></div>
-    <ul class="nav-bar my-0 mx-auto">
-      <li
-        v-for="(link, index) in links"
-        :key="`navbar-${index}`"
-        class="nav-bar__link"
-      >
-        {{ link.text }}
-      </li>
-      <div class="location-line"></div>
-    </ul>
+    <div class="nav-bar-wrapper">
+      <ul class="nav-bar my-0 mx-auto">
+        <li
+          v-for="(link, index) in links"
+          :key="`navbar-${index}`"
+          class="nav-bar__link"
+        >
+          {{ link.text }}
+        </li>
+      </ul>
+      <div class="perspective-square-left"></div>
+      <div class="perspective-square-right"></div>
+    </div>
     <div class="footer-content">
       <div class="img-wrapper mx-auto py-4">
         <img src="/logo.svg" alt="" />
@@ -54,10 +57,38 @@ export default {
 .footer-content {
   position: relative;
   background-color: #ffac06;
-  z-index: 10;
+  z-index: 30;
 
   .img-wrapper {
     width: 44%;
+  }
+}
+
+.nav-bar-wrapper {
+  position: relative;
+
+  .perspective-square-left,
+  .perspective-square-right {
+    content: '';
+    border: 2px solid #222940;
+    background-color: #5a55f8;
+    position: absolute;
+    width: 200px;
+    top: -22px;
+    height: 100px;
+    z-index: 10;
+  }
+
+  .perspective-square-left {
+    border-right: 0;
+    left: -104px;
+    transform: skewY(15deg);
+  }
+
+  .perspective-square-right {
+    border-left: 0;
+    right: -104px;
+    transform: skewY(-15deg);
   }
 }
 
@@ -72,6 +103,7 @@ export default {
   position: relative;
   border: 2px solid #222940;
   width: 1200px;
+  z-index: 20;
 
   .nav-bar__link {
     padding: 0.8em 0;
