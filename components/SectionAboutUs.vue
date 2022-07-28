@@ -1,11 +1,11 @@
 <template>
   <div class="about-us-section">
     <div class="section-head">
-      <div class="first-header m-0">
-        <h2>About us</h2>
+      <div class="first-header">
+        <h2 class="m-0">About us</h2>
       </div>
-      <div class="second-header m-0">
-        <h2 class="px-5">Why we're here</h2>
+      <div class="second-header">
+        <h2 class="px-5 m-0">Why we're here</h2>
       </div>
     </div>
     <div class="cube mb-9">
