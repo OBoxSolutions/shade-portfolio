@@ -42,32 +42,32 @@ $side-bottom-height: 40px;
   perspective: 200px;
   position: relative;
   z-index: 100;
-}
 
-.first-header,
-.second-header {
-  width: 100%;
-  padding: 20px 0px;
-  text-align: center;
-  border: 3px solid black;
-  z-index: 100;
-}
+  .first-header,
+  .second-header {
+    width: 100%;
+    padding: 20px 0px;
+    text-align: center;
+    border: 3px solid black;
+    z-index: 100;
+  }
 
-.first-header {
-  background-color: #ef4242;
-  text-transform: uppercase;
-  font-size: 4.4rem;
-  border-left: 0;
-  transform: skewY(-$angle-of-inclination);
-  perspective-origin: right;
-}
+  .first-header {
+    background-color: #ef4242;
+    text-transform: uppercase;
+    font-size: 4.4rem;
+    border-left: 0;
+    transform: skewY(-$angle-of-inclination);
+    perspective-origin: right;
+  }
 
-.second-header {
-  background-color: #d43737;
-  border-right: 0;
-  font-size: 2.4rem;
-  transform: skewY($angle-of-inclination);
-  perspective-origin: left;
+  .second-header {
+    background-color: #d43737;
+    border-right: 0;
+    font-size: 2.4rem;
+    transform: skewY($angle-of-inclination);
+    perspective-origin: left;
+  }
 }
 
 .cube {
