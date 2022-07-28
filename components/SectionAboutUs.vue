@@ -2,7 +2,9 @@
   <div class="about-us-section">
     <div class="section-head">
       <h2 class="first-header m-0">About us</h2>
-      <h2 class="second-header m-0">Why we're here</h2>
+      <div class="second-header m-0">
+        <h2 class="px-5">Why we're here</h2>
+      </div>
     </div>
     <div class="cube mb-9">
       <div class="front-size">
@@ -63,8 +65,12 @@ $side-bottom-height: 40px;
   .second-header {
     background-color: #d43737;
     border-right: 0;
-    font-size: 3rem;
     transform: skewY($angle-of-inclination);
+    text-align: left;
+
+    h2 {
+      font-size: 3rem;
+    }
   }
 }
 
