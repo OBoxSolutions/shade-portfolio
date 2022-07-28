@@ -1,8 +1,12 @@
 <template>
-  <div>
-    <div class="section-head mb-8">
+  <div class="about-us-section">
+    <div class="section-head">
       <h2 class="first-header m-0">About us</h2>
       <h2 class="second-header m-0">Why we're here</h2>
+    </div>
+    <div class="cube mb-9">
+      <div class="front-size"></div>
+      <div class="down-size"></div>
     </div>
   </div>
 </template>
@@ -15,6 +19,13 @@ export default {
 
 <style scoped lang="scss">
 $angle-of-inclination: 2deg;
+$side-bottom-height: 40px;
+
+.about-us-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 .section-head {
   display: flex;
@@ -46,5 +57,33 @@ $angle-of-inclination: 2deg;
   font-size: 2.4rem;
   transform: skewY($angle-of-inclination);
   perspective-origin: left;
+}
+
+.cube {
+  position: relative;
+  height: 600px;
+  width: 60%;
+  transform-style: preserve-3d;
+  perspective: 200px;
+  perspective-origin: bottom;
+
+  .front-size,
+  .down-size {
+    width: 100%;
+    height: 100%;
+  }
+
+  .front-size {
+    background-color: #ddd6bf;
+    position: absolute;
+  }
+
+  .down-size {
+    height: $side-bottom-height;
+    position: absolute;
+    background-color: #5a55f8;
+    bottom: -($side-bottom-height / 2);
+    transform: rotateX(-20deg) translateY($side-bottom-height / 2);
+  }
 }
 </style>
