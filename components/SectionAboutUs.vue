@@ -40,6 +40,8 @@ $side-bottom-height: 40px;
   display: flex;
   width: 100%;
   perspective: 200px;
+  position: relative;
+  z-index: 100;
 }
 
 .first-header,
@@ -75,6 +77,9 @@ $side-bottom-height: 40px;
   transform-style: preserve-3d;
   perspective: 200px;
   perspective-origin: bottom;
+  position: relative;
+  top: -20px;
+  z-index: 10;
 
   .front-size,
   .down-size {
