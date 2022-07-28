@@ -5,7 +5,16 @@
       <h2 class="second-header m-0">Why we're here</h2>
     </div>
     <div class="cube mb-9">
-      <div class="front-size"></div>
+      <div class="front-size">
+        <div class="p-5">
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officia
+            doloribus eaque laudantium commodi nisi quibusdam itaque asperiores
+            recusandae repellat corrupti id neque eveniet vitae voluptate earum
+            nostrum, atque sed quas.
+          </p>
+        </div>
+      </div>
       <div class="down-size"></div>
     </div>
   </div>
