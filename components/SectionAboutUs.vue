@@ -85,16 +85,15 @@ $side-bottom-height: 40px;
   .down-size {
     width: 100%;
     height: 100%;
+    position: absolute;
   }
 
   .front-size {
     background-color: #ddd6bf;
-    position: absolute;
   }
 
   .down-size {
     height: $side-bottom-height;
-    position: absolute;
     background-color: #5a55f8;
     bottom: -($side-bottom-height / 2);
     transform: rotateX(-20deg) translateY($side-bottom-height / 2);
