@@ -34,7 +34,7 @@ $angle-of-inclination: 2deg;
 .first-header {
   background-color: #ef4242;
   text-transform: uppercase;
-  font-size: 2rem;
+  font-size: 4.4rem;
   border-left: 0;
   transform: skewY(-$angle-of-inclination);
   perspective-origin: right;
@@ -43,6 +43,7 @@ $angle-of-inclination: 2deg;
 .second-header {
   background-color: #d43737;
   border-right: 0;
+  font-size: 2.4rem;
   transform: skewY($angle-of-inclination);
   perspective-origin: left;
 }
