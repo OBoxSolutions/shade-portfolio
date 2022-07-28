@@ -55,18 +55,16 @@ $side-bottom-height: 40px;
   .first-header {
     background-color: #ef4242;
     text-transform: uppercase;
-    font-size: 4.4rem;
+    font-size: 6.2rem;
     border-left: 0;
     transform: skewY(-$angle-of-inclination);
-    perspective-origin: right;
   }
 
   .second-header {
     background-color: #d43737;
     border-right: 0;
-    font-size: 2.4rem;
+    font-size: 3rem;
     transform: skewY($angle-of-inclination);
-    perspective-origin: left;
   }
 }
 
