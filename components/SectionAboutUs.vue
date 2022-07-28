@@ -1,7 +1,9 @@
 <template>
   <div class="about-us-section">
     <div class="section-head">
-      <h2 class="first-header m-0">About us</h2>
+      <div class="first-header m-0">
+        <h2>About us</h2>
+      </div>
       <div class="second-header m-0">
         <h2 class="px-5">Why we're here</h2>
       </div>
@@ -57,9 +59,12 @@ $side-bottom-height: 40px;
   .first-header {
     background-color: #ef4242;
     text-transform: uppercase;
-    font-size: 6.2rem;
     border-left: 0;
     transform: skewY(-$angle-of-inclination);
+
+    h2 {
+      font-size: 6.2rem;
+    }
   }
 
   .second-header {
