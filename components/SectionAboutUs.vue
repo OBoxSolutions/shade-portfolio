@@ -67,7 +67,7 @@ $perspective: 200px;
     background-color: #ef4242;
     text-transform: uppercase;
     border-left: 0;
-    transform: skewY(-$angle-of-inclination);
+    transform: rotateY(2deg);
 
     .first-header__top-side {
     }
@@ -80,8 +80,8 @@ $perspective: 200px;
   .second-header-cube {
     background-color: #d43737;
     border-right: 0;
-    transform: skewY($angle-of-inclination);
     text-align: left;
+    transform: rotateY(-2deg);
 
     h2 {
       font-size: 3rem;
