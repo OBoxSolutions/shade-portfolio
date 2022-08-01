@@ -35,6 +35,7 @@ export default {
 <style scoped lang="scss">
 $angle-of-inclination: 2deg;
 $side-bottom-height: 40px;
+$perspective: 200px;
 
 .about-us-section {
   display: flex;
@@ -45,7 +46,7 @@ $side-bottom-height: 40px;
 .section-head {
   display: flex;
   width: 100%;
-  perspective: 200px;
+  perspective: $perspective;
   position: relative;
   z-index: 100;
 
@@ -56,6 +57,8 @@ $side-bottom-height: 40px;
     text-align: center;
     border: 3px solid black;
     z-index: 100;
+    transform-style: preserve-3d;
+    perspective: $perspective;
   }
 
   .first-header-cube {
@@ -63,6 +66,9 @@ $side-bottom-height: 40px;
     text-transform: uppercase;
     border-left: 0;
     transform: skewY(-$angle-of-inclination);
+
+    .first-header__top-side {
+    }
 
     h2 {
       font-size: 6.2rem;
@@ -86,7 +92,7 @@ $side-bottom-height: 40px;
   height: 600px;
   width: 60%;
   transform-style: preserve-3d;
-  perspective: 200px;
+  perspective: $perspective;
   perspective-origin: bottom;
   position: relative;
   top: -20px;
