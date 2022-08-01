@@ -51,7 +51,8 @@ $headers-rotation-x-degrees: 2deg;
   z-index: 100;
   transform-style: preserve-3d;
   perspective: $perspective;
-  transform: rotateX(-20deg);
+  transform: rotateX(-24deg);
+  perspective-origin: top;
 
   .first-header-cube,
   .second-header-cube {
