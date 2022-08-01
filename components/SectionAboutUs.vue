@@ -46,9 +46,11 @@ $perspective: 200px;
 .section-head {
   display: flex;
   width: 100%;
-  perspective: $perspective;
   position: relative;
   z-index: 100;
+  transform-style: preserve-3d;
+  perspective: $perspective;
+  transform: rotateX(-20deg);
 
   .first-header-cube,
   .second-header-cube {
