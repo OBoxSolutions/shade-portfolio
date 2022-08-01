@@ -104,8 +104,8 @@ $side-bottom-height: 40px;
   .down-size {
     height: $side-bottom-height;
     background-color: #5a55f8;
-    bottom: -($side-bottom-height / 2);
-    transform: rotateX(-20deg) translateY($side-bottom-height / 2);
+    bottom: -(calc($side-bottom-height / 2));
+    transform: rotateX(-20deg) translateY(calc($side-bottom-height / 2));
   }
 }
 </style>
