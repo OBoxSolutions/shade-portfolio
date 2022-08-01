@@ -1,6 +1,6 @@
 <template>
   <div class="about-us-section">
-    <div class="section-head">
+    <div class="section-head-cube">
       <div class="first-header-cube">
         <div class="first-header__top-side"></div>
         <h2 class="m-0">About us</h2>
@@ -43,7 +43,7 @@ $perspective: 200px;
   align-items: center;
 }
 
-.section-head {
+.section-head-cube {
   display: flex;
   width: 100%;
   position: relative;
