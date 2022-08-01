@@ -36,6 +36,7 @@ export default {
 $angle-of-inclination: 2deg;
 $side-bottom-height: 40px;
 $perspective: 200px;
+$headers-rotation-x-degrees: 2deg;
 
 .about-us-section {
   display: flex;
@@ -67,7 +68,7 @@ $perspective: 200px;
     background-color: #ef4242;
     text-transform: uppercase;
     border-left: 0;
-    transform: rotateY(2deg);
+    transform: rotateY($headers-rotation-x-degrees) translateX(1.5px);
 
     .first-header__top-side {
     }
@@ -81,7 +82,7 @@ $perspective: 200px;
     background-color: #d43737;
     border-right: 0;
     text-align: left;
-    transform: rotateY(-2deg);
+    transform: rotateY(-($headers-rotation-x-degrees)) translateX(-1.5px);
 
     h2 {
       font-size: 3rem;
