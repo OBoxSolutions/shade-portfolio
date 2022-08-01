@@ -1,15 +1,17 @@
 <template>
   <div class="about-us-section">
     <div class="section-head">
-      <div class="first-header">
+      <div class="first-header-cube">
+        <div class="first-header__top-side"></div>
         <h2 class="m-0">About us</h2>
       </div>
-      <div class="second-header">
+      <div class="second-header-cube">
+        <div class="second-header__top-side"></div>
         <h2 class="px-5 m-0">Why we're here</h2>
       </div>
     </div>
-    <div class="cube mb-9">
-      <div class="front-size">
+    <div class="description-cube mb-9">
+      <div class="description-front-side">
         <div class="p-5">
           <p>
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officia
@@ -19,7 +21,7 @@
           </p>
         </div>
       </div>
-      <div class="down-size"></div>
+      <div class="description-down-side"></div>
     </div>
   </div>
 </template>
@@ -47,8 +49,8 @@ $side-bottom-height: 40px;
   position: relative;
   z-index: 100;
 
-  .first-header,
-  .second-header {
+  .first-header-cube,
+  .second-header-cube {
     width: 100%;
     padding: 20px 0px;
     text-align: center;
@@ -56,7 +58,7 @@ $side-bottom-height: 40px;
     z-index: 100;
   }
 
-  .first-header {
+  .first-header-cube {
     background-color: #ef4242;
     text-transform: uppercase;
     border-left: 0;
@@ -67,7 +69,7 @@ $side-bottom-height: 40px;
     }
   }
 
-  .second-header {
+  .second-header-cube {
     background-color: #d43737;
     border-right: 0;
     transform: skewY($angle-of-inclination);
@@ -79,7 +81,7 @@ $side-bottom-height: 40px;
   }
 }
 
-.cube {
+.description-cube {
   position: relative;
   height: 600px;
   width: 60%;
@@ -90,18 +92,18 @@ $side-bottom-height: 40px;
   top: -20px;
   z-index: 10;
 
-  .front-size,
-  .down-size {
+  .description-front-side,
+  .description-down-side {
     width: 100%;
     height: 100%;
     position: absolute;
   }
 
-  .front-size {
+  .description-front-side {
     background-color: #ddd6bf;
   }
 
-  .down-size {
+  .description-down-side {
     height: $side-bottom-height;
     background-color: #5a55f8;
     bottom: -(calc($side-bottom-height / 2));
