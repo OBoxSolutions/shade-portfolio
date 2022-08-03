@@ -27,7 +27,6 @@ $headers-rotation-x-degrees: 2deg;
   display: flex;
   width: 100%;
   position: relative;
-  z-index: 100;
   transform-style: preserve-3d;
   perspective: $perspective;
   transform: rotateX(-24deg);

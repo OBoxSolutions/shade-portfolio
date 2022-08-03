@@ -34,8 +34,6 @@ $headers-rotation-x-degrees: 2deg;
   perspective: $perspective;
   perspective-origin: bottom;
   position: relative;
-  top: -40px;
-  z-index: 10;
 
   .description-front-side,
   .description-down-side {

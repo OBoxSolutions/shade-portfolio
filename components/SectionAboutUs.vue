@@ -1,7 +1,11 @@
 <template>
   <div class="about-us-section">
-    <section-about-us-headers></section-about-us-headers>
-    <section-about-use-description></section-about-use-description>
+    <section-about-us-headers
+      class="section-headers"
+    ></section-about-us-headers>
+    <section-about-use-description
+      class="section-description"
+    ></section-about-use-description>
   </div>
 </template>
 
@@ -23,5 +27,14 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.section-headers {
+  z-index: 100;
+}
+
+.section-description {
+  top: -40px;
+  z-index: 10;
 }
 </style>
