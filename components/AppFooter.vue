@@ -12,6 +12,8 @@
             {{ link.text }}
           </li>
         </ul>
+        <div class="nav-bar-left-side"></div>
+        <div class="nav-bar-right-side"></div>
       </div>
       <div class="img-content">
         <div class="img-wrapper mx-auto py-4">
@@ -42,6 +44,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
+$border-size: 2px;
+
 .footer {
   position: relative;
   overflow-x: hidden;
@@ -60,7 +64,7 @@ export default {
 .footer-content {
   width: 1600px;
   position: relative;
-  border: 2px solid #222940;
+  border: $border-size solid #222940;
   transform-style: preserve-3d;
   perspective: 200px;
 }
@@ -88,7 +92,7 @@ export default {
   padding: 0.4em 0.2em;
   text-transform: uppercase;
   position: relative;
-  border-bottom: 2px solid #222940;
+  border-bottom: $border-size solid #222940;
   width: calc(100% - 0.4em);
 
   .nav-bar__link {
@@ -97,15 +101,15 @@ export default {
     justify-content: center;
     flex-grow: 1;
     border: solid #222940;
-    border-width: 0 2px;
+    border-width: 0 $border-size;
 
     &:first-child {
       border: solid #222940;
-      border-width: 0 2px 0 4px;
+      border-width: 0 $border-size 0 ($border-size * 2);
     }
     &:last-of-type {
       border: solid #222940;
-      border-width: 0 4px 0 2px;
+      border-width: 0 ($border-size * 2) 0 $border-size;
     }
   }
 }
