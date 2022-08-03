@@ -1,7 +1,7 @@
 <template>
   <footer class="footer">
     <div class="section-change-marker"></div>
-    <div class="content mx-auto">
+    <div class="footer-content mx-auto">
       <div class="nav-bar-wrapper">
         <ul class="nav-bar my-0 mx-auto">
           <li
@@ -13,7 +13,7 @@
           </li>
         </ul>
       </div>
-      <div class="footer-content">
+      <div class="content">
         <div class="img-wrapper mx-auto py-4">
           <img src="/logo.svg" alt="" />
         </div>
@@ -57,7 +57,7 @@ export default {
   z-index: 5;
 }
 
-.content {
+.footer-content {
   width: 1600px;
   position: relative;
   border: 2px solid #222940;
@@ -65,7 +65,7 @@ export default {
   perspective: 200px;
 }
 
-.footer-content {
+.content {
   position: relative;
   background-color: #ffac06;
   z-index: 30;
