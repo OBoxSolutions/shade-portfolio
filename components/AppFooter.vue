@@ -18,8 +18,8 @@
           <img src="/logo.svg" alt="" />
         </div>
       </div>
-      <div class="nav-bar-left-side"></div>
-      <div class="nav-bar-right-side"></div>
+      <div class="footer-left-side"></div>
+      <div class="footer-right-side"></div>
     </div>
   </footer>
 </template>
