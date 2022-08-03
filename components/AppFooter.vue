@@ -49,6 +49,7 @@ $border-size: 2px;
 .footer {
   position: relative;
   overflow-x: hidden;
+  background-color: #e39e15;
 }
 
 .section-change-marker {
