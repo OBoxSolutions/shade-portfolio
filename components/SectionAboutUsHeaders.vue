@@ -18,8 +18,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-$angle-of-inclination: 2deg;
-$side-bottom-height: 40px;
+$top-side-height: 400px;
 $perspective: 200px;
 $headers-rotation-x-degrees: 2deg;
 
@@ -46,10 +45,10 @@ $headers-rotation-x-degrees: 2deg;
     .second-header__top-side {
       position: absolute;
       width: 100%;
-      height: 400px;
+      height: $top-side-height;
       background: linear-gradient(90deg, #f8981d 7.29%, #fec111 48.61%);
-      top: -200px;
-      transform: rotateX(-165deg) translateY(200px);
+      top: -(calc($top-side-height/2));
+      transform: rotateX(-165deg) translateY(calc($top-side-height/2));
     }
   }
 
