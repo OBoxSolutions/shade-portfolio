@@ -93,14 +93,17 @@ $border-size: 2px;
     height: calc(100% - ($border-size));
     width: 100%;
     top: -($border-size);
-    transform: rotateY(300deg) translateX(50%);
   }
 
   .nav-bar-left-side {
-    left: calc(-50% - ($border-size * 2));
+    left: calc(-50% - 3px);
+    transform: rotateY(60deg) translateX(-50%);
+    border-right: 0;
   }
   .nav-bar-right-side {
-    right: calc(-50% - ($border-size * 2));
+    right: calc(-50% - 3px);
+    transform: rotateY(300deg) translateX(50%);
+    border-left: 0;
   }
 }
 
