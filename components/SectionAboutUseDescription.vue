@@ -21,10 +21,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
-$angle-of-inclination: 2deg;
 $side-bottom-height: 40px;
 $perspective: 200px;
-$headers-rotation-x-degrees: 2deg;
 
 .description-cube {
   position: relative;
