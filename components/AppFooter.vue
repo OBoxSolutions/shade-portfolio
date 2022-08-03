@@ -12,14 +12,14 @@
             {{ link.text }}
           </li>
         </ul>
-        <div class="nav-bar-left-side"></div>
-        <div class="nav-bar-right-side"></div>
       </div>
       <div class="footer-content">
         <div class="img-wrapper mx-auto py-4">
           <img src="/logo.svg" alt="" />
         </div>
       </div>
+      <div class="nav-bar-left-side"></div>
+      <div class="nav-bar-right-side"></div>
     </div>
   </footer>
 </template>
@@ -51,6 +51,8 @@ export default {
   width: 1200px;
   position: relative;
   border: 2px solid #222940;
+  transform-style: preserve-3d;
+  perspective: 200px;
 }
 
 .section-change-marker {
