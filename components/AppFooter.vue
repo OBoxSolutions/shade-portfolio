@@ -47,14 +47,6 @@ export default {
   overflow-x: hidden;
 }
 
-.content {
-  width: 1600px;
-  position: relative;
-  border: 2px solid #222940;
-  transform-style: preserve-3d;
-  perspective: 200px;
-}
-
 .section-change-marker {
   background-color: #15aaaa;
   width: 100%;
@@ -63,6 +55,14 @@ export default {
   top: 0;
   left: 0;
   z-index: 5;
+}
+
+.content {
+  width: 1600px;
+  position: relative;
+  border: 2px solid #222940;
+  transform-style: preserve-3d;
+  perspective: 200px;
 }
 
 .footer-content {
