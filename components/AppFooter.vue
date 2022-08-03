@@ -12,8 +12,8 @@
             {{ link.text }}
           </li>
         </ul>
-        <div class="perspective-square-left"></div>
-        <div class="perspective-square-right"></div>
+        <div class="nav-bar-left-side"></div>
+        <div class="nav-bar-right-side"></div>
       </div>
       <div class="footer-content">
         <div class="img-wrapper mx-auto py-4">
