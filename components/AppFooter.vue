@@ -48,7 +48,7 @@ export default {
 }
 
 .content {
-  width: 1200px;
+  width: 1600px;
   position: relative;
   border: 2px solid #222940;
   transform-style: preserve-3d;
