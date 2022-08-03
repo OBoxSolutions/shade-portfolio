@@ -85,6 +85,7 @@ $border-size: 2px;
   position: relative;
   transform-style: preserve-3d;
   perspective: 200px;
+  perspective-origin: center -100%;
 
   .nav-bar-left-side,
   .nav-bar-right-side {
@@ -98,12 +99,12 @@ $border-size: 2px;
 
   .nav-bar-left-side {
     left: calc(-50% - 3px);
-    transform: rotateY(60deg) translateX(-50%);
+    transform: rotateY(110deg) translateX(-50%);
     border-right: 0;
   }
   .nav-bar-right-side {
     right: calc(-50% - 3px);
-    transform: rotateY(300deg) translateX(50%);
+    transform: rotateY(250deg) translateX(50%);
     border-left: 0;
   }
 }
