@@ -58,7 +58,7 @@ $border-size: 2px;
   position: relative;
   top: 0;
   left: 0;
-  z-index: 5;
+  z-index: 10;
 }
 
 .footer-content {
@@ -67,6 +67,7 @@ $border-size: 2px;
   border: $border-size solid #222940;
   transform-style: preserve-3d;
   perspective: 200px;
+  z-index: 20;
 }
 
 .img-content {
@@ -92,13 +93,14 @@ $border-size: 2px;
     height: calc(100% - ($border-size));
     width: 100%;
     top: -($border-size);
+    transform: rotateY(300deg) translateX(50%);
   }
 
   .nav-bar-left-side {
-    left: calc(-100% - ($border-size * 2));
+    left: calc(-50% - ($border-size * 2));
   }
   .nav-bar-right-side {
-    right: calc(-100% - ($border-size * 2));
+    right: calc(-50% - ($border-size * 2));
   }
 }
 
