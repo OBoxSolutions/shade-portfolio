@@ -97,30 +97,6 @@ export default {
 
 .nav-bar-wrapper {
   position: relative;
-
-  // .perspective-square-left,
-  // .perspective-square-right {
-  //   content: '';
-  //   border: 2px solid #222940;
-  //   background-color: #5a55f8;
-  //   position: absolute;
-  //   width: 200px;
-  //   top: -22px;
-  //   height: 100px;
-  //   z-index: 10;
-  // }
-
-  // .perspective-square-left {
-  //   border-right: 0;
-  //   left: -104px;
-  //   transform: skewY(15deg);
-  // }
-
-  // .perspective-square-right {
-  //   border-left: 0;
-  //   right: -104px;
-  //   transform: skewY(-15deg);
-  // }
 }
 
 .nav-bar {
