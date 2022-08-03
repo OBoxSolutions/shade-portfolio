@@ -13,7 +13,7 @@
           </li>
         </ul>
       </div>
-      <div class="content">
+      <div class="img-content">
         <div class="img-wrapper mx-auto py-4">
           <img src="/logo.svg" alt="" />
         </div>
@@ -65,7 +65,7 @@ export default {
   perspective: 200px;
 }
 
-.content {
+.img-content {
   position: relative;
   background-color: #ffac06;
   z-index: 30;
