@@ -81,6 +81,25 @@ $border-size: 2px;
 
 .nav-bar-wrapper {
   position: relative;
+  transform-style: preserve-3d;
+  perspective: 200px;
+
+  .nav-bar-left-side,
+  .nav-bar-right-side {
+    border: $border-size solid #222940;
+    background-color: #5a55f8;
+    position: absolute;
+    height: calc(100% - ($border-size));
+    width: 100%;
+    top: -($border-size);
+  }
+
+  .nav-bar-left-side {
+    left: calc(-100% - ($border-size * 2));
+  }
+  .nav-bar-right-side {
+    right: calc(-100% - ($border-size * 2));
+  }
 }
 
 .nav-bar {
