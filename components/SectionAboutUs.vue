@@ -3,7 +3,7 @@
     <section-about-us-headers
       class="section-headers"
     ></section-about-us-headers>
-    <simple-cube title="Lorem Ipsum">
+    <simple-cube title="Lorem Ipsum" class="section-description">
       <p>
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore rem
         vitae facere fugiat voluptatem corrupti repudiandae voluptates eligendi,
