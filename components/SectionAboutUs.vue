@@ -3,21 +3,17 @@
     <section-about-us-headers
       class="section-headers"
     ></section-about-us-headers>
-    <section-about-use-description
-      class="section-description"
-    ></section-about-use-description>
+    <simple-cube title="Lorem Ipsum" description="Lorem ipsum"></simple-cube>
   </div>
 </template>
 
 <script>
 import SectionAboutUsHeaders from './SectionAboutUsHeaders.vue'
-import SectionAboutUseDescription from './SectionAboutUseDescription.vue'
 
 export default {
   name: 'SectionAboutUs',
   components: {
     SectionAboutUsHeaders,
-    SectionAboutUseDescription,
   },
 }
 </script>
