@@ -5,9 +5,7 @@
         <h2>
           {{ title }}
         </h2>
-        <p>
-          {{ text }}
-        </p>
+        <slot> </slot>
       </div>
     </div>
     <div class="description-down-side"></div>
