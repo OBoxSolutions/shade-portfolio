@@ -127,7 +127,7 @@ $border-style: $border-size solid black;
 .cube-back {
   position: absolute;
   top: calc(90px);
-  height: calc(200px - $border-size);
+  height: calc($cube-front-height - $border-size);
   width: 60%;
   transform: translateZ(
       -($side-bottom-width-top-and-bottom-cubes) + $side-bottom-width
