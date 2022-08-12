@@ -55,6 +55,8 @@ $side-bottom-width-top-and-bottom-cubes: 200px;
 $border-size: 1.5px;
 $border-style: $border-size solid black;
 
+$cube-front-height: 240px;
+
 .container {
   position: relative;
   perspective: $perspective;
@@ -93,7 +95,8 @@ $border-style: $border-size solid black;
 }
 
 .cube-front {
-  height: 200px;
+  height: $cube-front-height;
+  align-items: center;
   width: 60%;
 
   .cube-front-side {
