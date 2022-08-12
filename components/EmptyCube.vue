@@ -2,14 +2,14 @@
   <div class="container mb-6">
     <div class="cube cube-top">
       <div class="cube-side cube-front-side">
-        <h1>{{ title }}</h1>
+        <h2>{{ title }}</h2>
       </div>
       <div class="cube-side cube-right-side"></div>
       <div class="cube-side cube-bottom-side"></div>
     </div>
     <div class="cube cube-front">
       <div class="cube-side cube-front-side">
-        <div class="p-1">
+        <div class="p-1 font-family-consolas description">
           <slot> </slot>
         </div>
       </div>
@@ -55,7 +55,7 @@ $side-bottom-width-top-and-bottom-cubes: 200px;
 $border-size: 1.5px;
 $border-style: $border-size solid black;
 
-$cube-front-height: 240px;
+$cube-front-height: 280px;
 
 .container {
   position: relative;
@@ -70,6 +70,13 @@ $cube-front-height: 240px;
     height: 100%;
     background-color: #ddd6bf;
   }
+}
+
+.description {
+  font-weight: 400;
+  line-height: 29.27px;
+  color: black;
+  font-size: 20px;
 }
 
 .cube {
@@ -91,6 +98,12 @@ $cube-front-height: 240px;
   .cube-front-side {
     display: flex;
     justify-content: center;
+
+    h2 {
+      font-size: 3rem;
+      margin: 0;
+      margin-top: 0.4em;
+    }
   }
 }
 
