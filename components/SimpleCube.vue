@@ -1,6 +1,6 @@
 <template>
   <div class="cube mb-9">
-    <div class="description-front-side">
+    <div class="cube-front-side">
       <div class="p-5">
         <h2>
           {{ title }}
@@ -8,13 +8,13 @@
         <slot> </slot>
       </div>
     </div>
-    <div class="description-down-side"></div>
+    <div class="cube-down-side"></div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'SectionAboutUseDescription',
+  name: 'SimpleCube',
   props: {
     title: {
       type: String,
@@ -41,18 +41,19 @@ $perspective: 200px;
   perspective-origin: bottom;
   position: relative;
 
-  .description-front-side,
-  .description-down-side {
+  .cube-front-side,
+  .cube-down-side {
     width: 100%;
     height: 100%;
     position: absolute;
+    z-index: 10;
   }
 
-  .description-front-side {
+  .cube-front-side {
     background-color: #ddd6bf;
   }
 
-  .description-down-side {
+  .cube-down-side {
     height: $side-bottom-height;
     background-color: #5a55f8;
     bottom: -(calc($side-bottom-height / 2));
