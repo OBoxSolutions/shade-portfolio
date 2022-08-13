@@ -2,6 +2,7 @@
   <div>
     <section-hero-navbar class="nav"></section-hero-navbar>
     <section-hiring-header></section-hiring-header>
+    <section-hiring-information-form></section-hiring-information-form>
   </div>
 </template>
 

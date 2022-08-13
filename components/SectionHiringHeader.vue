@@ -36,7 +36,7 @@ export default {
       background-color: #FFAC06;
       width: 25em;
       height: 95%;
-      margin: 8% 0 0 4em;
+      margin: 7.5% 0 0 4em;
       border: 1px solid #000000;
     }
 
@@ -46,6 +46,7 @@ export default {
       height: 90%;
       margin-top: auto;
       border: 2px solid #000000;
+      border-bottom: 0;
       box-shadow: inset 0px 4px 7px 2px rgba(0, 0, 0, 0.25);
       border-top-left-radius: 15px;
       border-top-right-radius: 15px;
