@@ -3,7 +3,7 @@
     <div class="section-header__description">
       <div class="section-header__outside-box">
         <div class="section-header__inside-box">
-          <p>So, want to work for us huh? Alright. Fill out the basic information thing and answer all the questions provided below. Once you’re finished, relax a little while we finish our bit and reach out to you. By the way, DO NOT misinput your email. Make sure the email is typed correctly and that it’s the one you have access to. I mean we know that it’s pretty simple to just type in your email, but also, it’s pretty frustrating when people don’t do that!!!</p>
+          <p>So, want to work for us huh? Alright. Fill out the basic information thing and answer all the questions provided below. Once you’re finished, relax a little while we finish our bit and reach out to you. By the way, DO NOT misinput your email. Make sure the email is typed correctly and that it’s the one you have access to. I mean we know that’s it’s pretty simple to just type in your email, but also, it’s pretty frustrating when people don’t do that!!!</p>
         </div>
       </div>
     </div>
@@ -51,11 +51,11 @@ export default {
       border-top-right-radius: 15px;
 
       p{
-        padding: .5em;
+        padding: 1px .5rem;
         font-family: 'Lucida Console', sans-serif;
         font-style: normal;
         font-weight: 400;
-        font-size: 1.3rem;
+        font-size: 1.4rem;
         line-height: 1.5rem;
         text-align: center;
         color: #FFFFFF;
