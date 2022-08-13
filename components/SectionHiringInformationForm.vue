@@ -93,7 +93,7 @@ export default {
         flex-direction: column;
         gap: 1rem;
         margin: .5rem 0 2rem;
-        width: 45%;
+        width: 40%;
         padding: 1rem 2rem;
         background: #8A8A8A;
         border: 2px solid #000000;
@@ -144,13 +144,13 @@ export default {
         padding-left: 0;
 
         .birthdate-input{
-          width: 4rem;
+          width: 5rem;
           height: 1.8rem;
           text-align: center;
           color: #FFFFFF
         }
         .month, .day {
-          width: 2rem;
+          width: 2.5rem;
         }
       }
     }
