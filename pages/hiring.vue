@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section-hero-navbar></section-hero-navbar>
+    <section-hero-navbar class="nav"></section-hero-navbar>
     <section-hiring-header></section-hiring-header>
   </div>
 </template>
@@ -15,6 +15,9 @@ export default {
 }
 </script>
 
-<style>
+<style scoped lang="scss">
+.nav{
+  position: absolute;
+}
 
 </style>
