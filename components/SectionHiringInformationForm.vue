@@ -121,7 +121,7 @@ export default {
             height: 16px;
             border-radius: 50%;
             transform: scale(0);
-            // transition: 120ms transform ease-in-out;
+            transition: 120ms transform ease-in-out;
             box-shadow: inset 1em 1em #FFAC06;
           }
           &:checked::before {
