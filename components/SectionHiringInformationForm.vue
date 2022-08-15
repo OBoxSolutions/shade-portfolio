@@ -69,8 +69,6 @@ $perspective: 200px;
   border-bottom: 1px solid #000000;
   background-color: #D43737;
 
-
-
   h1{
     text-align: right;
     padding-right: 2rem;
@@ -109,7 +107,7 @@ $perspective: 200px;
         input{
           margin-top: 5px;
           height: 1.8rem;
-          width: 80%;
+          width: 85%;
           background: #D43737;
           border: 2px solid #000000;
           color: #FFFFFF;
