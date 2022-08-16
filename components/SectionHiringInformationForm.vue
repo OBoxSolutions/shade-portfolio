@@ -1,5 +1,5 @@
 <template>
-<div class="section-hiring-cube mb-9">
+<div class="section-hiring-cube">
   <div class="section-hiring-form">
     <h1>BASIC INFORMATION</h1>
     <form class="section-form">
@@ -57,7 +57,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-$perspective: 200px;
+$perspective: 100px;
 
 .section-hiring-cube{
   transform-style: preserve-3d;
@@ -72,7 +72,7 @@ $perspective: 200px;
   h1{
     text-align: right;
     padding-right: 2rem;
-    font-size: 3.75rem;
+    font-size: 3rem;
     font-weight: 400;
     line-height: 60px;
     color: #FFFFFF;
@@ -84,7 +84,7 @@ $perspective: 200px;
     margin-bottom: 3rem;
 
     label{
-      font-size: 20px;
+      font-size: 1rem;
       line-height: 20px;
       color: #FFFFFF;
     }
@@ -135,10 +135,10 @@ $perspective: 200px;
 
         input[type='radio'] {
           appearance: none;
-          background-color: #fff;
+          background-color: #ffffff;
           margin: 0;
-          width: 16px;
-          height: 16px;
+          width: 1rem;
+          height: 1rem;
           border: 2px solid black;
           border-radius: 50%;
 
@@ -147,12 +147,12 @@ $perspective: 200px;
 
           &::before {
             content: "";
-            width: 12px;
-            height: 12px;
+            width: .8rem;
+            height: .8rem;
             border-radius: 50%;
             transform: scale(0);
             transition: 120ms transform ease-in-out;
-            box-shadow: inset 1em 1em #FFAC06;
+            box-shadow: inset 1rem 1rem #FFAC06;
           }
           &:checked::before {
             transform: scale(1);
@@ -187,7 +187,7 @@ $perspective: 200px;
   }
 }
 .form-down-side{
-  // z-index: 10;
+  z-index: 10;
   position: absolute;
   height: 40px;
   width: 100%;
