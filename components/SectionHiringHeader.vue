@@ -35,7 +35,7 @@ export default {
 
       background-color: #FFAC06;
       width: 25em;
-      height: 95%;
+      height: 97%;
       margin: 7.5% 0 0 4em;
       border: 1px solid #000000;
     }
