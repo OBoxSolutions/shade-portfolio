@@ -1,5 +1,5 @@
 <template>
-  <div class="hiring-submit mb-9">
+  <div class="hiring-submit">
     <div class="hiring-submit__top" />
     <button class="hiring-submit__button">
       <h1>
@@ -22,11 +22,27 @@ $perspective: 300px;
   transform-style: preserve-3d;
   perspective: $perspective;
   perspective-origin: bottom;
+  z-index: 10;
 
   .hiring-submit__top{
     background: #33B758;
     border: 1px solid #000000;
     height: 20px;
+    cursor: pointer;
+  }
+  &:hover {
+    .hiring-submit__button{
+      background-color: #33B758;
+    }
+  }
+  &:active {
+    .hiring-submit__top{
+      height: 3px;
+    }
+    .hiring-submit__button{
+      line-height: 80px;
+      background-color: #33B758;
+    }
   }
   .hiring-submit__button{
     width: 100%;
@@ -37,19 +53,16 @@ $perspective: 300px;
 
     position: absolute;
     width: 100%;
-    bottom: -96px;
+    bottom: -89.8px;
     transform: rotateX(-20deg) translateY(90px);
 
     &:hover {
-      background-color: #33B758; //hover color
-    }
-    &:active {
-      background-color: #969696; //active color
+      background-color: #33B758;
     }
 
     h1{
       font-size: 4rem;
-      line-height: 96px;
+      line-height: 90px;
       text-align: center;
       color: #000000;
       transform: matrix(0.83, 0, -0.89, 1, 0, 0);

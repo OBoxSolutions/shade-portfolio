@@ -45,6 +45,7 @@ export default {
 .footer {
   position: relative;
   overflow-x: hidden;
+  z-index: -1;
 }
 
 .content {

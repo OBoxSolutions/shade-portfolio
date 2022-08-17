@@ -69,7 +69,7 @@ export default {
 
     img{
       margin-top: 2rem;
-      width: 58rem;
+      width: 100%;
     }
   }
 }
