@@ -3,7 +3,7 @@
     <div class="section-questions__outside-box">
       <div class="section-questions__inside-box">
         <div class="questions-white-box">
-          Hiring question works!
+          Hiring questions works!
         </div>
         <div class="questions-user-name">
           <h1>-[NAME]</h1>

@@ -4,6 +4,7 @@
     <section-hiring-header></section-hiring-header>
     <section-hiring-information-form></section-hiring-information-form>
     <section-hiring-questions></section-hiring-questions>
+    <hiring-submit-button></hiring-submit-button>
   </div>
 </template>
 
@@ -11,9 +12,10 @@
 import SectionHeroNavbar from '~/components/SectionHeroNavbar.vue'
 import SectionHiringHeader from '~/components/SectionHiringHeader.vue'
 import SectionHiringQuestions from '~/components/SectionHiringQuestions.vue'
+import HiringSubmitButton from '~/components/HiringSubmitButton.vue'
 export default {
   name: 'HiringPage',
-  components: { SectionHeroNavbar, SectionHiringHeader, SectionHiringQuestions },
+  components: { SectionHeroNavbar, SectionHiringHeader, SectionHiringQuestions, HiringSubmitButton },
 
 }
 </script>
