@@ -148,7 +148,7 @@ $perspective: 100px;
           &::before {
             content: "";
             width: .8rem;
-            height: .8rem;
+            height: .84rem;
             border-radius: 50%;
             transform: scale(0);
             transition: 120ms transform ease-in-out;
