@@ -50,6 +50,35 @@ $border-size: 2px;
   position: relative;
   overflow-x: hidden;
   background-color: #e39e15;
+  z-index: -1;
+}
+
+.content {
+  width: 1200px;
+  position: relative;
+  border: 2px solid #222940;
+
+  &::before,
+  &::after {
+    content: '';
+    border: 2px solid #222940;
+    background-color: #ffac06;
+    position: absolute;
+    width: 200px;
+    top: -2px;
+    height: 100%;
+    z-index: -1;
+  }
+
+  &::before {
+    border-right: 0;
+    left: -204px;
+  }
+
+  &::after {
+    border-left: 0;
+    right: -104px;
+  }
 }
 
 .section-change-marker {

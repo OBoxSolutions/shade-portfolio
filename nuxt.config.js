@@ -20,6 +20,10 @@ export default {
         rel: 'stylesheet',
         href: 'https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap',
       },
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.cdnfonts.com/css/lucida-console',
+      },
     ],
   },
 
