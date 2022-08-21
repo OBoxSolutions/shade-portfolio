@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section-hero-navbar></section-hero-navbar>
+    <section-hero-navbar class="nav"></section-hero-navbar>
     <section-porfolio-header></section-porfolio-header>
     <section-portfolio-previews></section-portfolio-previews>
   </div>
@@ -16,6 +16,8 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped lang="scss">
+.nav{
+  position: absolute;
+}
 </style>
