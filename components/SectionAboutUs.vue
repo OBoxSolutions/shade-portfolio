@@ -3,7 +3,7 @@
     <section-about-us-headers
       class="section-headers"
     ></section-about-us-headers>
-    <simple-cube title="Lorem Ipsum" class="section-description">
+    <simple-cube title="Lorem Ipsum" class="section-description mx-auto">
       <p>
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore rem
         vitae facere fugiat voluptatem corrupti repudiandae voluptates eligendi,
@@ -48,6 +48,7 @@ export default {
 .section-description {
   top: -40px;
   z-index: 10;
+  max-width: 900px;
 }
 
 .section-partnership {
