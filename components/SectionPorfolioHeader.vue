@@ -24,15 +24,16 @@ export default {
 
 <style scoped lang="scss">
 .section-header{
+  position: relative;
   width: 100%;
-  height: 860px;
-  background: url('/porfolio-header-background.png');
-  padding-top: 5rem;
+  height: 840px;
+  background: url('/portfolio.gif') center;
+  padding-top: 8rem;
 
   .section-header__bottom{
-    width: 100%;
     position: absolute;
-    bottom: calc(-140px - 5rem);
+    width: 100%;
+    bottom: -2px;
   }
 
   .section-header__description{
@@ -42,17 +43,18 @@ export default {
     .section-header__outside-box{
       display: flex;
       flex-direction: column;
+      gap: 2.5rem;
       justify-content: center;
       align-items: center;
 
       background-color: #FFAC06;
       width: 25em;
-      height: 80%;
+      height: 70%;
       margin-left: 3rem;
       border: 1px solid #000000;
 
       .title{
-        // margin-top: 5rem;
+        margin-top: 6rem;
         padding: 0 1rem;
         text-align: center;
         font-size: 20px;
@@ -64,8 +66,7 @@ export default {
     .section-header__inside-box{
       background-color: #CC8800;
       width: 80%;
-      height: 62%;
-      // margin-top: auto;
+      height: 100%;
       border: 2px solid #000000;
       border-bottom: 0;
       box-shadow: inset 0px 4px 7px 2px rgba(0, 0, 0, 0.25);

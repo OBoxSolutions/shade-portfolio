@@ -19,5 +19,6 @@ export default {
 <style scoped lang="scss">
 .nav{
   position: absolute;
+  z-index: 10;
 }
 </style>

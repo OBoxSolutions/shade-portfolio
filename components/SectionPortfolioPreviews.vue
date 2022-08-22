@@ -6,15 +6,18 @@
       </div>
       <div class="section-portfolio-previews__title-bottom"></div>
     </div>
+
     <div class="section-portfolio-previews__content">
       <div v-for="(preview, index) in previews" :key="`preview-${index}`" class="section-portfolio-preview">
         <div class="section-portfolio-preview__image">
           <img :src="preview.image" alt="preview-image">
         </div>
-        <div class="section-portfolio-preview__green-middle" />
+
         <div class="section-portfolio-preview__bottom">
+          <div class="section-portfolio-preview__green-middle" />
           <a target="_blanck" :href="preview.link">View Site</a>
         </div>
+
       </div>
     </div>
   </div>
@@ -73,30 +76,38 @@ export default {
 
     .section-portfolio-preview__image{
       width: 100%;
-
       img{
         width: 100%;
       }
     }
 
-    .section-portfolio-preview__green-middle{
-      width: 100%;
-      height: 10px;
-      background-color: #15AAAA;
-    }
-
     .section-portfolio-preview__bottom{
-      height: 50px;
+      position: relative;
+      height: 110px;
+      z-index: 100;
       background-image: linear-gradient(90deg, #FFAC06 33.33%, #5A55F8 33.33%, #5A55F8 66.66%, #FFAC06 66.66%);
       text-align: center;
+      clip-path: polygon(100% 0, 100% 40%, 66% 68%, 34% 68%, 0 40%, 0 0);
+
+      .section-portfolio-preview__green-middle{
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 80px;
+        background-color: #15AAAA;
+        z-index: 10;
+        clip-path: polygon(100% 0, 66% 28%, 34% 28%, 0% 0%);
+
+
+      }
 
       a{
         display: block;
         height: 100%;
-        width: 33.33%;
-        margin:auto;
+        width: 20%;
+        margin: auto;
 
-        line-height: 55px;
+        line-height: 100px;
         font-size: 1.5rem;
         text-align: center;
         color: #000000;
