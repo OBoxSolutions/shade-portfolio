@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="press-start-container">
-      <base-button> Press start </base-button>
+      <base-button class="w-full"> Press start </base-button>
     </div>
     <div class="divider"></div>
     <div class="hire-team-container">
