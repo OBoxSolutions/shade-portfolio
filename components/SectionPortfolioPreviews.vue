@@ -19,12 +19,19 @@
         </div>
 
       </div>
+
+      <base-button class="portfolio-button">Press Start</base-button>
+
     </div>
+
+
   </div>
 </template>
 
 <script>
+import BaseButton from './BaseButton.vue'
 export default {
+  components: { BaseButton },
   data() {
     return {
       previews: [
@@ -70,6 +77,10 @@ export default {
     gap: 6rem;
     padding: 6rem 0;
 
+    .portfolio-button{
+      font-size: 40px;
+    }
+
     .section-portfolio-preview{
       width: 90%;
     }
@@ -97,8 +108,6 @@ export default {
         background-color: #15AAAA;
         z-index: 10;
         clip-path: polygon(100% 0, 66% 28%, 34% 28%, 0% 0%);
-
-
       }
 
       a{
