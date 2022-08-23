@@ -1,26 +1,29 @@
 <template>
   <div class="section-hero">
-    <div class="navbar-wrapper mx-auto">
-      <div class="navbar-content">
-        <section-hero-navbar></section-hero-navbar>
-      </div>
-    </div>
-    <div class="content">
-      <div class="resume">
-        <img src="/logo.svg" class="mt-9 mx-1" alt="" />
-        <p class="mx-2">Every pixel delivered with care</p>
-        <div class="description p-1 mr-1 mt-2">
-          <p>
-            We are a website design company, WebDo. The sole purpose of our
-            existence is to create something you like. Truth be told, we just
-            love making websites!
-          </p>
+    <div class="first-section">
+      <div class="navbar-wrapper mx-auto">
+        <div class="navbar-content">
+          <section-hero-navbar></section-hero-navbar>
         </div>
       </div>
-      <div class="sunset-picture">
-        <img src="/sunset.gif" alt="" />
+      <div class="content">
+        <div class="resume">
+          <img src="/logo.svg" class="mt-9 mx-1" alt="" />
+          <p class="mx-2">Every pixel delivered with care</p>
+          <div class="description p-1 mr-1 mt-2">
+            <p>
+              We are a website design company, WebDo. The sole purpose of our
+              existence is to create something you like. Truth be told, we just
+              love making websites!
+            </p>
+          </div>
+        </div>
+        <div class="sunset-picture">
+          <img src="/sunset.gif" alt="" />
+        </div>
       </div>
     </div>
+    <section-hero-foot class="mx-0 w-full"></section-hero-foot>
   </div>
 </template>
 
@@ -33,7 +36,10 @@ export default {
 <style scoped lang="scss">
 .section-hero {
   position: relative;
-  height: 100vh;
+
+  .first-section {
+    height: 100vh;
+  }
 
   .content {
     display: flex;
