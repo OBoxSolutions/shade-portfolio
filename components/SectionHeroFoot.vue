@@ -23,11 +23,12 @@ $border-style: 1px solid #877432;
 .content {
   display: flex;
   width: 100%;
+  align-items: end;
 }
 
 .press-start-container {
   background-color: $background-color;
-  height: 400px;
+  height: 300px;
   width: 35%;
   border: $border-style;
   padding: 40px;
@@ -35,11 +36,13 @@ $border-style: 1px solid #877432;
 
 .divider {
   background-color: $background-color;
+  height: 200px;
   width: 30%;
   border-top: $border-style;
 }
 
 .hire-team-container {
+  height: 350px;
   background-color: $background-color;
   width: 35%;
   border: $border-style;
