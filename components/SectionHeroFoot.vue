@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="content">
     <div class="press-start-container">
       <base-button class="w-full"> Press start </base-button>
     </div>
@@ -20,7 +20,7 @@ export default {
 $background-color: #d6932f;
 $border-style: 1px solid #877432;
 
-.container {
+.content {
   display: flex;
   width: 100%;
 }
