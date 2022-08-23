@@ -90,16 +90,17 @@ export default {
       padding: 0 !important;
       background-color: $botton-color;
       border-radius: 5px;
+      width: 35%;
 
       transform-style: preserve-3d;
       perspective: 100px;
       perspective-origin: bottom;
 
       h1{
-        font-size: 60px;
-        width: 32.5rem;
+        font-size: 3.75rem;
+        width: 70%;
         font-weight: 400;
-        margin: 1rem 0;
+        margin: 1rem auto;
         color: #ffffff;
       }
       &:hover{
@@ -108,7 +109,7 @@ export default {
       &::before{
         background-color: $botton-hover-color;
         min-height: 11px;
-        width: calc(32.5rem - 12px);
+        width: calc(100% - 13px);
         bottom: -10px;
         left: 6px;
         border-radius: 0;
