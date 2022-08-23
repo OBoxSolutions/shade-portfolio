@@ -5,7 +5,9 @@
     </div>
     <div class="divider"></div>
     <div class="hire-team-container">
-      <p>Hire a team today!</p>
+      <div class="hire-team-subcontainer">
+        <p>Hire a team today!</p>
+      </div>
     </div>
   </div>
 </template>
@@ -55,8 +57,16 @@ $border-style: 1px solid #877432;
   background-color: $background-color;
   width: 30%;
   border: $border-style;
-  padding: 20px;
+  padding: 0px 30px;
   border-radius: 10px 0 0 0;
   font-size: 40px;
+
+  .hire-team-subcontainer {
+    background-color: #ffb341;
+    height: 100%;
+    margin-top: 30px;
+    border-radius: 10px;
+    padding: 5px 0 0px 20px;
+  }
 }
 </style>
