@@ -20,7 +20,9 @@
 
       </div>
 
-      <base-button class="portfolio-button">Press Start</base-button>
+      <base-button class="portfolio-button">
+        <h1>Press Start</h1>
+      </base-button>
 
     </div>
 
@@ -78,7 +80,14 @@ export default {
     padding: 6rem 0;
 
     .portfolio-button{
-      font-size: 40px;
+      padding: 0 !important;
+      h1{
+        font-size: 60px;
+        width: 32.5rem;
+        font-weight: 400;
+        margin: 1rem 0;
+        color: #ffffff;
+      }
     }
 
     .section-portfolio-preview{
