@@ -1,7 +1,7 @@
 <template>
   <div class="content">
     <div class="press-start-container">
-      <base-button class="w-full py-1"> Press start </base-button>
+      <base-button class="w-full py-1 base-button"> Press start </base-button>
     </div>
     <div class="divider"></div>
     <div class="hire-team-container">
@@ -36,9 +36,10 @@ $border-style: 1px solid #877432;
   font-weight: 400;
   font-size: 80px;
 
-  .py-1 {
+  .base-button {
     padding-top: 16px !important;
     padding-bottom: 16px !important;
+    border-radius: 10px;
   }
 }
 
