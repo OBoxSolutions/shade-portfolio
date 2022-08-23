@@ -25,6 +25,10 @@
       </base-button>
 
     </div>
+    <div class="section-portfolio-previews__botton">
+      <h1 class="bottom-title">And many more!</h1>
+      <div class="bottom-footer"></div>
+    </div>
 
 
   </div>
@@ -79,8 +83,18 @@ export default {
     gap: 6rem;
     padding: 6rem 0;
 
+    $botton-color: #F05757;
+    $botton-hover-color: #C24646;
+
     .portfolio-button{
       padding: 0 !important;
+      background-color: $botton-color;
+      border-radius: 5px;
+
+      transform-style: preserve-3d;
+      perspective: 100px;
+      perspective-origin: bottom;
+
       h1{
         font-size: 60px;
         width: 32.5rem;
@@ -88,18 +102,40 @@ export default {
         margin: 1rem 0;
         color: #ffffff;
       }
+      &:hover{
+        background-color: $botton-hover-color;
+      }
+      &::before{
+        background-color: $botton-hover-color;
+        min-height: 11px;
+        width: calc(32.5rem - 12px);
+        bottom: -10px;
+        left: 6px;
+        border-radius: 0;
+        transform: skewX(0);
+        transform: rotateX(-20deg);
+      }
+      &::after{
+        width: 0;
+      }
+      &:active {
+        transform: translateY(10px);
+        background-color: $botton-hover-color;
+
+        &::before {
+          min-height: 0;
+        }
+      }
     }
 
     .section-portfolio-preview{
       width: 90%;
-    }
 
-    .section-portfolio-preview__image{
-      width: 100%;
-      img{
+      .section-portfolio-preview__image > img{
         width: 100%;
       }
     }
+
 
     .section-portfolio-preview__bottom{
       position: relative;
@@ -131,6 +167,27 @@ export default {
         color: #000000;
         text-decoration: none;
       }
+    }
+  }
+  .section-portfolio-previews__botton{
+    height: 70px;
+
+    .bottom-title{
+      margin: 0;
+      height: 80%;
+      background-color: #49EA76;
+
+      font-weight: 400;
+      line-height: 60px;
+      text-align: center;
+      color: #FFFFFF;
+
+    }
+    .bottom-footer{
+      height: 20%;
+      background-color: #33B758;
+      border-top: 2px solid #000000;
+      border-bottom: 2px solid #000000;
     }
   }
 }
