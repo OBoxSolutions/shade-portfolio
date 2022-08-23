@@ -30,6 +30,7 @@ $border-style: 1px solid #877432;
   height: 400px;
   width: 35%;
   border: $border-style;
+  padding: 40px;
 }
 
 .divider {
