@@ -1,7 +1,7 @@
 <template>
   <div class="content">
     <div class="press-start-container">
-      <base-button class="w-full"> Press start </base-button>
+      <base-button class="w-full py-1"> Press start </base-button>
     </div>
     <div class="divider"></div>
     <div class="hire-team-container">
@@ -33,6 +33,13 @@ $border-style: 1px solid #877432;
   border: $border-style;
   padding: 40px;
   border-radius: 0 10px 0 0;
+  font-weight: 400;
+  font-size: 80px;
+
+  .py-1 {
+    padding-top: 16px !important;
+    padding-bottom: 16px !important;
+  }
 }
 
 .divider {
