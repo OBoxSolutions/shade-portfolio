@@ -32,6 +32,7 @@ $border-style: 1px solid #877432;
   width: 35%;
   border: $border-style;
   padding: 40px;
+  border-radius: 0 10px 0 0;
 }
 
 .divider {
@@ -47,5 +48,6 @@ $border-style: 1px solid #877432;
   width: 35%;
   border: $border-style;
   padding: 5px;
+  border-radius: 10px 0 0 0;
 }
 </style>
