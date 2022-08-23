@@ -93,6 +93,6 @@ export default {
 
 .hero-foot {
   position: relative;
-  top: -220px;
+  top: -240px;
 }
 </style>
