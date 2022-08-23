@@ -43,11 +43,11 @@ $border-style: 1px solid #877432;
 }
 
 .hire-team-container {
-  height: 350px;
+  height: 310px;
   background-color: $background-color;
   width: 35%;
   border: $border-style;
-  padding: 5px;
+  padding: 20px;
   border-radius: 10px 0 0 0;
 }
 </style>
