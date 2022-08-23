@@ -57,5 +57,6 @@ $border-style: 1px solid #877432;
   border: $border-style;
   padding: 20px;
   border-radius: 10px 0 0 0;
+  font-size: 40px;
 }
 </style>
