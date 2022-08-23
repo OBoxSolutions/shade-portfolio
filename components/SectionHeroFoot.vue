@@ -30,7 +30,7 @@ $border-style: 1px solid #877432;
 
 .press-start-container {
   background-color: $background-color;
-  height: 300px;
+  height: 400px;
   width: 45%;
   border: $border-style;
   padding: 40px;
@@ -47,13 +47,13 @@ $border-style: 1px solid #877432;
 
 .divider {
   background-color: $background-color;
-  height: 200px;
+  height: 300px;
   width: 25%;
   border-top: $border-style;
 }
 
 .hire-team-container {
-  height: 310px;
+  height: 410px;
   background-color: $background-color;
   width: 30%;
   border: $border-style;
