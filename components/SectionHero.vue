@@ -52,6 +52,8 @@ export default {
 
       p {
         text-align: center;
+        font-weight: 400;
+        font-size: 25px;
       }
 
       .description {
@@ -59,6 +61,8 @@ export default {
         border-radius: 0 15px;
         p {
           text-align: left;
+          font-weight: 400;
+          font-size: 25px;
         }
       }
     }
