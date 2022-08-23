@@ -27,7 +27,8 @@ export default {
   position: relative;
   width: 100%;
   height: 840px;
-  background: url('/portfolio.gif') center;
+  background: url('/portfolio-header.gif') repeat;
+  background-position: -50% 10%;
   padding-top: 8rem;
 
   .section-header__bottom{
