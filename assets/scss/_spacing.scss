@@ -63,3 +63,7 @@
 
 @include spacing-counter(10, em);
 @include spacing(auto);
+
+.w-full {
+  width: 100%;
+}
