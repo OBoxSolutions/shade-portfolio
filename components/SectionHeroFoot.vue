@@ -23,7 +23,7 @@ $border-style: 1px solid #877432;
 .content {
   display: flex;
   width: 100%;
-  align-items: end;
+  align-items: flex-end;
 }
 
 .press-start-container {
