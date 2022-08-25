@@ -42,7 +42,7 @@ export default {
     height: 100%;
     background-color: #ffac06;
     z-index: -1;
-    transform: translateZ(-130px);
+    transform: translateZ(-134px);
   }
 }
 
