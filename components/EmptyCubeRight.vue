@@ -1,5 +1,10 @@
 <template>
   <div class="cube">
+    <img
+      class="side-hole"
+      src="/side-hole-right.png"
+      alt="Depicts a hole to the side of the cube"
+    />
     <div class="side side-front">
       <div class="px-3">
         <h1>Partnership</h1>
@@ -44,6 +49,13 @@ $right-side-width: 100px;
   width: 100%;
   transform-style: preserve-3d;
   perspective: 800px;
+
+  .side-hole {
+    position: absolute;
+    z-index: 10;
+    right: -36px;
+    top: 110px;
+  }
 }
 
 .side {
