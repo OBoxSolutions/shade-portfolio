@@ -30,7 +30,7 @@ $right-side-width: 100px;
 
 .cube {
   position: relative;
-  height: 600px;
+  height: 560px;
   width: 100%;
   transform-style: preserve-3d;
   perspective: 800px;
@@ -49,7 +49,7 @@ $right-side-width: 100px;
 .side-right {
   background-color: #5a55f8;
   width: $right-side-width;
-  left: calc(100% - $right-side-width / 2);
-  transform: rotateY(42deg) translateX($right-side-width / 2);
+  left: calc(100% - calc($right-side-width / 2));
+  transform: rotateY(42deg) translateX(calc($right-side-width / 2));
 }
 </style>
