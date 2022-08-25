@@ -30,5 +30,6 @@ export default {
 <style scoped>
 .section-partnership {
   display: flex;
+  background-color: #ffac06;
 }
 </style>
