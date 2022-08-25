@@ -2,7 +2,17 @@
   <div class="cube">
     <div class="side side-front">
       <div class="px-3">
-        <slot></slot>
+        <h1>Partnership</h1>
+        <p>
+          WebDo is very grateful for every new quality connection it gets to
+          make while on this journey, that's why we take communication with
+          clients very seriously. Our colleagues will always be open to your
+          ideas and give you the time necessary to build an idea about your
+          product that you and we will be both proud of. Our website creators
+          will always keep a friendly and suitable environment because that is
+          when the best ideas are born. I truly hope you get to experience it
+          for yourself.
+        </p>
       </div>
     </div>
     <div class="side side-right"></div>
@@ -51,5 +61,15 @@ $right-side-width: 100px;
   width: $right-side-width;
   left: calc(100% - calc($right-side-width / 2));
   transform: rotateY(42deg) translateX(calc($right-side-width / 2));
+}
+
+h1 {
+  text-align: center;
+  font-size: 50px;
+  line-height: 79px;
+}
+
+p {
+  font-size: 18px;
 }
 </style>
