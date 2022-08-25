@@ -11,6 +11,7 @@
         illo id!
       </p>
     </simple-cube>
+    <section-about-us-partnership></section-about-us-partnership>
   </div>
 </template>
 
