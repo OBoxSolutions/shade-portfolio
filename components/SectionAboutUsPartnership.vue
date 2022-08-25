@@ -1,6 +1,7 @@
 <template>
   <div class="section-partnership">
     <empty-cube-right class="content"> </empty-cube-right>
+    <div class="connector-line"></div>
     <div class="image">
       <img
         src="/pixelated-handshake.png"
@@ -38,10 +39,24 @@ export default {
   width: calc(50% - 100px);
 }
 
+.connector-line {
+  $connector-line-height: 120px;
+  $connector-line-width: 34%;
+
+  width: $connector-line-width;
+  height: $connector-line-height;
+  position: absolute;
+  left: 867px;
+  top: calc(50% - calc($connector-line-height / 2));
+  background-color: #d9d9d9;
+  z-index: 10;
+}
+
 .image {
   width: calc(50% + 100px);
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 20;
 }
 </style>
