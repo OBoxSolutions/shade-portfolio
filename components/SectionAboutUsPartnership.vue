@@ -1,6 +1,7 @@
 <template>
   <div class="section-partnership">
-    <empty-cube-right>
+    <div class="filler"></div>
+    <empty-cube-right class="content">
       <h1>Partnership</h1>
       <p>
         WebDo is very grateful for every new quality connection it gets to make
@@ -16,7 +17,6 @@
       <img
         src="/pixelated-handshake.png"
         alt="Pixelated image describing a handshake"
-        class="mr-6"
       />
     </div>
   </div>
@@ -28,9 +28,32 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .section-partnership {
   display: flex;
-  background-color: #ffac06;
+  transform-style: preserve-3d;
+  position: relative;
+  perspective: 800px;
+
+  &::after {
+    position: absolute;
+    content: '';
+    width: 300%;
+    height: 100%;
+    background-color: #ffac06;
+    z-index: -1;
+    transform: translateZ(-130px);
+  }
+}
+
+.content {
+  width: calc(50% - 100px);
+}
+
+.image {
+  width: calc(50% + 100px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 </style>
