@@ -1,6 +1,5 @@
 <template>
   <div class="section-partnership">
-    <div class="filler"></div>
     <empty-cube-right class="content">
       <h1>Partnership</h1>
       <p>
