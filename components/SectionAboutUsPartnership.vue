@@ -1,6 +1,6 @@
 <template>
   <div class="section-partnership">
-    <div class="square">
+    <empty-cube-right>
       <h1>Partnership</h1>
       <p>
         WebDo is very grateful for every new quality connection it gets to make
@@ -11,7 +11,7 @@
         friendly and suitable environment because that is when the best ideas
         are born. I truly hope you get to experience it for yourself.
       </p>
-    </div>
+    </empty-cube-right>
     <div class="image">
       <img
         src="/pixelated-handshake.png"
