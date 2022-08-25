@@ -16,6 +16,7 @@
       <img
         src="/pixelated-handshake.png"
         alt="Pixelated image describing a handshake"
+        class="mr-6"
       />
     </div>
   </div>
