@@ -39,7 +39,6 @@ $perspective: 200px;
   transform-style: preserve-3d;
   perspective: $perspective;
   perspective-origin: bottom;
-  position: relative;
 
   .cube-front-side,
   .cube-down-side {
