@@ -82,6 +82,7 @@ h1 {
 }
 
 p {
+  font-family: 'Consolas';
   font-size: 18px;
 }
 </style>
