@@ -12,6 +12,7 @@
       </p>
     </simple-cube>
     <section-about-us-partnership></section-about-us-partnership>
+    <section-about-us-commitment></section-about-us-commitment>
   </div>
 </template>
 
