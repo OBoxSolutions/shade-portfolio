@@ -1,6 +1,6 @@
 <template>
   <div class="section-partnership">
-    <empty-cube-both-sides class="content" :left="false">
+    <empty-cube class="content" :left="false">
       <template #title> Partnership </template>
       <template #text>
         WebDo is very grateful for every new quality connection it gets to make
@@ -11,7 +11,7 @@
         friendly and suitable environment because that is when the best ideas
         are born. I truly hope you get to experience it for yourself.
       </template>
-    </empty-cube-both-sides>
+    </empty-cube>
     <div class="connector-line"></div>
     <div class="image">
       <img
