@@ -41,14 +41,14 @@ export default {
 </script>
 
 <style scoped lang="scss">
-$side-width: 100px;
+$side-width: 130px;
 
 .cube {
   position: relative;
   height: 560px;
   width: 100%;
   transform-style: preserve-3d;
-  perspective: 800px;
+  perspective: 500px;
 
   .side-hole-left,
   .side-hole-right {
@@ -80,8 +80,8 @@ $side-width: 100px;
 }
 
 .side-left {
-  left: -50px;
-  transform: rotateY(-42deg) translateX(-50px);
+  left: calc($side-width / 2 * -1);
+  transform: rotateY(-42deg) translateX(calc($side-width / 2 * -1));
 }
 
 .side-right {
