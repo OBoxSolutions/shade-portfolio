@@ -1,5 +1,5 @@
 <template>
-  <div class="cube" :style="{ perspective: perspective }">
+  <div class="cube" :style="{ perspective: perspectiveOrigin }">
     <img
       class="side-hole-left"
       src="/side-hole-left.png"
