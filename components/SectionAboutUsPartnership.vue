@@ -1,6 +1,11 @@
 <template>
   <div class="section-partnership">
-    <empty-cube class="content" :left="false">
+    <empty-cube
+      class="content"
+      perspective="800px"
+      side-width="100px"
+      :left="false"
+    >
       <template #title> Partnership </template>
       <template #text>
         WebDo is very grateful for every new quality connection it gets to make
