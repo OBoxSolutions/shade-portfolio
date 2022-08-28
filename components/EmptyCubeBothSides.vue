@@ -70,22 +70,21 @@ $side-width: 100px;
   width: 100%;
   height: 100%;
   position: absolute;
+  background-color: #5a55f8;
+  width: $side-width;
 }
 
 .side-front {
   background-color: #ddd6bf;
+  width: 100%;
 }
 
 .side-left {
-  background-color: #5a55f8;
-  width: $side-width;
   left: -50px;
   transform: rotateY(-42deg) translateX(-50px);
 }
 
 .side-right {
-  background-color: #5a55f8;
-  width: $side-width;
   left: calc(100% - calc($side-width / 2));
   transform: rotateY(42deg) translateX(calc($side-width / 2));
 }
