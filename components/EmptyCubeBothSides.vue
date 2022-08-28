@@ -6,7 +6,7 @@
       alt="Depicts a hole to the side of the cube"
     />
     <img
-      class="side-hole"
+      class="side-hole-right"
       src="/side-hole-right.png"
       alt="Depicts a hole to the side of the cube"
     />
@@ -50,17 +50,19 @@ $side-width: 100px;
   transform-style: preserve-3d;
   perspective: 800px;
 
-  .side-hole-left {
-    position: absolute;
-    z-index: 10;
-    left: -36px;
-    top: 110px;
-  }
+  .side-hole-left,
   .side-hole-right {
     position: absolute;
     z-index: 10;
+  }
+
+  .side-hole-left {
+    left: -36px;
+    top: 100px;
+  }
+  .side-hole-right {
     right: -36px;
-    top: 110px;
+    top: 100px;
   }
 }
 
