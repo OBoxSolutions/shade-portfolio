@@ -13,6 +13,7 @@
     </simple-cube>
     <section-about-us-partnership></section-about-us-partnership>
     <section-about-us-commitment></section-about-us-commitment>
+    <section-about-us-style-and-communication></section-about-us-style-and-communication>
   </div>
 </template>
 
