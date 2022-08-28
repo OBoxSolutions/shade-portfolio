@@ -60,12 +60,14 @@ export default {
   computed: {
     sideLeftStyles() {
       return {
+        width: this.sideWidth,
         left: `calc(${this.sideWidth} / 2 * -1)`,
         transform: `rotateY(-42deg) translateX(calc(${this.sideWidth} / 2 * -1))`,
       }
     },
     sideRightStyles() {
       return {
+        width: this.sideWidth,
         left: `calc(100% - calc(${this.sideWidth} / 2))`,
         transform: `rotateY(42deg) translateX(calc(${this.sideWidth} / 2))`,
       }
