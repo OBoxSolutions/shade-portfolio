@@ -1,5 +1,5 @@
 <template>
-  <div class="cube" :style="{ perspective: perspectiveOrigin }">
+  <div class="cube" :style="{ perspective: perspective }">
     <img
       class="side-hole-left"
       src="/side-hole-left.png"
@@ -46,7 +46,7 @@ export default {
       type: Boolean,
       default: true,
     },
-    perspectiveOrigin: {
+    perspective: {
       type: String,
       default: '',
     },
