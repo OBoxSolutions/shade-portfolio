@@ -27,8 +27,9 @@ $perspective: 300px;
   .hiring-submit__top{
     background: #33B758;
     border: 1px solid #000000;
-    height: 20px;
+    min-height: 20px;
     cursor: pointer;
+    transition: min-height .1s ease-out;
   }
   &:hover {
     .hiring-submit__button{
@@ -37,7 +38,7 @@ $perspective: 300px;
   }
   &:active {
     .hiring-submit__top{
-      height: 3px;
+      min-height: 3px;
     }
     .hiring-submit__button{
       line-height: 80px;
