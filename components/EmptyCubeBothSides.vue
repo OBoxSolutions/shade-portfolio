@@ -1,5 +1,5 @@
 <template>
-  <div class="cube">
+  <div class="cube" :style="{ perspective: perspective }">
     <img
       class="side-hole-left"
       src="/side-hole-left.png"
@@ -19,14 +19,14 @@
         </p>
       </div>
     </div>
-    <div class="side side-left"></div>
-    <div class="side side-right"></div>
+    <div class="side" :style="sideLeftStyles"></div>
+    <div class="side" :style="sideRightStyles"></div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'EmptyCubeLeft',
+  name: 'EmptyCubeBothSides',
   props: {
     title: {
       type: String,
@@ -35,6 +35,28 @@ export default {
     text: {
       type: String,
       default: '',
+    },
+    perspectiveOrigin: {
+      type: String,
+      default: '',
+    },
+    sideWidth: {
+      type: String,
+      default: '130px',
+    },
+  },
+  computed: {
+    sideLeftStyles() {
+      return {
+        left: `calc(${this.sideWidth} / 2 * -1)`,
+        transform: `rotateY(-42deg) translateX(calc(${this.sideWidth} / 2 * -1))`,
+      }
+    },
+    sideRightStyles() {
+      return {
+        left: `calc(100% - calc(${this.sideWidth} / 2))`,
+        transform: `rotateY(42deg) translateX(calc(${this.sideWidth} / 2))`,
+      }
     },
   },
 }
@@ -77,16 +99,6 @@ $side-width: 130px;
 .side-front {
   background-color: #ddd6bf;
   width: 100%;
-}
-
-.side-left {
-  left: calc($side-width / 2 * -1);
-  transform: rotateY(-42deg) translateX(calc($side-width / 2 * -1));
-}
-
-.side-right {
-  left: calc(100% - calc($side-width / 2));
-  transform: rotateY(42deg) translateX(calc($side-width / 2));
 }
 
 h1 {
