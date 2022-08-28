@@ -19,8 +19,8 @@
         </p>
       </div>
     </div>
-    <div class="side" :style="sideLeftStyles"></div>
-    <div class="side" :style="sideRightStyles"></div>
+    <div v-if="left" class="side" :style="sideLeftStyles"></div>
+    <div v-if="right" class="side" :style="sideRightStyles"></div>
   </div>
 </template>
 
@@ -35,6 +35,14 @@ export default {
     text: {
       type: String,
       default: '',
+    },
+    left: {
+      type: Boolean,
+      default: true,
+    },
+    right: {
+      type: Boolean,
+      default: true,
     },
     perspectiveOrigin: {
       type: String,
