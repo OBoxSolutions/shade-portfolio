@@ -30,7 +30,7 @@
 
 <script>
 export default {
-  name: 'EmptyCubeBothSides',
+  name: 'EmptyCube',
   props: {
     title: {
       type: String,
