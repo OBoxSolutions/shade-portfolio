@@ -43,7 +43,10 @@ export default {
   &::after {
     position: absolute;
     content: '';
-    width: 300%;
+    left: 0;
+    top: 0;
+    right: 0;
+    width: 100%;
     height: 100%;
     background-color: #ffac06;
     z-index: -1;

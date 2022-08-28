@@ -1,10 +1,8 @@
 <template>
   <div class="section-partnership">
-    <div class="connector-line"></div>
-    <empty-cube-both-sides class="content" title="lol"> </empty-cube-both-sides>
-    <div class="connector-line"></div>
-    <empty-cube-both-sides class="content" title="lol"> </empty-cube-both-sides>
-    <div class="connector-line"></div>
+    <div class="cube-wrapper left">
+      <empty-cube class="cube" perspective-origin="500px"></empty-cube>
+    </div>
   </div>
 </template>
 
@@ -21,13 +19,26 @@ export default {}
 
   &::after {
     position: absolute;
-    left: -400px;
+    left: 0px;
     content: '';
-    width: 300%;
+    width: 100%;
     height: 100%;
     background-color: #ffac06;
     z-index: -1;
     transform: translateZ(-134px);
   }
+}
+
+.cube-wrapper {
+  width: 30% !important;
+  position: relative;
+}
+
+.cube-wrapper.left {
+  left: 40px;
+}
+
+.cube-wrapper.right {
+  left: calc(100% - 40px);
 }
 </style>

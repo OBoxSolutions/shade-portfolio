@@ -45,9 +45,11 @@ export default {
 
   &::after {
     position: absolute;
-    left: -400px;
+    left: 0;
+    top: 0;
+    right: 0;
     content: '';
-    width: 300%;
+    width: 100%;
     height: 100%;
     background-color: #ffac06;
     z-index: -1;
