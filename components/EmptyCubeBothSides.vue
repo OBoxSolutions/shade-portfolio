@@ -13,9 +13,11 @@
 
     <div class="side side-front">
       <div class="px-3">
-        <h1>{{ title }}</h1>
+        <h1>
+          <slot name="title"></slot>
+        </h1>
         <p>
-          {{ text }}
+          <slot name="text"></slot>
         </p>
       </div>
     </div>
