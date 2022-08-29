@@ -51,8 +51,8 @@ export default {}
     left: 0px;
     content: '';
     width: 100%;
-    top: 7.5%;
-    height: 85%;
+    top: 6.2%;
+    height: 87.8%;
     background-color: #ffac06;
     z-index: -1;
   }
