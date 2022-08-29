@@ -13,7 +13,10 @@
       alt="Depicts a hole to the side of the cube"
     />
 
-    <div class="side side-front">
+    <div
+      class="side side-front"
+      :style="{ 'background-color': backgroundColor }"
+    >
       <div class="px-3">
         <h1>
           <slot name="title"></slot>
@@ -59,6 +62,10 @@ export default {
     rotation: {
       type: String,
       default: '42deg',
+    },
+    backgroundColor: {
+      type: String,
+      default: '#ddd6bf',
     },
   },
   computed: {
