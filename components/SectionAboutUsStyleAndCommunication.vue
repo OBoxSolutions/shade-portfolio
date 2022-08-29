@@ -88,7 +88,7 @@ export default {}
 }
 
 .connector-line-middle {
-  $width: 674px;
+  $width: 366px;
 
   width: $width;
   left: calc(50% - $width / 2);
