@@ -59,7 +59,7 @@ export default {}
 }
 
 .cube-wrapper {
-  width: 30% !important;
+  width: 38% !important;
   position: relative;
 }
 
