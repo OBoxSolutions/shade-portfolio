@@ -2,11 +2,34 @@
   <div class="section-partnership">
     <div class="connector-line connector-line-left"></div>
     <div class="cube-wrapper left">
-      <empty-cube class="cube" perspective-origin="500px"></empty-cube>
+      <empty-cube class="cube" perspective-origin="500px">
+        <template #title>Style </template>
+        <template #text
+          >We are aware of the fact that like it or not, hired web developers
+          are people, and people have emotions, well most of them anyway.
+          Emotions and opinions dictate their style and work, and may or may not
+          align with your creative vision. I mean, look at this website, it's
+          just flowing with creativity! But I imagine very few people want this
+          type of look. That's why during the planning stage we will hand-pick
+          the right team to match your wanted style.</template
+        >
+      </empty-cube>
     </div>
     <div class="connector-line connector-line-middle"></div>
     <div class="cube-wrapper right">
-      <empty-cube class="cube" perspective-origin="500px"></empty-cube>
+      <empty-cube class="cube" perspective-origin="500px">
+        <template #title>Communication</template>
+        <template #text>
+          Quality communication with the client is very important to us, I mean,
+          that's a big part of the service that we deliver. No matter if we're
+          doing website design for a small business, or for a big company, we
+          still think you're awesome. Philosophy that exists for quite some time
+          is that at the end of the day, the most important thing is not money,
+          but the connections you get to make along the way. We could not
+          support that saying more, like, who doesn't want to make friends? At
+          the end of the day, well, you get the point, talk to us.
+        </template>
+      </empty-cube>
     </div>
     <div class="connector-line connector-line-right"></div>
   </div>
