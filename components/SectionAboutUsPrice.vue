@@ -21,6 +21,7 @@
       </div>
       <div class="side cube-down-side"></div>
     </div>
+    <empty-cube class="cube cube-right-of-price"></empty-cube>
     <div class="cube cube-left-under-price">
       <div class="side cube-front-side"></div>
       <div class="side cube-right-side"></div>
@@ -42,6 +43,7 @@ $perspective: 200px;
 .section-about-us-price {
   perspective: $perspective;
   transform-style: preserve-3d;
+  position: relative;
 }
 
 .cube {
@@ -78,6 +80,14 @@ $perspective: 200px;
   }
 }
 
+.cube-right-of-price {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 6%;
+  height: 1300px;
+}
+
 .cube-left-under-price {
   width: 140px;
   height: 640px;
@@ -97,11 +107,12 @@ $perspective: 200px;
 .bottom {
   $height: 80px;
 
-  position: relative;
+  position: absolute;
+
   height: $height;
   width: 130%;
   background-color: #139494;
-  top: -(calc($height / 2));
+  bottom: -(calc($height / 2));
   transform: rotateX(20deg) translateY(calc($height / 2 * -1));
 }
 </style>
