@@ -26,6 +26,7 @@
       side-width="80px"
       perspective="initial"
       rotation="20deg"
+      background-color="#ffac06"
       :right="false"
     ></empty-cube>
     <div class="cube cube-left-under-price">
@@ -90,7 +91,7 @@ $perspective: 200px;
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 6%;
+  width: 4%;
   height: 1300px;
 }
 
