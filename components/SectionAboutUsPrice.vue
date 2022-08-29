@@ -21,7 +21,13 @@
       </div>
       <div class="side cube-down-side"></div>
     </div>
-    <empty-cube class="cube cube-right-of-price"></empty-cube>
+    <empty-cube
+      class="cube cube-right-of-price"
+      side-width="80px"
+      perspective="initial"
+      rotation="20deg"
+      :right="false"
+    ></empty-cube>
     <div class="cube cube-left-under-price">
       <div class="side cube-front-side"></div>
       <div class="side cube-right-side"></div>
