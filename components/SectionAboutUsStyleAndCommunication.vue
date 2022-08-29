@@ -2,7 +2,7 @@
   <div class="section-partnership">
     <div class="connector-line connector-line-left"></div>
     <div class="cube-wrapper left">
-      <empty-cube class="cube" perspective-origin="500px">
+      <empty-cube class="cube" perspective="620px">
         <template #title>Style </template>
         <template #text
           >We are aware of the fact that like it or not, hired web developers
@@ -17,7 +17,7 @@
     </div>
     <div class="connector-line connector-line-middle"></div>
     <div class="cube-wrapper right">
-      <empty-cube class="cube" perspective-origin="500px">
+      <empty-cube class="cube" perspective="620px">
         <template #title>Communication</template>
         <template #text>
           Quality communication with the client is very important to us, I mean,
