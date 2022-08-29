@@ -22,10 +22,10 @@ export default {}
     left: 0px;
     content: '';
     width: 100%;
-    height: 100%;
+    top: 7.5%;
+    height: 85%;
     background-color: #ffac06;
     z-index: -1;
-    transform: translateZ(-134px);
   }
 }
 
