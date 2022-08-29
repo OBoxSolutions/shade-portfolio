@@ -3,6 +3,9 @@
     <div class="cube-wrapper left">
       <empty-cube class="cube" perspective-origin="500px"></empty-cube>
     </div>
+    <div class="cube-wrapper right">
+      <empty-cube class="cube" perspective-origin="500px"></empty-cube>
+    </div>
   </div>
 </template>
 
@@ -39,6 +42,7 @@ export default {}
 }
 
 .cube-wrapper.right {
-  left: calc(100% - 40px);
+  position: absolute;
+  right: 40px;
 }
 </style>
