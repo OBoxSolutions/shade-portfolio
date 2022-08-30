@@ -21,7 +21,9 @@
       </div>
       <div class="side cube-down-side"></div>
     </div>
-    <div class="connector-line connector-line-middle"></div>
+    <div class="connector-line connector-line-middle">
+      <div>Some text</div>
+    </div>
 
     <empty-cube
       class="cube cube-right-of-price"
@@ -168,5 +170,13 @@ $perspective: 200px;
 
   width: $width;
   right: 95px;
+
+  div {
+    transform: rotateZ(270deg);
+    position: absolute;
+    width: 200px;
+    left: -50px;
+    top: 380px;
+  }
 }
 </style>
