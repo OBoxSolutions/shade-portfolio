@@ -7,7 +7,7 @@
           <p>
             How much does it cost to make a website? The cost will be handpicked
             just for you after we get a rough idea of your project. Generally,
-            the price is a deal breaker for a lot of people, that’s why we
+            the price is a deal breaker for a lot of people, that's why we
             evaluate it very carefully and personally for the client, to make it
             as accurate, reasonable, and affordable as possible. When choosing
             the price for the client there are a lot of factors involved so we
@@ -23,12 +23,21 @@
     </div>
     <empty-cube
       class="cube cube-right-of-price"
-      side-width="80px"
+      side-width="30px"
       perspective="initial"
-      rotation="20deg"
+      rotation="130deg"
       background-color="#ffac06"
       :right="false"
-    ></empty-cube>
+    >
+      <template #left>
+        <div class="side-hole-left-wrapper">
+          <img
+            src="/side-hole-big-size.svg"
+            alt="Depicts a hole to the side of the cube"
+          />
+        </div>
+      </template>
+    </empty-cube>
     <div class="cube cube-left-under-price">
       <div class="side cube-front-side"></div>
       <div class="side cube-right-side"></div>
@@ -121,5 +130,12 @@ $perspective: 200px;
   background-color: #139494;
   bottom: -(calc($height / 2));
   transform: rotateX(20deg) translateY(calc($height / 2 * -1));
+}
+
+.side-hole-left-wrapper {
+  position: absolute;
+  z-index: 10;
+  left: -62px;
+  top: 110px;
 }
 </style>
