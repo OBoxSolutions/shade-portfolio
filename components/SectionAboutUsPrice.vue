@@ -37,6 +37,9 @@
           />
         </div>
       </template>
+      <template #title>
+        <div class="rotated-text">Technical talk</div>
+      </template>
     </empty-cube>
     <div class="cube cube-left-under-price">
       <div class="side cube-front-side"></div>
@@ -137,5 +140,14 @@ $perspective: 200px;
   z-index: 10;
   left: -62px;
   top: 110px;
+}
+
+.rotated-text {
+  transform: rotateZ(270deg);
+  position: absolute;
+  height: 800px;
+  width: 800px;
+  top: 230px;
+  left: 0px;
 }
 </style>
