@@ -1,17 +1,21 @@
 <template>
   <div class="cube" :style="{ perspective: perspective }">
-    <img
-      v-if="left"
-      class="side-hole-left"
-      src="/side-hole-left.png"
-      alt="Depicts a hole to the side of the cube"
-    />
-    <img
-      v-if="right"
-      class="side-hole-right"
-      src="/side-hole-right.png"
-      alt="Depicts a hole to the side of the cube"
-    />
+    <slot name="left">
+      <img
+        v-if="left"
+        class="side-hole-left"
+        src="/side-hole-left.png"
+        alt="Depicts a hole to the side of the cube"
+      />
+    </slot>
+    <slot name="right-hole">
+      <img
+        v-if="right"
+        class="side-hole-right"
+        src="/side-hole-right.png"
+        alt="Depicts a hole to the side of the cube"
+      />
+    </slot>
 
     <div
       class="side side-front"
