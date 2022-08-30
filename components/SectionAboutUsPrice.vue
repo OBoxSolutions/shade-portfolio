@@ -21,6 +21,8 @@
       </div>
       <div class="side cube-down-side"></div>
     </div>
+    <div class="connector-line connector-line-middle"></div>
+
     <empty-cube
       class="cube cube-right-of-price"
       side-width="30px"
@@ -149,5 +151,22 @@ $perspective: 200px;
   width: 800px;
   top: 230px;
   left: 0px;
+}
+
+.connector-line {
+  $connector-line-height: 820px;
+
+  height: $connector-line-height;
+  position: absolute;
+  top: calc(45% - calc($connector-line-height / 2));
+  background-color: #d9d9d9;
+  z-index: 10;
+}
+
+.connector-line-middle {
+  $width: 86px;
+
+  width: $width;
+  right: 95px;
 }
 </style>
