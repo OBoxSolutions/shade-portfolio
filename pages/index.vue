@@ -1,6 +1,8 @@
 <template>
   <div>
     <section-hero></section-hero>
+    <section-hero-foot class="mx-0 w-full hero-foot"></section-hero-foot>
+
     <section-about-us class="section-about-us"></section-about-us>
     <div class="content-sections">
       <div class="content-sections__img"></div>
@@ -21,8 +23,13 @@ export default {
 .content-sections__img {
   background: url('/principal-page-background.svg');
 }
+
+.hero-foot {
+  position: absolute;
+  bottom: -390px;
+}
+
 .section-about-us {
-  position: relative;
-  top: -260px;
+  padding-top: 260px;
 }
 </style>

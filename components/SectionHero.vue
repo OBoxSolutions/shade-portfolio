@@ -23,7 +23,6 @@
         </div>
       </div>
     </div>
-    <section-hero-foot class="mx-0 w-full hero-foot"></section-hero-foot>
   </div>
 </template>
 
@@ -38,7 +37,7 @@ export default {
   position: relative;
 
   .first-section {
-    height: 100vh;
+    height: calc(100vh + 100px);
   }
 
   .content {
@@ -89,10 +88,5 @@ export default {
     width: fit-content;
     margin: auto;
   }
-}
-
-.hero-foot {
-  position: relative;
-  top: -240px;
 }
 </style>
