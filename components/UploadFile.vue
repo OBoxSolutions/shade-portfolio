@@ -1,9 +1,10 @@
 <template>
 <div class="upload-container">
+  <form action=""></form>
   <div class="upload-input">
-    <input type="file" accept="image/*,video/*" @change="loadFile($event)">
+    <input type="file" required accept="image/*,video/*" @change="loadFile($event)">
   </div>
-  <base-button @click="uploadFile">Upload</base-button>
+  <base-button  @click="uploadFile">Upload</base-button>
 </div>
 </template>
 
@@ -29,12 +30,17 @@ export default {
       this.file = e.target.files[0]
     },
     uploadFile(){
-      const storage = getStorage()
-      const fileRef = ref(storage, this.getUserName+'/'+this.file.name)
-      uploadBytes(fileRef, this.file)
-      .then((snapshot) => {
-        console.log('uploaded a file')
-      })
+      if(this.file === null || this.getUserName === ''){
+        console.log('missing parameters')
+      }
+      else{
+        const storage = getStorage()
+        const fileRef = ref(storage, this.getUserName+'/'+this.file.name)
+        uploadBytes(fileRef, this.file)
+        .then((snapshot) => {
+          console.log('uploaded a file')
+        })
+      }
     }
   }
 }
