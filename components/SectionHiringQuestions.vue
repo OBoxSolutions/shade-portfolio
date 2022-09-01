@@ -6,7 +6,7 @@
           <section-hiring-question-tabs class="questions" />
         </div>
         <div class="questions-user-name">
-          <h1>-[NAME]</h1>
+          <h1>{{ getUserName }}</h1>
         </div>
       </div>
     </div>
@@ -14,9 +14,14 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 import SectionHiringQuestionTabs from './SectionHiringQuestionTabs.vue'
+
 export default {
   components: { SectionHiringQuestionTabs },
+  computed: {
+    ...mapGetters(['getUserName']),
+  },
 
 }
 </script>

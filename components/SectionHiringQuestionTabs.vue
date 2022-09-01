@@ -17,13 +17,16 @@
       :key="`answer-${index}`"
       class="answer">
         <p>{{question.text}}</p>
+        <upload-file />
     </div>
   </div>
 </div>
 </template>
 
 <script>
+import UploadFile from './UploadFile.vue';
 export default {
+  components: { UploadFile },
   data() {
     return {
       questions: [
