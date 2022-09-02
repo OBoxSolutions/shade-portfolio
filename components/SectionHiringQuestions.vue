@@ -60,6 +60,7 @@ export default {
         align-items: center;
 
         .questions{
+          border: 5px solid black;
           width: 95%;
           height: 90%;
         }

@@ -1,24 +1,30 @@
 <template>
-<div class="tabs">
-  <div class="tab-links">
-    <button
-      v-for="(question, index) in questions"
-      :key="`question-${index}`"
-      :class="{ isActive: index === activeTab }"
-      class="tab-button"
-      @click="changeTab(index, `answer-${index}`)">
-        {{question.text}}
-    </button>
+<div class="tabs-container">
+  <div class="tabs-header">
+    <img src="/down-arrow.svg" alt="down-arrow">
+    <h1>Questions</h1>
   </div>
-  <div class="tab-content">
-    <div
-      v-for="(question, index) in questions"
-      v-show="index === 0"
-      :id="`answer-${index}`"
-      :key="`answer-${index}`"
-      class="answer">
-        <textarea :id="`input-${index}`" placeholder="Type your answer here..." class="answer-input"></textarea>
-        <upload-file />
+  <div class="tabs">
+    <div class="tab-links">
+      <button
+        v-for="(question, index) in questions"
+        :key="`question-${index}`"
+        :class="{ isActive: index === activeTab }"
+        class="tab-button"
+        @click="changeTab(index, `answer-${index}`)">
+          {{question.text}}
+      </button>
+    </div>
+    <div class="tab-content">
+      <div
+        v-for="(question, index) in questions"
+        v-show="index === 0"
+        :id="`answer-${index}`"
+        :key="`answer-${index}`"
+        class="answer">
+          <textarea :id="`input-${index}`" placeholder="Type your answer here..." class="answer-input"></textarea>
+          <upload-file />
+      </div>
     </div>
   </div>
 </div>
@@ -58,33 +64,52 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.tabs{
-  display: flex;
-  background-color: #222940;
-  font-family: sans-serif;
+.tabs-container{
+  $header-height: 60px;
+  .tabs-header{
+    background-color: #222940;
+    display: flex;
+    color: #ffffff;
+    height: $header-height;
 
-  height: 100%;
-  color: #E5E5E5;
+    img{
+      margin-left: 5px;
+      width: 45px;
+    }
 
-}
-.tab-links{
-  width: 50%;
-  background-color: #1B2032;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  overflow-y: auto;
-
-
-  .tab-button{
-    background-color: #1B2032;
-    color: #E5E5E5;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    text-align: justify;
-    padding: 1em;
+    h1{
+      font-family: sans-serif;
+      margin: 10px 5px;
+    }
   }
+  .tabs{
+    display: flex;
+    background-color: #222940;
+    font-family: sans-serif;
+
+    height: calc(100% - $header-height);
+    color: #E5E5E5;
+
+    .tab-links{
+      width: 50%;
+      background-color: #1B2032;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      overflow-y: auto;
+
+      .tab-button{
+        background-color: #1B2032;
+        color: #E5E5E5;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        text-align: justify;
+        padding: 1em;
+      }
+    }
+  }
+
 }
 .tab-content{
   width: 50%;
