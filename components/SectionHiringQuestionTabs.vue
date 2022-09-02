@@ -4,8 +4,9 @@
     <button
       v-for="(question, index) in questions"
       :key="`question-${index}`"
+      :class="{ isActive: index === activeTab }"
       class="tab-button"
-      @click="changeTab(`answer-${index}`)">
+      @click="changeTab(index, `answer-${index}`)">
         {{question.text}}
     </button>
   </div>
@@ -16,7 +17,7 @@
       :id="`answer-${index}`"
       :key="`answer-${index}`"
       class="answer">
-        <p>{{question.text}}</p>
+        <textarea :id="`input-${index}`" placeholder="Type your answer here..." class="answer-input"></textarea>
         <upload-file />
     </div>
   </div>
@@ -40,15 +41,17 @@ export default {
         { text: 'Are you satisfied with yourself?' },
         { text: 'Maybe have anything to add? Any questions perhaps?' },
       ],
+      activeTab: 0
     }
   },
   methods: {
-    changeTab(tabClass){
+    changeTab(tabIndex, answerIndex){
       const nonActiveTabs = document.getElementsByClassName("answer");
       for (let i = 0; i < nonActiveTabs.length; i++) {
         nonActiveTabs[i].style.display = "none";
       }
-      document.getElementById(tabClass).style.display = "block";
+      document.getElementById(answerIndex).style.display = "block";
+      this.activeTab = tabIndex
     }
   }
 }
@@ -58,8 +61,11 @@ export default {
 .tabs{
   display: flex;
   background-color: #222940;
+  font-family: sans-serif;
+
   height: 100%;
-  color: #E5E5E5
+  color: #E5E5E5;
+
 }
 .tab-links{
   width: 50%;
@@ -67,6 +73,8 @@ export default {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  overflow-y: auto;
+
 
   .tab-button{
     background-color: #1B2032;
@@ -75,9 +83,27 @@ export default {
     outline: none;
     cursor: pointer;
     text-align: justify;
+    padding: 1em;
   }
 }
 .tab-content{
   width: 50%;
+
+  .answer{
+    height: 100%;
+  }
+
+  .answer-input{
+    width: 98.7%;
+    height: 70%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    resize: none;
+    color: #ffffff;
+  }
+}
+.isActive {
+  background-color: #414E77 !important;
 }
 </style>

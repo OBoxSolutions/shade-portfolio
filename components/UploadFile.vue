@@ -2,7 +2,7 @@
 <div class="upload-container">
   <form action=""></form>
   <div class="upload-input">
-    <input type="file" required accept="image/*,video/*" @change="loadFile($event)">
+    <input type="file" accept="image/*,video/*" @change="loadFile($event)">
   </div>
   <base-button  @click="uploadFile">Upload</base-button>
 </div>
