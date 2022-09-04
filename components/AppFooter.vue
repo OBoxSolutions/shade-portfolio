@@ -24,6 +24,7 @@
       </div>
       <div class="footer-left-side"></div>
       <div class="footer-right-side"></div>
+    <div class="half-circle"></div>
     </div>
   </footer>
 </template>
@@ -181,5 +182,14 @@ $image-content-height: 270px;
     bottom: calc(-1 * $image-content-height - 2px);
     background-color: #F34021;
   }
+}
+  $size: 100px;
+  .half-circle {
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    bottom: 0;
+    clip-path: ellipse(50% 100% at 50% 100%);
+    background-color: #F8981D;
 }
 </style>
