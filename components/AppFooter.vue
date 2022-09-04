@@ -47,6 +47,7 @@ export default {
 
 <style scoped lang="scss">
 $border-size: 2px;
+$image-content-height: 270px;
 
 .footer {
   position: relative;
@@ -107,6 +108,7 @@ $border-size: 2px;
 .img-content {
   background-color: #ffac06;
   // z-index: -1;
+  min-height: $image-content-height;
 
   .img-wrapper {
     position: relative;
@@ -174,9 +176,9 @@ $border-size: 2px;
   .active::after{
     position: absolute;
     content: "";
-    height: 270px;
+    height: $image-content-height;
     width: 12%;
-    bottom: -272px;
+    bottom: calc(-1 * $image-content-height - 2px);
     background-color: #F34021;
   }
 }
