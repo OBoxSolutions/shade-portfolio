@@ -11,6 +11,7 @@ import SectionHeroNavbar from '~/components/SectionHeroNavbar.vue'
 import SectionPorfolioHeader from '~/components/SectionPorfolioHeader.vue'
 import SectionPortfolioPreviews from '~/components/SectionPortfolioPreviews.vue'
 export default {
+  name: 'PortfolioPage',
   components: { SectionHeroNavbar, SectionPorfolioHeader, SectionPortfolioPreviews },
 
 }

@@ -7,6 +7,8 @@
           <li
             v-for="(link, index) in links"
             :key="`navbar-${index}`"
+            :to="link.url"
+            :class="{ active: $route.path === link.url }"
             class="nav-bar__link"
           >
             {{ link.text }}
@@ -32,11 +34,11 @@ export default {
   data() {
     return {
       links: [
-        { text: 'About us', url: '' },
-        { text: 'Portfolio', url: '' },
-        { text: 'Contacts', url: '' },
-        { text: 'Get started', url: '' },
-        { text: "We're hiring", url: '' },
+        { text: 'About us', url: '/' },
+        { text: 'Portfolio', url: '/portfolio' },
+        { text: 'Contacts', url: '/contact' },
+        { text: 'Get started', url: '/get-started' },
+        { text: "We're hiring", url: '/hiring' },
       ],
     }
   },
@@ -50,7 +52,7 @@ $border-size: 2px;
   position: relative;
   overflow-x: hidden;
   background-color: #e39e15;
-  z-index: -1;
+  // z-index: -1;
 }
 
 .content {
@@ -92,20 +94,22 @@ $border-size: 2px;
 }
 
 .footer-content {
-  width: 1600px;
+  // width: 1600px;
+  width: calc(100vw - 150px);
   position: relative;
   border: $border-size solid #222940;
+  border-bottom: 0;
   transform-style: preserve-3d;
-  perspective: 200px;
+  perspective: 0;
   z-index: 20;
 }
 
 .img-content {
-  position: relative;
   background-color: #ffac06;
-  z-index: 30;
+  // z-index: -1;
 
   .img-wrapper {
+    position: relative;
     width: 44%;
   }
 }
@@ -127,12 +131,12 @@ $border-size: 2px;
   }
 
   .nav-bar-left-side {
-    left: calc(-50% - 3px);
+    left: calc(-50% - 2.8px);
     transform: rotateY(110deg) translateX(-50%);
     border-right: 0;
   }
   .nav-bar-right-side {
-    right: calc(-50% - 3px);
+    right: calc(-50% - 2.7px);
     transform: rotateY(250deg) translateX(50%);
     border-left: 0;
   }
@@ -166,6 +170,14 @@ $border-size: 2px;
       border: solid #222940;
       border-width: 0 ($border-size * 2) 0 $border-size;
     }
+  }
+  .active::after{
+    position: absolute;
+    content: "";
+    height: 270px;
+    width: 12%;
+    bottom: -272px;
+    background-color: #F34021;
   }
 }
 </style>
