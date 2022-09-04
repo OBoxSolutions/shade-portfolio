@@ -24,7 +24,11 @@
       </div>
       <div class="footer-left-side"></div>
       <div class="footer-right-side"></div>
-    <div class="half-circle"></div>
+    <span class="back-to-top-wrap">
+      <span class="back-to-top" @click="toTop">
+        <h1>Back to the top?</h1>
+      </span>
+    </span>
     </div>
   </footer>
 </template>
@@ -36,25 +40,33 @@ export default {
     return {
       links: [
         { text: 'About us', url: '/' },
-        { text: 'Portfolio', url: '/portfolio' },
+        { text: 'Portfolio', url: '/portfolio/' },
         { text: 'Contacts', url: '/contact' },
         { text: 'Get started', url: '/get-started' },
         { text: "We're hiring", url: '/hiring' },
       ],
     }
   },
+  methods: {
+    toTop () {
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+      })
+    }
+  }
 }
 </script>
 
 <style scoped lang="scss">
 $border-size: 2px;
-$image-content-height: 270px;
+$image-content-height: 300px;
 
 .footer {
   position: relative;
   overflow-x: hidden;
   background-color: #e39e15;
-  // z-index: -1;
 }
 
 .content {
@@ -71,7 +83,7 @@ $image-content-height: 270px;
     width: 200px;
     top: -2px;
     height: 100%;
-    z-index: -1;
+    // z-index: -1;
   }
 
   &::before {
@@ -164,6 +176,7 @@ $image-content-height: 270px;
     flex-grow: 1;
     border: solid #222940;
     border-width: 0 $border-size;
+    cursor: pointer;
 
     &:first-child {
       border: solid #222940;
@@ -181,15 +194,33 @@ $image-content-height: 270px;
     width: 12%;
     bottom: calc(-1 * $image-content-height - 2px);
     background-color: #F34021;
+    cursor: default;
+
   }
 }
-  $size: 100px;
-  .half-circle {
+  .back-to-top-wrap{
     position: absolute;
     width: 100%;
-    height: 50px;
-    bottom: 0;
-    clip-path: ellipse(50% 100% at 50% 100%);
-    background-color: #F8981D;
-}
+    filter: drop-shadow(0px -4px 4px rgba(0, 0, 0, 0.25));
+
+    .back-to-top {
+      position: absolute;
+      width: 100%;
+      height: 50px;
+      bottom: 0;
+      clip-path: ellipse(50% 100% at 50% 100%);
+      background-color: #F8981D;
+      box-shadow: 0px -4px 4px rgba(0, 0, 0, 0.25);
+      cursor: pointer;
+
+      h1{
+        font-weight: 400;
+        font-size: 26px;
+        line-height: 26px;
+        text-align: center;
+
+        color: #000000;
+      }
+    }
+  }
 </style>

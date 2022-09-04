@@ -22,7 +22,8 @@ $perspective: 300px;
   transform-style: preserve-3d;
   perspective: $perspective;
   perspective-origin: bottom;
-  z-index: 10;
+  z-index: 20;
+  position: relative;
 
   .hiring-submit__top{
     background: #33B758;
