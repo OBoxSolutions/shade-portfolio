@@ -8,9 +8,10 @@
             v-for="(link, index) in links"
             :key="`navbar-${index}`"
             :to="link.url"
-            :class="{ active: $route.path === link.url }"
+            :class="{ active: $route.path === link.url,  hiring: link.url === '/hiring' }"
             class="nav-bar__link"
           >
+          <!-- <span v-show="link.url === '/hiring'" class="hiring-tag">New</span> -->
             {{ link.text }}
           </li>
         </ul>
@@ -43,7 +44,7 @@ export default {
         { text: 'Portfolio', url: '/portfolio/' },
         { text: 'Contacts', url: '/contact' },
         { text: 'Get started', url: '/get-started' },
-        { text: "We're hiring", url: '/hiring' },
+        { text: "We're hiring!", url: '/hiring' },
       ],
     }
   },
@@ -186,6 +187,19 @@ $image-content-height: 300px;
       border: solid #222940;
       border-width: 0 ($border-size * 2) 0 $border-size;
     }
+  }
+  .hiring::before{
+      position: absolute;
+      content: "New";
+      text-transform: capitalize;
+      width: 25%;
+      font-size: 14px;
+      line-height: 15px;
+      text-align: center;
+      color: #F34021;
+      top: 6px;
+      text-align: left;
+      margin-left: 50px;
   }
   .active::after{
     position: absolute;
