@@ -1,22 +1,20 @@
 <template>
 <div class="upload-container">
-  <form action=""></form>
-  <div class="upload-input">
-    <input type="file" accept="image/*,video/*" @change="loadFile($event)">
-  </div>
-  <base-button  @click="uploadFile">Upload</base-button>
+  <h1>Do you want to attach some video or picture to your answer?</h1>
+  <input type="file" accept="image/*,video/*" @change="loadFile($event)">
+  <!-- <base-button  @click="uploadFile">Upload</base-button> -->
 </div>
 </template>
 
 <script>
 import { mapGetters } from "vuex"
 import { getStorage, ref, uploadBytes } from 'firebase/storage'
-import BaseButton from './BaseButton.vue'
+// import BaseButton from './BaseButton.vue'
 
 
 export default {
   name: 'UploadFile',
-  components: { BaseButton },
+  // components: { BaseButton },
   data (){
     return {
       file: null,
@@ -52,5 +50,19 @@ export default {
   display: flex;
   flex-direction: column;
   gap: 1em;
+  width: 100%;
+  height: calc(30% - 10px);
+
+  h1{
+    font-family: sans-serif;
+    font-size: 1.2em;
+    width: 90%;
+    text-align: center;
+    margin: 1em auto;
+    // margin-top: 1em;
+  }
+  input{
+    margin-left: 1.8em;
+  }
 }
 </style>
