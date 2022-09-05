@@ -22,7 +22,8 @@
         :id="`answer-${index}`"
         :key="`answer-${index}`"
         class="answer">
-          <textarea :id="`input-${index}`" placeholder="Type your answer here..." class="answer-input"></textarea>
+          <!-- <textarea :id="`input-${index}`" placeholder="Type your answer here..." class="answer-input"></textarea> -->
+          <textarea-input-answer />
           <upload-file />
       </div>
     </div>
@@ -31,9 +32,10 @@
 </template>
 
 <script>
+import TextareaInputAnswer from './TextareaInputAnswer.vue';
 import UploadFile from './UploadFile.vue';
 export default {
-  components: { UploadFile },
+  components: { UploadFile, TextareaInputAnswer },
   data() {
     return {
       questions: [
@@ -118,15 +120,15 @@ export default {
     height: 100%;
   }
 
-  .answer-input{
-    width: 98.7%;
-    height: 70%;
-    background-color: transparent;
-    border: none;
-    outline: none;
-    resize: none;
-    color: #ffffff;
-  }
+  // .answer-input{
+  //   width: 98.7%;
+  //   height: 70%;
+  //   background-color: transparent;
+  //   border: none;
+  //   outline: none;
+  //   resize: none;
+  //   color: #ffffff;
+  // }
 }
 .isActive {
   background-color: #414E77 !important;
