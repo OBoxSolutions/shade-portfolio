@@ -115,7 +115,7 @@ $image-content-height: 300px;
   border: $border-size solid #222940;
   border-bottom: 0;
   transform-style: preserve-3d;
-  perspective: 0;
+  perspective: 150px;
   z-index: 20;
 }
 
