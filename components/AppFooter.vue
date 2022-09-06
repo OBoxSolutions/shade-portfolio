@@ -200,6 +200,7 @@ $image-content-height: 300px;
       top: 6px;
       text-align: left;
       margin-left: 50px;
+      cursor: default;
   }
   .active::after{
     position: absolute;
