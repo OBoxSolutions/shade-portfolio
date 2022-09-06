@@ -7,26 +7,28 @@
       />
     </div>
     <div class="connector-line"></div>
-    <empty-cube
-      class="content"
-      perspective="800px"
-      side-width="100px"
-      :right="false"
-    >
-      <template #title> Time Commitment </template>
-      <template #text>
-        It is a promise that our design agency will always complete your project
-        by or before the deadline that you've set. Although it's probably
-        healthy to mention, that people are people, so the project where we have
-        a minute to make the new web for NASA probably won't happen. Coming out
-        of that the time itself may have to be discussed and tweaked accordingly
-        to form an appropriate timeline of events. A very important fact you
-        should know is, that we will never sacrifice the quality of our work to
-        save ourselves a couple of hours of work, that is not what defines us.
-        If there would be a choice of what to sacrifice, quality or time, we
-        would sacrifice none.
-      </template>
-    </empty-cube>
+    <div class="cube-wrapper">
+      <empty-cube
+        class="content"
+        perspective="600px"
+        side-width="190px"
+        :right="false"
+      >
+        <template #title> Time Commitment </template>
+        <template #text>
+          It is a promise that our design agency will always complete your
+          project by or before the deadline that you've set. Although it's
+          probably healthy to mention, that people are people, so the project
+          where we have a minute to make the new web for NASA probably won't
+          happen. Coming out of that the time itself may have to be discussed
+          and tweaked accordingly to form an appropriate timeline of events. A
+          very important fact you should know is, that we will never sacrifice
+          the quality of our work to save ourselves a couple of hours of work,
+          that is not what defines us. If there would be a choice of what to
+          sacrifice, quality or time, we would sacrifice none.
+        </template>
+      </empty-cube>
+    </div>
   </div>
 </template>
 
@@ -45,20 +47,19 @@ export default {
 
   &::after {
     position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
+    left: 0px;
     content: '';
     width: 100%;
-    height: 100%;
+    top: 8.5%;
+    height: 81.5%;
     background-color: #ffac06;
     z-index: -1;
-    transform: translateZ(-134px);
   }
 }
 
-.content {
+.cube-wrapper {
   width: calc(50% - 100px);
+  position: relative;
 }
 
 .connector-line {

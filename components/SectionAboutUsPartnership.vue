@@ -1,22 +1,25 @@
 <template>
   <div class="section-partnership">
-    <empty-cube
-      class="content"
-      perspective="800px"
-      side-width="100px"
-      :left="false"
-    >
-      <template #title> Partnership </template>
-      <template #text>
-        WebDo is very grateful for every new quality connection it gets to make
-        while on this journey, that's why we take communication with clients
-        very seriously. Our colleagues will always be open to your ideas and
-        give you the time necessary to build an idea about your product that you
-        and we will be both proud of. Our website creators will always keep a
-        friendly and suitable environment because that is when the best ideas
-        are born. I truly hope you get to experience it for yourself.
-      </template>
-    </empty-cube>
+    <div class="cube-wrapper">
+      <empty-cube
+        class="content"
+        perspective="600px"
+        side-width="190px"
+        :left="false"
+      >
+        <template #title> Partnership </template>
+        <template #text>
+          WebDo is very grateful for every new quality connection it gets to
+          make while on this journey, that's why we take communication with
+          clients very seriously. Our colleagues will always be open to your
+          ideas and give you the time necessary to build an idea about your
+          product that you and we will be both proud of. Our website creators
+          will al ways keep a friendly and suitable environment because that is
+          when the best ideas are born. I truly hope you get to experience it
+          for yourself.
+        </template>
+      </empty-cube>
+    </div>
     <div class="connector-line"></div>
     <div class="image">
       <img
@@ -42,20 +45,19 @@ export default {
 
   &::after {
     position: absolute;
+    left: 0px;
     content: '';
-    left: 0;
-    top: 0;
-    right: 0;
     width: 100%;
-    height: 100%;
+    top: 8.5%;
+    height: 82.8%;
     background-color: #ffac06;
     z-index: -1;
-    transform: translateZ(-134px);
   }
 }
 
-.content {
+.cube-wrapper {
   width: calc(50% - 100px);
+  position: relative;
 }
 
 .connector-line {
