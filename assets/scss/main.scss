@@ -1,0 +1,41 @@
+@import '../css/normalize.css';
+
+@import './fonts';
+@import './variables';
+@import './container';
+@import './general-styles';
+@import './social-links';
+@import './grids';
+@import './spacing';
+
+
+
+
+html,body{
+  margin:0;
+  padding: 0;
+}
+
+
+.color-primary {
+  color: var(--color-primary);
+}
+
+.bg-primary {
+  background-color: var(--color-primary) !important;
+}
+
+.bg-secondary {
+  background-color: var(--bg-color-primary) !important;
+}
+
+.no-outline {
+  outline: none !important;
+}
+
+.font-family-consolas {
+  font-family: 'Consolas', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif !important;
+}
+
+

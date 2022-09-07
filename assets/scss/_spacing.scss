@@ -1,0 +1,69 @@
+@mixin spacing($space, $measure-unit: '') {
+  @include spacing-margin($space, $measure-unit);
+  @include spacing-padding($space, $measure-unit);
+}
+
+@mixin spacing-margin($space, $measure-unit: '') {
+  .m-#{$space} {
+    margin: $space + $measure-unit !important;
+  }
+  .mt-#{$space} {
+    margin-top: $space + $measure-unit !important;
+  }
+  .mb-#{$space} {
+    margin-bottom: $space + $measure-unit !important;
+  }
+  .ml-#{$space} {
+    margin-left: $space + $measure-unit !important;
+  }
+  .mr-#{$space} {
+    margin-right: $space + $measure-unit !important;
+  }
+  .my-#{$space} {
+    margin-top: $space + $measure-unit !important;
+    margin-bottom: $space + $measure-unit !important;
+  }
+  .mx-#{$space} {
+    margin-right: $space + $measure-unit !important;
+    margin-left: $space + $measure-unit !important;
+  }
+}
+
+@mixin spacing-padding($space, $measure-unit: '') {
+  .p-#{$space} {
+    padding: $space + $measure-unit !important;
+  }
+  .pt-#{$space} {
+    padding-top: $space + $measure-unit !important;
+  }
+  .pb-#{$space} {
+    padding-bottom: $space + $measure-unit !important;
+  }
+  .pl-#{$space} {
+    padding-left: $space + $measure-unit !important;
+  }
+  .pr-#{$space} {
+    padding-right: $space + $measure-unit !important;
+  }
+  .py-#{$space} {
+    padding-top: $space + $measure-unit !important;
+    padding-bottom: $space + $measure-unit !important;
+  }
+  .px-#{$space} {
+    padding-right: $space + $measure-unit !important;
+    padding-left: $space + $measure-unit !important;
+  }
+}
+
+@mixin spacing-counter($amount: 10, $measure-unit: '') {
+  @for $i from 0 to $amount {
+    @include spacing($i, em);
+  }
+}
+
+@include spacing-counter(10, em);
+@include spacing(auto);
+
+.w-full {
+  width: 100%;
+}

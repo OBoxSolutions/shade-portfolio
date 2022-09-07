@@ -1,0 +1,28 @@
+<template>
+  <div>
+    <section-hero></section-hero>
+    <section-about-us class="section-about-us"></section-about-us>
+    <div class="content-sections">
+      <div class="content-sections__img"></div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'IndexPage',
+}
+</script>
+
+<style scoped>
+.content-sections {
+  background-color: #d6932f;
+}
+.content-sections__img {
+  background: url('/principal-page-background.svg');
+}
+.section-about-us {
+  position: relative;
+  top: -260px;
+}
+</style>
