@@ -35,8 +35,8 @@ export default {
   flex-direction: column;
   align-items: center;
   overflow-x: hidden;
-  background-image: url('~@/static/principal-page-background.svg');
-  background-color: #d6932f;
+  background: url('~@/static/principal-page-background.svg') #d6932f;
+  background-size: cover;
 }
 
 .section-headers {
