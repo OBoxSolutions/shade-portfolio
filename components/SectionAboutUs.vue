@@ -11,9 +11,11 @@
         illo id!
       </p>
     </simple-cube>
-    <section-about-us-partnership></section-about-us-partnership>
-    <section-about-us-commitment></section-about-us-commitment>
-    <section-about-us-style-and-communication></section-about-us-style-and-communication>
+    <section-about-us-partnership class="mt-5"></section-about-us-partnership>
+    <section-about-us-commitment class="mt-5"></section-about-us-commitment>
+    <section-about-us-style-and-communication
+      class="mt-5"
+    ></section-about-us-style-and-communication>
     <section-about-us-price class="section mt-8"></section-about-us-price>
   </div>
 </template>
