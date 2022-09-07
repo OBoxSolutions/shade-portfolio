@@ -36,6 +36,7 @@ export default {
   align-items: center;
   overflow-x: hidden;
   background-image: url('~@/static/principal-page-background.svg');
+  background-color: #d6932f;
 }
 
 .section-headers {
