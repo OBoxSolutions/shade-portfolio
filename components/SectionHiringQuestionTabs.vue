@@ -60,6 +60,7 @@ export default {
       ],
       activeTab: 0,
       file: null,
+      lineCountCache: 0,
     }
   },
   computed: {
