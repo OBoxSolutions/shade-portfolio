@@ -141,11 +141,30 @@ export default {
 .tab-content{
   width: 50%;
 
-  .file-picker-container{
-    height: 20%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.file-picker-container{
+      height: 20%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .file-picker{
+        background-color: #1B2032;
+        text-align: center;
+        color:white;
+        border: 1px solid;
+        border-radius: 5px;
+        font-family: sans-serif;
+        display: inline-block;
+        margin:5px;
+        padding:10px;
+        box-shadow:0px 1px 3px rgba(0,0,0,0.4);
+        cursor: pointer;
+      }
+
+      .file-picker + [type='file']{
+        display:none;
+      }
   }
 
   .answer{
