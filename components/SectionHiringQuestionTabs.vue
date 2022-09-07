@@ -24,7 +24,10 @@
         class="answer">
           <!-- <textarea :id="`input-${index}`" placeholder="Type your answer here..." class="answer-input"></textarea> -->
           <textarea-input-answer />
-          <upload-file />
+          <div class="file-picker-container">
+            <label for="file-picker" class="file-picker">{{ file !== null ? file.name : 'Attach some file to your answer' }}</label>
+            <input id="file-picker" type="file" accept="image/*,video/*" @change="loadFile($event)">
+          </div>
       </div>
     </div>
   </div>
@@ -32,10 +35,12 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex"
+import { getStorage, ref, uploadBytes } from 'firebase/storage'
 import TextareaInputAnswer from './TextareaInputAnswer.vue';
-import UploadFile from './UploadFile.vue';
+
 export default {
-  components: { UploadFile, TextareaInputAnswer },
+  components: { TextareaInputAnswer },
   data() {
     return {
       questions: [
@@ -49,8 +54,12 @@ export default {
         { text: 'Are you satisfied with yourself?' },
         { text: 'Maybe have anything to add? Any questions perhaps?' },
       ],
-      activeTab: 0
+      activeTab: 0,
+      file: null,
     }
+  },
+  computed: {
+    ...mapGetters(['getUserName']),
   },
   methods: {
     changeTab(tabIndex, answerIndex){
@@ -60,6 +69,22 @@ export default {
       }
       document.getElementById(answerIndex).style.display = "block";
       this.activeTab = tabIndex
+    },
+    loadFile(e) {
+      this.file = e.target.files[0]
+    },
+    uploadFile(){
+      if(this.file === null || this.getUserName === ''){
+        console.log('missing parameters')
+      }
+      else{
+        const storage = getStorage()
+        const fileRef = ref(storage, this.getUserName+'/'+this.file.name)
+        uploadBytes(fileRef, this.file)
+        .then((snapshot) => {
+          console.log('uploaded a file')
+        })
+      }
     }
   }
 }
@@ -116,19 +141,16 @@ export default {
 .tab-content{
   width: 50%;
 
+  .file-picker-container{
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   .answer{
     height: 100%;
   }
-
-  // .answer-input{
-  //   width: 98.7%;
-  //   height: 70%;
-  //   background-color: transparent;
-  //   border: none;
-  //   outline: none;
-  //   resize: none;
-  //   color: #ffffff;
-  // }
 }
 .isActive {
   background-color: #414E77 !important;

@@ -48,7 +48,7 @@ methods: {
 
 <style lang="scss" scoped>
 div{
-    height: 70%;
+    height: 80%;
     p{
       margin: 0;
       height: 100%;
