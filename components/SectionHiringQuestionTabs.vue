@@ -234,7 +234,7 @@ export default {
       color: #707070;
       position: absolute;
       width: 1.5rem;
-      height: 25rem;
+      height: 28.5rem;
       /* Determine appearance of line counter */
       background-color: transparent;
       color:#ffffff;
