@@ -42,14 +42,12 @@ export default {
   position: relative;
   border: 1px solid #222940;
   width: 1200px;
-
   .nav-bar__link {
     display: flex;
     justify-content: center;
     flex-grow: 1;
     border: solid #222940;
     border-width: 0 2px;
-
     &:first-child {
       border: solid #222940;
       border-width: 0 2px 0 4px;
@@ -59,7 +57,6 @@ export default {
       border-width: 0 4px 0 2px;
     }
   }
-
   .location-line {
     position: absolute;
     padding: 0;

@@ -8,6 +8,12 @@
 @import './grids';
 @import './spacing';
 
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
 .color-primary {
   color: var(--color-primary);
 }
