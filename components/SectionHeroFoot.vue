@@ -41,14 +41,14 @@ $border-style: 1px solid #877432;
 
 .base-button {
   display: none;
+  padding-top: 16px !important;
+  padding-bottom: 10px !important;
+  border-radius: 10px;
 }
 
 @media screen and (min-width: 700px) {
   .base-button {
     display: block;
-    padding-top: 16px !important;
-    padding-bottom: 10px !important;
-    border-radius: 10px;
   }
 }
 
