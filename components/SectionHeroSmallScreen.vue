@@ -3,6 +3,7 @@
     <div class="logo-wrapper px-1 py-3 mx-2 mt-9">
       <img src="/logo.svg" alt="" />
     </div>
+    <p class="mx-2">Every pixel delivered with care</p>
   </div>
 </template>
 
@@ -24,5 +25,12 @@ export default {
     border: 2px solid black;
     background-color: #15aaaa;
   }
+}
+
+p {
+  text-align: center;
+  font-weight: 400;
+  font-size: 32px;
+  text-align: left;
 }
 </style>
