@@ -13,6 +13,11 @@
         class="tab-button"
         @click="changeTab(index, `answer-${index}`)">
           {{question.text}}
+        <span v-if="question.file !== null">
+          <img v-if="question.file.type === 'image/jpeg' || question.file.type === 'image/png'" src="/image-file.svg" alt="image-file">
+          <img v-else src="/video-file.svg" alt="video-file">
+          {{question.file.name}}
+        </span>
       </button>
     </div>
     <div class="tab-content">
@@ -27,7 +32,7 @@
             <label
               :for="`file-picker-${index}`"
               class="file-picker-label">
-                {{ question.file !== null ? question.file.name : 'Attach a file to your answer' }}
+                Attach a file to your answer
             </label>
             <input
               :id="`file-picker-${index}`"
@@ -138,6 +143,21 @@ export default {
         cursor: pointer;
         text-align: justify;
         padding: 1em;
+
+        display: flex;
+        flex-direction: column;
+
+        span{
+          display: flex;
+          align-items: center;
+          gap: .5em;
+          margin-top: .8em;
+
+          img{
+            width: 1.8em;
+            margin-left: 1em;
+          }
+        }
       }
     }
   }
@@ -151,7 +171,7 @@ export default {
       width: 100%;
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: end;
 
       .file-picker-label{
         background-color: #1B2032;
