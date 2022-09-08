@@ -18,6 +18,7 @@ export default {
   height: calc(100vh + 100px);
   display: flex;
   flex-direction: column;
+  background-color: #ea5555;
 
   .logo-wrapper {
     border: 2px solid black;
