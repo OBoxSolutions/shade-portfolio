@@ -137,7 +137,7 @@ h1 {
 }
 
 p {
-  font-family: 'Consolas';
+  font-family: 'Prompt';
   font-size: 18px;
 }
 </style>
