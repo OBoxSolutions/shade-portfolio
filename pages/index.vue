@@ -26,7 +26,13 @@ export default {
 
 .hero-foot {
   position: absolute;
-  bottom: -390px;
+  bottom: -80px;
+}
+
+@media screen and (min-width: 700px) {
+  .hero-foot {
+    bottom: -390px;
+  }
 }
 
 .section-about-us {
