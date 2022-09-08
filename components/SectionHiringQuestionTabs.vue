@@ -27,7 +27,7 @@
             <label
               :for="`file-picker-${index}`"
               class="file-picker-label">
-                {{ question.file !== null ? question.file.name : 'Attach some file to your answer' }}
+                {{ question.file !== null ? question.file.name : 'Attach a file to your answer' }}
             </label>
             <input
               :id="`file-picker-${index}`"
