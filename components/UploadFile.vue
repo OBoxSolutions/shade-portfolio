@@ -1,9 +1,8 @@
 <template>
-<div class="upload-container">
-  <h1>Do you want to attach some video or picture to your answer?</h1>
-  <input type="file" accept="image/*,video/*" @change="loadFile($event)">
-  <!-- <base-button  @click="uploadFile">Upload</base-button> -->
-</div>
+  <div class="file-picker-container">
+    <label for="file-picker" class="file-picker">{{ file !== null ? file.name : 'Attach some file to your answer' }}</label>
+    <input id="file-picker" type="file" accept="image/*,video/*" @change="loadFile($event)">
+  </div>
 </template>
 
 <script>
@@ -45,24 +44,29 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.upload-container{
-  width: 20%;
-  display: flex;
-  flex-direction: column;
-  gap: 1em;
+.file-picker-container{
+  height: 20%;
   width: 100%;
-  height: calc(30% - 10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  h1{
-    font-family: sans-serif;
-    font-size: 1.2em;
-    width: 90%;
+  .file-picker{
+    background-color: #1B2032;
     text-align: center;
-    margin: 1em auto;
-    // margin-top: 1em;
+    color:white;
+    border: 1px solid;
+    border-radius: 5px;
+    font-family: sans-serif;
+    display: inline-block;
+    margin:5px;
+    padding:10px;
+    box-shadow:0px 1px 3px rgba(0,0,0,0.4);
+    cursor: pointer;
   }
-  input{
-    margin-left: 1.8em;
+
+  .file-picker + [type='file']{
+    display:none;
   }
 }
 </style>

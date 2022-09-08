@@ -22,15 +22,20 @@
         :id="`answer-${index}`"
         :key="`answer-${index}`"
         class="answer">
-          <!-- <textarea :id="`input-${index}`" placeholder="Type your answer here..." class="answer-input"></textarea> -->
-          <!-- <textarea-input-answer /> -->
-          <div class="textarea-container">
-            <p><textarea id='lineCounter' ref="lineCounter" wrap='off' readonly>1</textarea>
-            <textarea id='codeEditor' ref="codeEditor" wrap="off" placeholder="Type your answer here..." @scroll="scroll" @keydown="inputTab" @input="handlerCounter"></textarea></p>
-          </div>
+          <textarea-input-answer @answer="question.answer = $event" />
           <div class="file-picker-container">
-            <label for="file-picker" class="file-picker">{{ file !== null ? file.name : 'Attach some file to your answer' }}</label>
-            <input id="file-picker" type="file" accept="image/*,video/*" @change="loadFile($event)">
+            <label
+              :for="`file-picker-${index}`"
+              class="file-picker-label">
+                {{ question.file !== null ? question.file.name : 'Attach some file to your answer' }}
+            </label>
+            <input
+              :id="`file-picker-${index}`"
+              class="file-picker-input"
+              type="file"
+              accept="image/*,video/*"
+              @change="question.file = $event.target.files[0]"
+            >
           </div>
       </div>
     </div>
@@ -41,59 +46,30 @@
 <script>
 import { mapGetters } from "vuex"
 import { getStorage, ref, uploadBytes } from 'firebase/storage'
-// import TextareaInputAnswer from './TextareaInputAnswer.vue';
+import TextareaInputAnswer from './TextareaInputAnswer.vue';
 
 export default {
-  // components: { TextareaInputAnswer },
+  components: { TextareaInputAnswer },
   data() {
     return {
       questions: [
-        { text: 'What is your proudest accomplishment?' },
-        { text: 'What moral value do you value the most?' },
-        { text: 'Are you ever justified to kill?' },
-        { text: 'Is morality subjective or objective?' },
-        { text: 'If you could live forever, would do you want to?' },
-        { text: 'If you could change the world, what would you change?' },
-        { text: 'Some questions?' },
-        { text: 'Are you satisfied with yourself?' },
-        { text: 'Maybe have anything to add? Any questions perhaps?' },
+        { text: 'What is your proudest accomplishment?', answer: '', file: null },
+        { text: 'What moral value do you value the most?', answer: '', file: null },
+        { text: 'Are you ever justified to kill?', answer: '', file: null },
+        { text: 'Is morality subjective or objective?', answer: '', file: null },
+        { text: 'If you could live forever, would do you want to?', answer: '', file: null },
+        { text: 'If you could change the world, what would you change?', answer: '', file: null },
+        { text: 'Some questions?', answer: '', file: null },
+        { text: 'Are you satisfied with yourself?', answer: '', file: null },
+        { text: 'Maybe have anything to add? Any questions perhaps?', answer: '', file: null },
       ],
       activeTab: 0,
-      file: null,
-      lineCountCache: 0,
     }
   },
   computed: {
     ...mapGetters(['getUserName']),
   },
   methods: {
-    scroll(){
-      this.$refs.lineCounter.scrollTop = this.$refs.codeEditor.scrollTop;
-      this.$refs.lineCounter.scrollLeft = this.$refs.codeEditor.scrollLeft;
-    },
-    inputTab(e){
-      const { keyCode } = e;
-      const { value, selectionStart, selectionEnd } = this.$refs.codeEditor;
-      if (keyCode === 9) {  // TAB = 9
-        e.preventDefault()
-        this.$refs.codeEditor.value = value.slice(0, selectionStart) + '\t' + value.slice(selectionEnd);
-        this.$refs.codeEditor.setSelectionRange(selectionStart+2, selectionStart+2)
-      }
-    },
-    line_counter() {
-      const lineCount = this.$refs.codeEditor.value.split('\n').length
-      const outarr = [];
-      if (this.lineCountCache !== lineCount) {
-          for (let x = 0; x < lineCount; x++) {
-            outarr[x] = (x + 1)
-          }
-          this.$refs.lineCounter.value = outarr.join('\n')
-      }
-      this.lineCountCache = lineCount
-    },
-    handlerCounter(){
-      this.line_counter();
-    },
     changeTab(tabIndex, answerIndex){
       const nonActiveTabs = document.getElementsByClassName("answer");
       for (let i = 0; i < nonActiveTabs.length; i++) {
@@ -101,9 +77,6 @@ export default {
       }
       document.getElementById(answerIndex).style.display = "block";
       this.activeTab = tabIndex
-    },
-    loadFile(e) {
-      this.file = e.target.files[0]
     },
     uploadFile(){
       if(this.file === null || this.getUserName === ''){
@@ -180,7 +153,7 @@ export default {
       align-items: center;
       justify-content: center;
 
-      .file-picker{
+      .file-picker-label{
         background-color: #1B2032;
         text-align: center;
         color:white;
@@ -194,7 +167,7 @@ export default {
         cursor: pointer;
       }
 
-      .file-picker + [type='file']{
+      .file-picker-input{
         display:none;
       }
   }
@@ -205,45 +178,5 @@ export default {
 }
 .isActive {
   background-color: #414E77 !important;
-}
-
-//Textarea styles
-.textarea-container{
-    height: 80%;
-    p{
-      margin: 0;
-      height: 100%;
-    }
-}
-#codeEditor, #lineCounter {
-    width: 100%;
-    margin: 0;
-    padding: 5px 0;
-    resize: none;
-    font-size: 16px;
-    line-height: 1.2;
-    outline: none;
-    border: none;
-    box-sizing: border-box;
-}
-#lineCounter {
-      display: flex;
-      overflow-y: hidden;
-      text-align: right;
-      box-shadow: none;
-      color: #707070;
-      position: absolute;
-      width: 1.5rem;
-      height: 28.5rem;
-      /* Determine appearance of line counter */
-      background-color: transparent;
-      color:#ffffff;
-}
-#codeEditor {
-      padding-left: calc(1.5rem + 8px);
-      height: 100%;
-      /* Determine appearance of code editor */
-      background-color: transparent;
-      color:#ffffff;
 }
 </style>

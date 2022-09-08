@@ -41,6 +41,7 @@ methods: {
   },
   handlerCounter(){
     this.line_counter();
+    this.$emit('answer', this.$refs.codeEditor.value)
   }
 },
 }
