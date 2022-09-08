@@ -67,13 +67,20 @@ $border-style: 1px solid #877432;
   padding: 0px 30px;
   border-radius: 10px 0 0 0;
   font-size: 40px;
+}
 
+.hire-team-subcontainer {
+  display: none;
+  background-color: #ffb341;
+  height: 100%;
+  margin-top: 30px;
+  border-radius: 10px;
+  padding: 5px 0 0px 20px;
+}
+
+@media screen and (min-width: 700px) {
   .hire-team-subcontainer {
-    background-color: #ffb341;
-    height: 100%;
-    margin-top: 30px;
-    border-radius: 10px;
-    padding: 5px 0 0px 20px;
+    display: block;
   }
 }
 </style>
