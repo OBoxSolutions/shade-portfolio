@@ -37,8 +37,15 @@ $border-style: 1px solid #877432;
   border-radius: 0 10px 0 0;
   font-weight: 400;
   font-size: 80px;
+}
 
+.base-button {
+  display: none;
+}
+
+@media screen and (min-width: 700px) {
   .base-button {
+    display: block;
     padding-top: 16px !important;
     padding-bottom: 10px !important;
     border-radius: 10px;
