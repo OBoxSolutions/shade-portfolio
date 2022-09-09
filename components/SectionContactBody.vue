@@ -145,6 +145,7 @@
     background-image: url('/contact/header-background.png');
     background-size: contain;
     overflow-x: clip;
+    z-index: 3;
 
     .section-body__container{  
         display: none;
@@ -690,6 +691,6 @@
         }
     }
 }
-  
+ 
 </style>
   
