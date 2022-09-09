@@ -76,6 +76,12 @@ $border-style: 1px solid #877432;
   }
 }
 
+@media screen and (min-width: 700px) {
+  .base-button-small-wrapper {
+    display: none;
+  }
+}
+
 .base-button {
   display: none;
   padding-top: 16px !important;
