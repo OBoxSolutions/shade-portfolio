@@ -113,4 +113,10 @@ $border-style: 1px solid #877432;
     height: 360px;
   }
 }
+
+@media screen and (min-width: 700px) {
+  .cube-wrapper {
+    display: none;
+  }
+}
 </style>
