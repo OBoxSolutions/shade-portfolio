@@ -73,7 +73,7 @@ $perspective: 200px;
     height: $side-bottom-height;
     background-color: #5a55f8;
     top: -(calc($side-bottom-height / 2));
-    transform: rotateX(100deg) translateY(calc($side-bottom-height / 2));
+    transform: rotateX(190deg) translateY(calc($side-bottom-height / 2));
   }
 }
 </style>
