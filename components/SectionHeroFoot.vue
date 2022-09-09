@@ -107,5 +107,10 @@ $border-style: 1px solid #877432;
   position: absolute;
   width: 100%;
   left: 0;
+  top: 280px;
+
+  .cube {
+    height: 360px;
+  }
 }
 </style>
