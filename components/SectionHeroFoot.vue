@@ -9,6 +9,13 @@
         <p>Hire a team today!</p>
       </div>
     </div>
+    <div class="cube-wrapper">
+      <simple-cube top class="cube">
+        We are a website design company, WebDo. The sole purpose of our
+        existence is to create something you like. Truth be told, we just love
+        making websites!
+      </simple-cube>
+    </div>
   </div>
 </template>
 
@@ -26,6 +33,7 @@ $border-style: 1px solid #877432;
   display: flex;
   width: 100%;
   align-items: flex-end;
+  position: relative;
 }
 
 .press-start-container {
@@ -88,5 +96,11 @@ $border-style: 1px solid #877432;
   .hire-team-subcontainer {
     display: block;
   }
+}
+
+.cube-wrapper {
+  position: absolute;
+  width: 100%;
+  left: 0;
 }
 </style>
