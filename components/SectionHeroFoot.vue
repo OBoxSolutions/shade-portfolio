@@ -22,7 +22,9 @@
       </simple-cube>
     </div>
 
-    <base-button class="w-full py-1 base-button"></base-button>
+    <div class="base-button-small-wrapper">
+      <base-button class="w-full base-button-small"> Press start </base-button>
+    </div>
   </div>
 </template>
 
@@ -58,6 +60,19 @@ $border-style: 1px solid #877432;
   .press-start-container {
     width: 45%;
     height: 500px;
+  }
+}
+
+.base-button-small-wrapper {
+  position: absolute;
+  top: 700px;
+  width: calc(100% - 60px);
+  padding: 5px 30px;
+  font-size: 50px;
+
+  .base-button-small {
+    padding-top: 20px;
+    padding-bottom: 20px;
   }
 }
 
