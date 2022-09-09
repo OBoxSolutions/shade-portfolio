@@ -36,7 +36,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow-x: hidden;
+  overflow: hidden;
   background: url('~@/static/principal-page-background.svg') #d6932f;
   background-size: cover;
 }
