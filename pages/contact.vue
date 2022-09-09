@@ -7,15 +7,12 @@
 </template>
 
 <script>
-import AppNavbar from '~/components/AppNavbar.vue'
+import AppNavbar from '~/components/AppNavBar.vue'
 import SectionContactHeader from '~/components/SectionContactHeader.vue'
 import SectionContactBody from '~/components/SectionContactBody.vue'
 export default {
-  components: { AppNavbar, SectionContactHeader, SectionContactBody }
-
+  components: { AppNavbar, SectionContactHeader, SectionContactBody },
 }
 </script>
 
-<style scoped lang="scss">
-
-</style>
+<style scoped lang="scss"></style>
