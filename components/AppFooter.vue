@@ -9,7 +9,7 @@
             :key="`navbar-${index}`"
             class="nav-bar__link"
           >
-           <NuxtLink to="`${link.url}`"> {{ link.text }} </NuxtLink>
+           <NuxtLink :to="link.url"> {{ link.text }} </NuxtLink>
           </li>
         </ul>
         <div class="nav-bar-left-side"></div>
@@ -24,16 +24,16 @@
               v-for="(link, index) in links"
               :key="`navbar-${index}`"
               class="nav-bar__link"
-              :style="`${link.id === page() ? 'background-color:red;' : 'bacdeded'}`"
+              :style="`${link.id === page ? 'background-color:red;' : ''}`"
             >
-            <NuxtLink to="`${link.url}`"> {{ link.text }} </NuxtLink>
+            <NuxtLink :to="link.url"> {{ link.text }} </NuxtLink>
             </li>
           </ul>
 
         <div class="bottom-clip" onclick="javascript:window.scrollTo(0, 0)">
             Back to the top?
         </div>
-        <div class="cursor"  :style="`transform:${positionFunction()}`">
+        <div class="cursor"   :style="'transform:' + position">
         </div>
       </div>
       <div class="footer-left-side"></div>
@@ -44,38 +44,49 @@
 
 <script>
 export default {
+
   name: 'AppFooter',
   data() {
     return {
       links: [
-        { text: 'About us', url: '/' ,id:"home"},
-        { text: 'Portfolio', url: '/portfolio',id:"portfolio" },
-        { text: 'Contacts', url: '/contact',id:"contact" },
+        { text: 'About us', url: '/' , id:"home"},
+        { text: 'Portfolio', url: '/portfolio', id:"portfolio" },
+        { text: 'Contacts', url: '/contact', id:"contact" },
         { text: 'Get started', url: '/', id:"get started" },
         { text: "We're hiring", url: '/hiring', id:"hiring" },
       ],
+      page: '',
+      position:'',
     }
   },
-    methods:{
-      positionFunction:() => {
-        if(typeof window !== "undefined"){
-            const page = window.location.pathname.replaceAll("/","") || 'home'
-            const positions = {
-              'home':'translateX(calc(170vw * 0.07))',
-              'portfolio':'translateX(calc(170vw * 0.13))',
-              'contact':'translateX(calc(170vw * 0.2))',
-              'get started':'translateX(calc(170vw * 0.27))',
-              'hiring':'translateX(calc(170vw * 0.345))'
-            }
-            return positions[page];;
+  watch:{
+    $route(){
+      this.updatePosition();
+      this.updatePage();
+    }
+  },
+  beforeMount(){
+      this.updatePosition();
+      this.updatePage();
+  },
+  methods:{
+    updatePosition(){
+      if(typeof window !== "undefined"){
+          const page = window.location.pathname.replaceAll("/","") || 'home'
+          const positions = {
+            'home':'translateX(calc(170vw * 0.07))',
+            'portfolio':'translateX(calc(170vw * 0.13))',
+            'contact':'translateX(calc(170vw * 0.2))',
+            'get started':'translateX(calc(170vw * 0.27))',
+            'hiring':'translateX(calc(170vw * 0.345))'
           }
-        },
-        page:()=>{
-          if(typeof window !== "undefined"){
-              return window.location.pathname.replaceAll("/","") || 'home';
-          }
-        } 
+          this.position =  positions[page];;
+        }
       },
+      updatePage(){
+        this.page = typeof window !== "undefined" ? window.location.pathname.replaceAll("/","") : 'home';
+      }
+  },
       
 }
 </script>
