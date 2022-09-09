@@ -21,6 +21,8 @@
         making websites!
       </simple-cube>
     </div>
+
+    <base-button class="w-full py-1 base-button"></base-button>
   </div>
 </template>
 
@@ -43,7 +45,7 @@ $border-style: 1px solid #877432;
 
 .press-start-container {
   background-color: $background-color;
-  height: 500px;
+  height: 380px;
   width: 35%;
   border: $border-style;
   padding: 40px;
@@ -55,6 +57,7 @@ $border-style: 1px solid #877432;
 @media screen and (min-width: 700px) {
   .press-start-container {
     width: 45%;
+    height: 500px;
   }
 }
 
@@ -79,13 +82,19 @@ $border-style: 1px solid #877432;
 }
 
 .hire-team-container {
-  height: 450px;
+  height: 410px;
   background-color: $background-color;
   width: 30%;
   border: $border-style;
   padding: 0px 30px;
   border-radius: 10px 0 0 0;
   font-size: 40px;
+}
+
+@media screen and (min-width: 700px) {
+  .hire-team-subcontainer {
+    height: 450px;
+  }
 }
 
 .hire-team-subcontainer {
