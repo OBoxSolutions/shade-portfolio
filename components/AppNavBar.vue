@@ -15,7 +15,7 @@
           :key="`navbar-${index}`"
           class="nav-bar__link"
         >
-          <a :href="`${link.url}`"> {{ link.text }} </a>
+          <NuxtLink to="`${link.url}`"> {{ link.text }} </NuxtLink>
         </li>
         <div class="location-line">
           <div class="cursor" :style="`transform:${positionFunction()}`">

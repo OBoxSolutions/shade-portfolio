@@ -9,7 +9,7 @@
             :key="`navbar-${index}`"
             class="nav-bar__link"
           >
-           <a :href="`${link.url}`"> {{ link.text }} </a>
+           <NuxtLink to="`${link.url}`"> {{ link.text }} </NuxtLink>
           </li>
         </ul>
         <div class="nav-bar-left-side"></div>
@@ -26,7 +26,7 @@
               class="nav-bar__link"
               :style="`${link.id === page() ? 'background-color:red;' : 'bacdeded'}`"
             >
-            <a :href="`${link.url}`"> {{ link.text }} </a>
+            <NuxtLink to="`${link.url}`"> {{ link.text }} </NuxtLink>
             </li>
           </ul>
 
