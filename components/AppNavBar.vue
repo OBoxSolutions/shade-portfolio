@@ -15,10 +15,10 @@
           :key="`navbar-${index}`"
           class="nav-bar__link"
         >
-          <NuxtLink to="`${link.url}`"> {{ link.text }} </NuxtLink>
+          <NuxtLink :to="link.url"> {{ link.text }} </NuxtLink>
         </li>
         <div class="location-line">
-          <div class="cursor" :style="`transform:${positionFunction()}`">
+          <div class="cursor" :style="'transform:' + position">
           </div>
         </div>
       </ul>
@@ -44,10 +44,19 @@
           { text: 'Get started', url: '/' },
           { text: "We're hiring", url: '/hiring' },
         ],
+        position:'',
       }
     },
+    watch:{
+      $route(){
+        this.updatePosition();
+      }
+    },
+    beforeMount(){
+        this.updatePosition();
+    },
     methods:{
-      positionFunction:() => {
+      updatePosition(){
         if(typeof window !== "undefined"){
             const page = window.location.pathname.replaceAll("/","") || 'home'
             const positions = {
@@ -57,8 +66,7 @@
               'get started':'translateX(calc(100%*4.2))',
               'hiring':'translateX(calc(100%*5.7))'
             }
-            const position = positions[page];
-            return position;
+            this.position = positions[page];
           }
         }
           
