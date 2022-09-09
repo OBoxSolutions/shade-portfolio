@@ -74,7 +74,7 @@ export default {
       if(typeof window !== "undefined"){
           const page = window.location.pathname.replaceAll("/","") || 'home'
           const positions = {
-            'home':'translateX(calc(170vw * 0.07))',
+            'home':'translateX(calc(170vw * 0.05))',
             'portfolio':'translateX(calc(170vw * 0.13))',
             'contact':'translateX(calc(170vw * 0.2))',
             'get started':'translateX(calc(170vw * 0.27))',
@@ -84,7 +84,7 @@ export default {
         }
       },
       updatePage(){
-        this.page = typeof window !== "undefined" ? window.location.pathname.replaceAll("/","") : 'home';
+        this.page = typeof window !== "undefined" ? window.location.pathname.replaceAll("/","") || 'home' : 'home';
       }
   },
       

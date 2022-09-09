@@ -3,7 +3,6 @@
     <div class="first-section">
       <div class="navbar-wrapper mx-auto">
         <div class="navbar-content">
-          <section-hero-navbar></section-hero-navbar>
         </div>
       </div>
       <div class="content">
