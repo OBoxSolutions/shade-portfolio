@@ -1,7 +1,14 @@
 <template>
   <div class="cube mb-9">
-    <div v-if="top" class="cube-top-side"></div>
-    <div class="cube-front-side">
+    <div
+      v-if="top"
+      class="cube-top-side"
+      :style="{ 'background-color': otherSidesBackgroundColor }"
+    ></div>
+    <div
+      class="cube-front-side"
+      :style="{ 'background-color': frontSideBackgroundColor }"
+    >
       <div class="p-5">
         <h2>
           {{ title }}
@@ -9,7 +16,11 @@
         <slot> </slot>
       </div>
     </div>
-    <div v-if="bottom" class="cube-down-side"></div>
+    <div
+      v-if="bottom"
+      class="cube-down-side"
+      :style="{ 'background-color': otherSidesBackgroundColor }"
+    ></div>
   </div>
 </template>
 
@@ -32,6 +43,14 @@ export default {
     bottom: {
       type: Boolean,
       default: false,
+    },
+    frontSideBackgroundColor: {
+      type: String,
+      default: '#ddd6bf',
+    },
+    otherSidesBackgroundColor: {
+      type: String,
+      default: '#5a55f8',
     },
   },
 }
@@ -58,20 +77,14 @@ $perspective: 200px;
     z-index: 10;
   }
 
-  .cube-front-side {
-    background-color: #ddd6bf;
-  }
-
   .cube-down-side {
     height: $side-bottom-height;
-    background-color: #5a55f8;
     bottom: -(calc($side-bottom-height / 2));
     transform: rotateX(-20deg) translateY(calc($side-bottom-height / 2));
   }
 
   .cube-top-side {
     height: $side-bottom-height;
-    background-color: #5a55f8;
     top: -(calc($side-bottom-height / 2));
     transform: rotateX(190deg) translateY(calc($side-bottom-height / 2));
   }
