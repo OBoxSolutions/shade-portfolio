@@ -1,6 +1,6 @@
 <template>
   <div class="cube mb-9">
-    <div class="cube-top-side"></div>
+    <div v-if="top" class="cube-top-side"></div>
     <div class="cube-front-side">
       <div class="p-5">
         <h2>
@@ -9,7 +9,7 @@
         <slot> </slot>
       </div>
     </div>
-    <div class="cube-down-side"></div>
+    <div v-if="bottom" class="cube-down-side"></div>
   </div>
 </template>
 
@@ -24,6 +24,14 @@ export default {
     text: {
       type: String,
       default: '',
+    },
+    top: {
+      type: Boolean,
+      default: false,
+    },
+    bottom: {
+      type: Boolean,
+      default: false,
     },
   },
 }
