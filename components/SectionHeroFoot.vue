@@ -10,7 +10,12 @@
       </div>
     </div>
     <div class="cube-wrapper">
-      <simple-cube top class="cube">
+      <simple-cube
+        top
+        class="cube"
+        front-side-background-color="#ffac06"
+        other-sides-background-color="#15AAAA"
+      >
         We are a website design company, WebDo. The sole purpose of our
         existence is to create something you like. Truth be told, we just love
         making websites!
