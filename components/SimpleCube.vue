@@ -1,5 +1,6 @@
 <template>
   <div class="cube mb-9">
+    <div class="cube-top-side"></div>
     <div class="cube-front-side">
       <div class="p-5">
         <h2>
@@ -41,6 +42,7 @@ $perspective: 200px;
   perspective-origin: bottom;
 
   .cube-front-side,
+  .cube-top-side,
   .cube-down-side {
     width: 100%;
     height: 100%;
@@ -57,6 +59,13 @@ $perspective: 200px;
     background-color: #5a55f8;
     bottom: -(calc($side-bottom-height / 2));
     transform: rotateX(-20deg) translateY(calc($side-bottom-height / 2));
+  }
+
+  .cube-top-side {
+    height: $side-bottom-height;
+    background-color: #5a55f8;
+    top: -(calc($side-bottom-height / 2));
+    transform: rotateX(100deg) translateY(calc($side-bottom-height / 2));
   }
 }
 </style>
