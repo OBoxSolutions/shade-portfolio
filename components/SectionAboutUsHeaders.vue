@@ -64,7 +64,13 @@ $headers-rotation-x-degrees: 2deg;
     }
 
     h2 {
-      font-size: 6.2rem;
+      font-size: 3.2rem;
+    }
+
+    @media screen and (min-width: 700px) {
+      h2 {
+        font-size: 6.2rem;
+      }
     }
   }
 
@@ -80,7 +86,15 @@ $headers-rotation-x-degrees: 2deg;
     }
 
     h2 {
-      font-size: 3rem;
+      font-size: 1.4rem;
+      padding-left: 10px !important;
+      padding-right: 10px !important;
+    }
+
+    @media screen and (min-width: 700px) {
+      h2 {
+        font-size: 3rem;
+      }
     }
   }
 }
