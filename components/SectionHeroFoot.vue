@@ -23,7 +23,9 @@
     </div>
 
     <div class="base-button-small-wrapper">
-      <base-button class="w-full base-button-small"> Press start </base-button>
+      <base-button class="w-full base-button-small" flat>
+        Press start
+      </base-button>
     </div>
   </div>
 </template>
