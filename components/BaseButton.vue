@@ -1,5 +1,10 @@
 <template>
-  <button v-bind="$attrs" class="button py-2 px-1" v-on="$listeners">
+  <button
+    v-bind="$attrs"
+    class="button py-2 px-1"
+    :class="{ 'button--flat': flat }"
+    v-on="$listeners"
+  >
     <slot></slot>
   </button>
 </template>
@@ -7,6 +12,12 @@
 <script>
 export default {
   name: 'BaseButton',
+  props: {
+    flat: {
+      type: Boolean,
+      default: false,
+    },
+  },
 }
 </script>
 
@@ -61,6 +72,13 @@ $sides-color: #747474;
     &::after {
       width: 0;
     }
+  }
+}
+
+.button--flat {
+  &::before,
+  &::after {
+    display: none;
   }
 }
 </style>
