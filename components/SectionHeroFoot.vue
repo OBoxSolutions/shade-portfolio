@@ -71,8 +71,8 @@ $border-style: 1px solid #877432;
   font-size: 50px;
 
   .base-button-small {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
   }
 }
 
