@@ -57,7 +57,7 @@ $headers-rotation-x-degrees: 2deg;
     text-transform: uppercase;
     border-left: 0;
     transform: rotateY($headers-rotation-x-degrees) translateX(1.5px);
-    perspective-origin: -400%;
+    perspective-origin: -1700%;
 
     .first-header__top-side {
       border-right: 26px solid black;
@@ -74,12 +74,18 @@ $headers-rotation-x-degrees: 2deg;
     }
   }
 
+  @media screen and (min-width: 700px) {
+    .first-header-cube {
+      perspective-origin: -400%;
+    }
+  }
+
   .second-header-cube {
     background-color: #d43737;
     border-right: 0;
     text-align: left;
     transform: rotateY(-($headers-rotation-x-degrees)) translateX(-1.5px);
-    perspective-origin: 400%;
+    perspective-origin: 1700%;
 
     .second-header__top-side {
       border-left: 26px solid black;
@@ -95,6 +101,12 @@ $headers-rotation-x-degrees: 2deg;
       h2 {
         font-size: 3rem;
       }
+    }
+  }
+
+  @media screen and (min-width: 700px) {
+    .second-header-cube {
+      perspective-origin: 1700%;
     }
   }
 }
