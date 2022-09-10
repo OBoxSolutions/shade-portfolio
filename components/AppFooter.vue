@@ -33,7 +33,10 @@
         <div class="bottom-clip" onclick="javascript:window.scrollTo(0, 0)">
             Back to the top?
         </div>
-        <div class="cursor"   :style="'transform:' + position">
+        <div class="cursor-container">
+          <div class="cursor"   :style="'transform:' + position">
+
+        </div>
         </div>
       </div>
       <div class="footer-left-side"></div>
@@ -74,17 +77,17 @@ export default {
       if(typeof window !== "undefined"){
           const page = window.location.pathname.replaceAll("/","") || 'home'
           const positions = {
-            'home':'translateX(calc(170vw * 0.07))',
-            'portfolio':'translateX(calc(170vw * 0.13))',
-            'contact':'translateX(calc(170vw * 0.2))',
-            'get started':'translateX(calc(170vw * 0.27))',
-            'hiring':'translateX(calc(170vw * 0.345))'
+            'home':'translateX(calc(100% * 0.15))',
+            'portfolio':'translateX(calc(100% * 1.42))',
+            'contact':'translateX(calc(100% * 2.7))',
+            'get started':'translateX(calc(100% * 4.2))',
+            'hiring':'translateX(calc(100% * 5.7))'
           }
           this.position =  positions[page];;
         }
       },
       updatePage(){
-        this.page = typeof window !== "undefined" ? window.location.pathname.replaceAll("/","") : 'home';
+        this.page = typeof window !== "undefined" ? window.location.pathname.replaceAll("/","") || 'home' : 'home';
       }
   },
       
@@ -160,6 +163,9 @@ $border-size: 2px;
     width: 78.2%;
     border:2px solid black;
     border-width: 0 2px 0 2px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   .img-wrapper {
     display: none;
     width: 44%;
@@ -218,7 +224,7 @@ $border-size: 2px;
   position: relative;
   border-bottom: $border-size solid #222940;
   border-bottom: 0;
-  width: fit-content;
+  width: calc(100%/1.5);
 
   .nav-bar__link {
     padding: 0.8em 0;
@@ -227,7 +233,7 @@ $border-size: 2px;
     flex-grow: 1;
     border: solid #222940;
     border-width: 0 $border-size;
-    padding: 0.5rem 2rem;
+    padding: 0.5rem 1rem;
     &:first-child {
       border: solid #222940;
       border-width: 0 $border-size 0 ($border-size * 2);
@@ -243,6 +249,7 @@ $border-size: 2px;
 .mobile-nav{
   list-style: none ;
   padding: 0;
+  width: 100%;
   li{
     width: 100%;
     display: flex;
@@ -268,15 +275,23 @@ $border-size: 2px;
 
   }
 
-  .cursor{
+  .cursor-container{
     height: 100%;
-    top: 0;
-    background-color: #F34021;
-    width: calc(100vw/15);
+    width: calc(100%/1.18);
     position: absolute;
-    transition: transform 2s;
-    display: none;
+    top: 0;
+    .cursor{
+      height: 100%;
+      top: 0;
+      background-color: #F34021;
+      width: calc(100%/7);
+      position: absolute;
+      transition: transform 2s;
+      display: none;
+    }
   }
+
+  
   /* Breakpoints start here */
 
   @media(min-width: 1200px) {
@@ -298,8 +313,10 @@ $border-size: 2px;
     .mobile-nav{
       display: none;
     }
-    .cursor{
-      display: block;
+    .cursor-container{
+      .cursor{
+        display: block;
+      }
     }
   }
   
