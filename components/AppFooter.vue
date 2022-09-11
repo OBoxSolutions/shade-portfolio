@@ -280,6 +280,7 @@ $border-size: 2px;
     width: calc(100%/1.18);
     position: absolute;
     top: 0;
+    display: none;
     .cursor{
       height: 100%;
       top: 0;
@@ -314,6 +315,7 @@ $border-size: 2px;
       display: none;
     }
     .cursor-container{
+      display: block;
       .cursor{
         display: block;
       }
