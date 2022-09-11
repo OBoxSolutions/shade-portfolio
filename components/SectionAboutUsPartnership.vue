@@ -21,7 +21,7 @@
       </empty-cube>
     </div>
     <div class="connector-line"></div>
-    <div class="image">
+    <div v-if="!$breakpoints.isSmAndDown" class="image">
       <img
         src="/pixelated-handshake.png"
         alt="Pixelated image describing a handshake"
