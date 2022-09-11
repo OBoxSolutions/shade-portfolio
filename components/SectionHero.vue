@@ -3,19 +3,18 @@
     <section-hero-small-screen v-if="isSmall"></section-hero-small-screen>
     <div v-else class="first-section">
       <div class="navbar-wrapper mx-auto">
-        <div class="navbar-content">
-        </div>
+        <div class="navbar-content"></div>
       </div>
       <div class="content">
         <div class="resume">
           <img src="/logo.svg" class="mt-9 mx-1" alt="" />
-          <p class="mx-2">Every pixel delivered with care.</p>
+          <h4 class="mx-2">Every pixel delivered with care.</h4>
           <div class="description p-1 mr-1 mt-2">
-            <p>
+            <h5>
               We are a website design company, WebDo. The sole purpose of our
               existence is to create something you like. Truth be told, we just
               love making websites!
-            </p>
+            </h5>
           </div>
         </div>
         <div class="sunset-picture">
