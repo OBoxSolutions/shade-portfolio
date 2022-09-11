@@ -2,17 +2,17 @@ import Breakpoints from 'breakpoints-js'
 
 export default (context, inject) => {
   Breakpoints()
-  idSmAndDown(Breakpoints)
+  isSmAndDown(Breakpoints)
   inject('breakpoints', Breakpoints)
 }
 
-function idSmAndDown(breakpoints) {
+function isSmAndDown(breakpoints) {
   breakpoints.on('xs sm', {
     enter: () => {
-      breakpoints.idSmAndDown = true
+      breakpoints.isSmAndDown = true
     },
     leave: () => {
-      breakpoints.idSmAndDown = false
+      breakpoints.isSmAndDown = false
     },
   })
 }
