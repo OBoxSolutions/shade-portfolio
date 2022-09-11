@@ -108,6 +108,8 @@ export default {
 }
 
 .section-description-card {
+  position: relative;
+  top: -50px;
   margin: 0px 2em;
   text-align: center;
 }
