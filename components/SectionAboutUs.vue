@@ -3,24 +3,27 @@
     <section-about-us-headers
       class="section-headers"
     ></section-about-us-headers>
-    <app-card v-if="isScreenSmall">
-      WebDo started in the April of 2022, with a small but very talented team of
-      designers, programmers, and managers to deliver what you deserve, and that
-      is the highest quality you could want. We've been pushing ever since, and
-      we hope that you will be a part of this journey! Our main focus is to
-      provide top-notch website design services to the client, with the least
-      trouble possible. If you're working with us, it's about as straightforward
-      as it gets. You contact us, we assign a special group of people just for
-      you, to make your website the best as it can be. Normally you would have
-      to individually hire several people to do your project. You would also
-      have to manage them, pay them separately, and above all hope that they are
-      trustworthy and have enough experience to be worth your money. Everything
-      mentioned above, WebDo takes care of instead of you. All you have to do is
-      relax and watch your project grow! Also laugh at people for not choosing
-      WebDo while you're at it. Our design agency strives to become the most
-      convenient and skillful web development company out there, and by ordering
-      from us you are helping to reach this goal. The part about bullying other
-      companies is not supposed to be taken seriously, unless...
+    <app-card v-if="isScreenSmall" class="section-description-card">
+      <p>
+        WebDo started in the April of 2022, with a small but very talented team
+        of designers, programmers, and managers to deliver what you deserve, and
+        that is the highest quality you could want. We've been pushing ever
+        since, and we hope that you will be a part of this journey! Our main
+        focus is to provide top-notch website design services to the client,
+        with the least trouble possible. If you're working with us, it's about
+        as straightforward as it gets. You contact us, we assign a special group
+        of people just for you, to make your website the best as it can be.
+        Normally you would have to individually hire several people to do your
+        project. You would also have to manage them, pay them separately, and
+        above all hope that they are trustworthy and have enough experience to
+        be worth your money. Everything mentioned above, WebDo takes care of
+        instead of you. All you have to do is relax and watch your project grow!
+        Also laugh at people for not choosing WebDo while you're at it. Our
+        design agency strives to become the most convenient and skillful web
+        development company out there, and by ordering from us you are helping
+        to reach this goal. The part about bullying other companies is not
+        supposed to be taken seriously, unless...
+      </p>
     </app-card>
     <simple-cube v-else title="Lorem Ipsum" class="section-description mx-auto">
       <p>
@@ -102,6 +105,11 @@ export default {
   top: -40px;
   z-index: 10;
   max-width: 900px;
+}
+
+.section-description-card {
+  margin: 0px 2em;
+  text-align: center;
 }
 
 .section-partnership,
