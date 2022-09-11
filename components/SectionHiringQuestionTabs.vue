@@ -171,7 +171,7 @@ export default {
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: end;
+  justify-content: flex-end;
 
   .file-picker-label{
     background-color: #1B2032;
