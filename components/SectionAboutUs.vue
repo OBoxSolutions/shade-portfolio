@@ -63,7 +63,7 @@ export default {
   },
   data() {
     return {
-      isSmall: false,
+      isScreenSmall: false,
     }
   },
   mounted() {
@@ -77,8 +77,8 @@ export default {
     })
   },
   methods: {
-    setSmallScreen(isSmall) {
-      this.isSmall = isSmall
+    setSmallScreen(isScreenSmall) {
+      this.isScreenSmall = isScreenSmall
     },
   },
 }
