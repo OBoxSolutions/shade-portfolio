@@ -57,14 +57,26 @@ $headers-rotation-x-degrees: 2deg;
     text-transform: uppercase;
     border-left: 0;
     transform: rotateY($headers-rotation-x-degrees) translateX(1.5px);
-    perspective-origin: -400%;
+    perspective-origin: -1700%;
 
     .first-header__top-side {
       border-right: 26px solid black;
     }
 
     h2 {
-      font-size: 6.2rem;
+      font-size: 3.2rem;
+    }
+
+    @media screen and (min-width: 700px) {
+      h2 {
+        font-size: 6.2rem;
+      }
+    }
+  }
+
+  @media screen and (min-width: 700px) {
+    .first-header-cube {
+      perspective-origin: -400%;
     }
   }
 
@@ -73,14 +85,28 @@ $headers-rotation-x-degrees: 2deg;
     border-right: 0;
     text-align: left;
     transform: rotateY(-($headers-rotation-x-degrees)) translateX(-1.5px);
-    perspective-origin: 400%;
+    perspective-origin: 1700%;
 
     .second-header__top-side {
       border-left: 26px solid black;
     }
 
     h2 {
-      font-size: 3rem;
+      font-size: 1.4rem;
+      padding-left: 10px !important;
+      padding-right: 10px !important;
+    }
+
+    @media screen and (min-width: 700px) {
+      h2 {
+        font-size: 3rem;
+      }
+    }
+  }
+
+  @media screen and (min-width: 700px) {
+    .second-header-cube {
+      perspective-origin: 1700%;
     }
   }
 }

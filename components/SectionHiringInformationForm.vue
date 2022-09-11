@@ -6,7 +6,7 @@
       <div class="section-form__column-left">
         <div>
           <label for="full-name">Full name:</label><br>
-          <input id="full-name" type="text" name="full-name"><br>
+          <input id="full-name"  v-model="userName" type="text" name="full-name"><br>
         </div>
         <div>
           <label for="email-address">Email address:</label><br>
@@ -51,8 +51,24 @@
 </template>
 
 <script>
+import { mapGetters, mapMutations } from "vuex";
+
 export default {
   name: 'SectionHiringInformationForm',
+  computed: {
+    ...mapGetters(['getUserName']),
+    userName: {
+        get(){
+            return this.getUserName
+        },
+        set(value){
+            this.setUserName(value)
+        }
+    }
+  },
+  methods: {
+    ...mapMutations(['setUserName']),
+  }
 }
 </script>
 

@@ -11,9 +11,11 @@
         illo id!
       </p>
     </simple-cube>
-    <section-about-us-partnership></section-about-us-partnership>
-    <section-about-us-commitment></section-about-us-commitment>
-    <section-about-us-style-and-communication></section-about-us-style-and-communication>
+    <section-about-us-partnership class="mt-5"></section-about-us-partnership>
+    <section-about-us-commitment class="mt-5"></section-about-us-commitment>
+    <section-about-us-style-and-communication
+      class="mt-5"
+    ></section-about-us-style-and-communication>
     <section-about-us-price class="section mt-8"></section-about-us-price>
   </div>
 </template>
@@ -34,8 +36,9 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow-x: hidden;
-  background-image: url('~@/static/principal-page-background.svg');
+  overflow: hidden;
+  background: url('~@/static/principal-page-background.svg') #d6932f;
+  background-size: cover;
 }
 
 .section-headers {

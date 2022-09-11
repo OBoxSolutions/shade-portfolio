@@ -13,11 +13,12 @@ import SectionHiringQuestions from '~/components/SectionHiringQuestions.vue'
 import HiringSubmitButton from '~/components/HiringSubmitButton.vue'
 export default {
   name: 'HiringPage',
-  components: {  SectionHiringHeader, SectionHiringQuestions, HiringSubmitButton },
-
+  components: {
+    SectionHiringHeader,
+    SectionHiringQuestions,
+    HiringSubmitButton,
+  },
 }
 </script>
 
-<style scoped lang="scss">
-
-</style>
+<style scoped lang="scss"></style>

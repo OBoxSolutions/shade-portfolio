@@ -26,10 +26,22 @@ export default {
 
 .hero-foot {
   position: absolute;
-  bottom: -390px;
+  bottom: -220px;
+}
+
+@media screen and (min-width: 700px) {
+  .hero-foot {
+    bottom: -390px;
+  }
 }
 
 .section-about-us {
-  padding-top: 260px;
+  padding-top: 760px;
+}
+
+@media screen and (min-width: 700px) {
+  .section-about-us {
+    padding-top: 260px;
+  }
 }
 </style>

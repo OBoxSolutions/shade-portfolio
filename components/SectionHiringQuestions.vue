@@ -3,10 +3,10 @@
     <div class="section-questions__outside-box">
       <div class="section-questions__inside-box">
         <div class="questions-white-box">
-          Hiring questions works!
+          <section-hiring-question-tabs class="questions" />
         </div>
         <div class="questions-user-name">
-          <h1>-[NAME]</h1>
+          <h1>{{ getUserName }}</h1>
         </div>
       </div>
     </div>
@@ -14,7 +14,14 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+import SectionHiringQuestionTabs from './SectionHiringQuestionTabs.vue'
+
 export default {
+  components: { SectionHiringQuestionTabs },
+  computed: {
+    ...mapGetters(['getUserName']),
+  },
 
 }
 </script>
@@ -47,6 +54,16 @@ export default {
         height: 78%;
         box-shadow: 2px 2px 1px #8A8A8A;
         margin: 3rem auto 1rem;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .questions{
+          border: 5px solid black;
+          width: 95%;
+          height: 90%;
+        }
       }
       .questions-user-name{
         width: 97%;

@@ -1,6 +1,7 @@
 <template>
   <div class="section-hero">
-    <div class="first-section">
+    <section-hero-small-screen v-if="isSmall"></section-hero-small-screen>
+    <div v-else class="first-section">
       <div class="navbar-wrapper mx-auto">
         <div class="navbar-content">
         </div>
@@ -8,7 +9,7 @@
       <div class="content">
         <div class="resume">
           <img src="/logo.svg" class="mt-9 mx-1" alt="" />
-          <p class="mx-2">Every pixel delivered with care</p>
+          <p class="mx-2">Every pixel delivered with care.</p>
           <div class="description p-1 mr-1 mt-2">
             <p>
               We are a website design company, WebDo. The sole purpose of our
@@ -28,6 +29,26 @@
 <script>
 export default {
   name: 'SectionHero',
+  data() {
+    return {
+      isSmall: false,
+    }
+  },
+  mounted() {
+    this.$breakpoints.on('xs sm', {
+      enter: () => {
+        this.setSmallScreen(true)
+      },
+      leave: () => {
+        this.setSmallScreen(false)
+      },
+    })
+  },
+  methods: {
+    setSmallScreen(isSmall) {
+      this.isSmall = isSmall
+    },
+  },
 }
 </script>
 

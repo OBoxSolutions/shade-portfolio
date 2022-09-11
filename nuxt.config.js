@@ -18,7 +18,7 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       {
         rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap',
+        href: 'https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Prompt&display=swap',
       },
       {
         rel: 'stylesheet',
@@ -31,7 +31,7 @@ export default {
   css: ['~/assets/scss/main.scss'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: [{ src: '~/plugins/breakpoint', mode: 'client' }, '~/plugins/firebase.js'],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,

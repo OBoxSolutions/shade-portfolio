@@ -1,6 +1,5 @@
 @import '../css/normalize.css';
 
-@import './fonts';
 @import './variables';
 @import './container';
 @import './general-styles';
@@ -34,6 +33,6 @@ a{
 }
 
 .font-family-consolas {
-  font-family: 'Consolas', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+  font-family: 'Prompt', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
     'Lucida Sans Unicode', Geneva, Verdana, sans-serif !important;
 }

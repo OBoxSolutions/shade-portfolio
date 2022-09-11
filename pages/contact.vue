@@ -9,11 +9,8 @@
 import SectionContactHeader from '~/components/SectionContactHeader.vue'
 import SectionContactBody from '~/components/SectionContactBody.vue'
 export default {
-  components: { SectionContactHeader, SectionContactBody }
-
+  components: { SectionContactHeader, SectionContactBody },
 }
 </script>
 
-<style scoped lang="scss">
-
-</style>
+<style scoped lang="scss"></style>
