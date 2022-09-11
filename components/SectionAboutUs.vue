@@ -64,26 +64,6 @@ export default {
   components: {
     SectionAboutUsHeaders,
   },
-  data() {
-    return {
-      isScreenSmall: false,
-    }
-  },
-  mounted() {
-    this.$breakpoints.on('xs sm', {
-      enter: () => {
-        this.setSmallScreen(true)
-      },
-      leave: () => {
-        this.setSmallScreen(false)
-      },
-    })
-  },
-  methods: {
-    setSmallScreen(isScreenSmall) {
-      this.isScreenSmall = isScreenSmall
-    },
-  },
 }
 </script>
 
