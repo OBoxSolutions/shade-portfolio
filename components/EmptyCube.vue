@@ -132,8 +132,20 @@ $side-width: 130px;
 
 h1 {
   text-align: center;
-  font-size: 50px;
+  font-size: 1.6rem;
   line-height: 79px;
+}
+
+@media screen and (min-width: 768px) {
+  h1 {
+    font-size: 2.6rem;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  h1 {
+    font-size: 3.6rem;
+  }
 }
 
 p {
