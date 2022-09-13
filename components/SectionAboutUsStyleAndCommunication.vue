@@ -103,14 +103,14 @@ export default {}
 
 .first-cube-connector-line,
 .second-cube-connector-line {
-  width: 300px;
+  width: 200px;
 }
 
 .first-cube-connector-line {
-  right: -307px;
+  right: -207px;
 }
 
 .second-cube-connector-line {
-  left: -307px;
+  left: -207px;
 }
 </style>
