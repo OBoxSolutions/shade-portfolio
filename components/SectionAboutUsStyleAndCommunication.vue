@@ -14,10 +14,14 @@
           the right team to match your wanted style.</template
         >
       </empty-cube>
-      <div class="connector-line connector-line-right"></div>
+      <div
+        class="connector-line connector-line-right first-cube-connector-line"
+      ></div>
     </div>
     <div class="cube-wrapper right">
-      <div class="connector-line connector-line-left"></div>
+      <div
+        class="connector-line connector-line-left second-cube-connector-line"
+      ></div>
       <empty-cube class="cube" perspective="620px">
         <template #title>Communication</template>
         <template #text>
@@ -25,10 +29,7 @@
           that's a big part of the service that we deliver. No matter if we're
           doing website design for a small business, or for a big company, we
           still think you're awesome. Philosophy that exists for quite some time
-          is that at the end of the day, the most important thing is not money,
-          but the connections you get to make along the way. We could not
-          support that saying more, like, who doesn't want to make friends? At
-          the end of the day, well, you get the point, talk to us.
+          is that at the end of the day, the mostfirstoint, talk to us.
         </template>
       </empty-cube>
       <div class="connector-line connector-line-right"></div>
@@ -98,5 +99,18 @@ export default {}
 .connector-line-right {
   width: 100px;
   right: -107px;
+}
+
+.first-cube-connector-line,
+.second-cube-connector-line {
+  width: 300px;
+}
+
+.first-cube-connector-line {
+  right: -307px;
+}
+
+.second-cube-connector-line {
+  left: -307px;
 }
 </style>
