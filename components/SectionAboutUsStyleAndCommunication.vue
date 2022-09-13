@@ -4,15 +4,15 @@
       <div class="connector-line connector-line-left"></div>
       <empty-cube class="cube" perspective="620px">
         <template #title>Style </template>
-        <template #text
-          >We are aware of the fact that like it or not, hired web developers
-          are people, and people have emotions, well most of them anyway.
-          Emotions and opinions dictate their style and work, and may or may not
-          align with your creative vision. I mean, look at this website, it's
-          just flowing with creativity! But I imagine very few people want this
-          type of look. That's why during the planning stage we will hand-pick
-          the right team to match your wanted style.</template
-        >
+        <template #text>
+          We are aware of the fact that like it or not, hired web developers are
+          people, and people have emotions, well most of them anyway. Emotions
+          and opinions dictate their style and work, and may or may not align
+          with your creative vision. I mean, look at this website, it's just
+          flowing with creativity! But I imagine very few people want this type
+          of look. That's why during the planning stage we will hand-pick the
+          right team to match your wanted style.
+        </template>
       </empty-cube>
       <div
         class="connector-line connector-line-right first-cube-connector-line"
@@ -70,7 +70,7 @@ export default {}
 }
 
 .cube-wrapper.right {
-  position: absolute;
+  margin-left: auto;
   right: 40px;
 }
 
