@@ -44,6 +44,7 @@ export default {}
 <style scoped lang="scss">
 .section-partnership {
   display: flex;
+  flex-direction: column;
   transform-style: preserve-3d;
   position: relative;
   perspective: 800px;
@@ -60,9 +61,21 @@ export default {}
   }
 }
 
+@media screen and (min-width: 991px) {
+  .section-partnership {
+    flex-direction: row;
+  }
+}
+
 .cube-wrapper {
-  width: 38% !important;
+  width: calc(100% - 80px) !important;
   position: relative;
+}
+
+@media screen and (min-width: 991px) {
+  .cube-wrapper {
+    width: 38% !important;
+  }
 }
 
 .cube-wrapper.left {
@@ -72,6 +85,13 @@ export default {}
 .cube-wrapper.right {
   margin-left: auto;
   right: 40px;
+  margin-top: 8em;
+}
+
+@media screen and (min-width: 991px) {
+  .cube-wrapper.right {
+    margin-top: 0em;
+  }
 }
 
 .connector-line {
