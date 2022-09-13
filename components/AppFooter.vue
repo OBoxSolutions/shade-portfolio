@@ -55,7 +55,7 @@ export default {
         { text: 'About us', url: '/' , id:"home"},
         { text: 'Portfolio', url: '/portfolio', id:"portfolio" },
         { text: 'Contacts', url: '/contact', id:"contact" },
-        { text: 'Get started', url: '/', id:"get started" },
+        { text: 'Get started', url: '/get-started', id:"get-started" },
         { text: "We're hiring", url: '/hiring', id:"hiring" },
       ],
       page: '',
@@ -80,7 +80,7 @@ export default {
             'home':'translateX(calc(100% * 0.15))',
             'portfolio':'translateX(calc(100% * 1.42))',
             'contact':'translateX(calc(100% * 2.7))',
-            'get started':'translateX(calc(100% * 4.2))',
+            'get-started':'translateX(calc(100% * 4.2))',
             'hiring':'translateX(calc(100% * 5.7))'
           }
           this.position =  positions[page];;
@@ -280,6 +280,7 @@ $border-size: 2px;
     width: calc(100%/1.18);
     position: absolute;
     top: 0;
+    display: none;
     .cursor{
       height: 100%;
       top: 0;
@@ -314,6 +315,7 @@ $border-size: 2px;
       display: none;
     }
     .cursor-container{
+      display: block;
       .cursor{
         display: block;
       }
