@@ -29,15 +29,11 @@
       <h1 class="bottom-title">And many more!</h1>
       <div class="bottom-footer"></div>
     </div>
-
-
   </div>
 </template>
 
 <script>
-import BaseButton from './BaseButton.vue'
 export default {
-  components: { BaseButton },
   data() {
     return {
       previews: [
