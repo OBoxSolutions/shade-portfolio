@@ -197,7 +197,8 @@
                     display: flex;
                     flex-direction: column-reverse;
                     gap:3rem;
-
+                    width: 100%;
+                    margin: 0 1rem;
                     .__yes-container{
                         display: flex;
                         flex-direction: column;
@@ -238,7 +239,7 @@
                             width: 100%;
                             .__time{
                                 width: 100%;
-                                padding: 0.5rem ;
+                                padding: 0.5rem 0;
                                 font-size: 0.8rem;
                                 cursor: pointer;
                                 
@@ -388,6 +389,8 @@
                     .__choice-container{
                         flex-direction: row;
                         margin: 0 2rem;
+                        width: fit-content;
+                        margin: 0 1rem;
                         .__yes-container{
                             .__time-display{
                                 .__yes{
@@ -397,6 +400,7 @@
                                 .__display{
                                     font-size: 0.6rem;
                                     .__time{
+                                        padding:0.5rem;
                                     }
                                     .__text{
                                     }

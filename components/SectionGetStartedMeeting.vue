@@ -60,7 +60,7 @@
         padding: 1rem;
     
         .__title{
-            width: 25rem;
+            margin: 1rem;
             text-align: center;
             color:white;
             font-size: 1.5rem;
@@ -89,6 +89,7 @@
                 .__time-container{
                     background-color: #352FCF;
                     display: flex;
+                    gap:1rem;
                     align-items: center;
                     justify-content: space-between;
                     color:white;
@@ -129,6 +130,10 @@
     /* Breakpoints begin here  */
     @media(min-width: 768px) {
         .section-meeting{
+            .__title{
+                width: 25rem;
+                margin: 0;
+            }
             .__date-container{
                 flex-direction: row;
                     .__calendar{
