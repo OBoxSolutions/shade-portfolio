@@ -32,9 +32,13 @@ export default {
   padding-top: 8rem;
 
   .section-header__bottom{
-    position: absolute;
     width: 100%;
-    bottom: -2px;
+    img{
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      object-fit: cover;
+    }
   }
 
   .section-header__description{
@@ -87,5 +91,13 @@ export default {
     }
   }
 }
+
+  /* Breakpoints begin here  */
+  @media(max-width: 1175px) {
+    .section-header{
+      background-position: unset;
+      background-repeat: no-repeat !important;
+    }
+  }
 
 </style>

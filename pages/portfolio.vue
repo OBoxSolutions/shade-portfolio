@@ -17,7 +17,7 @@ export default {
     }
   },
   mounted() {
-    this.$breakpoints.on('xs sm', {
+    this.$breakpoints.on('xs', {
       enter: () => {
         this.setSmallScreen(true)
       },
