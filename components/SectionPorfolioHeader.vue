@@ -50,7 +50,7 @@ export default {
 
       background-color: #FFAC06;
       width: 25em;
-      height: 70%;
+      height: 99%;
       margin-left: 3rem;
       border: 1px solid #000000;
 
