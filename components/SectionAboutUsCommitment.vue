@@ -82,10 +82,16 @@ export default {
   width: $connector-line-width;
   height: $connector-line-height;
   position: absolute;
-  right: 867px;
+  right: 540px;
   top: calc(50% - calc($connector-line-height / 2));
   background-color: #d9d9d9;
   z-index: 10;
+}
+
+@media screen and (min-width: 991px) {
+  .connector-line {
+    left: 867px;
+  }
 }
 
 .image {
