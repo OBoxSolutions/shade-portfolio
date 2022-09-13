@@ -1,7 +1,7 @@
 <template>
   <div class="section-partnership">
-    <div class="connector-line connector-line-left"></div>
     <div class="cube-wrapper left">
+      <div class="connector-line connector-line-left"></div>
       <empty-cube class="cube" perspective="620px">
         <template #title>Style </template>
         <template #text
@@ -14,9 +14,10 @@
           the right team to match your wanted style.</template
         >
       </empty-cube>
+      <div class="connector-line connector-line-right"></div>
     </div>
-    <div class="connector-line connector-line-middle"></div>
     <div class="cube-wrapper right">
+      <div class="connector-line connector-line-left"></div>
       <empty-cube class="cube" perspective="620px">
         <template #title>Communication</template>
         <template #text>
@@ -30,8 +31,8 @@
           the end of the day, well, you get the point, talk to us.
         </template>
       </empty-cube>
+      <div class="connector-line connector-line-right"></div>
     </div>
-    <div class="connector-line connector-line-right"></div>
   </div>
 </template>
 
@@ -83,8 +84,8 @@ export default {}
 }
 
 .connector-line-left {
-  width: 33px;
-  left: 0;
+  width: 100px;
+  left: -107px;
 }
 
 .connector-line-middle {
@@ -95,7 +96,7 @@ export default {}
 }
 
 .connector-line-right {
-  width: 33px;
-  right: 0;
+  width: 100px;
+  right: -107px;
 }
 </style>
