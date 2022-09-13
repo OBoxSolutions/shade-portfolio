@@ -1,6 +1,6 @@
 <template>
   <div class="section-partnership">
-    <div class="image">
+    <div v-if="!$breakpoints.isSmAndDown" class="image">
       <img
         src="/pixel-art-clock.png"
         alt="Pixelated image describing a handshake"
@@ -10,8 +10,8 @@
     <div class="cube-wrapper">
       <empty-cube
         class="content"
-        perspective="600px"
-        side-width="190px"
+        :perspective="$breakpoints.isSmAndDown ? '400px' : '600px'"
+        :side-width="$breakpoints.isSmAndDown ? '120px' : '190px'"
         :right="false"
       >
         <template #title> Time Commitment </template>
@@ -41,6 +41,7 @@ export default {
 <style scoped lang="scss">
 .section-partnership {
   display: flex;
+  flex-direction: row-reverse;
   transform-style: preserve-3d;
   position: relative;
   perspective: 800px;
@@ -57,9 +58,21 @@ export default {
   }
 }
 
+@media screen and (min-width: 991px) {
+  .section-partnership {
+    flex-direction: row;
+  }
+}
+
 .cube-wrapper {
-  width: calc(50% - 100px);
+  width: calc(100% - 100px);
   position: relative;
+}
+
+@media screen and (min-width: 991px) {
+  .cube-wrapper {
+    width: calc(50% - 100px);
+  }
 }
 
 .connector-line {

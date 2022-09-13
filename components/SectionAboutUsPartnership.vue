@@ -3,8 +3,8 @@
     <div class="cube-wrapper">
       <empty-cube
         class="content"
-        perspective="600px"
-        side-width="190px"
+        :perspective="$breakpoints.isSmAndDown ? '400px' : '600px'"
+        :side-width="$breakpoints.isSmAndDown ? '120px' : '190px'"
         :left="false"
       >
         <template #title> Partnership </template>
@@ -56,8 +56,14 @@ export default {
 }
 
 .cube-wrapper {
-  width: calc(50% - 100px);
+  width: calc(100% - 100px);
   position: relative;
+}
+
+@media screen and (min-width: 991px) {
+  .cube-wrapper {
+    width: calc(50% - 100px);
+  }
 }
 
 .connector-line {
