@@ -192,4 +192,22 @@ export default {
     }
   }
 }
+
+  /* Breakpoints begin here  */
+@media(max-width: 1285px) {
+  .section-portfolio-previews__title{
+    height: 150px !important;
+    .section-portfolio-previews__title-top{
+      height: 110px !important;
+    }
+  }
+}
+@media(max-width: 850px) {
+  .section-portfolio-previews__title{
+    height: 110px !important;
+    .section-portfolio-previews__title-top{
+      height: 70px !important;
+    }
+  }
+}
 </style>
