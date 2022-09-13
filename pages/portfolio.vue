@@ -1,6 +1,7 @@
 <template>
   <div>
-    <section-porfolio-header></section-porfolio-header>
+    <!-- <section-porfolio-header></section-porfolio-header> -->
+    <section-mobile-portfolio-header></section-mobile-portfolio-header>
     <section-portfolio-previews></section-portfolio-previews>
   </div>
 </template>
