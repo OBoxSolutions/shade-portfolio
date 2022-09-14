@@ -49,15 +49,17 @@ export default {}
   position: relative;
   perspective: 800px;
 
-  &::after {
-    position: absolute;
-    left: 0px;
-    content: '';
-    width: 100%;
-    top: 6.2%;
-    height: 87.8%;
-    background-color: #ffac06;
-    z-index: -1;
+  @media screen and (min-width: 991px) {
+    &::after {
+      position: absolute;
+      left: 0px;
+      content: '';
+      width: 100%;
+      top: 6.2%;
+      height: 87.8%;
+      background-color: #ffac06;
+      z-index: -1;
+    }
   }
 }
 
