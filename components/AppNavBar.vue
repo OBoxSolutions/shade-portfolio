@@ -33,7 +33,7 @@ export default {
         { text: 'About us', url: '/' },
         { text: 'Portfolio', url: '/portfolio' },
         { text: 'Contacts', url: '/contact' },
-        { text: 'Get started', url: '/' },
+        { text: 'Get started', url: '/get-started' },
         { text: "We're hiring", url: '/hiring' },
       ],
       position: '',
@@ -55,7 +55,7 @@ export default {
           home: 'translateX(calc(100%/6))',
           portfolio: 'translateX(calc(100%*1.5))',
           contact: 'translateX(calc(100%*2.8))',
-          'get started': 'translateX(calc(100%*4.2))',
+          "get-started": 'translateX(calc(100%*4.2))',
           hiring: 'translateX(calc(100%*5.7))',
         }
         this.position = positions[page]
@@ -105,14 +105,14 @@ export default {
       right: 0;
       display: none;
       .top {
-        background-color: #5a55f8;
+        background-color: #352FCF;
         height: 85%;
         border: 1px solid black;
         border-width: 1px 0 0 0;
         padding: 0 20px;
       }
       .bottom {
-        background-color: #ffac06;
+        background-color: #D08B00;
         height: 15%;
         padding: 0 20px;
       }
