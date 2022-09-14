@@ -8,7 +8,7 @@
     </div>
 
     <div class="section-portfolio-previews__content">
-      <div v-for="(preview, index) in previews" :key="`preview-${index}`" class="section-portfolio-preview">
+      <div v-for="(preview, index) in getPortfolio" :key="`preview-${index}`" class="section-portfolio-preview">
         <div class="section-portfolio-preview__image">
           <img :src="preview.image" alt="preview-image">
         </div>
@@ -33,16 +33,11 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex"
+
 export default {
-  data() {
-    return {
-      previews: [
-        { image: '/portfolio/unborder.png', link: '' },
-        { image: '/portfolio/cleaning-services.png', link: '' },
-        { image: '/portfolio/cabbo.png', link: '' },
-        { image: '/portfolio/flowers.png', link: '' },
-      ],
-    }
+  computed: {
+    ...mapGetters(['getPortfolio']),
   },
 
 }

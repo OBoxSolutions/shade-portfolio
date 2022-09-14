@@ -1,12 +1,30 @@
 <template>
     <div class="section-portfolio-previews">
-    <div class="section-portfolio-previews__title">
-      <div class="section-portfolio-previews__title-top">
-        <img src="/portfolio-title.svg" alt="portfolio">
+      <div class="section-portfolio-previews__title">
+        <div class="section-portfolio-previews__title-top">
+          <img src="/portfolio-title.svg" alt="portfolio">
+        </div>
+        <div class="section-portfolio-previews__title-bottom"></div>
       </div>
-      <div class="section-portfolio-previews__title-bottom"></div>
-    </div>
 
+      <div class="section-portfolio-previews__content">
+        <div v-for="(preview, index) in getPortfolio" :key="`preview-${index}`" class="section-portfolio-preview">
+          <div class="section-portfolio-preview__image">
+            <img :src="preview.image" alt="preview-image">
+          </div>
+
+          <div class="section-portfolio-preview__bottom">
+            <div class="section-portfolio-preview__green-middle" />
+            <a target="_blanck" :href="preview.link">View Site</a>
+          </div>
+
+        </div>
+
+        <!-- <base-button class="portfolio-button">
+          <h1>Press Start</h1>
+        </base-button> -->
+
+      </div>
 
     <div class="section-portfolio-previews__botton">
       <h1 class="bottom-title">And many more!</h1>
@@ -16,7 +34,11 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex"
 export default {
+  computed: {
+    ...mapGetters(['getPortfolio']),
+  },
 
 }
 </script>
@@ -36,6 +58,21 @@ export default {
       height: 19px;
       background-color: #5A55F8;
       border-top: 1px solid #000000;
+    }
+  }
+
+  .section-portfolio-previews__content{
+    width: 100%;
+    background-color: #071C50;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6rem;
+    padding: 6rem 0;
+
+    .section-portfolio-preview__image > img{
+      width: 100%;
     }
   }
 
