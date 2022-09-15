@@ -1,10 +1,9 @@
 <template>
   <div class="section-portfolio-previews">
     <div class="section-portfolio-previews__title">
-      <div class="section-portfolio-previews__title-top">
-        <img src="/portfolio-title.svg" alt="portfolio">
-      </div>
-      <div class="section-portfolio-previews__title-bottom"></div>
+      <img src="/portfolio-title.svg" alt="portfolio">
+      <div class="section-portfolio-previews__title-top" />
+      <div class="section-portfolio-previews__title-bottom" />
     </div>
 
     <div class="section-portfolio-previews__content">
@@ -48,17 +47,25 @@ export default {
   width: 100%;
 
   .section-portfolio-previews__title{
-    height: 190px;
+    transform-style: preserve-3d;
+    perspective: 300px;
+    perspective-origin: bottom;
+    img{
+      position: absolute;
+      width: 100%;
+      z-index: 10;
+      margin-top: 5px;
+    }
 
     .section-portfolio-previews__title-top{
       background-color: #00D2F9;
       height: 150px;
-      img{
-        width: 100%;
-      }
     }
     .section-portfolio-previews__title-bottom{
-      height: 39px;
+      position: absolute;
+      width: 100%;
+
+      height: 30px;
       background-color: #5A55F8;
       border-top: 1px solid #000000;
     }
@@ -186,11 +193,8 @@ export default {
 
   /* Breakpoints begin here  */
 @media(max-width: 1285px) {
-  .section-portfolio-previews__title{
-    height: 150px !important;
-    .section-portfolio-previews__title-top{
-      height: 110px !important;
-    }
+  .section-portfolio-previews__title-top{
+    height: 110px !important;
   }
 }
 @media(max-width: 1145px) {
@@ -199,11 +203,8 @@ export default {
   }
 }
 @media(max-width: 850px) {
-  .section-portfolio-previews__title{
-    height: 110px !important;
-    .section-portfolio-previews__title-top{
-      height: 70px !important;
-    }
+  .section-portfolio-previews__title-top{
+    height: 70px !important;
   }
 }
 </style>

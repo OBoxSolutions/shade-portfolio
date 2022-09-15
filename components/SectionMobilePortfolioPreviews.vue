@@ -1,10 +1,9 @@
 <template>
     <div class="section-portfolio-previews">
       <div class="section-portfolio-previews__title">
-        <div class="section-portfolio-previews__title-top">
-          <img src="/portfolio-title.svg" alt="portfolio">
-        </div>
-        <div class="section-portfolio-previews__title-bottom"></div>
+        <img src="/portfolio-title.svg" alt="portfolio">
+        <div class="section-portfolio-previews__title-top" />
+        <div class="section-portfolio-previews__title-bottom" />
       </div>
 
       <div class="portfolio-previews__content">
@@ -55,16 +54,24 @@ export default {
 
 <style lang="scss" scoped>
   .section-portfolio-previews__title{
-    height: 90px;
+    transform-style: preserve-3d;
+    perspective: 300px;
+    perspective-origin: bottom;
+    img{
+      position: absolute;
+      width: 100%;
+      z-index: 10;
+      margin-top: 5px;
+    }
 
     .section-portfolio-previews__title-top{
       background-color: #00D2F9;
-      height: 70px;
-      img{
-        width: 100%;
-      }
+      height: 60px;
     }
     .section-portfolio-previews__title-bottom{
+      position: absolute;
+      width: 100%;
+
       height: 19px;
       background-color: #5A55F8;
       border-top: 1px solid #000000;
@@ -231,7 +238,7 @@ export default {
 }
   @media(max-width: 500px) {
   .section-portfolio-previews__title{
-    height: 60px !important;
+    height: 50px !important;
     .section-portfolio-previews__title-top{
       height: 40px !important;
     }
