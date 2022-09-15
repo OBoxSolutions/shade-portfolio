@@ -25,7 +25,7 @@
       </base-button>
 
     </div>
-    <div class="section-portfolio-previews__botton">
+    <div class="section-portfolio-previews__bottom">
       <h1 class="bottom-title">And many more!</h1>
       <div class="bottom-footer"></div>
     </div>
@@ -161,7 +161,7 @@ export default {
       }
     }
   }
-  .section-portfolio-previews__botton{
+  .section-portfolio-previews__bottom{
     height: 70px;
 
     .bottom-title{

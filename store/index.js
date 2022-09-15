@@ -1,10 +1,10 @@
 export const state = () => ({
   userName: '',
   portfolio: [
-    { image: '/portfolio/unborder.png', link: '#' },
-    { image: '/portfolio/cleaning-services.png', link: '#' },
-    { image: '/portfolio/cabbo.png', link: '#' },
-    { image: '/portfolio/flowers.png', link: '#' },
+    { name: 'Unborder', image: '/portfolio/unborder.png', link: '#' },
+    { name: 'Cleaning Services', image: '/portfolio/cleaning-services.png', link: '#' },
+    { name: 'Caboo', image: '/portfolio/cabbo.png', link: '#' },
+    { name: 'Flowers', image: '/portfolio/flowers.png', link: '#' },
   ],
 })
 
