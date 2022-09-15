@@ -30,9 +30,9 @@
 
         </div>
 
-        <!-- <base-button class="portfolio-button">
+        <base-button class="portfolio-button">
           <h1>Press Start</h1>
-        </base-button> -->
+        </base-button>
 
       </div>
 
@@ -106,10 +106,10 @@ export default {
           width: 100%;
         }
         .link-container{
-          width: 90%;
+          width: 80%;
           background-color: #49EA76;
           text-align: center;
-          padding: 10px 0;
+          padding: 12px 0;
           margin-bottom: 5px;
           a{
             font-family: 'Press Start 2P';
@@ -153,8 +153,49 @@ export default {
             border-bottom: 3px solid #000000;
           }
         }
-
       }
+      $botton-color: #F05757;
+      $botton-hover-color: #C24646;
+      .portfolio-button{
+        padding: 0 !important;
+        background-color: $botton-color;
+        border-radius: 5px;
+
+        transform-style: preserve-3d;
+        perspective: 100px;
+        perspective-origin: bottom;
+
+        h1{
+          width: 70%;
+          font-weight: 400;
+          margin: 1rem auto;
+          color: #ffffff;
+        }
+      &:hover{
+        background-color: $botton-hover-color;
+      }
+      &::before{
+        background-color: $botton-hover-color;
+        min-height: 11px;
+        width: calc(100% - 10px);
+        bottom: -10px;
+        left: 5px;
+        border-radius: 0;
+        transform: skewX(0);
+        transform: rotateX(-20deg);
+      }
+      &::after{
+        width: 0;
+      }
+      &:active {
+        transform: translateY(10px);
+        background-color: $botton-hover-color;
+
+        &::before {
+          min-height: 0;
+        }
+      }
+    }
 
     }
 
@@ -163,7 +204,7 @@ export default {
 
     .bottom-title{
       margin: 0;
-      height: 80%;
+      height: 50px;
       background-color: #49EA76;
       font-size: 1.2rem;
       font-weight: 400;
@@ -173,7 +214,7 @@ export default {
 
     }
     .bottom-footer{
-      height: 20%;
+      height: 16px;
       background-color: #33B758;
       border-top: 2px solid #000000;
       border-bottom: 2px solid #000000;

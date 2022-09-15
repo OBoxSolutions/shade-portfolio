@@ -166,7 +166,7 @@ export default {
 
     .bottom-title{
       margin: 0;
-      height: 80%;
+      height: 50px;
       background-color: #49EA76;
 
       font-weight: 400;
@@ -176,7 +176,7 @@ export default {
 
     }
     .bottom-footer{
-      height: 20%;
+      height: 16px;
       background-color: #33B758;
       border-top: 2px solid #000000;
       border-bottom: 2px solid #000000;
@@ -191,6 +191,11 @@ export default {
     .section-portfolio-previews__title-top{
       height: 110px !important;
     }
+  }
+}
+@media(max-width: 1145px) {
+  .portfolio-button > h1{
+    font-size: 2rem !important;
   }
 }
 @media(max-width: 850px) {
