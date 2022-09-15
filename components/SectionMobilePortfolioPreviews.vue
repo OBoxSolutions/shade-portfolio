@@ -21,7 +21,9 @@
               </div>
             </div>
             <div class="corners">
-              <div class="__center" />
+              <div class="__center-wrap">
+                <div class="__center" />
+              </div>
               <div class="__right" />
             </div>
           </div>
@@ -96,6 +98,7 @@ export default {
         align-items: center;
         width: 40%;
         background-color: #FFFFFF;
+        border-right: 3px solid #000000;
         h1{
           font-size: 1rem;
           color: #000000;
@@ -121,27 +124,39 @@ export default {
         position: relative;
         display: flex;
         width: 60%;
-        .__center{
+        .__center-wrap{
+          position: relative;
           width: 30%;
+          height: calc(100% + 2px);
+          z-index: 5;
+          background: #000000;
           clip-path: polygon(0 0, 25% 36%, 25% 70%, 0% 100%);
-          background-color: #352FCF;
-          border: 2px solid #000000;
+
+
+          .__center{
+            position: absolute;
+            top: 0px;
+            left: -4px;
+            right: -2px;
+            bottom: 0px;
+            clip-path: polygon(0 0, 25% 36%, 25% 70%, 0% 100%);
+            background-color: #352FCF;
+          }
         }
-        .__right{
-          position: absolute;
-          width: calc(100% - 4px);
-          height: 100px;
-          right: 0;
-          clip-path: polygon(0 1%, 100% 0%, 100% 30%, 8% 30%);
-          background-color: #352FCF;
-          border: 2px solid #000000;
+          .__right{
+            position: absolute;
+            width: 100%;
+            height: 31%;
+            right: 0;
+            background-color: #4E49DE;
+            border-top: 3px solid #000000;
+            border-bottom: 3px solid #000000;
+          }
         }
 
       }
 
     }
-
-  }
 
   .section-portfolio-previews__bottom{
     height: 70px;
