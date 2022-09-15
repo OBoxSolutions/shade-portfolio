@@ -35,7 +35,8 @@ export default {
   plugins: [
     { src: '~/plugins/calendar', mode: 'client' },
     { src: '~/plugins/breakpoint', mode: 'client' },
-    '~/plugins/firebase.js'],
+    '~/plugins/firebase.js',
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
