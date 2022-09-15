@@ -1,14 +1,13 @@
 <template>
   <div class="section-portfolio-previews">
     <div class="section-portfolio-previews__title">
-      <div class="section-portfolio-previews__title-top">
-        <img src="/portfolio-title.svg" alt="portfolio">
-      </div>
-      <div class="section-portfolio-previews__title-bottom"></div>
+      <img src="/portfolio-title.svg" alt="portfolio">
+      <div class="section-portfolio-previews__title-top" />
+      <div class="section-portfolio-previews__title-bottom" />
     </div>
 
     <div class="section-portfolio-previews__content">
-      <div v-for="(preview, index) in previews" :key="`preview-${index}`" class="section-portfolio-preview">
+      <div v-for="(preview, index) in getPortfolio" :key="`preview-${index}`" class="section-portfolio-preview">
         <div class="section-portfolio-preview__image">
           <img :src="preview.image" alt="preview-image">
         </div>
@@ -25,28 +24,19 @@
       </base-button>
 
     </div>
-    <div class="section-portfolio-previews__botton">
+    <div class="section-portfolio-previews__bottom">
       <h1 class="bottom-title">And many more!</h1>
       <div class="bottom-footer"></div>
     </div>
-
-
   </div>
 </template>
 
 <script>
-import BaseButton from './BaseButton.vue'
+import { mapGetters } from "vuex"
+
 export default {
-  components: { BaseButton },
-  data() {
-    return {
-      previews: [
-        { image: '/portfolio/unborder.png', link: '' },
-        { image: '/portfolio/cleaning-services.png', link: '' },
-        { image: '/portfolio/cabbo.png', link: '' },
-        { image: '/portfolio/flowers.png', link: '' },
-      ],
-    }
+  computed: {
+    ...mapGetters(['getPortfolio']),
   },
 
 }
@@ -57,17 +47,25 @@ export default {
   width: 100%;
 
   .section-portfolio-previews__title{
-    height: 190px;
+    transform-style: preserve-3d;
+    perspective: 300px;
+    perspective-origin: bottom;
+    img{
+      position: absolute;
+      width: 100%;
+      z-index: 10;
+      margin-top: 5px;
+    }
 
     .section-portfolio-previews__title-top{
       background-color: #00D2F9;
       height: 150px;
-      img{
-        width: 100%;
-      }
     }
     .section-portfolio-previews__title-bottom{
-      height: 39px;
+      position: absolute;
+      width: 100%;
+
+      height: 30px;
       background-color: #5A55F8;
       border-top: 1px solid #000000;
     }
@@ -170,12 +168,12 @@ export default {
       }
     }
   }
-  .section-portfolio-previews__botton{
+  .section-portfolio-previews__bottom{
     height: 70px;
 
     .bottom-title{
       margin: 0;
-      height: 80%;
+      height: 50px;
       background-color: #49EA76;
 
       font-weight: 400;
@@ -185,11 +183,28 @@ export default {
 
     }
     .bottom-footer{
-      height: 20%;
+      height: 16px;
       background-color: #33B758;
       border-top: 2px solid #000000;
       border-bottom: 2px solid #000000;
     }
+  }
+}
+
+  /* Breakpoints begin here  */
+@media(max-width: 1285px) {
+  .section-portfolio-previews__title-top{
+    height: 110px !important;
+  }
+}
+@media(max-width: 1145px) {
+  .portfolio-button > h1{
+    font-size: 2rem !important;
+  }
+}
+@media(max-width: 850px) {
+  .section-portfolio-previews__title-top{
+    height: 70px !important;
   }
 }
 </style>
