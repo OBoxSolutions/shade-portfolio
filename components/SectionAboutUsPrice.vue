@@ -1,55 +1,60 @@
 <template>
   <div class="section-about-us-price">
-    <div class="cube cube-price">
-      <div class="side cube-front-side">
-        <div class="px-5">
-          <h2>Price</h2>
-          <p>
-            How much does it cost to make a website? The cost will be handpicked
-            just for you after we get a rough idea of your project. Generally,
-            the price is a deal breaker for a lot of people, that's why we
-            evaluate it very carefully and personally for the client, to make it
-            as accurate, reasonable, and affordable as possible. When choosing
-            the price for the client there are a lot of factors involved so we
-            can choose a fair price. Broadly speaking we look at the complexity
-            of the project, and the communication between the two parties. We
-            are also looking at which team of our talent will be making the
-            website, you know, a lot of designers need to eat and also, they
-            have rent or what not.
-          </p>
+    <section-about-us-price-small-screen
+      v-if="$breakpoints.isSmAndDown"
+    ></section-about-us-price-small-screen>
+    <div v-else>
+      <div class="cube cube-price">
+        <div class="side cube-front-side">
+          <div class="px-5">
+            <h2>Price</h2>
+            <p>
+              How much does it cost to make a website? The cost will be
+              handpicked just for you after we get a rough idea of your project.
+              Generally, the price is a deal breaker for a lot of people, that's
+              why we evaluate it very carefully and personally for the client,
+              to make it as accurate, reasonable, and affordable as possible.
+              When choosing the price for the client there are a lot of factors
+              involved so we can choose a fair price. Broadly speaking we look
+              at the complexity of the project, and the communication between
+              the two parties. We are also looking at which team of our talent
+              will be making the website, you know, a lot of designers need to
+              eat and also, they have rent or what not.
+            </p>
+          </div>
         </div>
+        <div class="side cube-down-side"></div>
       </div>
-      <div class="side cube-down-side"></div>
-    </div>
-    <div class="connector-line connector-line-middle">
-      <div>Some text</div>
-    </div>
+      <div class="connector-line connector-line-middle">
+        <div>Some text</div>
+      </div>
 
-    <empty-cube
-      class="cube cube-right-of-price"
-      side-width="30px"
-      perspective="initial"
-      rotation="130deg"
-      background-color="#ffac06"
-      :right="false"
-    >
-      <template #left>
-        <div class="side-hole-left-wrapper">
-          <img
-            src="/side-hole-big-size.svg"
-            alt="Depicts a hole to the side of the cube"
-          />
-        </div>
-      </template>
-      <template #title>
-        <div class="rotated-text">Technical talk</div>
-      </template>
-    </empty-cube>
-    <div class="cube cube-left-under-price">
-      <div class="side cube-front-side"></div>
-      <div class="side cube-right-side"></div>
+      <empty-cube
+        class="cube cube-right-of-price"
+        side-width="30px"
+        perspective="initial"
+        rotation="130deg"
+        background-color="#ffac06"
+        :right="false"
+      >
+        <template #left>
+          <div class="side-hole-left-wrapper">
+            <img
+              src="/side-hole-big-size.svg"
+              alt="Depicts a hole to the side of the cube"
+            />
+          </div>
+        </template>
+        <template #title>
+          <div class="rotated-text">Technical talk</div>
+        </template>
+      </empty-cube>
+      <div class="cube cube-left-under-price">
+        <div class="side cube-front-side"></div>
+        <div class="side cube-right-side"></div>
+      </div>
+      <div class="bottom"></div>
     </div>
-    <div class="bottom"></div>
   </div>
 </template>
 
