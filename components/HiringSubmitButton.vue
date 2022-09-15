@@ -19,6 +19,7 @@ export default {
 $perspective: 300px;
 
 .hiring-submit{
+  position: relative;
   transform-style: preserve-3d;
   perspective: $perspective;
   perspective-origin: bottom;
