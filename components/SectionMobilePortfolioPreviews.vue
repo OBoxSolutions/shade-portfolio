@@ -82,7 +82,7 @@ export default {
     padding: 6rem 0;
 
     .portfolio-preview__image{
-      padding-bottom: 1rem;
+      padding: .5rem;
       background-color: #FFFFFF;
       img{
         width: 100%;
