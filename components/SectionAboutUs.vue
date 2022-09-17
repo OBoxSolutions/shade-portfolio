@@ -25,12 +25,7 @@
         supposed to be taken seriously, unless...
       </p>
     </app-card>
-    <simple-cube
-      v-else
-      title="Lorem Ipsum"
-      class="section-description mx-auto"
-      bottom
-    >
+    <simple-cube v-else class="section-description mx-auto" bottom>
       <p>
         WebDo started in the April of 2022, with a small but very talented team
         of designers, programmers, and managers to deliver what you deserve, and
