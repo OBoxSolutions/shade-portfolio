@@ -19,8 +19,8 @@
           for yourself.
         </template>
       </empty-cube>
+      <div class="connector-line"></div>
     </div>
-    <div class="connector-line"></div>
     <div v-if="!$breakpoints.isSmAndDown" class="image">
       <img
         src="/pixelated-handshake.png"
@@ -55,6 +55,10 @@ export default {
   }
 }
 
+.content {
+  position: relative;
+}
+
 .cube-wrapper {
   width: calc(100% - 100px);
   position: relative;
@@ -68,21 +72,15 @@ export default {
 
 .connector-line {
   $connector-line-height: 120px;
-  $connector-line-width: 34%;
+  $connector-line-width: 40%;
 
   width: $connector-line-width;
   height: $connector-line-height;
   position: absolute;
-  left: 540px;
+  left: calc(100% + 7px);
   top: calc(50% - calc($connector-line-height / 2));
   background-color: #d9d9d9;
   z-index: 10;
-}
-
-@media screen and (min-width: 991px) {
-  .connector-line {
-    left: 867px;
-  }
 }
 
 .image {

@@ -6,8 +6,8 @@
         alt="Pixelated image describing a handshake"
       />
     </div>
-    <div class="connector-line"></div>
     <div class="cube-wrapper">
+      <div class="connector-line"></div>
       <empty-cube
         class="content"
         :perspective="$breakpoints.isSmAndDown ? '400px' : '600px'"
@@ -77,21 +77,15 @@ export default {
 
 .connector-line {
   $connector-line-height: 120px;
-  $connector-line-width: 34%;
+  $connector-line-width: 40%;
 
   width: $connector-line-width;
   height: $connector-line-height;
   position: absolute;
-  right: 540px;
+  right: calc(100% + 7px);
   top: calc(50% - calc($connector-line-height / 2));
   background-color: #d9d9d9;
   z-index: 10;
-}
-
-@media screen and (min-width: 991px) {
-  .connector-line {
-    right: 867px;
-  }
 }
 
 .image {
