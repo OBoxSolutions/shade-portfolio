@@ -1,6 +1,6 @@
 <template>
   <div class="section-partnership">
-    <div v-if="!$breakpoints.isSmAndDown" class="image">
+    <div v-if="!breakpoints.isSmAndDown" class="image">
       <img
         src="/pixel-art-clock.png"
         alt="Pixelated image describing a handshake"
@@ -10,8 +10,8 @@
       <div class="connector-line"></div>
       <empty-cube
         class="content"
-        :perspective="$breakpoints.isSmAndDown ? '400px' : '600px'"
-        :side-width="$breakpoints.isSmAndDown ? '120px' : '190px'"
+        :perspective="breakpoints.isSmAndDown ? '400px' : '600px'"
+        :side-width="breakpoints.isSmAndDown ? '120px' : '190px'"
         :right="false"
       >
         <template #title> Time Commitment </template>
@@ -33,8 +33,13 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
   name: 'SectionAboutUsPartnership',
+  computed: {
+    ...mapState(['breakpoints']),
+  },
 }
 </script>
 

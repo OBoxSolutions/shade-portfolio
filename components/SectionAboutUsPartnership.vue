@@ -3,8 +3,8 @@
     <div class="cube-wrapper">
       <empty-cube
         class="content"
-        :perspective="$breakpoints.isSmAndDown ? '400px' : '600px'"
-        :side-width="$breakpoints.isSmAndDown ? '120px' : '190px'"
+        :perspective="breakpoints.isSmAndDown ? '400px' : '600px'"
+        :side-width="breakpoints.isSmAndDown ? '120px' : '190px'"
         :left="false"
       >
         <template #title> Partnership </template>
@@ -21,7 +21,7 @@
       </empty-cube>
       <div class="connector-line"></div>
     </div>
-    <div v-if="!$breakpoints.isSmAndDown" class="image">
+    <div v-if="!breakpoints.isSmAndDown" class="image">
       <img
         src="/pixelated-handshake.png"
         alt="Pixelated image describing a handshake"
@@ -31,8 +31,13 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
   name: 'SectionAboutUsPartnership',
+  computed: {
+    ...mapState(['breakpoints']),
+  },
 }
 </script>
 

@@ -3,7 +3,7 @@
     <section-about-us-headers
       class="section-headers"
     ></section-about-us-headers>
-    <app-card v-if="$breakpoints.isSmAndDown" class="section-description-card">
+    <app-card v-if="breakpoints.isSmAndDown" class="section-description-card">
       <p>
         WebDo started in the April of 2022, with a small but very talented team
         of designers, programmers, and managers to deliver what you deserve, and
@@ -57,12 +57,17 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 import SectionAboutUsHeaders from './SectionAboutUsHeaders.vue'
 
 export default {
   name: 'SectionAboutUs',
   components: {
     SectionAboutUsHeaders,
+  },
+  computed: {
+    ...mapState(['breakpoints']),
   },
 }
 </script>

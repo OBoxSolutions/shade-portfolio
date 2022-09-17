@@ -1,7 +1,7 @@
 <template>
   <div class="section-hero">
     <section-hero-small-screen
-      v-if="$breakpoints.isSmAndDown"
+      v-if="breakpoints.isSmAndDown"
     ></section-hero-small-screen>
     <div v-else class="first-section">
       <div class="navbar-wrapper mx-auto">
@@ -28,8 +28,13 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
   name: 'SectionHero',
+  computed: {
+    ...mapState(['breakpoints']),
+  },
 }
 </script>
 
