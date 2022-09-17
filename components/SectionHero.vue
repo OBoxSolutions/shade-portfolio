@@ -1,6 +1,8 @@
 <template>
   <div class="section-hero">
-    <section-hero-small-screen v-if="isSmall"></section-hero-small-screen>
+    <section-hero-small-screen
+      v-if="$breakpoints.isSmAndDown"
+    ></section-hero-small-screen>
     <div v-else class="first-section">
       <div class="navbar-wrapper mx-auto">
         <div class="navbar-content"></div>
@@ -28,26 +30,6 @@
 <script>
 export default {
   name: 'SectionHero',
-  data() {
-    return {
-      isSmall: false,
-    }
-  },
-  mounted() {
-    this.$breakpoints.on('xs sm', {
-      enter: () => {
-        this.setSmallScreen(true)
-      },
-      leave: () => {
-        this.setSmallScreen(false)
-      },
-    })
-  },
-  methods: {
-    setSmallScreen(isSmall) {
-      this.isSmall = isSmall
-    },
-  },
 }
 </script>
 
