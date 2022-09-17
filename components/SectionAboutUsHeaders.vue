@@ -93,7 +93,8 @@ $headers-rotation-x-degrees: 2deg;
 
   h2 {
     font-size: 1.4rem;
-    padding-left: 10px !important;
+    padding-top: 20px;
+    padding-left: 20px !important;
     padding-right: 10px !important;
   }
 
