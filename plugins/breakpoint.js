@@ -5,6 +5,7 @@ export default (context, inject) => {
   Breakpoints()
   inject('breakpoints', Breakpoints)
   isSmAndDown(Breakpoints)
+  isMdAndDown(Breakpoints)
 }
 
 function isSmAndDown(breakpoints) {
@@ -15,6 +16,18 @@ function isSmAndDown(breakpoints) {
     },
     leave: () => {
       set(breakpoints, 'isSmAndDown', false)
+    },
+  })
+}
+
+function isMdAndDown(breakpoints) {
+  breakpoints.isMdAndDown = undefined
+  breakpoints.on('xs sm md', {
+    enter: () => {
+      set(breakpoints, 'isMdAndDown', true)
+    },
+    leave: () => {
+      set(breakpoints, 'isMdAndDown', false)
     },
   })
 }
