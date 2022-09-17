@@ -1,5 +1,5 @@
 <template>
-  <div v-if="isSmall">
+  <div v-if="breakpoints.isSmAndDown">
     <section-mobile-portfolio-header></section-mobile-portfolio-header>
     <section-mobile-portfolio-previews></section-mobile-portfolio-previews>
   </div>
@@ -10,31 +10,13 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 
 export default {
-  data() {
-    return {
-      isSmall: false,
-    }
-  },
-  mounted() {
-    this.$breakpoints.on('xs', {
-      enter: () => {
-        this.setSmallScreen(true)
-      },
-      leave: () => {
-        this.setSmallScreen(false)
-      },
-    })
-  },
-  methods: {
-    setSmallScreen(isSmall) {
-      this.isSmall = isSmall
-    },
+  computed: {
+    ...mapState(['breakpoints']),
   },
 }
 </script>
 
-<style scoped lang="scss">
-
-</style>
+<style scoped lang="scss"></style>
