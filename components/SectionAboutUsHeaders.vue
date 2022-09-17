@@ -99,6 +99,8 @@ $headers-rotation-x-degrees: 2deg;
 
   @media screen and (min-width: 700px) {
     h2 {
+      padding-left: 4em !important;
+      padding-right: 2em !important;
       font-size: 3rem;
     }
   }
