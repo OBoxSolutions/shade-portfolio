@@ -1,18 +1,20 @@
 import Breakpoints from 'breakpoints-js'
+import { set } from 'vue'
 
 export default (context, inject) => {
   Breakpoints()
-  isSmAndDown(Breakpoints)
   inject('breakpoints', Breakpoints)
+  isSmAndDown(Breakpoints)
 }
 
 function isSmAndDown(breakpoints) {
+  breakpoints.isSmAndDown = undefined
   breakpoints.on('xs sm', {
     enter: () => {
-      breakpoints.isSmAndDown = true
+      set(breakpoints, 'isSmAndDown', true)
     },
     leave: () => {
-      breakpoints.isSmAndDown = false
+      set(breakpoints, 'isSmAndDown', false)
     },
   })
 }
