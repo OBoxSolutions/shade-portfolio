@@ -16,9 +16,11 @@
         front-side-background-color="#ffac06"
         other-sides-background-color="#15AAAA"
       >
-        We are a website design company, WebDo. The sole purpose of our
-        existence is to create something you like. Truth be told, we just love
-        making websites!
+        <p>
+          We are a website design company, WebDo. The sole purpose of our
+          existence is to create something you like. Truth be told, we just love
+          making websites!
+        </p>
       </simple-cube>
     </div>
 
@@ -137,12 +139,20 @@ $border-style: 1px solid #877432;
 
 .cube-wrapper {
   position: absolute;
-  width: 100%;
+  width: calc(100% - 4px);
   left: 0;
   top: 160px;
 
   .cube {
     height: 360px;
+    border: 2px solid black;
+
+    p {
+      text-align: center;
+      font-family: 'Press Start 2P', 'Lucida Sans', 'Lucida Sans Regular',
+        'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif !important;
+      border-bottom: 2px solid black;
+    }
   }
 }
 
