@@ -1,33 +1,14 @@
 import Breakpoints from 'breakpoints-js'
-import { set } from 'vue'
 
-export default (context, inject) => {
-  Breakpoints()
-  inject('breakpoints', Breakpoints)
-  isSmAndDown(Breakpoints)
-  isMdAndDown(Breakpoints)
-}
+Breakpoints()
 
-function isSmAndDown(breakpoints) {
-  breakpoints.isSmAndDown = undefined
-  breakpoints.on('xs sm', {
+export function plugin(store) {
+  Breakpoints.on('xs sm', {
     enter: () => {
-      set(breakpoints, 'isSmAndDown', true)
+      store.commit('setBreakpoints', { isSmAndDown: true })
     },
     leave: () => {
-      set(breakpoints, 'isSmAndDown', false)
-    },
-  })
-}
-
-function isMdAndDown(breakpoints) {
-  breakpoints.isMdAndDown = undefined
-  breakpoints.on('xs sm md', {
-    enter: () => {
-      set(breakpoints, 'isMdAndDown', true)
-    },
-    leave: () => {
-      set(breakpoints, 'isMdAndDown', false)
+      store.commit('setBreakpoints', { isSmAndDown: false })
     },
   })
 }
