@@ -58,7 +58,7 @@ $border-style: 1px solid #877432;
   font-size: 80px;
 }
 
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 900px) {
   .press-start-container {
     width: 45%;
     height: 500px;
@@ -78,7 +78,7 @@ $border-style: 1px solid #877432;
   }
 }
 
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 900px) {
   .base-button-small-wrapper {
     display: none;
   }
@@ -91,7 +91,7 @@ $border-style: 1px solid #877432;
   border-radius: 10px;
 }
 
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 900px) {
   .base-button {
     display: block;
   }
@@ -114,7 +114,7 @@ $border-style: 1px solid #877432;
   font-size: 40px;
 }
 
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 900px) {
   .hire-team-subcontainer {
     height: 450px;
   }
@@ -129,7 +129,7 @@ $border-style: 1px solid #877432;
   padding: 5px 0 0px 20px;
 }
 
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 900px) {
   .hire-team-subcontainer {
     display: block;
   }
@@ -146,7 +146,7 @@ $border-style: 1px solid #877432;
   }
 }
 
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 900px) {
   .cube-wrapper {
     display: none;
   }
