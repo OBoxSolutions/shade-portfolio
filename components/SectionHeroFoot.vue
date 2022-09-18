@@ -1,7 +1,9 @@
 <template>
   <div class="content">
     <div class="press-start-container">
-      <base-button class="w-full py-1 base-button"> Press start </base-button>
+      <base-button class="w-full py-1 base-button button--red">
+        Press start
+      </base-button>
     </div>
     <div class="divider"></div>
     <div class="hire-team-container">
