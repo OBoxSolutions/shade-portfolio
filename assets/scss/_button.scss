@@ -1,0 +1,52 @@
+$button-bg-color: #d9d9d9;
+$button-bg-color-hover: #929292;
+$button-bg-color-active: #969696;
+$button-sides-bg-color: #747474;
+
+.button {
+  transform-style: preserve-3d;
+  background-color: $button-bg-color;
+  position: relative;
+  border: none;
+  color: black;
+  cursor: pointer;
+  transition: linear 0.1s all;
+  text-transform: uppercase;
+
+  .side {
+    position: absolute;
+    transition: linear 0.1s all;
+  }
+
+  .button__bottom-side {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $button-sides-bg-color;
+    border-radius: inherit;
+    transform: translate3d(0, 0.2em, -1em);
+  }
+
+  &:hover {
+    background-color: $button-bg-color-hover;
+  }
+
+  &:active {
+    transform: translate3d(0, 0.2em, -1em);
+    background-color: $button-bg-color-active;
+
+    .button__bottom-side {
+      transform: translate3d(0, 0em, -1em);
+    }
+  }
+}
+
+.button--flat {
+  &::before,
+  &::after {
+    display: none;
+  }
+}
