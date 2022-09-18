@@ -36,7 +36,7 @@ $headers-rotation-x-degrees: 2deg;
 .second-header-cube {
   width: 100%;
   padding: 20px 0px;
-  text-align: center;
+  text-align: left;
   border: 3px solid black;
   z-index: 100;
   transform-style: preserve-3d;
@@ -69,11 +69,34 @@ $headers-rotation-x-degrees: 2deg;
   perspective-origin: -1700%;
 
   h2 {
-    font-size: 3.2rem;
+    padding-left: 0.1em;
+    font-size: 2.2rem;
+  }
+
+  @media screen and (min-width: 640px) {
+    h2 {
+      padding-left: 0.5em;
+      font-size: 3.2rem;
+    }
   }
 
   @media screen and (min-width: 700px) {
     h2 {
+      padding-left: 0.5em;
+      font-size: 4rem;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    h2 {
+      padding-left: 0.4em;
+      font-size: 4.6rem;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    h2 {
+      padding-left: 1em;
       font-size: 6.2rem;
     }
   }
@@ -98,11 +121,39 @@ $headers-rotation-x-degrees: 2deg;
     padding-right: 10px !important;
   }
 
-  @media screen and (min-width: 700px) {
+  @media screen and (min-width: 640px) {
     h2 {
-      padding-left: 4em !important;
+      padding-left: 2em !important;
       padding-right: 2em !important;
-      font-size: 3rem;
+      font-size: 2rem;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    h2 {
+      padding-left: 0.2em;
+      font-size: 3.2rem;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    h2 {
+      padding-left: 1em;
+      font-size: 4em;
+    }
+  }
+
+  @media screen and (min-width: 1280px) {
+    h2 {
+      padding-left: 1em;
+      font-size: 4.8em;
+    }
+  }
+
+  @media screen and (min-width: 1536px) {
+    h2 {
+      padding-left: 1em;
+      font-size: 6.2rem;
     }
   }
 }
