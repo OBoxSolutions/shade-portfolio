@@ -44,6 +44,28 @@ $button-sides-bg-color: #747474;
   }
 }
 
+.button--red {
+  $button-bg-color: #f05757;
+  $button-bg-color-hover: #929292;
+  $button-bg-color-active: #969696;
+  $button-sides-bg-color: #d43737;
+
+  background-color: $button-bg-color;
+  color: white;
+
+  .button__bottom-side {
+    background-color: $button-sides-bg-color;
+  }
+
+  &:hover {
+    background-color: $button-bg-color-hover;
+  }
+
+  &:active {
+    background-color: $button-bg-color-active;
+  }
+}
+
 .button--flat {
   &::before,
   &::after {
