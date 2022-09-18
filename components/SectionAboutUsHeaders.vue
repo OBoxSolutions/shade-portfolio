@@ -132,28 +132,28 @@ $headers-rotation-x-degrees: 2deg;
   @media screen and (min-width: 768px) {
     h2 {
       padding-left: 0.2em;
-      font-size: 3.2rem;
+      font-size: 2.4rem;
     }
   }
 
   @media screen and (min-width: 1024px) {
     h2 {
       padding-left: 1em;
-      font-size: 4em;
+      font-size: 3em;
     }
   }
 
   @media screen and (min-width: 1280px) {
     h2 {
       padding-left: 1em;
-      font-size: 4.8em;
+      font-size: 3.6em;
     }
   }
 
   @media screen and (min-width: 1536px) {
     h2 {
       padding-left: 1em;
-      font-size: 6.2rem;
+      font-size: 4rem;
     }
   }
 }
