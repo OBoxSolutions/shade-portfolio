@@ -29,7 +29,7 @@
 
         </div>
 
-        <base-button class="portfolio-button">
+        <base-button only-bottom class="portfolio-button">
           <h1>Press Start</h1>
         </base-button>
 
