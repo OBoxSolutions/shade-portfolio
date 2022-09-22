@@ -33,6 +33,7 @@ export default {
     background: url('/retro-macintosh.png') right no-repeat, url('/hiring-cover-up.png');
     background-size: contain;
     background-position-x: calc(100% + 50px);
+    background-position-y: calc(100% + 5px);
 
     .title-container{
       width: 10rem;
