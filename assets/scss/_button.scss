@@ -18,7 +18,7 @@ $button-sides-bg-color: #747474;
     transition: linear 0.1s all;
   }
 
-  .buttonBottomSide {
+  .button__bottom-side {
     width: 100%;
     height: 100%;
     top: 0;
@@ -29,7 +29,7 @@ $button-sides-bg-color: #747474;
     border-radius: inherit;
     transform: translate3d(0, 0.2em, -1em);
   }
-  .start {
+  .button__only-bottom {
     width: calc(100% - 15px);
     min-height: 15px;
     height: unset;
@@ -50,10 +50,10 @@ $button-sides-bg-color: #747474;
     transform: translate3d(0, 0.2em, -1em);
     background-color: $button-bg-color-active;
 
-    .buttonBottomSide {
+    .button__bottom-side {
       transform: translate3d(0, 0em, -1em);
     }
-    .start{
+    .button__only-bottom{
       min-height: 0;
       transform: translateY(-14px);
     }
@@ -69,7 +69,7 @@ $button-sides-bg-color: #747474;
   background-color: $button-bg-color;
   color: white;
 
-  .buttonBottomSide {
+  .button__bottom-side {
     background-color: $button-sides-bg-color;
   }
 

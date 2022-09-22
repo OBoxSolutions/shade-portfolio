@@ -8,7 +8,7 @@
     <slot></slot>
     <span class="side button__left-side"></span>
     <span class="side button__right-side"></span>
-    <span :class="{ start: onlyBottom, buttonBottomSide: !onlyBottom }" class="side"></span>
+    <span :class="{ 'button__only-bottom': onlyBottom, 'button__bottom-side': !onlyBottom }" class="side"></span>
   </button>
 </template>
 
