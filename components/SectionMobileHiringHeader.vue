@@ -24,7 +24,8 @@ export default {
   .__top{
     margin-top: 4rem;
     height: 50%;
-    background: url('/hiring-cover-up.png');
+    background: url('/retro-macintosh.png') right no-repeat, url('/hiring-cover-up.png');
+    background-size: contain;
   }
   .__bottom{
     height: 50%;
