@@ -6,7 +6,11 @@
       </div>
     </div>
     <div class="__bottom">
-
+      <div class="__bottom-text-wraper">
+        <div class="__text">
+          <p>So, want to work for us huh? Alright. Fill out the basic information thing and answer all the questions provided below. Once you’re finished, relax a little while we finish our bit and reach out to you. By the way, DO NOT misinput your email. Make sure the email is typed correctly and that it’s the one you have access to. I mean we know that’s it’s pretty simple to just type in your email, but also, it’s pretty frustrating when people don’t do that!!!</p>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -51,6 +55,31 @@ export default {
     background-color: #FFAC06;
     display: flex;
     flex-direction: column;
+
+    .__bottom-text-wraper{
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .__text{
+        background-color: #CC8800;
+        width: 90%;
+        border: 2px solid #000000;
+        box-shadow: inset 0px 4px 7px 2px rgba(0, 0, 0, 0.25);
+        border-radius: 1rem;
+
+        p{
+          padding: 1px .5rem;
+          font-family: 'Lucida Console', sans-serif;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 1rem;
+          text-align: center;
+          color: #FFFFFF;
+        }
+      }
+    }
   }
 }
 </style>
