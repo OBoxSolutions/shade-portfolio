@@ -80,7 +80,7 @@ export default {
 }
 .section-hiring-form{
   border-top: 2px solid #000000;
-  border-bottom: 1px solid #000000;
+  border-bottom: 2px solid #000000;
   background-color: #D43737;
 
   h1{
@@ -191,10 +191,10 @@ export default {
 .form-bottom-side{
   z-index: 10;
   position: absolute;
-  height: 40px;
+  height: 30px;
   width: 100%;
   background-color: #AD23DE;;
-  bottom: -20px;
-  transform: rotateX(-50deg) translateY(20px);
+  bottom: -18px;
+  transform: rotateX(-35deg) translateY(11px);
 }
 </style>

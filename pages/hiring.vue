@@ -2,6 +2,7 @@
   <div v-if="breakpoints.isSmAndDown">
     <section-mobile-hiring-header />
     <section-mobile-hiring-information-form />
+    <section-mobile-hiring-questions />
   </div>
   <div v-else>
     <section-hiring-header />

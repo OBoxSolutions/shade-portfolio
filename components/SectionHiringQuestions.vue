@@ -14,11 +14,9 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
-import SectionHiringQuestionTabs from './SectionHiringQuestionTabs.vue'
+import { mapGetters } from "vuex"
 
 export default {
-  components: { SectionHiringQuestionTabs },
   computed: {
     ...mapGetters(['getUserName']),
   },
@@ -35,14 +33,14 @@ export default {
   .section-questions__outside-box{
     background-color: #8A8A8A;
     width: 88%;
-    height: 100%; //remove when content have added
+    height: 100%;
     margin: auto;
     margin-bottom: 1rem;
 
     .section-questions__inside-box{
       background-color: #DBDBDB;
       width: 95%;
-      height: 100%; //remove when content have added
+      height: 100%;
       margin: auto;
 
       display: flex;
