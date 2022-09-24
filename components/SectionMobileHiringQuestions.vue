@@ -1,9 +1,12 @@
 <template>
   <div class="section-questions__outside-box">
     <div class="section-questions__inside-box">
-      <!-- <div class="questions-white-box">
-        <section-hiring-question-tabs class="questions" />
-      </div> -->
+      <div class="question-container">
+        <div class="question-title">
+          <h1>Question</h1>
+        </div>
+        <textarea-input-answer class="question-answer" />
+      </div>
     </div>
   </div>
 </template>
@@ -20,6 +23,7 @@ export default {
     width: 100%;
     height: 900px;
     margin: auto;
+    position: relative;
 
     .section-questions__inside-box{
       background-color: #DBDBDB;
@@ -27,8 +31,9 @@ export default {
       height: 100%;
       margin: auto;
 
-      display: flex;
-      flex-direction: column;
+
+      // display: flex;
+      // flex-direction: column;
 
       // .questions-white-box{
       //   background-color: #FFFFFF;
