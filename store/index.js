@@ -67,6 +67,7 @@ export const state = () => ({
       answer: '',
       file: null },
   ],
+  mobileFiles: []
 })
 
 export const mutations = {
@@ -80,6 +81,9 @@ export const mutations = {
   setFileToQuestion: ( state, { question, file } ) => {
     const index = state.questions.indexOf(question)
     state.questions[index].file = file
+  },
+  setMobileFiles: ( state, files ) => {
+    state.mobileFiles = files
   },
 
   setBreakpoints: (state, breakpoints) =>

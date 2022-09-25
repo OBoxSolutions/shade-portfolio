@@ -9,13 +9,37 @@
         <textarea-input-answer  class="input-answer" @answer="updateAnswer(question, $event)" />
       </div>
     </div>
+    <div class="upload-files-wraper">
+      <FilePond
+      ref="pond"
+      class="filepond"
+      name="filepong"
+      allow-multiple="true"
+      credits="false"
+      style-button-remove-item-position='right'
+      label-idle="Select files here to send them"
+      :onaddfile="updateFiles"
+      :onremovefile="updateFiles"
+
+      >
+      </FilePond>
+      <div class="upload-file-image">
+        <img src="/upload-file.svg" alt="upload-file-picture">
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
+import vueFilePond from 'vue-filepond'
+import 'filepond/dist/filepond.min.css'
+
 import { mapState, mapMutations } from "vuex"
 export default {
   name: 'SectionMobileHiringQuestions',
+    components: {
+    FilePond: vueFilePond()
+  },
   computed: {
     ...mapState(['questions']),
   },
@@ -23,16 +47,25 @@ export default {
     document.getElementById('lineCounter').style.setProperty('height', '18rem', 'important')
   },
   methods: {
-    ...mapMutations(['setAnswerToQuestion', 'setFileToQuestion']),
+    ...mapMutations(['setAnswerToQuestion', 'setFileToQuestion', 'setMobileFiles']),
     updateAnswer(question, answer){
       this.setAnswerToQuestion({question, answer})
     },
+    updateFiles(){
+      const uploadFiles = []
+      const allFiles = this.$refs.pond.getFiles()
+      allFiles.forEach(element => {
+        uploadFiles.push(element.file)
+      })
+      this.setMobileFiles(uploadFiles)
+    }
   },
 
 }
 </script>
 
 <style lang="scss" scoped>
+
   .section-questions__outside-box{
     background: linear-gradient(to right, #8A8A8A 6.5%,#8A8A8A 6.5%,#DBDBDB 6.5%,#DBDBDB 93%,#8A8A8A 93%);;
     width: 100%;
@@ -70,4 +103,21 @@ export default {
       }
     }
   }
+  .upload-files-wraper{
+    display: flex;
+    .filepond{
+      width: 60%;
+    }
+    .upload-file-image{
+      width: 40%;
+      height: 12rem;
+      background: #222940;
+      outline: 2px solid #000000;
+      img{
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
 </style>
