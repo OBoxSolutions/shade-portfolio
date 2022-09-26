@@ -12,6 +12,8 @@
   min-height: 12rem !important;
   border: 2px solid #000000 !important;
   outline: 2px solid #000000;
+  display: flex;
+  flex-direction: column;
 
   label{
     font-family: 'Consolas';
@@ -19,6 +21,17 @@
     line-height: 23px !important;
     color: #343F61 !important;
     margin-bottom: auto !important;
+  }
+  button{
+    margin: auto;
+    padding: 5px 10px;
+    width: 8rem;
+    border: 0;
+    background: #5A55F8;
+    font-family: 'Consolas';
+    line-height: 18px;
+    text-align: center;
+    color: #FFFFFF;
   }
 }
 .filepond--file{

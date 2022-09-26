@@ -11,17 +11,16 @@
     </div>
     <div class="upload-files-wraper">
       <FilePond
-      ref="pond"
-      class="filepond"
-      name="filepong"
-      allow-multiple="true"
-      credits="false"
-      style-button-remove-item-position='right'
-      label-idle="Select files here to send them"
-      :onaddfile="updateFiles"
-      :onremovefile="updateFiles"
-
-      >
+        ref="pond"
+        class="filepond"
+        name="filepong"
+        allow-multiple="true"
+        credits="false"
+        style-button-remove-item-position='right'
+        label-idle="Select files here to send them"
+        :onaddfile="updateFiles"
+        :onremovefile="updateFiles"
+        @init="handleFilePondInit">
       </FilePond>
       <div class="upload-file-image">
         <img src="/upload-file.svg" alt="upload-file-picture">
@@ -38,7 +37,7 @@ import { mapState, mapMutations } from "vuex"
 export default {
   name: 'SectionMobileHiringQuestions',
     components: {
-    FilePond: vueFilePond()
+      FilePond: vueFilePond()
   },
   computed: {
     ...mapState(['questions']),
@@ -47,7 +46,7 @@ export default {
     document.getElementById('lineCounter').style.setProperty('height', '18rem', 'important')
   },
   methods: {
-    ...mapMutations(['setAnswerToQuestion', 'setFileToQuestion', 'setMobileFiles']),
+    ...mapMutations(['setAnswerToQuestion', 'setMobileFiles']),
     updateAnswer(question, answer){
       this.setAnswerToQuestion({question, answer})
     },
@@ -58,6 +57,16 @@ export default {
         uploadFiles.push(element.file)
       })
       this.setMobileFiles(uploadFiles)
+    },
+    handleFilePondInit(){
+      const element = document.querySelector('.filepond--drop-label');
+
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'filepond--media-search-action';
+      button.innerHTML = 'Import from Storage'
+
+      element.appendChild(button);
     }
   },
 

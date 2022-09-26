@@ -56,35 +56,37 @@ div{
     }
 }
 #codeEditor, #lineCounter {
-    width: 100%;
-    margin: 0;
-    padding: 5px 0;
-    resize: none;
-    font-size: 16px;
-    line-height: 1.2;
-    outline: none;
-    border: none;
-    box-sizing: border-box;
+  font-family: 'Consolas';
+  width: 100%;
+  margin: 0;
+  padding: 5px 0;
+  resize: none;
+  font-size: 16px;
+  line-height: 1.2;
+  outline: none;
+  border: none;
+  box-sizing: border-box;
 }
 #lineCounter {
-      display: flex;
-      overflow-y: hidden;
-      text-align: right;
-      box-shadow: none;
-      color: #707070;
-      position: absolute;
-      width: 1.5rem;
-      height: 32rem;
-      /* Determine appearance of line counter */
-      background-color: transparent;
-      color:#ffffff;
+  display: flex;
+  overflow-y: hidden;
+  text-align: right;
+  box-shadow: none;
+  color: #707070;
+  position: absolute;
+  width: 1.5rem;
+  height: 32rem;
+  /* Determine appearance of line counter */
+  background-color: transparent;
+  color:#ffffff;
 }
 #codeEditor {
-      padding-left: calc(1.5rem + 8px);
-      height: 100%;
-      /* Determine appearance of code editor */
-      background-color: transparent;
-      color:#ffffff;
+  font-family: 'Consolas';
+  padding-left: calc(1.5rem + 8px);
+  height: 100%;
+  /* Determine appearance of code editor */
+  background-color: transparent;
+  color:#ffffff;
 }
 
 </style>
