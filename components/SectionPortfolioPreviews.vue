@@ -19,7 +19,7 @@
 
       </div>
 
-      <base-button only-bottom class="portfolio-button">
+      <base-button only-bottom class="portfolio-button button--red">
         <h1>Press Start</h1>
       </base-button>
 
@@ -81,14 +81,8 @@ export default {
     gap: 6rem;
     padding: 6rem 0;
 
-    $botton-color: #F05757;
-    $button-bottom-color: #C24646;
-
-
-
     .portfolio-button{
       padding: 0 !important;
-      background-color: $botton-color;
       border-radius: 5px;
       width: 35%;
 
@@ -105,11 +99,6 @@ export default {
       }
       &:active {
         transform: translateY(10px);
-        background-color: $button-bottom-color;
-      }
-
-      &:hover{
-        background-color: $button-bottom-color;
       }
     }
 

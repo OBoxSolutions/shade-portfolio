@@ -26,6 +26,14 @@
         <img src="/upload-file.svg" alt="upload-file-picture">
       </div>
     </div>
+    <div class="hiring-button-container">
+      <base-button only-bottom class="hiring-button button--green">
+        <h1>Submit</h1>
+      </base-button>
+      <div class="__bottom-text">
+        <h1>It came through!</h1>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -79,7 +87,7 @@ export default {
     background: linear-gradient(to right, #8A8A8A 6.5%,#8A8A8A 6.5%,#DBDBDB 6.5%,#DBDBDB 93%,#8A8A8A 93%);;
     width: 100%;
     margin: auto;
-    padding: 4rem 0;
+    padding: 4rem 0 0;
 
     display: flex;
     flex-direction: column;
@@ -125,6 +133,48 @@ export default {
       img{
         width: 100%;
         height: 100%;
+      }
+    }
+  }
+  .hiring-button-container{
+    width: 100%;
+    position: relative;
+    background: #FFFFFF;
+    padding: 2rem 0;
+    display: flex;
+    justify-content: center;
+    border-top: 3px solid #000000;
+
+    .hiring-button{
+      padding: 1rem 3rem !important;
+      border-radius: 5px;
+      margin-bottom: 2rem;
+
+      transform-style: preserve-3d;
+      perspective: 100px;
+      perspective-origin: bottom;
+
+      h1{
+        font-weight: 400;
+        margin: 1rem auto;
+        color: #ffffff;
+      }
+      &:active {
+        transform: translateY(10px);
+      }
+    }
+    .__bottom-text{
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      background: #49EA76;
+
+      h1{
+        font-weight: 400;
+        font-size: 10px;
+        line-height: 10px;
+        text-align: center;
+        color: #FFFFFF;
       }
     }
   }
