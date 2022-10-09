@@ -1,4 +1,5 @@
 import { plugin } from '~/plugins/breakpoint'
+import adminApi from '~/api/admin'
 
 export const plugins = [plugin]
 
@@ -96,4 +97,22 @@ export const getters = {
   getPortfolio: (state) => {
     return state.portfolio
   }
+}
+export const actions = {
+  storeContactMessage: async (_, message) => {
+    await adminApi.post('/messages/', message);
+  },
+
+  // storeHiringRequest: async (_, hiringRequest) => {
+  //   await adminApi.post('/messages/', hiringRequest);
+  // },
+
+  // storeChatMeeting: async (_, chatMeeting) => {
+  //   await adminApi.post('/messages/', chatMeeting);
+  // },
+
+  // storeVoiceMeeting: async (_, voiceMeeting) => {
+  //   await adminApi.post('/messages/', voiceMeeting);
+  // },
+
 }
