@@ -4,7 +4,15 @@ import adminApi from '~/api/admin'
 export const plugins = [plugin]
 
 export const state = () => ({
+  // Hiring data
+  hiringName: '',
+
+  // Cantact me data
   userName: '',
+  message: '',
+
+  // Get started data
+
   breakpoints: {
     isSmAndDown: false,
   },
@@ -72,8 +80,14 @@ export const state = () => ({
 })
 
 export const mutations = {
+  setHiringName: (state, name) => {
+    state.hiringName = name
+  },
   setUserName: (state, name) => {
     state.userName = name
+  },
+  setMessage: (state, message) => {
+    state.message = message
   },
   setAnswerToQuestion: ( state, { question, answer } ) => {
     const index = state.questions.indexOf(question)
@@ -91,8 +105,14 @@ export const mutations = {
     (state.breakpoints = { ...state.breakpoints, ...breakpoints }),
 }
 export const getters = {
+  getHiringName: (state) => {
+    return state.hiringName
+  },
   getUserName: (state) => {
     return state.userName
+  },
+  getMessage: (state) => {
+    return state.message
   },
   getPortfolio: (state) => {
     return state.portfolio
