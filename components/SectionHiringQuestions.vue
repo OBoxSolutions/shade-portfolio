@@ -6,7 +6,7 @@
           <section-hiring-question-tabs class="questions" />
         </div>
         <div class="questions-user-name">
-          <h1>{{ getUserName }}</h1>
+          <h1>{{ getHiringName }}</h1>
         </div>
       </div>
     </div>
@@ -18,7 +18,7 @@ import { mapGetters } from "vuex"
 
 export default {
   computed: {
-    ...mapGetters(['getUserName']),
+    ...mapGetters(['getHiringName']),
   },
 
 }

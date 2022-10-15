@@ -25,16 +25,16 @@
           </div>
       </div>
       <div class="section-header__transition">
-        
+
       </div>
       <div class="section-header__text-box">
-        <textarea class="section-header__text" placeholder="type away...">
+        <textarea v-model="message" class="section-header__text" placeholder="type away..." @change="emitMessage">
 
         </textarea>
         <div class="section-header__sign-box__outer">
           <div class="section-header__sign-box__inner">
               <div>Signed by:</div>
-              - [<input placeholder="Your Name"/>]
+              - [<input v-model="userName" placeholder="Your Name" @change="emitName"/>]
           </div>
         </div>
       </div>
@@ -43,7 +43,31 @@
 </template>
 
 <script>
+import { mapGetters, mapMutations } from "vuex"
+
 export default {
+  computed: {
+    ...mapGetters(['getUserName', 'getMessage']),
+    userName: {
+        get(){
+            return this.getUserName
+        },
+        set(value){
+            this.setUserName(value)
+        }
+    },
+    message: {
+        get(){
+            return this.getMessage
+        },
+        set(value){
+            this.setMessage(value)
+        }
+    }
+  },
+  methods: {
+    ...mapMutations(['setUserName', 'setMessage']),
+  }
 
 }
 </script>
@@ -113,7 +137,7 @@ export default {
     }
     }
 
-    
+
 
     .section-header__page-title{
       width:100%;
@@ -123,7 +147,7 @@ export default {
         background-size: cover;
         height: calc(100vw/4);
         width: 100%;
-        
+
       }
       .section-header__page-title-text{
         color:white;
@@ -137,7 +161,7 @@ export default {
 
     }
 
-    
+
   }
 
   .section-header__message{
@@ -172,7 +196,7 @@ export default {
         display: flex;
         justify-content: center;
         overflow-wrap: break-word;
-        
+
       }
     }
 
@@ -195,7 +219,7 @@ export default {
       display: flex;
       flex-direction: column;
       background-color: #FF6363;
-      
+
 
       .section-header__text{
         font-family: 'Lucida Console', sans-serif;
@@ -246,7 +270,7 @@ export default {
     }
   }
 
-  
+
 }
 
 /* Breakpoints begin here  */
@@ -285,10 +309,10 @@ export default {
         }
       }
 
-      
+
     }
 
-    .section-header__message{     
+    .section-header__message{
       margin: 0px 20px;
       .section-header__title-box{
 
@@ -298,7 +322,7 @@ export default {
           width: 70%;
           padding:4px 0;
           height: fit-content;
-          
+
         }
       }
 

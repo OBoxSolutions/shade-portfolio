@@ -5,7 +5,7 @@
     <form class="section-form">
         <div>
           <label for="full-name">Full name:</label><br>
-          <input id="full-name"  v-model="userName" type="text" name="full-name"><br>
+          <input id="full-name"  v-model="hiringName" type="text" name="full-name"><br>
         </div>
         <div>
           <label for="email-address">Email address:</label><br>
@@ -56,18 +56,18 @@ import { mapGetters, mapMutations } from "vuex"
 export default {
   name: 'SectionMobileHiringInformationForm',
   computed: {
-    ...mapGetters(['getUserName']),
-    userName: {
+    ...mapGetters(['getHiringName']),
+    hiringName: {
         get(){
-            return this.getUserName
+            return this.getHiringName
         },
         set(value){
-            this.setUserName(value)
+            this.setHiringName(value)
         }
     }
   },
   methods: {
-    ...mapMutations(['setUserName']),
+    ...mapMutations(['setHiringName']),
   }
 }
 </script>

@@ -21,9 +21,9 @@
                 </div>
                 <div class="section-body__email-box-outer">
                     <div class="section-body__email-box-inner">
-                        <input class="section-body__input" />
+                        <input v-model="contact" class="section-body__input" />
                         <div class="section-body_tag">
-                            Email
+                            {{app}}
                         </div>
                     </div>
                 </div>
@@ -41,13 +41,13 @@
 
             </div>
         </div>
-        
+
         <div class="section-body__choose-platform-mobile">
             <div class="section-body__top-clip">
                 <div class="section-body__background">
 
                 </div>
-                
+
                 <div class="section-body__text-box">
                     <div class="section-body__top-clip">
 
@@ -60,7 +60,7 @@
             <div class="section-body__input-box">
                 <input class="section-body__input"/>
             </div>
-            
+
             <div class="section-body__popup">
                 <div class="section-body__popup-list">
                     <div
@@ -69,7 +69,7 @@
                         {{ option.text }}
                         <div :style="`background-image:url('${option.icon}')`"> </div>
                     </div>
-                    
+
                 </div>
             </div>
         </div>
@@ -87,7 +87,7 @@
                                 {{ option.text }}
                                 <div :style="`background-image:url('${option.icon}')`"> </div>
                             </div>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -105,7 +105,7 @@
                     </div>
                 </div>
                 <div class="section-body__alert">
-                    it came through!
+                    it came through! {{name}} {{message}}
                 </div>
 
             </div>
@@ -117,28 +117,32 @@
                 </base-button>
             </div>
         </div>
-      
+
     </div>
   </template>
-  
+
   <script>
-    import BaseButton from './BaseButton.vue'
-    export default {
-        components: { BaseButton },
-        data(){
-            return{
-                mediaOptions:[
-                    {text:'Discord', icon:'/contact/discord-icon.png'},
-                    {text:'Email', icon:'/contact/gmail-icon.png'},
-                    {text:'Messenger', icon:'/contact/messenger-icon.png'},
-                    {text:'Instagram', icon:'/contact/instagram-icon.png'},
-                ]
-            }
+  export default {
+    props: ['hiringName', 'userMessage'],
+    data(){
+        return{
+            mediaOptions:[
+                {text:'Discord', icon:'/contact/discord-icon.png'},
+                {text:'Email', icon:'/contact/gmail-icon.png'},
+                {text:'Messenger', icon:'/contact/messenger-icon.png'},
+                {text:'Instagram', icon:'/contact/instagram-icon.png'},
+            ],
+            contact: '',
+            app: '',
+            name: this.hiringName,
+            message: this.userMessage
+
         }
-    
     }
+
+  }
   </script>
-  
+
   <style scoped lang="scss">
   .section-body{
     position: relative;
@@ -147,7 +151,7 @@
     overflow-x: clip;
     z-index: 3;
 
-    .section-body__container{  
+    .section-body__container{
         display: none;
         justify-content: space-between;
 
@@ -172,7 +176,7 @@
                 max-width: 300px;
                 outline: 1px solid black;
 
-                .section-body__text-box-inner{    
+                .section-body__text-box-inner{
                     font-family: 'Lucida Console', sans-serif;
                     padding: 10px;
                     border:1px solid black;
@@ -207,7 +211,7 @@
 
         }
 
-    
+
 
 
         .section-body__choose-platform{
@@ -247,7 +251,7 @@
                     margin-right: 10px;
                     display: flex;
                     gap:5px;
-                    
+
 
                     .section-body__input{
                         background-color: #F06666;
@@ -280,7 +284,7 @@
                 margin-left: 1.2rem;
                 border: 1px solid black;
                 border-bottom-left-radius: 5px;
-                
+
                 .section-body__choose-platform-inner{
                     background-color: #D43737;
                     padding: 0 10px 5px 10px;
@@ -341,7 +345,7 @@
                 position: relative;
                 flex-direction: column;
                 align-items: flex-end;
-                z-index: 3;   
+                z-index: 3;
                 width: 100%;
                 height: 100%;
 
@@ -351,7 +355,7 @@
                     background-repeat: no-repeat;
                     width: 80%;
                     background-position: bottom;
-                    
+
 
                 }
 
@@ -428,7 +432,7 @@
                     }
                 }
             }
-            
+
         }
     }
     .section-body__submit{
@@ -512,8 +516,8 @@
                             }
                         }
                     }
-                    
-                   
+
+
                 }
             }
             .section-body__alert{
@@ -610,7 +614,7 @@
             margin-bottom: 4rem;
             display:flex;
 
-            
+
             $button-color: #F05757;
             $button-hover-color: #C24646;
             .portfolio-button{
@@ -659,7 +663,7 @@
 /* Breakpoints begin here  */
 @media(min-width: 768px) {
     .section-body{
-        .section-body__container{ 
+        .section-body__container{
             display: flex;
         }
         .section-body__submit{
@@ -691,6 +695,5 @@
         }
     }
 }
- 
+
 </style>
-  
