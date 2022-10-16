@@ -27,7 +27,7 @@
         :id="`answer-${index}`"
         :key="`answer-${index}`"
         class="answer">
-          <textarea-input-answer @answer="question.answer = $event" />
+          <textarea-input-answer @answer="updateAnswer(question, $event)" />
           <div class="file-picker-container">
             <label
               :for="`file-picker-${index}`"
@@ -39,7 +39,7 @@
               class="file-picker-input"
               type="file"
               accept="image/*,video/*"
-              @change="question.file = $event.target.files[0]"
+              @change="updateFile(question, $event.target.files[0])"
             >
           </div>
       </div>
@@ -49,32 +49,27 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex"
+import { mapState, mapGetters, mapMutations } from "vuex"
 import { getStorage, ref, uploadBytes } from 'firebase/storage'
-import TextareaInputAnswer from './TextareaInputAnswer.vue';
 
 export default {
-  components: { TextareaInputAnswer },
   data() {
     return {
-      questions: [
-        { text: 'What is your proudest accomplishment?', answer: '', file: null },
-        { text: 'What moral value do you value the most?', answer: '', file: null },
-        { text: 'Are you ever justified to kill?', answer: '', file: null },
-        { text: 'Is morality subjective or objective?', answer: '', file: null },
-        { text: 'If you could live forever, would do you want to?', answer: '', file: null },
-        { text: 'If you could change the world, what would you change?', answer: '', file: null },
-        { text: 'Some questions?', answer: '', file: null },
-        { text: 'Are you satisfied with yourself?', answer: '', file: null },
-        { text: 'Maybe have anything to add? Any questions perhaps?', answer: '', file: null },
-      ],
       activeTab: 0,
     }
   },
   computed: {
-    ...mapGetters(['getUserName']),
+    ...mapState(['questions']),
+    ...mapGetters(['getHiringName'])
   },
   methods: {
+    ...mapMutations(['setAnswerToQuestion', 'setFileToQuestion']),
+    updateAnswer(question, answer){
+      this.setAnswerToQuestion({question, answer})
+    },
+    updateFile(question, file){
+      this.setFileToQuestion({question, file})
+    },
     changeTab(tabIndex, answerIndex){
       const nonActiveTabs = document.getElementsByClassName("answer");
       for (let i = 0; i < nonActiveTabs.length; i++) {
@@ -84,12 +79,12 @@ export default {
       this.activeTab = tabIndex
     },
     uploadFile(){
-      if(this.file === null || this.getUserName === ''){
+      if(this.file === null || this.getHiringName === ''){
         console.log('missing parameters')
       }
       else{
         const storage = getStorage()
-        const fileRef = ref(storage, this.getUserName+'/'+this.file.name)
+        const fileRef = ref(storage, this.getHiringName+'/'+this.file.name)
         uploadBytes(fileRef, this.file)
         .then((snapshot) => {
           console.log('uploaded a file')

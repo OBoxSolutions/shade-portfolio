@@ -8,7 +8,7 @@
     <slot></slot>
     <span class="side button__left-side"></span>
     <span class="side button__right-side"></span>
-    <span class="side button__bottom-side"></span>
+    <span :class="{ 'button__only-bottom': onlyBottom, 'button__bottom-side': !onlyBottom }" class="side"></span>
   </button>
 </template>
 
@@ -20,6 +20,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    onlyBottom: {
+      type: Boolean,
+      default: false
+    }
   },
 }
 </script>

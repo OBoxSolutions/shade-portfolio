@@ -19,7 +19,7 @@
 
       </div>
 
-      <base-button class="portfolio-button">
+      <base-button only-bottom class="portfolio-button button--red">
         <h1>Press Start</h1>
       </base-button>
 
@@ -81,12 +81,8 @@ export default {
     gap: 6rem;
     padding: 6rem 0;
 
-    $botton-color: #F05757;
-    $botton-hover-color: #C24646;
-
     .portfolio-button{
       padding: 0 !important;
-      background-color: $botton-color;
       border-radius: 5px;
       width: 35%;
 
@@ -101,29 +97,8 @@ export default {
         margin: 1rem auto;
         color: #ffffff;
       }
-      &:hover{
-        background-color: $botton-hover-color;
-      }
-      &::before{
-        background-color: $botton-hover-color;
-        min-height: 11px;
-        width: calc(100% - 13px);
-        bottom: -10px;
-        left: 6px;
-        border-radius: 0;
-        transform: skewX(0);
-        transform: rotateX(-20deg);
-      }
-      &::after{
-        width: 0;
-      }
       &:active {
         transform: translateY(10px);
-        background-color: $botton-hover-color;
-
-        &::before {
-          min-height: 0;
-        }
       }
     }
 

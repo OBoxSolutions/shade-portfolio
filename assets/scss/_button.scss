@@ -29,6 +29,17 @@ $button-sides-bg-color: #747474;
     border-radius: inherit;
     transform: translate3d(0, 0.2em, -1em);
   }
+  .button__only-bottom {
+    width: calc(100% - 13px);
+    min-height: 15px;
+    height: unset;
+    top: unset;
+    left: 6px;
+    bottom: -14px;
+    border-radius: 0;
+    transform: rotateX(-20deg);
+    background-color: $button-sides-bg-color;
+  }
 
   &:hover {
     background-color: $button-bg-color-hover;
@@ -41,19 +52,46 @@ $button-sides-bg-color: #747474;
     .button__bottom-side {
       transform: translate3d(0, 0em, -1em);
     }
+    .button__only-bottom {
+      min-height: 0;
+      transform: translateY(-14px);
+    }
   }
 }
 
 .button--red {
   $button-bg-color: #f05757;
-  $button-bg-color-hover: #ee4141;
-  $button-bg-color-active: #b83f3f;
+  $button-bg-color-hover: #d43737;
+  $button-bg-color-active: #d43737;
   $button-sides-bg-color: #d43737;
 
   background-color: $button-bg-color;
   color: white;
 
-  .button__bottom-side {
+  .button__bottom-side,
+  .button__only-bottom {
+    background-color: $button-sides-bg-color;
+  }
+
+  &:hover {
+    background-color: $button-bg-color-hover;
+  }
+
+  &:active {
+    background-color: $button-bg-color-active;
+  }
+}
+.button--green {
+  $button-bg-color: #49ea76;
+  $button-bg-color-hover: #33b758;
+  $button-bg-color-active: #33b758;
+  $button-sides-bg-color: #33b758;
+
+  background-color: $button-bg-color;
+  color: white;
+
+  .button__bottom-side,
+  .button__only-bottom {
     background-color: $button-sides-bg-color;
   }
 

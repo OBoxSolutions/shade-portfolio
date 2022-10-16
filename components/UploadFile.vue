@@ -20,19 +20,19 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['getUserName']),
+    ...mapGetters(['getHiringName']),
   },
   methods: {
     loadFile(e) {
       this.file = e.target.files[0]
     },
     uploadFile(){
-      if(this.file === null || this.getUserName === ''){
+      if(this.file === null || this.getHiringName === ''){
         console.log('missing parameters')
       }
       else{
         const storage = getStorage()
-        const fileRef = ref(storage, this.getUserName+'/'+this.file.name)
+        const fileRef = ref(storage, this.getHiringName+'/'+this.file.name)
         uploadBytes(fileRef, this.file)
         .then((snapshot) => {
           console.log('uploaded a file')

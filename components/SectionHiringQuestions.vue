@@ -6,7 +6,7 @@
           <section-hiring-question-tabs class="questions" />
         </div>
         <div class="questions-user-name">
-          <h1>{{ getUserName }}</h1>
+          <h1>{{ getHiringName }}</h1>
         </div>
       </div>
     </div>
@@ -14,13 +14,11 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
-import SectionHiringQuestionTabs from './SectionHiringQuestionTabs.vue'
+import { mapGetters } from "vuex"
 
 export default {
-  components: { SectionHiringQuestionTabs },
   computed: {
-    ...mapGetters(['getUserName']),
+    ...mapGetters(['getHiringName']),
   },
 
 }
@@ -35,14 +33,14 @@ export default {
   .section-questions__outside-box{
     background-color: #8A8A8A;
     width: 88%;
-    height: 100%; //remove when content have added
+    height: 100%;
     margin: auto;
     margin-bottom: 1rem;
 
     .section-questions__inside-box{
       background-color: #DBDBDB;
       width: 95%;
-      height: 100%; //remove when content have added
+      height: 100%;
       margin: auto;
 
       display: flex;
@@ -60,7 +58,7 @@ export default {
         align-items: center;
 
         .questions{
-          border: 5px solid black;
+          outline: 5px solid black;
           width: 95%;
           height: 90%;
         }

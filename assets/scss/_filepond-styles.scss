@@ -1,0 +1,43 @@
+.filepond--file-action-button {
+  background-color: #FFFFFF !important;
+}
+.filepond--file-action-button.filepond--file-action-button svg{
+  color: #000000;
+}
+.filepond--panel-center{
+  background-color: #222940 !important;
+}
+.filepond--drop-label{
+  background-color: #FFFFFF !important;
+  min-height: 12rem !important;
+  border: 2px solid #000000 !important;
+  outline: 2px solid #000000;
+  display: flex;
+  flex-direction: column;
+
+  label{
+    font-family: 'Consolas';
+    font-size: 22px !important;
+    line-height: 23px !important;
+    color: #343F61 !important;
+    margin-bottom: auto !important;
+  }
+  button{
+    margin: auto;
+    padding: 5px 10px;
+    width: 8rem;
+    border: 0;
+    background: #5A55F8;
+    font-family: 'Consolas';
+    line-height: 18px;
+    text-align: center;
+    color: #FFFFFF;
+  }
+}
+.filepond--file{
+  background: #222940 !important;
+}
+
+.filepond--panel-bottom, .filepond--panel-top{
+  display: none !important;
+}

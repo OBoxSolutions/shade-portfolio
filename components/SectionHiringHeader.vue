@@ -7,9 +7,9 @@
         </div>
       </div>
     </div>
-    <div class="section-header__image">
+    <!-- <div class="section-header__image">
       <img src="/retro-macintosh.png" alt="retro-macintosh" />
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -22,7 +22,9 @@ export default {
 <style scoped lang="scss">
 
 .section-header{
-  background: url('/hiring-cover-up.png');
+  height: 100vh;
+  background: url('/retro-macintosh.png') right no-repeat, url('/hiring-cover-up.png');
+  background-size: contain;
   display: flex;
   width: 100%;
 
