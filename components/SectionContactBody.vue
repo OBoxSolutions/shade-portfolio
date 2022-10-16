@@ -75,19 +75,13 @@
       </div>
     </div>
     <div class="section-body__press-start">
-      <div class="section-body__button-container">
-        <base-button class="portfolio-button">
-          <h1>Press Start</h1>
-        </base-button>
-      </div>
+      <div class="section-body__button-container"></div>
     </div>
   </div>
 </template>
 
 <script>
-import BaseButton from './BaseButton.vue'
 export default {
-  components: { BaseButton },
   data() {
     return {
       mediaOptions: [
