@@ -1,12 +1,12 @@
 <template>
   <div v-if="breakpoints.isSmAndDown">
     <section-mobile-hiring-header />
-    <section-mobile-hiring-information-form />
+    <section-mobile-hiring-information-form v-model="form" />
     <section-mobile-hiring-questions />
   </div>
   <div v-else>
     <section-hiring-header />
-    <section-hiring-information-form />
+    <section-hiring-information-form v-model="form" />
     <section-hiring-questions />
     <hiring-submit-button />
   </div>
@@ -17,7 +17,19 @@ import { mapState } from 'vuex'
 
 export default {
   name: 'HiringPage',
-    computed: {
+  data() {
+    return {
+      form: {
+        name: '',
+        email: '',
+        country: '',
+        applying_for: '',
+        birthdate: '',
+        questions_answers: '',
+      },
+    }
+  },
+  computed: {
     ...mapState(['breakpoints']),
   },
 }
