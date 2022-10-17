@@ -20,9 +20,9 @@
     </div>
     <section-get-started-header />
     <section-get-started-basic-information v-model="form" :page="page" />
-    <section-get-started-chat v-if="page == 'chat'" v-model="form" />
+    <section-get-started-chat v-if="page == 'chat'" />
     <section-get-started-meeting v-if="page == 'meeting'" />
-    <section-get-started-summary :page="page" />
+    <section-get-started-summary :key="summary_key" :userName="name" :software="software" :page="page" />
   </div>
 </template>
 
@@ -36,7 +36,7 @@ export default {
         email: '',
         country: '',
         birthdate: '',
-        app: '',
+        app: 'Discord',
         about: '',
         goals: '',
         budget: '',
@@ -45,8 +45,27 @@ export default {
         more_info: '',
         more_info_file: '',
       },
+      summary_key: 0
     }
   },
+  computed: {
+    name(){
+      return this.form.name
+    },
+    software(){
+      return this.form.app
+    }
+  },
+  watch: {
+    name(){
+      console.log('hola')
+      this.summary_key++
+    },
+    software(){
+      console.log('hola')
+      this.summary_key++
+    }
+  }
 }
 </script>
 

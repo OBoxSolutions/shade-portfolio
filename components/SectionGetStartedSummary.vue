@@ -2,7 +2,7 @@
     <div class="section-summary">
         <div class="__top">
             <div class="__title">SUMMARY</div>
-            <div class="__description">[name] is going to chat via [software], and he’s going to like it!</div>
+            <div class="__description">[{{userName}}] is going to chat via [{{software}}], and he’s going to like it!</div>
         </div>
         <div class="__clip"></div>
         <div class="__details">
@@ -30,9 +30,9 @@
                             </div>
                         </div>
                         <div class="__time-list" >
-                            <div 
+                            <div
                                 v-for="(time, index) in timeList"
-                                :key="`time-${index}`" 
+                                :key="`time-${index}`"
                                 :style="`${time == selectedTime ? 'background:#071C50' : ''}`"
                                 class="__time"
                                 @click="selectTime(time)">
@@ -46,7 +46,7 @@
             </div>
             <div  v-if="page == 'meeting'" class="__inner-meeting-link">
                 <div class="title">Here's the link</div>
-                
+
                 <div class="__link-container">
                     <div class="__copy">Copy</div>
                     <div class="__link">some zoom or google meets link</div>
@@ -76,6 +76,14 @@
             page: {
                 type:String,
                 default:'',
+            },
+            userName: {
+              type:String,
+              default: ''
+            },
+            software: {
+              type:String,
+              default: ''
             }
         },
         data(){
@@ -119,7 +127,7 @@
                 text-align: center;
                 box-shadow: inset 4px -4px 4px 4px rgba(0, 0, 0, 0.1), inset -4px 4px 4px 4px rgba(0, 0, 0, 0.1);
                 margin: 0 1rem;
-            }   
+            }
         }
 
         .__clip{
@@ -150,7 +158,7 @@
                 text-align: center;
                 gap: 1rem;
                 border-radius: 1rem;
-                
+
                 .__description{
                     font-family: 'Lucida Console', sans-serif !important;
                     margin:0 2rem;
@@ -173,10 +181,10 @@
                         margin: 0 1.5rem;
                         font-size: small;
                         white-space: nowrap;
-                    }   
+                    }
                 }
             }
-            .__inner-arrange-meeting{           
+            .__inner-arrange-meeting{
                 width: 100%;
                 display: flex;
                 flex-direction: column;
@@ -187,12 +195,12 @@
                 text-align: center;
                 gap: 2rem;
                 border-radius: 1rem;
-                
+
                 .__description{
                     font-family: 'Lucida Console', sans-serif !important;
                     margin:0 2rem;
                 }
-                
+
                 .__choice-container{
                     display: flex;
                     flex-direction: column-reverse;
@@ -242,7 +250,7 @@
                                 padding: 0.5rem 0;
                                 font-size: 0.8rem;
                                 cursor: pointer;
-                                
+
                             }
                         }
                     }
@@ -261,10 +269,10 @@
                     }
 
                 }
-            
+
             }
 
-            .__inner-meeting-link{           
+            .__inner-meeting-link{
                 width: 100%;
                 display: flex;
                 flex-direction: column;
@@ -276,7 +284,7 @@
                 gap: 2rem;
                 border-radius: 1rem;
 
-                
+
                 .__link-container{
                     border:1rem solid #4E49DE;
                     border-width: 0.5rem 1rem ;
@@ -297,7 +305,7 @@
                         font-size: small;
                         width: 80%;
                         white-space: nowrap;
-                    }   
+                    }
                 }
 
                 .__choice-container{
@@ -359,12 +367,12 @@
             background-color: #49EA76;
             text-align: center;
         }
-        
+
     }
-    
+
     /* Breakpoints begin here  */
     @media(min-width: 768px) {
-        
+
         .section-summary{
             .__top{
                 .__description{
@@ -409,12 +417,12 @@
                             }
                         }
                         .__no{
-                            
+
                             padding: 0 4rem;
                         }
                     }
                 }
-                
+
             }
         }
     }

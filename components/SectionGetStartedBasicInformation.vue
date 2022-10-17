@@ -107,6 +107,7 @@ export default {
   methods: {
     selectSocial(social) {
       this.selectedSocial = social
+      this.form.app = this.selectedSocial
     },
   },
 }
