@@ -15,7 +15,7 @@ export default {
       form: {
         name: '',
         subject: '',
-        social: '',
+        social: 'Email',
         contact: '',
         text: '',
       },
