@@ -10,7 +10,7 @@
         </div>
         <div class="section-body__email-box-outer">
           <div class="section-body__email-box-inner">
-            <input class="section-body__input" />
+            <input v-model="form.email" class="section-body__input" />
             <div class="section-body_tag">Email</div>
           </div>
         </div>
@@ -82,6 +82,12 @@
 
 <script>
 export default {
+  props: {
+    value: {
+      type: Object,
+      default: () => {},
+    },
+  },
   data() {
     return {
       mediaOptions: [
@@ -91,6 +97,16 @@ export default {
         { text: 'Instagram', icon: '/contact/instagram-icon.png' },
       ],
     }
+  },
+  computed: {
+    form: {
+      get() {
+        return this.value
+      },
+      set(val) {
+        this.$emit('input', val)
+      },
+    },
   },
 }
 </script>

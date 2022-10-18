@@ -24,6 +24,7 @@
       <div class="section-header__title-box">
         <div>YOUR MESSAGE</div>
         <input
+          v-model="form.subject"
           type="text"
           class="section-header__description"
           placeholder="Insert general question"
@@ -32,20 +33,15 @@
       <div class="section-header__transition"></div>
       <div class="section-header__text-box">
         <textarea
-          v-model="message"
+          v-model="form.text"
           class="section-header__text"
           placeholder="type away..."
-          @change="emitMessage"
         >
         </textarea>
         <div class="section-header__sign-box__outer">
           <div class="section-header__sign-box__inner">
             <div>Signed by:</div>
-            - [<input
-              v-model="userName"
-              placeholder="Your Name"
-              @change="emitName"
-            />]
+            - [<input v-model="form.name" placeholder="Your Name" />]
           </div>
         </div>
       </div>
@@ -57,22 +53,21 @@
 import { mapGetters, mapMutations } from 'vuex'
 
 export default {
+  props: {
+    value: {
+      type: Object,
+      default: () => {},
+    },
+  },
   computed: {
     ...mapGetters(['getUserName', 'getMessage']),
-    userName: {
+
+    form: {
       get() {
-        return this.getUserName
+        return this.value
       },
-      set(value) {
-        this.setUserName(value)
-      },
-    },
-    message: {
-      get() {
-        return this.getMessage
-      },
-      set(value) {
-        this.setMessage(value)
+      set(val) {
+        this.$emit('input', val)
       },
     },
   },
