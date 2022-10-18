@@ -10,8 +10,8 @@
         </div>
         <div class="section-body__email-box-outer">
           <div class="section-body__email-box-inner">
-            <input v-model="form.email" class="section-body__input" />
-            <div class="section-body_tag">Email</div>
+            <input v-model="form.contact" class="section-body__input" />
+            <div class="section-body_tag">{{ form.social }}</div>
           </div>
         </div>
         <div class="section-body__choose-platform-outer">
@@ -60,6 +60,7 @@
               >
                 <input
                   :id="option.text"
+                  v-model="form.social"
                   :value="option.text"
                   type="radio"
                   name="social"
