@@ -1,7 +1,7 @@
 <template>
   <div>
-    <section-contact-header></section-contact-header>
-    <section-contact-body></section-contact-body>
+    <section-contact-header v-model="form"></section-contact-header>
+    <section-contact-body v-model="form"></section-contact-body>
   </div>
 </template>
 
@@ -10,6 +10,17 @@ import SectionContactHeader from '~/components/SectionContactHeader.vue'
 import SectionContactBody from '~/components/SectionContactBody.vue'
 export default {
   components: { SectionContactHeader, SectionContactBody },
+  data() {
+    return {
+      form: {
+        name: '',
+        subject: '',
+        social: '',
+        contact: '',
+        text: '',
+      },
+    }
+  },
 }
 </script>
 
