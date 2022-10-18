@@ -47,8 +47,7 @@ export default Vue.extend({
 
 .app-message {
   position: absolute;
-  left: 0;
-  right: 0;
+  right: 1em;
   margin: 3em auto;
 }
 </style>
