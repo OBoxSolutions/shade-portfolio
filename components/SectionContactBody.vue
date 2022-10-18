@@ -58,7 +58,16 @@
                 v-for="(option, index) in mediaOptions"
                 :key="`media-${index}`"
               >
-                {{ option.text }}
+                <input
+                  :id="option.text"
+                  :value="option.text"
+                  type="radio"
+                  name="social"
+                />
+
+                <label :for="option.text">
+                  {{ option.text }}
+                </label>
                 <div :style="`background-image:url('${option.icon}')`"></div>
               </div>
             </div>
