@@ -10,6 +10,7 @@ export const state = () => ({
   // Cantact me data
   userName: '',
   message: '',
+  messages: [],
 
   // Get started data
 
@@ -20,7 +21,7 @@ export const state = () => ({
     {
       name: 'Unborder',
       image: '/portfolio/unborder.png',
-      link: '#'
+      link: '#',
     },
     {
       name: 'Cleaning Services',
@@ -30,56 +31,66 @@ export const state = () => ({
     {
       name: 'Caboo',
       image: '/portfolio/cabbo.png',
-      link: '#'
+      link: '#',
     },
     {
       name: 'Flowers',
       image: '/portfolio/flowers.png',
-      link: '#'
+      link: '#',
     },
   ],
   questions: [
     {
       text: 'What is your proudest accomplishment?',
       answer: '',
-      file: null },
+      file: null,
+    },
     {
       text: 'What moral value do you value the most?',
       answer: '',
-      file: null },
+      file: null,
+    },
     {
       text: 'Are you ever justified to kill?',
       answer: '',
-      file: null },
+      file: null,
+    },
     {
       text: 'Is morality subjective or objective?',
       answer: '',
-      file: null },
+      file: null,
+    },
     {
       text: 'If you could live forever, would do you want to?',
       answer: '',
-      file: null },
+      file: null,
+    },
     {
       text: 'If you could change the world, what would you change?',
       answer: '',
-      file: null },
+      file: null,
+    },
     {
       text: 'Some questions?',
       answer: '',
-      file: null },
+      file: null,
+    },
     {
       text: 'Are you satisfied with yourself?',
       answer: '',
-      file: null },
+      file: null,
+    },
     {
       text: 'Maybe have anything to add? Any questions perhaps?',
       answer: '',
-      file: null },
+      file: null,
+    },
   ],
-  mobileFiles: []
+  mobileFiles: [],
 })
 
 export const mutations = {
+  addMessage: (state, message) => state.messages.push(message),
   setHiringName: (state, name) => {
     state.hiringName = name
   },
@@ -89,15 +100,15 @@ export const mutations = {
   setMessage: (state, message) => {
     state.message = message
   },
-  setAnswerToQuestion: ( state, { question, answer } ) => {
+  setAnswerToQuestion: (state, { question, answer }) => {
     const index = state.questions.indexOf(question)
     state.questions[index].answer = answer
   },
-  setFileToQuestion: ( state, { question, file } ) => {
+  setFileToQuestion: (state, { question, file }) => {
     const index = state.questions.indexOf(question)
     state.questions[index].file = file
   },
-  setMobileFiles: ( state, files ) => {
+  setMobileFiles: (state, files) => {
     state.mobileFiles = files
   },
 
@@ -116,11 +127,11 @@ export const getters = {
   },
   getPortfolio: (state) => {
     return state.portfolio
-  }
+  },
 }
 export const actions = {
   storeContactMessage: async (_, message) => {
-    await adminApi.post('/messages/', message);
+    await adminApi.post('/messages/', message)
   },
 
   // storeHiringRequest: async (_, hiringRequest) => {
@@ -134,5 +145,4 @@ export const actions = {
   // storeVoiceMeeting: async (_, voiceMeeting) => {
   //   await adminApi.post('/messages/', voiceMeeting);
   // },
-
 }
