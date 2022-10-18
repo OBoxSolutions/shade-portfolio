@@ -74,7 +74,7 @@
             </div>
           </div>
         </div>
-        <div class="section-body__submit-box-container">
+        <div class="section-body__submit-box-container" @click="onSubmit">
           <div class="section-body__submit-box">
             <div class="section-body__submit-button">Submit.</div>
             <div class="section-body__button-clip"></div>
@@ -116,6 +116,11 @@ export default {
       set(val) {
         this.$emit('input', val)
       },
+    },
+  },
+  methods: {
+    onSubmit() {
+      this.$emit('submit')
     },
   },
 }
