@@ -32,10 +32,17 @@ export default {
     submitContact() {
       try {
         createContact(this.form)
-        this.success = true
+        this.setState(true)
       } catch (error) {
-        this.success = false
+        this.setState(false)
       }
+    },
+
+    setState(state) {
+      this.success = state
+      setTimeout(() => {
+        this.success = undefined
+      }, 2000)
     },
   },
 }
