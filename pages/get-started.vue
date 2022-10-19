@@ -20,7 +20,7 @@
     </div>
     <section-get-started-header />
     <section-get-started-basic-information v-model="form" :page="page" />
-    <section-get-started-chat v-if="page == 'chat'" />
+    <section-get-started-chat v-if="page == 'chat'" v-model="form"/>
     <section-get-started-meeting v-if="page == 'meeting'" />
     <section-get-started-summary :key="summary_key" :userName="name" :software="software" :page="page" />
   </div>
@@ -41,9 +41,9 @@ export default {
         goals: '',
         budget: '',
         logo_info: '',
-        logo_file: '',
+        logo_file: null,
         more_info: '',
-        more_info_file: '',
+        more_info_file: null,
       },
       summary_key: 0
     }

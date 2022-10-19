@@ -6,16 +6,16 @@
         <div class="__question-list">
             <div
                 v-for="(question, index) in questions"
-                :key="`question-${index}`" 
+                :key="`question-${index}`"
                 class="__question" >
-                
+
                 <div v-if="question.input" class="__file-container-mobile">
                     <div class="__file-icon"></div>
                     <label for="file-input" class="__file-input">drop_or_select_files_here</label>
-                    <input id="__file-input" type="file"/>
+                    <input id="__file-input" type="file" @change="loadFile(question.model, $event)"/>
                 </div>
                 <div class="__input">
-                    <textarea-input-answer></textarea-input-answer>
+                    <textarea-input-answer @answer="setQuestionsAnswers(question.model, $event)"></textarea-input-answer>
                 </div>
                 <div class="__clip">
                     <div class="__inner">
@@ -24,7 +24,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="__cover"></div>
                 <div class="__line"></div>
                 <div class="__text-container">
@@ -35,11 +35,11 @@
                         <div class="__description">
                             {{question.description}}
                         </div>
-                        
+
                         <div v-if="question.input" class="__file-container">
                             <div class="__file-icon"></div>
                             <label for="file-input" class="__file-input">drop_or_select_files_here</label>
-                            <input id="__file-input" type="file"/>
+                            <input id="__file-input" type="file" @change="loadFile(question.model, $event)"/>
                         </div>
                     </div>
                 </div>
@@ -49,21 +49,51 @@
 </template>
 
 <script>
-    export default {
-        name: 'SectionGetStartedChat',
-        data() {
-            return {
-            questions: [
-                { title: 'YOU', description: 'Explain your brand or business in several sentences. Please describe the core products or services you provide.', input:false },
-                { title: 'YOUR GOALS', description: 'What are you hoping to achieve by getting your website your website built? List any goals that come to mind (for example: more sales, more appointments, more engagement...)', input:false },
-                { title: 'BUDGET', description: 'What is your approximate budget for this project? (in USD)', input:false },
-                { title: 'LOGO', description: 'Does your company have a logo?',input:true },
-                { title: "MORE INFO", description: 'Additional space to add information and images', input:true },
-            ],
-            position: '',
-            }
+  export default {
+    name: 'SectionGetStartedChat',
+    props: {
+      value: {
+        type: Object,
+        default: () => {},
+      },
+    },
+    data() {
+        return {
+        questions: [
+            { title: 'YOU', description: 'Explain your brand or business in several sentences. Please describe the core products or services you provide.', input:false, model: 'about' },
+            { title: 'YOUR GOALS', description: 'What are you hoping to achieve by getting your website your website built? List any goals that come to mind (for example: more sales, more appointments, more engagement...)', input:false, model: 'goals' },
+            { title: 'BUDGET', description: 'What is your approximate budget for this project? (in USD)', input:false, model: 'budget' },
+            { title: 'LOGO', description: 'Does your company have a logo?',input:true, model: 'logo_info' },
+            { title: "MORE INFO", description: 'Additional space to add information and images', input:true, model: 'more_info' },
+        ],
+        position: '',
+        file: null
         }
+    },
+    computed: {
+      form: {
+        get() {
+          return this.value
+        },
+        set(val) {
+          this.$emit('input', val)
+        },
+      },
+    },
+    methods: {
+      setQuestionsAnswers(question, answer){
+        this.form[`${question}`] = answer
+      },
+      loadFile(question, event){
+        if(question === 'logo_info'){
+          this.form.logo_file = event.target.files[0]
+        }
+        else{
+          this.form.more_info_file = event.target.files[0]
+        }
+      }
     }
+  }
 </script>
 
 
@@ -140,7 +170,7 @@
                 div{
                     height: 100% !important;
                 }
-                
+
             }
             .__input:deep(#lineCounter){
                 height: calc(100% - 2rem) !important;
@@ -164,7 +194,7 @@
                     display: none;
                     align-items: center;
                     perspective: 300px;
-                    
+
                     .__edges{
                         width: 200%;
                         height: 95%;
@@ -236,10 +266,10 @@
                         }
                     }
                 }
-                
-                
+
+
             }
-            
+
             .__cover{
                 position: absolute;
                 height:70%;
@@ -299,7 +329,7 @@
                     }
                 }
 
-                
+
                 .__input:deep(#lineCounter){
                     height: 100% !important;
                 }
