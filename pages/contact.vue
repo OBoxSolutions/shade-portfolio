@@ -25,11 +25,17 @@ export default {
         contact: '',
         text: '',
       },
+      success: undefined,
     }
   },
   methods: {
     submitContact() {
-      createContact(this.form)
+      try {
+        createContact(this.form)
+        this.success = true
+      } catch (error) {
+        this.success = false
+      }
     },
   },
 }
