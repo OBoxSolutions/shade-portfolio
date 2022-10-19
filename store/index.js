@@ -1,3 +1,4 @@
+import { getDownloadURL, getStorage, ref, uploadBytes } from 'firebase/storage'
 import { plugin } from '~/plugins/breakpoint'
 import adminApi from '~/api/admin'
 
@@ -115,6 +116,23 @@ export const mutations = {
   setBreakpoints: (state, breakpoints) =>
     (state.breakpoints = { ...state.breakpoints, ...breakpoints }),
 }
+const uploadFileToFirebase = async (user, file) => {
+  let downloadUrl = ''
+  if(file === ''){
+    downloadUrl = ''
+  }
+  else{
+    const storage = getStorage()
+    const fileRef = ref(storage, user + '/' + file.name)
+    await uploadBytes(fileRef, file)
+
+    await getDownloadURL(fileRef)
+    .then((url) => {
+      downloadUrl = url
+    })
+  }
+  return downloadUrl
+}
 export const getters = {
   getHiringName: (state) => {
     return state.hiringName
@@ -135,14 +153,19 @@ export const actions = {
   },
 
   // storeHiringRequest: async (_, hiringRequest) => {
-  //   await adminApi.post('/messages/', hiringRequest);
+  //   await adminApi.post('/messages/', hiringRequest)
   // },
 
-  // storeChatMeeting: async (_, chatMeeting) => {
-  //   await adminApi.post('/messages/', chatMeeting);
-  // },
+  storeChatMeeting: async (_, chatMeeting) => {
+    chatMeeting.logo_file = await uploadFileToFirebase(chatMeeting.name, chatMeeting.logo_file)
+    chatMeeting.more_info_file = await uploadFileToFirebase(chatMeeting.name, chatMeeting.more_info_file)
+
+    console.log(chatMeeting)
+
+    // await adminApi.post('/messages/', chatMeeting)
+  },
 
   // storeVoiceMeeting: async (_, voiceMeeting) => {
-  //   await adminApi.post('/messages/', voiceMeeting);
+  //   await adminApi.post('/messages/', voiceMeeting)
   // },
 }

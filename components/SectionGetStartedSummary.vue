@@ -2,7 +2,7 @@
     <div class="section-summary">
         <div class="__top">
             <div class="__title">SUMMARY</div>
-            <div class="__description">[{{userName}}] is going to chat via [{{software}}], and he’s going to like it!</div>
+            <div class="__description">[{{form.name}}] is going to chat via [{{form.app}}], and he’s going to like it!</div>
         </div>
         <div class="__clip"></div>
         <div class="__details">
@@ -58,7 +58,7 @@
                 </div>
             </div>
             <div class="__submit-container">
-                <button class="__submit">
+                <button class="__submit" @click="submitChatMeeting">
                     Submit.
                 </button>
                 <div class="__clip"> </div>
@@ -69,35 +69,42 @@
 </template>
 
 <script>
+  import { mapActions } from "vuex"
 
-    export default{
-        name:"SectionGetStartedSummary",
-        props: {
-            page: {
-                type:String,
-                default:'',
-            },
-            userName: {
-              type:String,
-              default: ''
-            },
-            software: {
-              type:String,
-              default: ''
-            }
-        },
-        data(){
-            return{
-                timeList:['15min.','30min.','45min.', '1h.'],
-                selectedTime:'time'
-            }
-        },
-        methods:{
-            selectTime(time){
-                this.selectedTime = time
-            }
+  export default{
+    name:"SectionGetStartedSummary",
+    props: {
+      page: {
+          type:String,
+          default:'',
+      },
+      form: {
+        type: Object,
+        default: null
+      }
+    },
+    data(){
+      return{
+          timeList:['15min.','30min.','45min.', '1h.'],
+          selectedTime:'time'
+      }
+    },
+    methods:{
+      ...mapActions(['storeChatMeeting']),
+      selectTime(time){
+          this.selectedTime = time
+      },
+      async submitChatMeeting(){
+        if(this.page === 'chat'){
+          await this.storeChatMeeting(this.form)
+          console.log('end')
         }
+        // else{
+        //   this.storeVoiceMeeting(this.form)
+        // }
+      }
     }
+  }
 
 </script>
 <style lang="scss" scoped>
