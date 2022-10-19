@@ -20,9 +20,9 @@
     </div>
     <section-get-started-header />
     <section-get-started-basic-information v-model="form" :page="page" />
-    <section-get-started-chat v-if="page == 'chat'" />
+    <section-get-started-chat v-if="page == 'chat'" v-model="form"/>
     <section-get-started-meeting v-if="page == 'meeting'" />
-    <section-get-started-summary :key="summary_key" :userName="name" :software="software" :page="page" />
+    <section-get-started-summary :key="summary_key" :form="form" :page="page" />
   </div>
 </template>
 
@@ -48,22 +48,12 @@ export default {
       summary_key: 0
     }
   },
-  computed: {
-    name(){
-      return this.form.name
-    },
-    software(){
-      return this.form.app
-    }
-  },
   watch: {
-    name(){
-      console.log('hola')
-      this.summary_key++
-    },
-    software(){
-      console.log('hola')
-      this.summary_key++
+    form: {
+      handler(){
+        this.summary_key++
+      },
+      deep: true
     }
   }
 }

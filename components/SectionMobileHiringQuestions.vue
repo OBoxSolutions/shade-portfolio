@@ -6,7 +6,7 @@
       class="question-wraper">
       <div class="question-info">
         <h1>{{question.text}}</h1>
-        <textarea-input-answer  class="input-answer" @answer="updateAnswer(question, $event)" />
+        <textarea-input-answer class="input-answer" @answer="updateAnswer(question, $event)" />
       </div>
     </div>
     <div class="upload-files-wraper">

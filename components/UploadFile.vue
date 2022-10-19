@@ -13,7 +13,6 @@ import { getStorage, ref, uploadBytes } from 'firebase/storage'
 
 export default {
   name: 'UploadFile',
-  // components: { BaseButton },
   data (){
     return {
       file: null,
