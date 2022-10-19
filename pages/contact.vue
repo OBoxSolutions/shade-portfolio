@@ -12,7 +12,7 @@
 import SectionContactHeader from '~/components/SectionContactHeader.vue'
 import SectionContactBody from '~/components/SectionContactBody.vue'
 
-import api from '@/api/admin'
+import { createContact } from '~/services/contact'
 
 export default {
   components: { SectionContactHeader, SectionContactBody },
@@ -25,11 +25,24 @@ export default {
         contact: '',
         text: '',
       },
+      success: undefined,
     }
   },
   methods: {
     submitContact() {
-      api.post('messages', this.form)
+      try {
+        createContact(this.form)
+        this.setState(true)
+      } catch (error) {
+        this.setState(false)
+      }
+    },
+
+    setState(state) {
+      this.success = state
+      setTimeout(() => {
+        this.success = undefined
+      }, 2000)
     },
   },
 }
