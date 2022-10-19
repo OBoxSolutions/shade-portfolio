@@ -12,7 +12,7 @@
 import SectionContactHeader from '~/components/SectionContactHeader.vue'
 import SectionContactBody from '~/components/SectionContactBody.vue'
 
-import api from '@/api/admin'
+import { createContact } from '~/services/contact'
 
 export default {
   components: { SectionContactHeader, SectionContactBody },
@@ -29,7 +29,7 @@ export default {
   },
   methods: {
     submitContact() {
-      api.post('messages', this.form)
+      createContact(this.form)
     },
   },
 }
