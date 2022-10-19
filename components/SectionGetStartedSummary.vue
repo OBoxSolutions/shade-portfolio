@@ -58,7 +58,7 @@
                 </div>
             </div>
             <div class="__submit-container">
-                <button class="__submit" @click="submitChatMeeting">
+                <button class="__submit" @click="submitMeeting">
                     Submit.
                 </button>
                 <div class="__clip"> </div>
@@ -86,7 +86,8 @@
     data(){
       return{
           timeList:['15min.','30min.','45min.', '1h.'],
-          selectedTime:'time'
+          selectedTime:'time',
+          submitDisable: false
       }
     },
     methods:{
@@ -94,14 +95,24 @@
       selectTime(time){
           this.selectedTime = time
       },
-      async submitChatMeeting(){
+      async submitMeeting(){
+        this.submitDisable = true
         if(this.page === 'chat'){
-          await this.storeChatMeeting(this.form)
-          console.log('end')
+          const resp = await this.storeChatMeeting(this.form)
+
+          // TODO: Replace later with notifications's dark magic
+          if(resp){
+            console.log('Chat meetinh stored')
+          }
+          else{
+            console.log('There was an error. Try again later')
+          }
         }
         // else{
         //   this.storeVoiceMeeting(this.form)
         // }
+        this.submitDisable = false
+
       }
     }
   }
