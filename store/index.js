@@ -157,12 +157,16 @@ export const actions = {
   // },
 
   storeChatMeeting: async (_, chatMeeting) => {
-    chatMeeting.logo_file = await uploadFileToFirebase(chatMeeting.name, chatMeeting.logo_file)
-    chatMeeting.more_info_file = await uploadFileToFirebase(chatMeeting.name, chatMeeting.more_info_file)
+    try{
+      chatMeeting.logo_file = await uploadFileToFirebase(chatMeeting.name, chatMeeting.logo_file)
+      chatMeeting.more_info_file = await uploadFileToFirebase(chatMeeting.name, chatMeeting.more_info_file)
 
-    console.log(chatMeeting)
+      await adminApi.post('/chat-meetings/', chatMeeting)
 
-    // await adminApi.post('/messages/', chatMeeting)
+      return true
+    }catch{
+      return false
+    }
   },
 
   // storeVoiceMeeting: async (_, voiceMeeting) => {
