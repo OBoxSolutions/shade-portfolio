@@ -5,16 +5,30 @@
     :class="{ 'button--flat': flat }"
     v-on="$listeners"
   >
-    <slot></slot>
-    <span class="side button__left-side"></span>
-    <span class="side button__right-side"></span>
-    <span :class="{ 'button__only-bottom': onlyBottom, 'button__bottom-side': !onlyBottom }" class="side"></span>
+    <app-loader v-if="loading"></app-loader>
+    <template v-else>
+      <slot></slot>
+      <span class="side button__left-side"></span>
+      <span class="side button__right-side"></span>
+      <span
+        :class="{
+          'button__only-bottom': onlyBottom,
+          'button__bottom-side': !onlyBottom,
+        }"
+        class="side"
+      ></span>
+    </template>
   </button>
 </template>
 
 <script>
+import AppLoader from './AppLoader.vue'
+
 export default {
   name: 'BaseButton',
+  components: {
+    AppLoader,
+  },
   props: {
     flat: {
       type: Boolean,
@@ -22,8 +36,12 @@ export default {
     },
     onlyBottom: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
+    loading: {
+      type: Boolean,
+      default: false,
+    },
   },
 }
 </script>
