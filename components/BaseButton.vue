@@ -54,5 +54,6 @@ export default {
 .disabled {
   pointer-events: none;
   color: gray;
+  background-color: rgb(212, 212, 212);
 }
 </style>
