@@ -2,7 +2,7 @@
   <button
     v-bind="$attrs"
     class="button py-2 px-1"
-    :class="{ 'button--flat': flat }"
+    :class="{ 'button--flat': flat, disabled: disabled }"
     v-on="$listeners"
   >
     <app-loader v-if="loading"></app-loader>
@@ -42,6 +42,17 @@ export default {
       type: Boolean,
       default: false,
     },
+    disabled: {
+      type: Boolean,
+      default: false,
+    },
   },
 }
 </script>
+
+<style scoped>
+.disabled {
+  pointer-events: none;
+  color: gray;
+}
+</style>
