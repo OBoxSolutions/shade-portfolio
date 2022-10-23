@@ -111,19 +111,16 @@ export default {
 
         if(this.page === 'chat'){
           const resp = await this.storeChatMeeting(this.form)
-          console.log('action done')
 
           if(resp){
             this.addMessage({type: 'sucess', text: 'Chat meeting stored'})
-            this.disabled = false
-            this.loading = false
           }
           else{
             this.addMessage({type: 'error', text: 'There was an error. Try again later'})
-            this.disabled = false
-            this.loading = false
           }
         }
+        this.disabled = false
+        this.loading = false
         // else{
         //   this.storeVoiceMeeting(this.form)
         // }
