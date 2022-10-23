@@ -81,7 +81,6 @@
           </div>
           <div class="section-body__clip"></div>
         </div>
-        <div class="section-body__alert">it came through!</div>
       </div>
     </div>
     <div class="section-body__press-start">
