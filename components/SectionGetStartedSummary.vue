@@ -105,29 +105,28 @@ export default {
       selectTime(time){
           this.selectedTime = time
       },
-      submitMeeting(){
-        this.addMessage( {type: 'success', text: 'Chat meeting stored'} )
+      async submitMeeting(){
+        this.disabled = true
+        this.loading = true
 
+        if(this.page === 'chat'){
+          const resp = await this.storeChatMeeting(this.form)
+          console.log('action done')
 
-        // this.disabled = true
-        // this.loading = true
-
-        // if(this.page === 'chat'){
-        //   const resp = await this.storeChatMeeting(this.form)
-
-        //   // TODO: Replace later with notifications's dark magic
-        //   if(resp){
-        //     this.addMessage('Chat meeting stored')
-        //   }
-        //   else{
-        //     this.addMessage('There was an error. Try again later')
-        //   }
+          if(resp){
+            this.addMessage({type: 'sucess', text: 'Chat meeting stored'})
+            this.disabled = false
+            this.loading = false
+          }
+          else{
+            this.addMessage({type: 'error', text: 'There was an error. Try again later'})
+            this.disabled = false
+            this.loading = false
+          }
+        }
+        // else{
+        //   this.storeVoiceMeeting(this.form)
         // }
-        // // else{
-        // //   this.storeVoiceMeeting(this.form)
-        // // }
-        // this.disabled = false
-        // this.loading = false
       }
     }
 }

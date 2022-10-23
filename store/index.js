@@ -131,6 +131,8 @@ const uploadFileToFirebase = async (user, file) => {
       downloadUrl = url
     })
   }
+  console.log('upload done')
+
   return downloadUrl
 }
 export const getters = {
@@ -161,8 +163,8 @@ export const actions = {
       chatMeeting.logo_file = await uploadFileToFirebase(chatMeeting.name, chatMeeting.logo_file)
       chatMeeting.more_info_file = await uploadFileToFirebase(chatMeeting.name, chatMeeting.more_info_file)
 
-      await adminApi.post('/chat-meetings/', chatMeeting)
-
+      await adminApi.post('/chat-meetings', chatMeeting)
+      console.log('post done')
       return true
     }catch{
       return false
