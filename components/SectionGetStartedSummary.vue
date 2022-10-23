@@ -58,10 +58,18 @@
                 </div>
             </div>
             <div class="__submit-container">
-                <button class="__submit" @click="submitMeeting">
+                <!-- <button class="__submit" @click="submitMeeting">
                     Submit.
-                </button>
-                <div class="__clip"> </div>
+                </button> -->
+                <base-button
+                  :disabled="disabled"
+                  :loading="loading"
+                  only-bottom
+                  class="__submit button--green"
+                  @click="submitMeeting">
+                  <h1>Submit</h1>
+                </base-button>
+                <!-- <div class="__clip"> </div> -->
             </div>
         </div>
         <div class="__alert">it came through</div>
@@ -69,7 +77,7 @@
 </template>
 
 <script>
-  import { mapActions } from "vuex"
+  import { mapMutations, mapActions } from "vuex"
 
   export default{
     name:"SectionGetStartedSummary",
@@ -87,31 +95,38 @@
       return{
           timeList:['15min.','30min.','45min.', '1h.'],
           selectedTime:'time',
-          submitDisable: false
+          disabled: false,
+          loading: false
       }
     },
     methods:{
       ...mapActions(['storeChatMeeting']),
+      ...mapMutations(['addMessage']),
       selectTime(time){
           this.selectedTime = time
       },
-      async submitMeeting(){
-        this.submitDisable = true
-        if(this.page === 'chat'){
-          const resp = await this.storeChatMeeting(this.form)
+      submitMeeting(){
+        this.addMessage( {type: 'success', text: 'Chat meeting stored'} )
 
-          // TODO: Replace later with notifications's dark magic
-          if(resp){
-            console.log('Chat meetinh stored')
-          }
-          else{
-            console.log('There was an error. Try again later')
-          }
-        }
-        // else{
-        //   this.storeVoiceMeeting(this.form)
+        // this.disabled = true
+        // this.loading = true
+
+        // if(this.page === 'chat'){
+        //   const resp = await this.storeChatMeeting(this.form)
+
+        //   // TODO: Replace later with notifications's dark magic
+        //   if(resp){
+        //     this.addMessage('Chat meeting stored')
+        //   }
+        //   else{
+        //     this.addMessage('There was an error. Try again later')
+        //   }
         // }
-        this.submitDisable = false
+        // // else{
+        // //   this.storeVoiceMeeting(this.form)
+        // // }
+        // this.disabled = false
+        // this.loading = false
 
       }
     }
@@ -351,30 +366,49 @@
                 flex-direction: column;
                 align-items: center;
                 position: relative;
+                // .__submit{
+                //     background-color: #49EA76;
+                //     font-size: 2rem;
+                //     padding: 3rem;
+                //     color: black;
+                //     cursor: pointer;
+                //     z-index: 20;
+                //     &:active{
+                //         background-color: gray;
+                //         transform: scale(0.97);
+                //     }
+                //     &:active ~ .__clip{
+                //         opacity: 0;
+                //     }
+                // }
                 .__submit{
-                    background-color: #49EA76;
-                    font-size: 2rem;
-                    padding: 3rem;
-                    color: black;
-                    cursor: pointer;
-                    z-index: 20;
-                    &:active{
-                        background-color: gray;
-                        transform: scale(0.97);
-                    }
-                    &:active ~ .__clip{
-                        opacity: 0;
-                    }
+                  padding: 1rem 3rem !important;
+                  border-radius: 5px;
+                  margin-bottom: 2rem;
+                  // border: 1px solid black;
+
+                  transform-style: preserve-3d;
+                  perspective: 100px;
+                  perspective-origin: bottom;
+
+                  h1{
+                    font-weight: 400;
+                    margin: 1rem auto;
+                    color: #ffffff;
+                  }
+                  &:active {
+                    transform: translateY(10px);
+                  }
                 }
-                .__clip{
-                    height: 1rem;
-                    width: calc(100% - 15px);
-                    border: 2px solid black;
-                    border-top: 0;
-                    background-color: #33A653;
-                    transform: rotateX(325deg) translateY(-7px);
-                    position: relative;
-                }
+                // .__clip{
+                //     height: 1rem;
+                //     width: calc(100% - 15px);
+                //     border: 2px solid black;
+                //     border-top: 0;
+                //     background-color: #33A653;
+                //     transform: rotateX(325deg) translateY(-7px);
+                //     position: relative;
+                // }
             }
         }
 
