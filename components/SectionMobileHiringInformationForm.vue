@@ -27,6 +27,7 @@
             <input
               v-model="year"
               class="birthdate-input year"
+              maxlength="4"
               type="text"
               name="birthdate-year"
             />
@@ -34,6 +35,7 @@
             <input
               v-model="month"
               class="birthdate-input month"
+              maxlength="2"
               type="text"
               name="birthdate-month"
             />
@@ -41,6 +43,7 @@
             <input
               v-model="day"
               class="birthdate-input day"
+              maxlength="2"
               type="text"
               name="birthdate-day"
             />
