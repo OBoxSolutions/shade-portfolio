@@ -147,7 +147,7 @@ export default {
 
     .hiring-button{
       padding: 1rem 3rem !important;
-      border-radius: 5px;
+      // border-radius: 5px;
       margin-bottom: 2rem;
 
       transform-style: preserve-3d;

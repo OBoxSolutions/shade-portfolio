@@ -58,9 +58,6 @@
                 </div>
             </div>
             <div class="__submit-container">
-                <!-- <button class="__submit" @click="submitMeeting">
-                    Submit.
-                </button> -->
                 <base-button
                   :disabled="disabled"
                   :loading="loading"
@@ -69,7 +66,6 @@
                   @click="submitMeeting">
                   <h1>Submit</h1>
                 </base-button>
-                <!-- <div class="__clip"> </div> -->
             </div>
         </div>
         <div class="__alert">it came through</div>
@@ -365,7 +361,7 @@ export default {
 
                 .__submit{
                   padding: 1rem 3rem !important;
-                  border-radius: 5px;
+                  // border-radius: 5px;
                   margin-bottom: 2rem;
                   // border: 1px solid black;
 
@@ -376,7 +372,7 @@ export default {
                   h1{
                     font-weight: 400;
                     margin: 1rem auto;
-                    color: #ffffff;
+                    color: #000000;
                   }
                   &:active {
                     transform: translateY(10px);
