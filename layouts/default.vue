@@ -17,7 +17,7 @@ export default {
     }
   },
   computed: {
-    ...mapState('app', ['messages']),
+    ...mapState(['messages']),
   },
   watch: {
     messages(messages) {
