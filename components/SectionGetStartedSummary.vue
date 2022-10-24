@@ -78,7 +78,7 @@
 </template>
 
 <script>
-import { mapMutations, mapActions } from 'vuex'
+import { mapActions } from 'vuex'
 
 export default {
   name: 'SectionGetStartedSummary',
@@ -102,7 +102,6 @@ export default {
   },
   methods: {
     ...mapActions(['storeChatMeeting']),
-    ...mapMutations(['addMessage']),
     selectTime(time) {
       this.selectedTime = time
     },
