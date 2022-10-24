@@ -118,16 +118,14 @@ export const mutations = {
 }
 const uploadFileToFirebase = async (user, file) => {
   let downloadUrl = ''
-  if(file === ''){
+  if (file === '') {
     downloadUrl = ''
-  }
-  else{
+  } else {
     const storage = getStorage()
     const fileRef = ref(storage, user + '/' + file.name)
     await uploadBytes(fileRef, file)
 
-    await getDownloadURL(fileRef)
-    .then((url) => {
+    await getDownloadURL(fileRef).then((url) => {
       downloadUrl = url
     })
   }
@@ -156,16 +154,25 @@ export const actions = {
   //   await adminApi.post('/messages/', hiringRequest)
   // },
 
-  storeChatMeeting: async (_, chatMeeting) => {
-    try{
-      chatMeeting.logo_file = await uploadFileToFirebase(chatMeeting.name, chatMeeting.logo_file)
-      chatMeeting.more_info_file = await uploadFileToFirebase(chatMeeting.name, chatMeeting.more_info_file)
+  storeChatMeeting: async ({ dispatch }, chatMeeting) => {
+    try {
+      chatMeeting.logo_file = await uploadFileToFirebase(
+        chatMeeting.name,
+        chatMeeting.logo_file
+      )
+      chatMeeting.more_info_file = await uploadFileToFirebase(
+        chatMeeting.name,
+        chatMeeting.more_info_file
+      )
 
-      const {data} = await adminApi.post('/chat-meetings', chatMeeting)
+      await adminApi.post('/chat-meetings', chatMeeting)
 
-      return data.success
-    }catch{
-      return false
+      dispatch('addMessage', { type: 'sucess', text: 'Chat meeting stored' })
+    } catch {
+      dispatch('addMessage', {
+        type: 'error',
+        text: 'There was an error. Try again later',
+      })
     }
   },
 
