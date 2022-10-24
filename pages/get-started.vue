@@ -22,7 +22,7 @@
     <section-get-started-basic-information v-model="form" :page="page" />
     <section-get-started-chat v-if="page == 'chat'" v-model="form"/>
     <section-get-started-meeting v-if="page == 'meeting'" />
-    <section-get-started-summary :key="summary_key" :form="form" :page="page" />
+    <section-get-started-summary :form="form" :page="page" />
   </div>
 </template>
 
@@ -48,14 +48,6 @@ export default {
       summary_key: 0
     }
   },
-  watch: {
-    form: {
-      handler(){
-        this.summary_key++
-      },
-      deep: true
-    }
-  }
 }
 </script>
 
