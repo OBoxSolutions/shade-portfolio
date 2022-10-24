@@ -11,7 +11,7 @@ $button-sides-bg-color: #747474;
   color: black;
   cursor: pointer;
   transition: linear 0.1s all;
-  text-transform: uppercase;
+  text-transform: capitalize;
 
   .side {
     position: absolute;
