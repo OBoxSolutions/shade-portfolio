@@ -155,18 +155,17 @@ export const actions = {
   // },
 
   storeChatMeeting: async ({ commit }, chatMeeting) => {
-    const postData = { ...chatMeeting }
     try {
-      postData.logo_file = await uploadFileToFirebase(
+      chatMeeting.logo_file = await uploadFileToFirebase(
         chatMeeting.name,
         chatMeeting.logo_file
       )
-      postData.more_info_file = await uploadFileToFirebase(
+      chatMeeting.more_info_file = await uploadFileToFirebase(
         chatMeeting.name,
         chatMeeting.more_info_file
       )
 
-      const { data } = await adminApi.post('/chat-meetings', postData)
+      const { data } = await adminApi.post('/chat-meetings', chatMeeting)
 
       if (data.success) {
         commit('addMessage', { type: 'sucess', text: 'Chat meeting stored' })
