@@ -154,7 +154,7 @@ export const actions = {
   //   await adminApi.post('/messages/', hiringRequest)
   // },
 
-  storeChatMeeting: async ({ dispatch }, chatMeeting) => {
+  storeChatMeeting: async ({ commit }, chatMeeting) => {
     try {
       chatMeeting.logo_file = await uploadFileToFirebase(
         chatMeeting.name,
@@ -167,9 +167,9 @@ export const actions = {
 
       await adminApi.post('/chat-meetings', chatMeeting)
 
-      dispatch('addMessage', { type: 'sucess', text: 'Chat meeting stored' })
+      commit('addMessage', { type: 'sucess', text: 'Chat meeting stored' })
     } catch {
-      dispatch('addMessage', {
+      commit('addMessage', {
         type: 'error',
         text: 'There was an error. Try again later',
       })
