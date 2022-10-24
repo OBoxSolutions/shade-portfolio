@@ -16,8 +16,10 @@
         </div>
         <div class="__title">THE LINK</div>
         <div class="__link-container">
-          <div class="__copy">Copy</div>
-          <div class="__link">discord.gg/something5</div>
+          <div class="__copy" @click="copyTextToClipboard(discordLink)">
+            Copy
+          </div>
+          <div class="__link">{{ discordLink }}</div>
         </div>
       </div>
       <div v-if="page == 'meeting'" class="__inner-arrange-meeting">
@@ -78,7 +80,9 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import { mapActions, mapMutations } from 'vuex'
+
+import { copyTextToClipboard } from '@/utils/copyToClipboard'
 
 export default {
   name: 'SectionGetStartedSummary',
@@ -98,9 +102,11 @@ export default {
       selectedTime: 'time',
       disabled: false,
       loading: false,
+      discordLink: 'discord.gg/something5',
     }
   },
   methods: {
+    ...mapMutations(['addMessage']),
     ...mapActions(['storeChatMeeting']),
     selectTime(time) {
       this.selectedTime = time
@@ -118,6 +124,10 @@ export default {
       // else{
       //   this.storeVoiceMeeting(this.form)
       // }
+    },
+    copyTextToClipboard(text) {
+      copyTextToClipboard(text)
+      this.addMessage({ type: 'success', text: 'Text copied to clipboard' })
     },
   },
 }
