@@ -419,8 +419,6 @@ export default {
                 .__time {
                   padding: 0.5rem;
                 }
-                .__text {
-                }
               }
             }
           }
