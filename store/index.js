@@ -165,9 +165,16 @@ export const actions = {
         chatMeeting.more_info_file
       )
 
-      await adminApi.post('/chat-meetings', chatMeeting)
+      const { data } = await adminApi.post('/chat-meetings', chatMeeting)
 
-      commit('addMessage', { type: 'sucess', text: 'Chat meeting stored' })
+      if (data.success) {
+        commit('addMessage', { type: 'sucess', text: 'Chat meeting stored' })
+      } else {
+        commit('addMessage', {
+          type: 'error',
+          text: 'There was an error. Try again later',
+        })
+      }
     } catch {
       commit('addMessage', {
         type: 'error',
