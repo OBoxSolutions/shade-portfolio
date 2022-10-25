@@ -30,14 +30,14 @@ $button-sides-bg-color: #747474;
     transform: translate3d(0, 0.2em, -1em);
   }
   .button__only-bottom {
-    width: calc(100% - 10px);
+    width: calc(100% - 13px);
     min-height: 10px;
     height: unset;
     top: unset;
-    left: 5px;
+    left: 6px;
     bottom: -9px;
     border-radius: 0;
-    transform: rotateX(-20deg);
+    transform: rotateX(-40deg);
     background-color: $button-sides-bg-color;
   }
 

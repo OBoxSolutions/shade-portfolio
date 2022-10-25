@@ -163,7 +163,7 @@ export default {
       }
       .portfolio-button{
         padding: 0 !important;
-        border-radius: 5px;
+        // border-radius: 5px;
 
         transform-style: preserve-3d;
         perspective: 100px;
