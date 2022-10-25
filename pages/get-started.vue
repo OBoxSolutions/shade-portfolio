@@ -45,7 +45,6 @@ export default {
         more_info: '',
         more_info_file: '',
       },
-      summary_key: 0
     }
   },
 }

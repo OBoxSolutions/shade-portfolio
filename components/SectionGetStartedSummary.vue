@@ -83,6 +83,7 @@
 import { mapActions, mapMutations } from 'vuex'
 
 import { copyTextToClipboard } from '@/utils/copyToClipboard'
+import { validateForm } from '@/utils/validateForm'
 
 export default {
   name: 'SectionGetStartedSummary',
@@ -112,18 +113,23 @@ export default {
       this.selectedTime = time
     },
     async submitMeeting() {
-      this.disabled = true
-      this.loading = true
+      if(validateForm(this.form)){
+        this.disabled = true
+        this.loading = true
 
-      if (this.page === 'chat') {
-        await this.storeChatMeeting(this.form)
+        if (this.page === 'chat') {
+          await this.storeChatMeeting(this.form)
+        }
+
+        this.disabled = false
+        this.loading = false
+        // else{
+        //   this.storeVoiceMeeting(this.form)
+        // }
       }
-
-      this.disabled = false
-      this.loading = false
-      // else{
-      //   this.storeVoiceMeeting(this.form)
-      // }
+      else{
+        this.addMessage({ type: 'error', text: 'Some form values ​​are missing' })
+      }
     },
     copyTextToClipboard(text) {
       copyTextToClipboard(text)
