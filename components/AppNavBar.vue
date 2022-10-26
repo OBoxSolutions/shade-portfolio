@@ -84,7 +84,7 @@ export default {
   display: none;
 }
 .mobile-menu {
-  z-index: 999;
+  z-index: 1000;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -117,7 +117,7 @@ export default {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 20;
+  z-index: 999;
   display: flex;
   align-items: center;
   background-color: #5a55f8;

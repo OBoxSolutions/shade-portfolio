@@ -146,7 +146,7 @@ $border-size: 2px;
   border: 2px solid #222940;
   transform-style: preserve-3d;
   perspective: 200px;
-  z-index: 19;
+  z-index: 20;
   display: flex;
   flex-wrap: nowrap;
   flex-direction: column;
