@@ -19,8 +19,21 @@
         <div class="cursor" :style="'transform:' + position"></div>
       </div>
     </ul>
-    <div class="menu"></div>
+    <div class="menu" @click="toggleMenu = !toggleMenu"></div>
     <div class="bottom-clip"></div>
+
+    <!-- mobile menu  -->
+    <div :class="toggleMenu ? 'mobile-menu' : 'hidden'">
+      <button @click="toggleMenu = false" class="close-btn">x</button>
+
+      <li
+        v-for="(link, index) in links"
+        :key="`navbar-${index}`"
+        class="nav-bar__link"
+      >
+        <NuxtLink :to="link.url"> {{ link.text }} </NuxtLink>
+      </li>
+    </div>
   </div>
 </template>
 
@@ -37,6 +50,7 @@ export default {
         { text: "We're hiring", url: '/hiring' },
       ],
       position: '',
+      toggleMenu: false,
     }
   },
   watch: {
@@ -55,7 +69,7 @@ export default {
           home: 'translateX(calc(100%/6))',
           portfolio: 'translateX(calc(100%*1.5))',
           contact: 'translateX(calc(100%*2.8))',
-          "get-started": 'translateX(calc(100%*4.2))',
+          'get-started': 'translateX(calc(100%*4.2))',
           hiring: 'translateX(calc(100%*5.7))',
         }
         this.position = positions[page]
@@ -66,6 +80,39 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.hidden {
+  display: none;
+}
+.mobile-menu {
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: fit-content;
+  width: 100%;
+  padding-top: 30px;
+  padding-bottom: 50px;
+  background-color: #f34021;
+  color: #222940;
+  gap: 40px;
+  border-bottom: 10px solid #81200f;
+
+  .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
+  .nav-bar__link {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
 .nav {
   position: absolute;
   top: 0;
@@ -105,14 +152,14 @@ export default {
       right: 0;
       display: none;
       .top {
-        background-color: #352FCF;
+        background-color: #352fcf;
         height: 85%;
         border: 1px solid black;
         border-width: 1px 0 0 0;
         padding: 0 20px;
       }
       .bottom {
-        background-color: #D08B00;
+        background-color: #d08b00;
         height: 15%;
         padding: 0 20px;
       }
