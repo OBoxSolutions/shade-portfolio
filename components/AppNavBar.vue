@@ -117,7 +117,7 @@ export default {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 20;
+  z-index: 999;
   display: flex;
   align-items: center;
   background-color: #5a55f8;
