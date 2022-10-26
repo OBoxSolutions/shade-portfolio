@@ -111,7 +111,6 @@
 </template>
 
 <script>
-import { mapGetters, mapMutations } from 'vuex'
 export default {
   name: 'SectionMobileHiringInformationForm',
   props: {
@@ -128,7 +127,6 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['getHiringName']),
     form: {
       get() {
         return this.value
@@ -145,9 +143,6 @@ export default {
     birthday(val) {
       this.form.birthday = val
     },
-  },
-  methods: {
-    ...mapMutations(['setHiringName']),
   },
 }
 </script>
