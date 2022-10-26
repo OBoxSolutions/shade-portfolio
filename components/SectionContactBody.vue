@@ -41,9 +41,26 @@
 
       <div class="section-body__popup">
         <div class="section-body__popup-list">
-          <div v-for="(option, index) in mediaOptions" :key="`media-${index}`">
-            {{ option.text }}
-            <div :style="`background-image:url('${option.icon}')`"></div>
+          <div
+            v-for="(option, index) in mediaOptions"
+            :key="`media-${index}`"
+            :class="option.text === form.social && 'selected-platform'"
+          >
+            <input
+              :id="option.text"
+              v-model="form.social"
+              :value="option.text"
+              type="radio"
+              name="social"
+            />
+
+            <label :for="option.text" class="platform-label">
+              {{ option.text }}
+              <div
+                :style="`background-image:url('${option.icon}')`"
+                class="icon"
+              ></div>
+            </label>
           </div>
         </div>
       </div>
@@ -140,9 +157,12 @@ export default {
   .platform-label {
     font-weight: 700;
     font-family: 'Press Start 2P' !important;
-    font-size: 0.55rem;
-  }
+    font-size: 0.55rem !important;
 
+    @media only screen and (max-width: 1024px) {
+      font-size: 0.8rem !important;
+    }
+  }
   .icon {
     filter: brightness(1.4);
   }
