@@ -113,7 +113,7 @@ export default {
       this.selectedTime = time
     },
     async submitMeeting() {
-      if(validateForm(this.form)){
+      if (validateForm(this.form)) {
         this.disabled = true
         this.loading = true
 
@@ -126,9 +126,11 @@ export default {
         // else{
         //   this.storeVoiceMeeting(this.form)
         // }
-      }
-      else{
-        this.addMessage({ type: 'error', text: 'Some form values ​​are missing' })
+      } else {
+        this.addMessage({
+          type: 'error',
+          text: 'Some form values ​​are missing',
+        })
       }
     },
     copyTextToClipboard(text) {
@@ -144,6 +146,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+  filter: saturate(0.8);
   .__top {
     background-color: #ffac06;
     padding: 2rem;

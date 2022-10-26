@@ -84,7 +84,7 @@ export default {
   display: none;
 }
 .mobile-menu {
-  z-index: 999;
+  z-index: 1000;
   display: flex;
   justify-content: center;
   align-items: center;
