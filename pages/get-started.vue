@@ -52,14 +52,14 @@ export default {
       this.updatePage()
     },
   },
+  mounted() {
+    this.page = this.$route.query.mode === 'meeting' ? 'meeting' : 'chat'
+  },
   methods: {
     updatePage() {
       this.page = this.$route.query.mode === 'meeting' ? 'meeting' : 'chat'
       return this.page
     },
-  },
-  mounted() {
-    this.page = this.$route.query.mode === 'meeting' ? 'meeting' : 'chat'
   },
 }
 </script>
