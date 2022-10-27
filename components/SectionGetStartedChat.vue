@@ -80,6 +80,20 @@
         },
       },
     },
+    mounted(){
+      const lineCounters = document.getElementsByClassName('lineCounter')
+      const largeWidth = window.innerWidth >= 768
+      if(largeWidth){
+        for (let i = 0; i < lineCounters.length; i++) {
+          lineCounters.item(i).style.setProperty('height', '18rem', 'important')
+        }
+      }
+      else{
+        for (let i = 0; i < lineCounters.length; i++) {
+          lineCounters.item(i).style.setProperty('height', '10rem', 'important')
+        }
+      }
+  },
     methods: {
       setQuestionsAnswers(question, answer){
         this.form[`${question}`] = answer
