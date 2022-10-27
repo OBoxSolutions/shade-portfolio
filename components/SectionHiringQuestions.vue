@@ -61,8 +61,8 @@
 </template>
 
 <script>
-
 export default {
+  name: 'SectionHiringQuestions',
   props: {
     value: {
       type: Object,

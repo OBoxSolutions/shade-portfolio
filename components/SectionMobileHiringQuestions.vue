@@ -6,10 +6,10 @@
       class="question-wraper">
       <div class="question-info">
         <h1>{{question.text}}</h1>
-        <textarea-input-answer class="input-answer" @answer="updateAnswer(question, $event)" />
+        <textarea-input-answer class="input-answer" @answer="setQuestionsAnswers(question.model, $event)" />
       </div>
     </div>
-    <div class="upload-files-wraper">
+    <!-- <div class="upload-files-wraper">
       <FilePond
         ref="pond"
         class="filepond"
@@ -25,9 +25,9 @@
       <div class="upload-file-image">
         <img src="/upload-file.svg" alt="upload-file-picture">
       </div>
-    </div>
+    </div> -->
     <div class="hiring-button-container">
-      <base-button only-bottom class="hiring-button button--green">
+      <base-button only-bottom class="hiring-button button--green" @click="submitHiringRequest">
         <h1>Submit</h1>
       </base-button>
       <div class="__bottom-text">
@@ -38,44 +38,78 @@
 </template>
 
 <script>
-import vueFilePond from 'vue-filepond'
-import 'filepond/dist/filepond.min.css'
+// import vueFilePond from 'vue-filepond'
+// import 'filepond/dist/filepond.min.css'
 
-import { mapState, mapMutations } from "vuex"
+import { mapMutations } from "vuex"
 export default {
   name: 'SectionMobileHiringQuestions',
-    components: {
-      FilePond: vueFilePond()
+  props: {
+    value: {
+      type: Object,
+      default: () => {},
+    },
+  },
+  // components: {
+  //   FilePond: vueFilePond()
+  // },
+  data() {
+    return {
+      questions: [
+        { text: 'What is your proudest accomplishment?', model: 'question_one', file: null },
+        { text: 'What moral value do you value the most?', model: 'question_two', file: null },
+        { text: 'Are you ever justified to kill?', model: 'question_three', file: null },
+        { text: 'Is morality subjective or objective?', model: 'question_four', file: null },
+        { text: 'If you could live forever, would do you want to?', model: 'question_five', file: null },
+        { text: 'If you could change the world, what would you change?', model: 'question_six', file: null },
+        { text: 'Some questions?', model: 'question_seven', file: null },
+        { text: 'Are you satisfied with yourself?', model: 'question_eight', file: null },
+        { text: 'Maybe have anything to add? Any questions perhaps?', model: 'question_nine', file: null },
+      ],
+    }
   },
   computed: {
-    ...mapState(['questions']),
+    form: {
+      get() {
+        return this.value
+      },
+      set(val) {
+        this.$emit('input', val)
+      },
+    },
   },
   mounted(){
-    document.getElementById('lineCounter').style.setProperty('height', '18rem', 'important')
+    const lineCounters = document.getElementsByClassName('lineCounter')
+    for (let i = 0; i < lineCounters.length; i++) {
+      lineCounters.item(i).style.setProperty('height', '18rem', 'important')
+    }
   },
   methods: {
-    ...mapMutations(['setAnswerToQuestion', 'setMobileFiles']),
-    updateAnswer(question, answer){
-      this.setAnswerToQuestion({question, answer})
+    ...mapMutations(['setMobileFiles']),
+    setQuestionsAnswers(question, answer){
+      this.form[`${question}`] = answer
     },
-    updateFiles(){
-      const uploadFiles = []
-      const allFiles = this.$refs.pond.getFiles()
-      allFiles.forEach(element => {
-        uploadFiles.push(element.file)
-      })
-      this.setMobileFiles(uploadFiles)
-    },
-    handleFilePondInit(){
-      const element = document.querySelector('.filepond--drop-label');
-
-      const button = document.createElement('button');
-      button.type = 'button';
-      button.className = 'filepond--media-search-action';
-      button.innerHTML = 'Import from Storage'
-
-      element.appendChild(button);
+    submitHiringRequest(){
+      console.log(this.form)
     }
+    // updateFiles(){
+    //   const uploadFiles = []
+    //   const allFiles = this.$refs.pond.getFiles()
+    //   allFiles.forEach(element => {
+    //     uploadFiles.push(element.file)
+    //   })
+    //   this.setMobileFiles(uploadFiles)
+    // },
+    // handleFilePondInit(){
+    //   const element = document.querySelector('.filepond--drop-label');
+
+    //   const button = document.createElement('button');
+    //   button.type = 'button';
+    //   button.className = 'filepond--media-search-action';
+    //   button.innerHTML = 'Import from Storage'
+
+    //   element.appendChild(button);
+    // }
   },
 
 }

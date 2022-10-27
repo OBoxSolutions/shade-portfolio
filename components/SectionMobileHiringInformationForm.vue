@@ -135,13 +135,13 @@ export default {
         this.$emit('input', val)
       },
     },
-    birthday() {
+    birthdate() {
       return `${this.day}-${this.month}-${this.year}`
     },
   },
   watch: {
-    birthday(val) {
-      this.form.birthday = val
+    birthdate(val) {
+      this.form.birthdate = val
     },
   },
 }
