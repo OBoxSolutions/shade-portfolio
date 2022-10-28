@@ -5,9 +5,6 @@ import adminApi from '~/api/admin'
 export const plugins = [plugin]
 
 export const state = () => ({
-  // Hiring data
-  hiringName: '',
-
   // Cantact me data
   userName: '',
   message: '',
@@ -150,9 +147,26 @@ export const actions = {
     await adminApi.post('/messages/', message)
   },
 
-  // storeHiringRequest: async (_, hiringRequest) => {
-  //   await adminApi.post('/messages/', hiringRequest)
-  // },
+  storeHiringRequest: async ({ commit }, hiringRequest) => {
+    try{
+      const { data } = await adminApi.post('/hiring-requests', hiringRequest)
+      if (data.success) {
+        commit('addMessage', { type: 'sucess', text: 'Hiring request stored' })
+      }
+      else {
+        commit('addMessage', {
+          type: 'error',
+          text: 'There was an error. Try again later',
+        })
+      }
+    }
+    catch{
+      commit('addMessage', {
+        type: 'error',
+        text: 'There was an error. Try again later',
+      })
+    }
+  },
 
   storeChatMeeting: async ({ commit }, chatMeeting) => {
     try {

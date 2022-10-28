@@ -10,6 +10,9 @@
 </template>
 
 <script>
+import { mapMutations, mapActions } from 'vuex'
+import { validateForm } from '@/utils/validateForm'
+
 export default {
   props: {
     form: {
@@ -18,8 +21,18 @@ export default {
     },
   },
   methods: {
-    submitHiringRequest(){
-      console.log(this.form)
+    ...mapMutations(['addMessage']),
+    ...mapActions(['storeHiringRequest']),
+    async submitHiringRequest(){
+      if (validateForm(this.form)) {
+        await this.storeHiringRequest(this.form)
+      }
+      else {
+        this.addMessage({
+          type: 'error',
+          text: 'Some form values ​​are missing',
+        })
+      }
     }
   }
 
