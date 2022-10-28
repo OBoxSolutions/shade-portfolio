@@ -29,12 +29,6 @@ export default {
       success: undefined,
     }
   },
-  mounted() {
-    this.addMessage({
-      type: 'error',
-      text: 'There was an error trying to contact us',
-    })
-  },
   methods: {
     ...mapMutations(['addMessage']),
     submitContact() {
