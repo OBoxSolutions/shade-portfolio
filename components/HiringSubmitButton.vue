@@ -1,8 +1,14 @@
 <template>
   <div class="hiring-submit">
-    <div class="hiring-submit__top" />
-    <button class="hiring-submit__button" @click="submitHiringRequest">
-      <h1>
+    <div
+      class="hiring-submit__top"
+      :class="{ disabled: disabled }" />
+    <button
+      class="hiring-submit__button"
+      :class="{ disabled: disabled }"
+      @click="submitHiringRequest">
+      <app-loader v-if="loading" class="spinner"></app-loader>
+      <h1 v-else>
         SUBMIT
       </h1>
     </button>
@@ -20,10 +26,18 @@ export default {
       default: null,
     },
   },
+  data (){
+    return {
+      disabled: false,
+      loading: false
+    }
+  },
   methods: {
     ...mapMutations(['addMessage']),
     ...mapActions(['storeHiringRequest']),
     async submitHiringRequest(){
+      this.disabled = true
+      this.loading = true
       if (validateForm(this.form)) {
         await this.storeHiringRequest(this.form)
       }
@@ -33,6 +47,8 @@ export default {
           text: 'Some form values ​​are missing',
         })
       }
+      this.disabled = false
+      this.loading = false
     }
   }
 
@@ -48,6 +64,7 @@ $perspective: 300px;
   perspective: $perspective;
   perspective-origin: bottom;
   z-index: 10;
+
 
   .hiring-submit__top{
     background: #33B758;
@@ -94,5 +111,13 @@ $perspective: 300px;
       transform: matrix(0.83, 0, -0.89, 1, 0, 0);
     }
   }
+}
+.disabled{
+  pointer-events: none !important;
+  color: gray !important;
+  background-color: rgb(212, 212, 212) !important;
+}
+.spinner{
+  padding: 2rem
 }
 </style>
