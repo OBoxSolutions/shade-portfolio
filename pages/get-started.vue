@@ -8,7 +8,7 @@
             type="radio"
             name="page"
             :value="'chat'"
-            checked
+            :checked="page === 'chat' ? true : false"
           />
           Chat
         </label>
@@ -20,7 +20,7 @@
     </div>
     <section-get-started-header />
     <section-get-started-basic-information v-model="form" :page="page" />
-    <section-get-started-chat v-if="page == 'chat'" v-model="form"/>
+    <section-get-started-chat v-if="page == 'chat'" v-model="form" />
     <section-get-started-meeting v-if="page == 'meeting'" />
     <section-get-started-summary :form="form" :page="page" />
   </div>
@@ -30,7 +30,7 @@
 export default {
   data() {
     return {
-      page: 'chat',
+      page: this.$route.query.mode === 'meeting' ? 'meeting' : 'chat',
       form: {
         name: '',
         email: '',
@@ -45,8 +45,21 @@ export default {
         more_info: '',
         more_info_file: '',
       },
-      summary_key: 0
     }
+  },
+  watch: {
+    $route() {
+      this.updatePage()
+    },
+  },
+  mounted() {
+    this.page = this.$route.query.mode === 'meeting' ? 'meeting' : 'chat'
+  },
+  methods: {
+    updatePage() {
+      this.page = this.$route.query.mode === 'meeting' ? 'meeting' : 'chat'
+      return this.page
+    },
   },
 }
 </script>
@@ -62,6 +75,7 @@ export default {
     border: 2px solid black;
     border-radius: 0.6rem;
     padding: 1rem;
+    z-index: 1;
     padding-top: 2rem;
     width: fit-content;
     .__inner {
@@ -106,6 +120,14 @@ export default {
   .get-started {
     .__selector {
       margin-left: calc(100vw / 1.56);
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .get-started {
+    .__selector {
+      display: none;
     }
   }
 }

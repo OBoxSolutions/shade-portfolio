@@ -83,7 +83,7 @@ export default {
 
     .portfolio-button{
       padding: 0 !important;
-      border-radius: 5px;
+      // border-radius: 5px;
       width: 35%;
 
       transform-style: preserve-3d;

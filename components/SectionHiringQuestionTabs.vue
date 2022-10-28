@@ -50,7 +50,6 @@
 
 <script>
 import { mapState, mapGetters, mapMutations } from "vuex"
-import { getStorage, ref, uploadBytes } from 'firebase/storage'
 
 export default {
   data() {
@@ -78,19 +77,6 @@ export default {
       document.getElementById(answerIndex).style.display = "block";
       this.activeTab = tabIndex
     },
-    uploadFile(){
-      if(this.file === null || this.getHiringName === ''){
-        console.log('missing parameters')
-      }
-      else{
-        const storage = getStorage()
-        const fileRef = ref(storage, this.getHiringName+'/'+this.file.name)
-        uploadBytes(fileRef, this.file)
-        .then((snapshot) => {
-          console.log('uploaded a file')
-        })
-      }
-    }
   }
 }
 </script>

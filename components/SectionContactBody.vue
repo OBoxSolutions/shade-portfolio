@@ -41,9 +41,26 @@
 
       <div class="section-body__popup">
         <div class="section-body__popup-list">
-          <div v-for="(option, index) in mediaOptions" :key="`media-${index}`">
-            {{ option.text }}
-            <div :style="`background-image:url('${option.icon}')`"></div>
+          <div
+            v-for="(option, index) in mediaOptions"
+            :key="`media-${index}`"
+            :class="option.text === form.social && 'selected-platform'"
+          >
+            <input
+              :id="option.text"
+              v-model="form.social"
+              :value="option.text"
+              type="radio"
+              name="social"
+            />
+
+            <label :for="option.text" class="platform-label">
+              {{ option.text }}
+              <div
+                :style="`background-image:url('${option.icon}')`"
+                class="icon"
+              ></div>
+            </label>
           </div>
         </div>
       </div>
@@ -57,6 +74,7 @@
               <div
                 v-for="(option, index) in mediaOptions"
                 :key="`media-${index}`"
+                :class="option.text === form.social && 'selected-platform'"
               >
                 <input
                   :id="option.text"
@@ -66,10 +84,13 @@
                   name="social"
                 />
 
-                <label :for="option.text">
+                <label :for="option.text" class="platform-label">
                   {{ option.text }}
+                  <div
+                    :style="`background-image:url('${option.icon}')`"
+                    class="icon"
+                  ></div>
                 </label>
-                <div :style="`background-image:url('${option.icon}')`"></div>
               </div>
             </div>
           </div>
@@ -100,7 +121,7 @@ export default {
   data() {
     return {
       mediaOptions: [
-        { text: 'Discord', icon: '/contact/discord-icon.png' },
+        { text: 'Discord', icon: '/contact/discord-icon-toned.png' },
         { text: 'Email', icon: '/contact/gmail-icon.png' },
         { text: 'Messenger', icon: '/contact/messenger-icon.png' },
         { text: 'Instagram', icon: '/contact/instagram-icon.png' },
@@ -126,6 +147,40 @@ export default {
 </script>
 
 <style scoped lang="scss">
+[type='radio'] {
+  display: none;
+}
+
+.selected-platform {
+  background-color: #8a8a8a;
+
+  .platform-label {
+    font-weight: 700;
+    font-family: 'Press Start 2P' !important;
+    font-size: 0.55rem !important;
+
+    @media only screen and (max-width: 1024px) {
+      font-size: 0.8rem !important;
+    }
+  }
+  .icon {
+    filter: brightness(1.4);
+  }
+}
+
+.platform-label {
+  font-weight: 400;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  height: 100%;
+  cursor: pointer;
+  width: 100%;
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+}
+
 .section-body {
   position: relative;
   background-image: url('/contact/header-background.png');
@@ -387,6 +442,7 @@ export default {
           margin: 2px 10px;
           border-bottom: 1px solid black;
           display: flex;
+          align-items: center;
           gap: 5px;
           justify-content: center;
           position: relative;
@@ -469,6 +525,7 @@ export default {
               margin: 0px 10px;
               border-bottom: 1px solid black;
               display: flex;
+              align-items: center;
               gap: 5px;
               justify-content: center;
               position: relative;

@@ -1,7 +1,7 @@
 <template>
   <div>
-    <p><textarea id='lineCounter' ref="lineCounter" wrap='off' readonly>1</textarea>
-    <textarea id='codeEditor' ref="codeEditor" wrap="off" placeholder="Type your answer here..." @scroll="scroll" @keydown="inputTab" @input="handlerCounter"></textarea></p>
+    <p><textarea class='lineCounter' ref="lineCounter" wrap='off' readonly>1</textarea>
+    <textarea class='codeEditor' ref="codeEditor" wrap="off" placeholder="Type your answer here..." @scroll="scroll" @keydown="inputTab" @input="handlerCounter"></textarea></p>
   </div>
 </template>
 
@@ -55,7 +55,7 @@ div{
       height: 100%;
     }
 }
-#codeEditor, #lineCounter {
+.codeEditor, .lineCounter {
   font-family: 'Consolas';
   width: 100%;
   margin: 0;
@@ -67,7 +67,7 @@ div{
   border: none;
   box-sizing: border-box;
 }
-#lineCounter {
+.lineCounter {
   display: flex;
   overflow-y: hidden;
   text-align: right;
@@ -80,7 +80,7 @@ div{
   background-color: transparent;
   color:#ffffff;
 }
-#codeEditor {
+.codeEditor {
   font-family: 'Consolas';
   padding-left: calc(1.5rem + 8px);
   height: 100%;

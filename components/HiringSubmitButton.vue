@@ -1,9 +1,9 @@
 <template>
   <div class="hiring-submit">
     <div class="hiring-submit__top" />
-    <button class="hiring-submit__button">
+    <button class="hiring-submit__button" @click="submitHiringRequest">
       <h1>
-        submit.
+        SUBMIT
       </h1>
     </button>
   </div>
@@ -11,6 +11,17 @@
 
 <script>
 export default {
+  props: {
+    form: {
+      type: Object,
+      default: null,
+    },
+  },
+  methods: {
+    submitHiringRequest(){
+      console.log(this.form)
+    }
+  }
 
 }
 </script>

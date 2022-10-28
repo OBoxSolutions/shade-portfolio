@@ -120,6 +120,7 @@ export default {
   z-index: 30;
   background-color: #ef4242;
   padding-bottom: -2rem;
+  filter: saturate(0.8);
   .__clip {
     width: 100%;
     height: 1.5rem;

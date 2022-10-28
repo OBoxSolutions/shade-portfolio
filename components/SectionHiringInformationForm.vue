@@ -111,8 +111,6 @@
 </template>
 
 <script>
-import { mapGetters, mapMutations } from 'vuex'
-
 export default {
   name: 'SectionHiringInformationForm',
   props: {
@@ -129,7 +127,6 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['getHiringName']),
     form: {
       get() {
         return this.value
@@ -138,17 +135,14 @@ export default {
         this.$emit('input', val)
       },
     },
-    birthday() {
+    birthdate() {
       return `${this.day}-${this.month}-${this.year}`
     },
   },
   watch: {
-    birthday(val) {
-      this.form.birthday = val
+    birthdate(val) {
+      this.form.birthdate = val
     },
-  },
-  methods: {
-    ...mapMutations(['setHiringName']),
   },
 }
 </script>
