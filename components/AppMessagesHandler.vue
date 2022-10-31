@@ -5,6 +5,7 @@
       :key="`message-${index}`"
       class="app-message"
       :message="message"
+      @click="deleteMessage(key)"
     ></app-message>
   </div>
 </template>
