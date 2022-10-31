@@ -1,5 +1,5 @@
 <template>
-  <app-card class="app-card">
+  <app-card class="app-card" v-on="$listeners">
     <div class="app-card-body">
       <span class="text-3xl mr-3" :class="icon"></span>
       <span>
