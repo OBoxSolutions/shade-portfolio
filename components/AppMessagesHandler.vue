@@ -1,10 +1,11 @@
 <template>
   <div class="app-messages-handler">
     <app-message
-      v-for="(message, index) in messages"
-      :key="`message-${index}`"
-      class="app-message"
+      v-for="(message, key, index) in messagesDirectory"
+      :key="key"
+      class="absolute left-0 right-0 mx-auto"
       :message="message"
+      :style="{ 'margin-top': `${index * 1}em` }"
       @click="deleteMessage(key)"
     ></app-message>
   </div>
@@ -55,6 +56,7 @@ export default Vue.extend({
   z-index: 500;
   position: fixed;
   width: 100%;
+  margin-top: 1em;
 }
 
 .app-message {
