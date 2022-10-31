@@ -15,6 +15,8 @@ import Vue from 'vue'
 
 import AppMessage from './AppMessage.vue'
 
+import { getRandomString } from '@/utils/randomnessGenerator'
+
 export default Vue.extend({
   name: 'AppMessagesHandler',
   components: {
@@ -26,14 +28,23 @@ export default Vue.extend({
     }
   },
   methods: {
-    deleteMessageAfterDelay(index) {
+    deleteMessageAfterDelay(id) {
       setTimeout(() => {
-        this.messages.splice(index, 1)
+        this.deleteMessage(id)
       }, 5000)
     },
+
+    deleteMessage(id) {
+      delete this.messagesDirectory[id]
+      this.messagesDirectory = { ...this.messagesDirectory }
+    },
+
     addMessage(message) {
-      this.messages.push(message)
-      this.deleteMessageAfterDelay(this.messages.length - 1)
+      const id = getRandomString()
+
+      this.$set(this.messagesDirectory, id, message)
+
+      this.deleteMessageAfterDelay(id)
     },
   },
 })
