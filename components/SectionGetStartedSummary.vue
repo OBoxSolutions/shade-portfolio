@@ -11,15 +11,15 @@
     <div class="__details">
       <div class="__inner-chat">
         <div class="__description">
-          Please join our discord server to proceed. Once you join, our team
+          Please join our {{selectedApp.name}} to proceed. Once you join, our team
           will contact you directly
         </div>
         <div class="__title">THE LINK</div>
         <div class="__link-container">
-          <div class="__copy" @click="copyTextToClipboard(discordLink)">
+          <div class="__copy" @click="copyTextToClipboard(selectedApp.link)">
             Copy
           </div>
-          <div class="__link">{{ discordLink }}</div>
+          <div class="__link">{{ selectedApp.link }}</div>
         </div>
       </div>
       <div v-if="page == 'meeting'" class="__inner-arrange-meeting">
@@ -103,7 +103,20 @@ export default {
       selectedTime: 'time',
       disabled: false,
       loading: false,
-      discordLink: 'discord.gg/something5',
+      appLinks: [
+        { name: 'Discord', link: 'discord.gg/something5' },
+        { name: 'Messenger', link: 'messanger.gg/something5' },
+        { name: 'Twitter', link: 'twitter.gg/something5' },
+        { name: 'Instagram', link: 'instagram.gg/something5' },
+        { name: 'Zoom', link: 'zoom.gg/something5' },
+        { name: 'Google Meet', link: 'meet.gg/something5' },
+      ],
+    }
+  },
+  computed: {
+    selectedApp(){
+      const result = this.appLinks.filter(app => app.name === this.form.app)
+      return result[0]
     }
   },
   methods: {
