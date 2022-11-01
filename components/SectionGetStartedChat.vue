@@ -10,8 +10,8 @@
                 class="__question" >
 
                 <div v-if="question.input" class="__file-container-mobile">
-                    <div class="__file-icon"></div>
-                    <label for="file-input" class="__file-input">drop_or_select_files_here</label>
+                    <div :class="!inputFileName(question.model) ? '__file-icon' : '__file-icon-loaded'"></div>
+                    <label for="file-input" class="__file-input">{{inputFileName(question.model) || 'drop_or_select_file_here'}}</label>
                     <input id="__file-input" type="file" @change="loadFile(question.model, $event)"/>
                 </div>
                 <div class="__input">
@@ -37,8 +37,8 @@
                         </div>
 
                         <div v-if="question.input" class="__file-container">
-                            <div class="__file-icon"></div>
-                            <label for="file-input" class="__file-input">drop_or_select_files_here</label>
+                            <div :class="!inputFileName(question.model) ? '__file-icon' : '__file-icon-loaded'"></div>
+                            <label for="file-input" class="__file-input">{{inputFileName(question.model) || 'drop_or_select_file_here'}}</label>
                             <input id="__file-input" type="file" @change="loadFile(question.model, $event)"/>
                         </div>
                     </div>
@@ -105,7 +105,17 @@
         else{
           this.form.more_info_file = event.target.files[0]
         }
-      }
+      },
+      inputFileName(model){
+        if(model === 'logo_info' && this.form.logo_file !== ''){
+          return this.form.logo_file.name
+        }
+        if(model === 'more_info' && this.form.more_info_file !== ''){
+          return this.form.more_info_file.name
+        }
+        return false
+
+      },
     }
   }
 </script>
@@ -141,16 +151,21 @@
                 display: flex;
                 position: relative;
                 cursor: pointer;
-                .__file-icon{
+                .__file-icon, .__file-icon-loaded{
                     width: 10%;
                     height: 100%;
-                    background-image: url("/get-started/file.png");
+                    // background-image: url("/get-started/file.png");
                     background-size: 80%;
                     background-repeat: no-repeat;
                     background-position: center;
                     background-color: #8A8A8A;
                     border-right: 1px solid black;
-
+                }
+                .__file-icon{
+                    background-image: url("/get-started/file.png");
+                }
+                .__file-icon-loaded{
+                    background-image: url("/get-started/file-loaded.svg");
                 }
                 .__file-input{
                     background-color: #CC8800;
@@ -249,16 +264,21 @@
                         display: none;
                         position: relative;
                         cursor: pointer;
-                        .__file-icon{
+                        .__file-icon, .__file-icon-loaded{
                             width: 10%;
                             height: 100%;
-                            background-image: url("/get-started/file.png");
+                            // background-image: url("/get-started/file.png");
                             background-size: 80%;
                             background-repeat: no-repeat;
                             background-position: center;
                             background-color: #8A8A8A;
                             border-right: 1px solid black;
-
+                        }
+                        .__file-icon{
+                            background-image: url("/get-started/file.png");
+                        }
+                        .__file-icon-loaded{
+                            background-image: url("/get-started/file-loaded.svg");
                         }
                         .__file-input{
                             background-color: #CC8800;
