@@ -22,7 +22,7 @@
           <div class="__link">{{ selectedApp.link }}</div>
         </div>
       </div>
-      <div v-if="page == 'meeting'" class="__inner-arrange-meeting">
+      <div v-if="page == 'meeting' && form.app !== 'Discord'" class="__inner-arrange-meeting">
         <div class="__description">
           Do you want us to send a reminder to you before the meeting starts?
         </div>
@@ -47,15 +47,15 @@
               </div>
             </div>
           </div>
-          <div class="__no">No.</div>
+          <button class="__no" @click="noTimeBeforeMeeting()">No.</button>
         </div>
       </div>
-      <div v-if="page == 'meeting'" class="__inner-meeting-link">
+      <div v-if="page == 'meeting' && form.app !== 'Discord'" class="__inner-meeting-link">
         <div class="title">Here's the link</div>
 
         <div class="__link-container">
-          <div class="__copy">Copy</div>
-          <div class="__link">some zoom or google meets link</div>
+          <button class="__copy" @click="copyTextToClipboard(meetingGeneratedLink)">Copy</button>
+          <div class="__link">{{meetingGeneratedLink}}</div>
         </div>
         <div>Do you want us to send it to your inbox?</div>
         <div class="__choice-container">
@@ -101,6 +101,7 @@ export default {
     return {
       timeList: ['15min.', '30min.', '45min.', '1h.'],
       selectedTime: 'time',
+      meetingGeneratedLink: 'some zoom or google meets link',
       disabled: false,
       loading: false,
       appLinks: [
@@ -125,6 +126,9 @@ export default {
     selectTime(time) {
       this.selectedTime = time
     },
+    noTimeBeforeMeeting(){
+      this.selectedTime = 'Nope'
+    },
     async submitMeeting() {
       if (validateForm(this.form)) {
         this.disabled = true
@@ -142,7 +146,7 @@ export default {
       } else {
         this.addMessage({
           type: 'error',
-          text: 'Some form values ​​are missing',
+          text: 'Some form values are missing',
         })
       }
     },
@@ -299,7 +303,7 @@ export default {
             width: 100%;
             .__time {
               width: 100%;
-              padding: 0.5rem 0;
+              padding: 0.5rem 1rem;
               font-size: 0.8rem;
               cursor: pointer;
             }
@@ -342,6 +346,7 @@ export default {
         background-color: #352fcf;
         overflow: hidden;
         .__copy {
+          color: #ffffff;
           padding: 0.5rem 1rem;
           background-color: #071c50;
           cursor: pointer;
