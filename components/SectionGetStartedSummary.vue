@@ -363,7 +363,7 @@ export default {
 
       .__choice-container {
         display: flex;
-        gap: 1rem;
+        gap: 3rem;
         div {
           width: 5rem;
           padding: 0.5rem 0;
