@@ -22,7 +22,7 @@
     <section-get-started-basic-information v-model="form" :page="page" />
     <section-get-started-chat v-if="page == 'chat'" v-model="form" />
     <section-get-started-meeting v-if="page == 'meeting'" v-model="form" />
-    <section-get-started-summary :form="form" :page="page" />
+    <section-get-started-summary v-model="form" :page="page" />
   </div>
 </template>
 
@@ -49,7 +49,7 @@ export default {
         // Voice info
         meeting_date: '',
         time_before_meeting: '',
-        meeting_link: ''
+        meeting_link: 'some zoom or google meets link'
       },
     }
   },

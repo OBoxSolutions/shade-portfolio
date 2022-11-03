@@ -2,14 +2,18 @@
   <div class="section-summary">
     <div class="__top">
       <div class="__title">SUMMARY</div>
-      <div class="__description">
-        [{{ form.name }}] is going to chat via [{{ form.app }}], and he’s going
+      <div v-if="page ==='chat'" class="__description">
+        [{{ form.name }}] is going to chat via [{{ form.app }}], and he's going
+        to like it!
+      </div>
+      <div v-else class="__description">
+        [{{ form.name }}] is going to have a [{{ form.app }}] meeting on [{{form.meeting_date}}], and he's going
         to like it!
       </div>
     </div>
     <div class="__clip"></div>
     <div class="__details">
-      <div class="__inner-chat">
+      <div v-if="form.app !== 'Zoom' && form.app !=='Google Meet'" class="__inner-chat">
         <div class="__description">
           Please join our {{selectedApp.name}} to proceed. Once you join, our team
           will contact you directly
@@ -92,15 +96,15 @@ export default {
       type: String,
       default: '',
     },
-    form: {
+    value: {
       type: Object,
-      default: null,
+      default: () => {},
     },
   },
   data() {
     return {
       timeList: ['15min.', '30min.', '45min.', '1h.'],
-      selectedTime: 'time',
+      selectedTime: '',
       meetingGeneratedLink: 'some zoom or google meets link',
       disabled: false,
       loading: false,
@@ -115,14 +119,27 @@ export default {
     }
   },
   computed: {
+    form: {
+      get() {
+        return this.value
+      },
+    },
     selectedApp(){
       const result = this.appLinks.filter(app => app.name === this.form.app)
       return result[0]
     }
   },
+  watch: {
+    selectedTime(val){
+      this.form.time_before_meeting = val
+    },
+    meetingGeneratedLink(val){
+      this.form.meeting_link = val
+    }
+  },
   methods: {
     ...mapMutations(['addMessage']),
-    ...mapActions(['storeChatMeeting']),
+    ...mapActions(['storeChatMeeting', 'storeVoiceMeeting']),
     selectTime(time) {
       this.selectedTime = time
     },
@@ -137,12 +154,13 @@ export default {
         if (this.page === 'chat') {
           await this.storeChatMeeting(this.form)
         }
+        else{
+          await this.storeVoiceMeeting(this.form)
+        }
 
         this.disabled = false
         this.loading = false
-        // else{
-        //   this.storeVoiceMeeting(this.form)
-        // }
+
       } else {
         this.addMessage({
           type: 'error',

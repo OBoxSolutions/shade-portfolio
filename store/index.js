@@ -197,7 +197,23 @@ export const actions = {
     }
   },
 
-  // storeVoiceMeeting: async (_, voiceMeeting) => {
-  //   await adminApi.post('/messages/', voiceMeeting)
-  // },
+  storeVoiceMeeting: async ({ commit }, voiceMeeting) => {
+    try{
+      const { data } = await adminApi.post('/voice-meetings', voiceMeeting)
+
+      if (data.success) {
+        commit('addMessage', { type: 'sucess', text: 'Voice meeting stored' })
+      } else {
+        commit('addMessage', {
+          type: 'error',
+          text: 'There was an error. Try again later',
+        })
+      }
+    } catch {
+      commit('addMessage', {
+        type: 'error',
+        text: 'There was an error. Try again later',
+      })
+    }
+  },
 }
