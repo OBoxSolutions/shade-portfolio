@@ -1,58 +1,63 @@
 <template>
-  <div class="section-header">
-    <div class="section-header__description">
-      <div class="section-header__outside-box">
-        <br />
-        <div class="section-header__inside-box">
-          <p>
-            Here you can leave us a message about... uhm... pretty much anything
-            you want, but mostly quick questions you want to ask us. Or you
-            know, need someone to talk to, just generally feeling lonely, same
-            here. Oh, and you can message us about website design services too.
-            Type your message in that big red box, select a way we should get
-            back to you and press submit. Pretty simple.
-          </p>
+  <validation-observer ref="form">
+    <form class="section-header">
+      <div class="section-header__description">
+        <div class="section-header__outside-box">
+          <br />
+          <div class="section-header__inside-box">
+            <p>
+              Here you can leave us a message about... uhm... pretty much
+              anything you want, but mostly quick questions you want to ask us.
+              Or you know, need someone to talk to, just generally feeling
+              lonely, same here. Oh, and you can message us about website design
+              services too. Type your message in that big red box, select a way
+              we should get back to you and press submit. Pretty simple.
+            </p>
+          </div>
+        </div>
+        <div class="section-header__page-title">
+          <div class="section-header__page-title-clip"></div>
+
+          <div class="section-header__page-title-text">CONTACTS</div>
         </div>
       </div>
-      <div class="section-header__page-title">
-        <div class="section-header__page-title-clip"></div>
-
-        <div class="section-header__page-title-text">CONTACTS</div>
-      </div>
-    </div>
-    <div class="section-header__message">
-      <div class="section-header__title-box">
-        <div>YOUR MESSAGE</div>
-        <input
-          v-model="form.subject"
-          type="text"
-          class="section-header__description"
-          placeholder="Insert general question"
-        />
-      </div>
-      <div class="section-header__transition"></div>
-      <div class="section-header__text-box">
-        <textarea
-          v-model="form.text"
-          class="section-header__text"
-          placeholder="type away..."
-        >
-        </textarea>
-        <div class="section-header__sign-box__outer">
-          <div class="section-header__sign-box__inner">
-            <div>Signed by:</div>
-            - [<input v-model="form.name" placeholder="Your Name" />]
+      <div class="section-header__message">
+        <div class="section-header__title-box">
+          <div>YOUR MESSAGE</div>
+          <input
+            v-model="form.subject"
+            type="text"
+            class="section-header__description"
+            placeholder="Insert general question"
+          />
+        </div>
+        <div class="section-header__transition"></div>
+        <div class="section-header__text-box">
+          <textarea
+            v-model="form.text"
+            class="section-header__text"
+            placeholder="type away..."
+          >
+          </textarea>
+          <div class="section-header__sign-box__outer">
+            <div class="section-header__sign-box__inner">
+              <div>Signed by:</div>
+              - [<input v-model="form.name" placeholder="Your Name" />]
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
+    </form>
+  </validation-observer>
 </template>
 
 <script>
 import { mapGetters, mapMutations } from 'vuex'
 
+import formOperations from '@/mixins/formOperations'
+
 export default {
+  mixins: [formOperations],
   props: {
     value: {
       type: Object,
