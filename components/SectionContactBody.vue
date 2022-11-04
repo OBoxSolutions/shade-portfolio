@@ -1,113 +1,115 @@
 <template>
-  <div class="section-body">
-    <div class="section-body__container">
-      <div class="section-body__hiring">
-        <div class="section-body__left-clip"></div>
-      </div>
-      <div class="section-body__choose-platform">
-        <div class="section-body__top-clip">
-          <span>Choose a way for us to contact you</span>
+  <validation-provider>
+    <form class="section-body">
+      <div class="section-body__container">
+        <div class="section-body__hiring">
+          <div class="section-body__left-clip"></div>
         </div>
-        <div class="section-body__email-box-outer">
-          <div class="section-body__email-box-inner">
-            <input v-model="form.contact" class="section-body__input" />
-            <div class="section-body_tag">{{ form.social }}</div>
+        <div class="section-body__choose-platform">
+          <div class="section-body__top-clip">
+            <span>Choose a way for us to contact you</span>
           </div>
-        </div>
-        <div class="section-body__choose-platform-outer">
-          <div class="section-body__choose-platform-inner">
-            <div class="section-body__button"></div>
-            <div class="section-body__arrow"></div>
-            <div>Choose a platform!</div>
+          <div class="section-body__email-box-outer">
+            <div class="section-body__email-box-inner">
+              <input v-model="form.contact" class="section-body__input" />
+              <div class="section-body_tag">{{ form.social }}</div>
+            </div>
           </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="section-body__choose-platform-mobile">
-      <div class="section-body__top-clip">
-        <div class="section-body__background"></div>
-
-        <div class="section-body__text-box">
-          <div class="section-body__top-clip"></div>
-          <div class="section-body__text">
-            Choose a way for us to contact you
-          </div>
-        </div>
-      </div>
-      <div class="section-body__input-box">
-        <input class="section-body__input" />
-      </div>
-
-      <div class="section-body__popup">
-        <div class="section-body__popup-list">
-          <div
-            v-for="(option, index) in mediaOptions"
-            :key="`media-${index}`"
-            :class="option.text === form.social && 'selected-platform'"
-          >
-            <input
-              :id="option.text"
-              v-model="form.social"
-              :value="option.text"
-              type="radio"
-              name="social"
-            />
-
-            <label :for="option.text" class="platform-label">
-              {{ option.text }}
-              <div
-                :style="`background-image:url('${option.icon}')`"
-                class="icon"
-              ></div>
-            </label>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="section-body__submit">
-      <div class="section-body__background">
-        <div class="section-body__popup-container">
-          <div class="section-body__popup-background"></div>
-          <div class="section-body__popup">
-            <div class="section-body__popup-list">
-              <div
-                v-for="(option, index) in mediaOptions"
-                :key="`media-${index}`"
-                :class="option.text === form.social && 'selected-platform'"
-              >
-                <input
-                  :id="option.text"
-                  v-model="form.social"
-                  :value="option.text"
-                  type="radio"
-                  name="social"
-                />
-
-                <label :for="option.text" class="platform-label">
-                  {{ option.text }}
-                  <div
-                    :style="`background-image:url('${option.icon}')`"
-                    class="icon"
-                  ></div>
-                </label>
-              </div>
+          <div class="section-body__choose-platform-outer">
+            <div class="section-body__choose-platform-inner">
+              <div class="section-body__button"></div>
+              <div class="section-body__arrow"></div>
+              <div>Choose a platform!</div>
             </div>
           </div>
         </div>
-        <div class="section-body__submit-box-container" @click="onSubmit">
-          <div class="section-body__submit-box">
-            <div class="section-body__submit-button">Submit.</div>
-            <div class="section-body__button-clip"></div>
+      </div>
+
+      <div class="section-body__choose-platform-mobile">
+        <div class="section-body__top-clip">
+          <div class="section-body__background"></div>
+
+          <div class="section-body__text-box">
+            <div class="section-body__top-clip"></div>
+            <div class="section-body__text">
+              Choose a way for us to contact you
+            </div>
           </div>
-          <div class="section-body__clip"></div>
+        </div>
+        <div class="section-body__input-box">
+          <input class="section-body__input" />
+        </div>
+
+        <div class="section-body__popup">
+          <div class="section-body__popup-list">
+            <div
+              v-for="(option, index) in mediaOptions"
+              :key="`media-${index}`"
+              :class="option.text === form.social && 'selected-platform'"
+            >
+              <input
+                :id="option.text"
+                v-model="form.social"
+                :value="option.text"
+                type="radio"
+                name="social"
+              />
+
+              <label :for="option.text" class="platform-label">
+                {{ option.text }}
+                <div
+                  :style="`background-image:url('${option.icon}')`"
+                  class="icon"
+                ></div>
+              </label>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="section-body__press-start">
-      <div class="section-body__button-container"></div>
-    </div>
-  </div>
+      <div class="section-body__submit">
+        <div class="section-body__background">
+          <div class="section-body__popup-container">
+            <div class="section-body__popup-background"></div>
+            <div class="section-body__popup">
+              <div class="section-body__popup-list">
+                <div
+                  v-for="(option, index) in mediaOptions"
+                  :key="`media-${index}`"
+                  :class="option.text === form.social && 'selected-platform'"
+                >
+                  <input
+                    :id="option.text"
+                    v-model="form.social"
+                    :value="option.text"
+                    type="radio"
+                    name="social"
+                  />
+
+                  <label :for="option.text" class="platform-label">
+                    {{ option.text }}
+                    <div
+                      :style="`background-image:url('${option.icon}')`"
+                      class="icon"
+                    ></div>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="section-body__submit-box-container" @click="onSubmit">
+            <div class="section-body__submit-box">
+              <div class="section-body__submit-button">Submit.</div>
+              <div class="section-body__button-clip"></div>
+            </div>
+            <div class="section-body__clip"></div>
+          </div>
+        </div>
+      </div>
+      <div class="section-body__press-start">
+        <div class="section-body__button-container"></div>
+      </div>
+    </form>
+  </validation-provider>
 </template>
 
 <script>
