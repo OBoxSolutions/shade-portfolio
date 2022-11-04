@@ -1,5 +1,5 @@
 <template>
-  <validation-provider ref="form">
+  <validation-observer ref="form">
     <form class="section-body">
       <div class="section-body__container">
         <div class="section-body__hiring">
