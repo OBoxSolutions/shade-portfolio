@@ -10,12 +10,11 @@
             <span>Choose a way for us to contact you</span>
           </div>
           <div class="section-body__email-box-outer">
-            <validation-provider
-              v-slot="{ errors }"
-              class="section-body__email-box-inner"
-            >
-              <input v-model="form.contact" class="section-body__input" />
-              <div class="section-body_tag">{{ form.social }}</div>
+            <validation-provider v-slot="{ errors }" rules="required">
+              <div class="section-body__email-box-inner">
+                <input v-model="form.contact" class="section-body__input" />
+                <div class="section-body_tag">{{ form.social }}</div>
+              </div>
               <app-input-error :error="errors[0]"></app-input-error>
             </validation-provider>
           </div>
@@ -40,11 +39,10 @@
             </div>
           </div>
         </div>
-        <validation-provider
-          v-slot="{ errors }"
-          class="section-body__input-box"
-        >
-          <input class="section-body__input" />
+        <validation-provider v-slot="{ errors }" rules="required">
+          <div class="section-body__input-box">
+            <input v-model="form.contact" class="section-body__input" />
+          </div>
           <app-input-error :error="errors[0]"></app-input-error>
         </validation-provider>
 
