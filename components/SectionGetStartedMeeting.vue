@@ -32,6 +32,12 @@
 <script>
 export default {
   name: 'SectionGetStartedMeeting',
+  props: {
+    value: {
+      type: Object,
+      default: () => {},
+    },
+  },
   data() {
     return {
       hours: [
@@ -62,7 +68,7 @@ export default {
         '20:00',
       ],
       selected: { weekday: 1 },
-      selectedHour: 'select_time',
+      selectedHour: '',
       weekdays: [
         'Sunday',
         'Monday',
@@ -73,6 +79,24 @@ export default {
         'Saturday',
       ],
     }
+  },
+  computed: {
+    form: {
+      get() {
+        return this.value
+      },
+      set(val) {
+        this.$emit('input', val)
+      },
+    },
+    meetingDate() {
+      return `${this.selected.day || ''}-${this.selected.month || ''}-${this.selected.year || ''}:${this.selectedHour} `
+    },
+  },
+  watch: {
+    meetingDate(val) {
+      this.form.meeting_date = val
+    },
   },
   methods: {
     dateSelected(date) {

@@ -21,8 +21,8 @@
     <section-get-started-header />
     <section-get-started-basic-information v-model="form" :page="page" />
     <section-get-started-chat v-if="page == 'chat'" v-model="form" />
-    <section-get-started-meeting v-if="page == 'meeting'" />
-    <section-get-started-summary :form="form" :page="page" />
+    <section-get-started-meeting v-if="page == 'meeting'" v-model="form" />
+    <section-get-started-summary v-model="form" :page="page" />
   </div>
 </template>
 
@@ -32,11 +32,13 @@ export default {
     return {
       page: this.$route.query.mode === 'meeting' ? 'meeting' : 'chat',
       form: {
+        // Basic info
         name: '',
         email: '',
         country: '',
         birthdate: '',
         app: 'Discord',
+        // Chat info
         about: '',
         goals: '',
         budget: '',
@@ -44,6 +46,10 @@ export default {
         logo_file: '',
         more_info: '',
         more_info_file: '',
+        // Voice info
+        meeting_date: '',
+        time_before_meeting: '',
+        meeting_link: 'some zoom or google meets link'
       },
     }
   },

@@ -110,6 +110,7 @@ export default {
     width: fit-content;
     height: 100%;
     display: flex;
+    outline: none;
     flex-direction: column-reverse;
 
     .section-header__outside-box {

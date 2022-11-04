@@ -2,27 +2,31 @@
   <div class="section-summary">
     <div class="__top">
       <div class="__title">SUMMARY</div>
-      <div class="__description">
-        [{{ form.name }}] is going to chat via [{{ form.app }}], and he’s going
+      <div v-if="page ==='chat'" class="__description">
+        [{{ form.name }}] is going to chat via [{{ form.app }}], and he's going
+        to like it!
+      </div>
+      <div v-else class="__description">
+        [{{ form.name }}] is going to have a [{{ form.app }}] meeting on [{{form.meeting_date}}], and he's going
         to like it!
       </div>
     </div>
     <div class="__clip"></div>
     <div class="__details">
-      <div class="__inner-chat">
+      <div v-if="form.app !== 'Zoom' && form.app !=='Google Meet'" class="__inner-chat">
         <div class="__description">
-          Please join our discord server to proceed. Once you join, our team
+          Please join our {{selectedApp.name}} to proceed. Once you join, our team
           will contact you directly
         </div>
         <div class="__title">THE LINK</div>
         <div class="__link-container">
-          <div class="__copy" @click="copyTextToClipboard(discordLink)">
+          <div class="__copy" @click="copyTextToClipboard(selectedApp.link)">
             Copy
           </div>
-          <div class="__link">{{ discordLink }}</div>
+          <div class="__link">{{ selectedApp.link }}</div>
         </div>
       </div>
-      <div v-if="page == 'meeting'" class="__inner-arrange-meeting">
+      <div v-if="page == 'meeting' && form.app !== 'Discord'" class="__inner-arrange-meeting">
         <div class="__description">
           Do you want us to send a reminder to you before the meeting starts?
         </div>
@@ -47,15 +51,15 @@
               </div>
             </div>
           </div>
-          <div class="__no">No.</div>
+          <button class="__no" @click="noTimeBeforeMeeting()">No.</button>
         </div>
       </div>
-      <div v-if="page == 'meeting'" class="__inner-meeting-link">
+      <div v-if="page == 'meeting' && form.app !== 'Discord'" class="__inner-meeting-link">
         <div class="title">Here's the link</div>
 
         <div class="__link-container">
-          <div class="__copy">Copy</div>
-          <div class="__link">some zoom or google meets link</div>
+          <button class="__copy" @click="copyTextToClipboard(meetingGeneratedLink)">Copy</button>
+          <div class="__link">{{meetingGeneratedLink}}</div>
         </div>
         <div>Do you want us to send it to your inbox?</div>
         <div class="__choice-container">
@@ -92,25 +96,55 @@ export default {
       type: String,
       default: '',
     },
-    form: {
+    value: {
       type: Object,
-      default: null,
+      default: () => {},
     },
   },
   data() {
     return {
       timeList: ['15min.', '30min.', '45min.', '1h.'],
-      selectedTime: 'time',
+      selectedTime: '',
+      meetingGeneratedLink: 'some zoom or google meets link',
       disabled: false,
       loading: false,
-      discordLink: 'discord.gg/something5',
+      appLinks: [
+        { name: 'Discord', link: 'discord.gg/something5' },
+        { name: 'Messenger', link: 'messanger.gg/something5' },
+        { name: 'Twitter', link: 'twitter.gg/something5' },
+        { name: 'Instagram', link: 'instagram.gg/something5' },
+        { name: 'Zoom', link: 'zoom.gg/something5' },
+        { name: 'Google Meet', link: 'meet.gg/something5' },
+      ],
+    }
+  },
+  computed: {
+    form: {
+      get() {
+        return this.value
+      },
+    },
+    selectedApp(){
+      const result = this.appLinks.filter(app => app.name === this.form.app)
+      return result[0]
+    }
+  },
+  watch: {
+    selectedTime(val){
+      this.form.time_before_meeting = val
+    },
+    meetingGeneratedLink(val){
+      this.form.meeting_link = val
     }
   },
   methods: {
     ...mapMutations(['addMessage']),
-    ...mapActions(['storeChatMeeting']),
+    ...mapActions(['storeChatMeeting', 'storeVoiceMeeting']),
     selectTime(time) {
       this.selectedTime = time
+    },
+    noTimeBeforeMeeting(){
+      this.selectedTime = 'Nope'
     },
     async submitMeeting() {
       if (validateForm(this.form)) {
@@ -120,16 +154,17 @@ export default {
         if (this.page === 'chat') {
           await this.storeChatMeeting(this.form)
         }
+        else{
+          await this.storeVoiceMeeting(this.form)
+        }
 
         this.disabled = false
         this.loading = false
-        // else{
-        //   this.storeVoiceMeeting(this.form)
-        // }
+
       } else {
         this.addMessage({
           type: 'error',
-          text: 'Some form values ​​are missing',
+          text: 'Some form values are missing',
         })
       }
     },
@@ -286,7 +321,7 @@ export default {
             width: 100%;
             .__time {
               width: 100%;
-              padding: 0.5rem 0;
+              padding: 0.5rem 1rem;
               font-size: 0.8rem;
               cursor: pointer;
             }
@@ -329,6 +364,7 @@ export default {
         background-color: #352fcf;
         overflow: hidden;
         .__copy {
+          color: #ffffff;
           padding: 0.5rem 1rem;
           background-color: #071c50;
           cursor: pointer;
@@ -345,7 +381,7 @@ export default {
 
       .__choice-container {
         display: flex;
-        gap: 1rem;
+        gap: 3rem;
         div {
           width: 5rem;
           padding: 0.5rem 0;
