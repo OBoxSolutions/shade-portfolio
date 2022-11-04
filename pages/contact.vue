@@ -1,7 +1,11 @@
 <template>
   <div>
-    <section-contact-header v-model="form"></section-contact-header>
+    <section-contact-header
+      ref="formHeader"
+      v-model="form"
+    ></section-contact-header>
     <section-contact-body
+      ref="formBody"
       v-model="form"
       @submit="submitContact"
     ></section-contact-body>
@@ -46,6 +50,10 @@ export default {
           text: error.message || 'There was an error trying to contact us',
         })
       }
+    },
+
+    validate() {
+      return this.$refs.formHeader.validate() && this.$refs.formBody.validate()
     },
 
     setState(state) {
