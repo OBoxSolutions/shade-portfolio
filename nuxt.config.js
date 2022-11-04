@@ -35,6 +35,7 @@ export default {
   plugins: [
     { src: '~/plugins/calendar', mode: 'client' },
     { src: '~/plugins/breakpoint', mode: 'client' },
+    { src: '~/plugins/veeValidate', mode: 'client' },
     '~/plugins/firebase.js',
   ],
 
