@@ -1,9 +1,9 @@
 <template>
   <div class="content">
     <div class="press-start-container">
-      <base-button class="w-full py-1 base-button button--red">
-        Press start
-      </base-button>
+      <button class="both-side-button button--red">
+        PRESS START
+      </button>
     </div>
     <div class="divider"></div>
     <div class="hire-team-container">
@@ -27,8 +27,8 @@
     </div>
 
     <div class="base-button-small-wrapper">
-      <base-button class="w-full base-button-small" flat>
-        Press start
+      <base-button only-bottom class="small-button button--red">
+        <h1>Press Start</h1>
       </base-button>
     </div>
   </div>
@@ -76,9 +76,23 @@ $border-style: 1px solid #877432;
   padding: 5px 30px;
   font-size: 50px;
 
-  .base-button-small {
-    padding-top: 20px !important;
-    padding-bottom: 20px !important;
+  .small-button{
+    padding: 0 !important;
+
+    transform-style: preserve-3d;
+    perspective: 100px;
+    perspective-origin: bottom;
+
+    h1{
+      font-size: 3.75rem;
+      width: 70%;
+      font-weight: 400;
+      margin: 1rem auto;
+      color: #ffffff;
+    }
+    &:active {
+      transform: translateY(10px);
+    }
   }
 }
 
@@ -88,15 +102,63 @@ $border-style: 1px solid #877432;
   }
 }
 
-.base-button {
+.both-side-button {
   display: none;
   padding-top: 16px !important;
   padding-bottom: 10px !important;
-  border-radius: 10px;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  transform-style: preserve-3d;
+
+  transition: transform 0.15s;
+
+  &::before{
+    content: '';
+    height: 100px;
+    min-width: calc(100% + 10%);
+    position: absolute;
+    clip-path: polygon(0 0, 91% 0, 93.9% 12%, 4% 12%);
+    background: #D43737;
+    left: 0;
+
+    transform: translate3d(0, 12.1rem, -1em);
+    transition: transform 0.15s, min-width 0.15s;
+
+  }
+  &::after{
+    content: '';
+    width: 100px;
+    min-height: calc(100% + 5%);
+    position: absolute;
+    clip-path: polygon(0 0, 20% 12%, 21% 100%, 0 100%);
+    background: #D43737;
+    top: 0;
+
+    transform: translate3d(6.8rem, 0rem, -1em);
+    transition: transform 0.15s, min-height 0.1s;
+  }
+  &:active {
+    background: #D43737;
+    transform: translate(.2em, 0.3em);
+  }
+  &:active::before {
+    min-width: 100%;
+    transform: translate3d(0, 0, -1em);
+    // display: none;
+  }
+  &:active::after {
+    min-height: 100%;
+    transform: translate3d(0, 0, -1em);
+    // display: none;
+
+  }
+
 }
 
 @media screen and (min-width: 900px) {
-  .base-button {
+  .both-side-button {
     display: block;
   }
 }
