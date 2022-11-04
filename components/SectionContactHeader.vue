@@ -24,12 +24,15 @@
       <div class="section-header__message">
         <div class="section-header__title-box">
           <div>YOUR MESSAGE</div>
-          <input
-            v-model="form.subject"
-            type="text"
-            class="section-header__description"
-            placeholder="Insert general question"
-          />
+          <validation-provider v-slot="{ errors }" rules="required">
+            <input
+              v-model="form.subject"
+              type="text"
+              class="section-header__description"
+              placeholder="Insert general question"
+            />
+            <app-input-error :error="errors[0]"></app-input-error>
+          </validation-provider>
         </div>
         <div class="section-header__transition"></div>
         <div class="section-header__text-box">
@@ -39,12 +42,15 @@
             placeholder="type away..."
           >
           </textarea>
-          <div class="section-header__sign-box__outer">
-            <div class="section-header__sign-box__inner">
-              <div>Signed by:</div>
-              - [<input v-model="form.name" placeholder="Your Name" />]
+          <validation-provider v-slot="{ errors }" rules="required">
+            <div class="section-header__sign-box__outer">
+              <div class="section-header__sign-box__inner">
+                <div>Signed by:</div>
+                - [<input v-model="form.name" placeholder="Your Name" />]
+                <app-input-error :error="errors[0]"></app-input-error>
+              </div>
             </div>
-          </div>
+          </validation-provider>
         </div>
       </div>
     </form>
