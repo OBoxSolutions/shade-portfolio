@@ -52,8 +52,11 @@ export default {
       }
     },
 
-    validate() {
-      return this.$refs.formHeader.validate() && this.$refs.formBody.validate()
+    async validate() {
+      const isFormHeaderValid = await this.$refs.formHeader.validate()
+      const isFormBodyValid = await this.$refs.formBody.validate()
+
+      return isFormHeaderValid && isFormBodyValid
     },
 
     setState(state) {
