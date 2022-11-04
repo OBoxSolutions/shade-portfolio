@@ -35,9 +35,13 @@ export default {
   },
   methods: {
     ...mapMutations(['addMessage']),
-    submitContact() {
+    async submitContact() {
+      const isValid = await this.validate()
+      if (!isValid) return
+
       try {
         createContact(this.form)
+
         this.addMessage({
           type: 'success',
           text: 'Contact inserted successfully',
