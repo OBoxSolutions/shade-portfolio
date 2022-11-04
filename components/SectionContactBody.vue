@@ -113,7 +113,10 @@
 </template>
 
 <script>
+import formOperation from '@/mixins/formOperations'
+
 export default {
+  mixins: [formOperation],
   props: {
     value: {
       type: Object,
