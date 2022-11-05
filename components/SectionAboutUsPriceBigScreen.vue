@@ -154,8 +154,6 @@ $perspective: 200px;
       min-height: 318px;
       right: -200px;
       bottom: 0;
-      border-top-right-radius: 20px;
-      border-bottom-right-radius: 20px;
       background: #5A55F8;
       transition: all 0.15s;
     }

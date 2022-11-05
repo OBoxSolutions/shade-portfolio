@@ -138,15 +138,15 @@ $border-style: 1px solid #877432;
   }
   &:active {
     background: #D43737;
-    transform: translate(.2em, 0.3em);
+    transform: translate3d(.2em, 0.3em, -.2em);
   }
   &:active::before {
     min-width: 100%;
     transform: translate3d(0, 0, -1em);
   }
   &:active::after {
-    right: -70px;
     min-height: 90%;
+    transform: translate3d(-50px, 0em, -20em);
   }
 
 }
