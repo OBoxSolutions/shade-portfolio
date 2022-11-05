@@ -135,9 +135,8 @@ $border-style: 1px solid #877432;
     clip-path: polygon(0 0, 20% 12%, 21% 100%, 0 100%);
     background: #D43737;
     top: 0;
-
-    transform: translate3d(6.8rem, 0rem, -1em);
-    transition: transform 0.15s, min-height 0.1s;
+    right: -100px;
+    transition: all 0.15s;
   }
   &:active {
     background: #D43737;
@@ -146,13 +145,11 @@ $border-style: 1px solid #877432;
   &:active::before {
     min-width: 100%;
     transform: translate3d(0, 0, -1em);
-    // display: none;
   }
   &:active::after {
-    min-height: 100%;
-    transform: translate3d(0, 0, -1em);
-    // display: none;
-
+    right: -70px;
+    min-height: 90%;
+    // z-index: -1;
   }
 
 }
