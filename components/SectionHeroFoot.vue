@@ -85,7 +85,6 @@ $border-style: 1px solid #877432;
 
     h1{
       font-size: 3.75rem;
-      width: 70%;
       font-weight: 400;
       margin: 1rem auto;
       color: #ffffff;
@@ -111,7 +110,6 @@ $border-style: 1px solid #877432;
   cursor: pointer;
   position: relative;
   transform-style: preserve-3d;
-
   transition: transform 0.15s;
 
   &::before{
@@ -149,7 +147,6 @@ $border-style: 1px solid #877432;
   &:active::after {
     right: -70px;
     min-height: 90%;
-    // z-index: -1;
   }
 
 }
