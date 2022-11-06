@@ -48,10 +48,7 @@
     <div class="cube cube-left-under-price">
       <div class="side cube-front-side"></div>
       <div class="side cube-right-side"></div>
-      <!-- <div class="button-wrapper"> -->
-        <button class="bottom-button button--red">Press Start</button>
-        <!-- <span class="button-right-side"></span> -->
-      <!-- </div> -->
+      <button class="bottom-button button--red">Press Start</button>
     </div>
     <div class="bottom">
     </div>
