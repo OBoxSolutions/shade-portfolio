@@ -28,7 +28,7 @@
         <div class="side cube-right-side"></div>
       </div>
       <div class="button-wrapper">
-        <base-button only-bottom class="base-button button--red">
+        <base-button only-bottom class="base-button button--red--side-blue">
           <h1>Press Start</h1>
         </base-button>
       </div>
@@ -83,6 +83,15 @@ $perspective: 200px;
       transform: translateY(10px);
     }
   }
+  @media screen and (max-width: 528px) {
+  .base-button {
+    left: calc(50% - 110px);
+    top: 150px;
+    h1{
+      font-size: 1.5rem;
+    }
+  }
+}
 }
 
 .cube {
