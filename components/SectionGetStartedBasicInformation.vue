@@ -1,69 +1,95 @@
 <template>
-  <div class="section-basic-information">
-    <div class="__clip"></div>
-    <div class="__form-container">
-      <form class="__form">
-        <div class="__title">
-          BASIC
-          <div>INFORMATION</div>
-        </div>
-        <div class="__input-container">
-          <div>Full name:</div>
-          <input v-model="form.name" />
-        </div>
-        <div class="__input-container">
-          <div>Email address:</div>
-          <input v-model="form.email" />
-        </div>
-        <div class="__input-container">
-          <div>Date of Birth:</div>
-          <span>
-            <input v-model="year" maxlength="4" class="__date-input" /> -
-            <input v-model="month" maxlength="2" class="__date-input" /> -
-            <input v-model="day" maxlength="2" class="__date-input" />
-          </span>
-        </div>
-        <div class="__input-container">
-          <div>Country in which you are based:</div>
-          <input v-model="form.country" />
-        </div>
-      </form>
-    </div>
-    <div class="__sidebar">
-      <div class="__top-clip"></div>
-      <div class="__content">
-        <div class="__title">
-          {{ page }}
-        </div>
-        <div class="__text">
-          When you fill everything out and press submit, either a scheduled
-          meeting link, or our Discord is going to be sent to you. It depends on
-          what meeting app you chose. Both ways all the information is going to
-          be sent to your email inbox, so make sure you typed an email you have
-          access to.
-        </div>
-        <div class="__software-list">
-          <div class="__title">What software would you like to use?</div>
-          <div class="__list">
-            <div
-              v-for="(social, index) in socials[page]"
-              :key="`chat-${index}`"
-              :style="`${social == selectedSocial ? 'background:#352FCF' : ''}`"
-              @click="selectSocial(social)"
-            >
-              {{ social }}
+  <validation-observer ref="form">
+    <form class="section-basic-information">
+      <div class="__clip"></div>
+      <div class="__form-container">
+        <form class="__form">
+          <div class="__title">
+            BASIC
+            <div>INFORMATION</div>
+          </div>
+          <div class="__input-container">
+            <div>Full name:</div>
+            <validation-provider v-slot="{ errors }" rules="required">
+              <input v-model="form.name" />
+              <app-input-error :error="errors[0]"></app-input-error>
+            </validation-provider>
+          </div>
+          <div class="__input-container">
+            <div>Email address:</div>
+            <validation-provider v-slot="{ errors }" rules="required|email">
+              <input v-model="form.email" />
+              <app-input-error :error="errors[0]"></app-input-error>
+            </validation-provider>
+          </div>
+          <div class="__input-container">
+            <div>Date of Birth:</div>
+              <span>
+                <validation-provider v-slot="{ errors }" rules="required|numeric">
+                  <input v-model="year" maxlength="4" class="__date-input" /> -
+                  <app-input-error :error="errors[0]"></app-input-error>
+                </validation-provider>
+
+                <validation-provider v-slot="{ errors }" rules="required|numeric">
+                  <input v-model="month" maxlength="2" class="__date-input" /> -
+                  <app-input-error :error="errors[0]"></app-input-error>
+                </validation-provider>
+
+                <validation-provider v-slot="{ errors }" rules="required|numeric">
+                  <input v-model="day" maxlength="2" class="__date-input" />
+                  <app-input-error :error="errors[0]"></app-input-error>
+                </validation-provider>
+              </span>
+          </div>
+          <div class="__input-container">
+            <div>Country in which you are based:</div>
+            <validation-provider v-slot="{ errors }" rules="required">
+              <input v-model="form.country" />
+              <app-input-error :error="errors[0]"></app-input-error>
+            </validation-provider>
+          </div>
+        </form>
+      </div>
+      <div class="__sidebar">
+        <div class="__top-clip"></div>
+        <div class="__content">
+          <div class="__title">
+            {{ page }}
+          </div>
+          <div class="__text">
+            When you fill everything out and press submit, either a scheduled
+            meeting link, or our Discord is going to be sent to you. It depends on
+            what meeting app you chose. Both ways all the information is going to
+            be sent to your email inbox, so make sure you typed an email you have
+            access to.
+          </div>
+          <div class="__software-list">
+            <div class="__title">What software would you like to use?</div>
+            <div class="__list">
+              <div
+                v-for="(social, index) in socials[page]"
+                :key="`chat-${index}`"
+                :style="`${social == selectedSocial ? 'background:#352FCF' : ''}`"
+                @click="selectSocial(social)"
+              >
+                {{ social }}
+              </div>
             </div>
           </div>
+          <div class="__tag"></div>
         </div>
-        <div class="__tag"></div>
       </div>
-    </div>
-  </div>
+    </form>
+  </validation-observer>
 </template>
 
 <script>
+import formOperations from '@/mixins/formOperations'
+
 export default {
   name: 'SectionGetStartedBasicInformation',
+  mixins: [formOperations],
+
   props: {
     page: {
       type: String,
