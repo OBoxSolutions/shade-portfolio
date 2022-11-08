@@ -6,19 +6,24 @@
   </div>
   <div v-else>
     <section-hiring-header />
-    <section-hiring-information-form v-model="form" />
+    <section-hiring-information-form ref="formBasicInfo" v-model="form" />
     <section-hiring-questions v-model="form" />
-    <hiring-submit-button :form="form" />
+    <hiring-submit-button
+      :loading="loading"
+      :disabled="disabled"
+      @submit="submitHiringRequest" />
   </div>
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapState, mapMutations, mapActions } from 'vuex'
 
 export default {
   name: 'HiringPage',
   data() {
     return {
+      disabled: false,
+      loading: false,
       form: {
         name: '',
         email: '',
@@ -40,6 +45,32 @@ export default {
   computed: {
     ...mapState(['breakpoints']),
   },
+  methods: {
+    ...mapMutations(['addMessage']),
+    ...mapActions(['storeHiringRequest']),
+    async validate() {
+      return await this.$refs.formBasicInfo.validate()
+    },
+    async submitHiringRequest(){
+      const isValid = await this.validate()
+      if (!isValid) return
+
+      this.disabled = true
+      this.loading = true
+
+      try{
+        await this.storeHiringRequest(this.form)
+      }
+      catch {
+        this.addMessage({
+          type: 'error',
+          text: 'Some form values are missing',
+        })
+      }
+      this.disabled = false
+      this.loading = false
+    }
+  }
 }
 </script>
 

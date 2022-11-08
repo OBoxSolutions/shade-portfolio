@@ -84,10 +84,10 @@ export default {
       const isValid = await this.validate()
       if (!isValid) return
 
-      try{
-        this.disabled = true
-        this.loading = true
+      this.disabled = true
+      this.loading = true
 
+      try{
         if (this.page === 'chat') {
           await this.storeChatMeeting(this.form)
         }
