@@ -48,7 +48,6 @@
 // import 'filepond/dist/filepond.min.css'
 
 import { mapMutations, mapActions } from "vuex"
-import { validateForm } from '@/utils/validateForm'
 
 export default {
   name: 'SectionMobileHiringQuestions',
@@ -103,10 +102,10 @@ export default {
     async submitHiringRequest(){
       this.disabled = true
       this.loading = true
-      if (validateForm(this.form)) {
+      try {
         await this.storeHiringRequest(this.form)
       }
-      else {
+      catch {
         this.addMessage({
           type: 'error',
           text: 'Some form values are missing',

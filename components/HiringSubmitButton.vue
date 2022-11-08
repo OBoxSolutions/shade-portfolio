@@ -17,7 +17,6 @@
 
 <script>
 import { mapMutations, mapActions } from 'vuex'
-import { validateForm } from '@/utils/validateForm'
 
 export default {
   props: {
@@ -38,10 +37,10 @@ export default {
     async submitHiringRequest(){
       this.disabled = true
       this.loading = true
-      if (validateForm(this.form)) {
+      try{
         await this.storeHiringRequest(this.form)
       }
-      else {
+      catch {
         this.addMessage({
           type: 'error',
           text: 'Some form values ​​are missing',
