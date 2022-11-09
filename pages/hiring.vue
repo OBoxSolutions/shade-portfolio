@@ -28,7 +28,7 @@ export default {
         name: '',
         email: '',
         country: '',
-        applying_for: '',
+        applying_for: 'Full-Stack Web Developer',
         birthdate: '',
         question_one: '',
         question_two: '',

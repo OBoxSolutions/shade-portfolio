@@ -48,46 +48,15 @@
           <div class="section-form__column-right">
             <label for="applying-for">Applying for:</label><br />
             <div class="applying-for">
-              <div>
+              <div v-for="(job, index) in applying_jobs" :key="`job-${index}`">
                 <input
-                  id="full-stack"
+                  :id="index"
                   v-model="form.applying_for"
                   type="radio"
                   name="applying-for"
-                  checked
-                  value="Full-Stack Web Developer"
+                  :value="job"
                 />
-                <label for="full-stack">Full-Stack Web Developer</label>
-              </div>
-              <div>
-                <input
-                  id="general-manager"
-                  v-model="form.applying_for"
-                  type="radio"
-                  name="applying-for"
-                  value="General Manager"
-                />
-                <label for="general-manager">General Manager</label>
-              </div>
-              <div>
-                <input
-                  id="seo-marketing"
-                  v-model="form.applying_for"
-                  type="radio"
-                  name="applying-for"
-                  value="SEO and Marketing Expert"
-                />
-                <label for="seo-marketing">SEO and Marketing Expert</label>
-              </div>
-              <div>
-                <input
-                  id="vice-president"
-                  v-model="form.applying_for"
-                  type="radio"
-                  name="applying-for"
-                  value="Vice President"
-                />
-                <label for="vice-president">Vice President</label>
+                <label :for="index">{{job}}</label>
               </div>
             </div>
             <label for="birthdate">Date of Birth:</label><br />
@@ -150,6 +119,7 @@ export default {
       year: '',
       month: '',
       day: '',
+      applying_jobs: [ 'Full-Stack Web Developer', 'General Manager', 'SEO and Marketing Expert', 'Vice President' ]
     }
   },
   computed: {
@@ -242,7 +212,8 @@ $perspective: 100px;
         margin: 0.5rem 0 2rem;
         width: 40%;
         padding: 1rem 2rem;
-        background: #8a8a8a;
+        // background: #8a8a8a;
+        background: url('/gray-texture.svg');
         border: 2px solid #000000;
 
         div {
