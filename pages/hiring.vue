@@ -1,8 +1,12 @@
 <template>
   <div v-if="breakpoints.isSmAndDown">
     <section-mobile-hiring-header />
-    <section-mobile-hiring-information-form v-model="form" />
-    <section-mobile-hiring-questions v-model="form" />
+    <section-mobile-hiring-information-form ref="formBasicInfo" v-model="form" />
+    <section-mobile-hiring-questions
+      v-model="form"
+      :loading="loading"
+      :disabled="disabled"
+      @submit="submitHiringRequest" />
   </div>
   <div v-else>
     <section-hiring-header />
