@@ -1,5 +1,5 @@
 <template>
-  <app-card class="app-card" v-on="$listeners">
+  <app-card class="app-card" :class="cardColor" v-on="$listeners">
     <div class="app-card-body">
       <span class="text-3xl mr-3" :class="icon"></span>
       <span>
@@ -27,15 +27,29 @@ export default {
     icon() {
       switch (this.message.type) {
         case 'success':
-          return 'mdi mdi-check-circle text-green-600'
+          return 'mdi mdi-check-circle'
         case 'error':
-          return 'mdi mdi-alert-circle text-red-500'
+          return 'mdi mdi-alert-circle'
         case 'info':
-          return 'mdi mdi-information text-blue-600'
+          return 'mdi mdi-information'
         case 'warning':
-          return 'mdi mdi-alert text-yellow-500'
+          return 'mdi mdi-alert'
         default:
-          return 'mdi mdi-check-circle text-green-600'
+          return 'mdi mdi-check-circle'
+      }
+    },
+    cardColor() {
+      switch (this.message.type) {
+        case 'success':
+          return 'app-card--green'
+        case 'error':
+          return 'app-card--red'
+        case 'info':
+          return 'app-card--blue'
+        case 'warning':
+          return 'app-card--yellow'
+        default:
+          return 'app-card--green'
       }
     },
   },
@@ -45,11 +59,25 @@ export default {
 <style scoped>
 .app-card {
   max-width: 600px;
+  z-index: 1000;
 }
 
 .app-card-body {
   display: flex;
   align-items: center;
   background-color: white;
+}
+
+.app-card--blue {
+  background-color: #15aaaa;
+}
+.app-card--green {
+  background-color: #13943a;
+}
+.app-card--red {
+  background-color: #ce2929;
+}
+.app-card--yellow {
+  background-color: #d6932f;
 }
 </style>
