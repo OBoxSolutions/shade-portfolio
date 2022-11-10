@@ -29,7 +29,11 @@ export default Vue.extend({
     }
   },
   methods: {
-    deleteMessageAfterDelay(id) {},
+    deleteMessageAfterDelay(id) {
+      setTimeout(() => {
+        this.deleteMessage(id)
+      }, 5000)
+    },
 
     deleteMessage(id) {
       delete this.messagesDirectory[id]
