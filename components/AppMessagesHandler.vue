@@ -29,11 +29,7 @@ export default Vue.extend({
     }
   },
   methods: {
-    deleteMessageAfterDelay(id) {
-      setTimeout(() => {
-        this.deleteMessage(id)
-      }, 5000)
-    },
+    deleteMessageAfterDelay(id) {},
 
     deleteMessage(id) {
       delete this.messagesDirectory[id]
@@ -53,7 +49,7 @@ export default Vue.extend({
 
 <style scoped>
 .app-messages-handler {
-  z-index: 500;
+  z-index: 1000;
   position: fixed;
   width: 100%;
   margin-top: 1em;
