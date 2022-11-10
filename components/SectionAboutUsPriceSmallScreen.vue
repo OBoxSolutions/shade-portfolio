@@ -2,7 +2,7 @@
   <div class="section-about-us-price">
     <div class="cube cube-price">
       <div class="side cube-front-side">
-        <div class="px-5">
+        <div class="px-1">
           <h2>Price</h2>
           <p>
             How much does it cost to make a website? The cost will be handpicked
@@ -57,7 +57,7 @@ $perspective: 200px;
   position: relative;
 }
 
-.button-wrapper{
+.button-wrapper {
   position: absolute;
   left: 50%;
   bottom: 90%;
@@ -74,7 +74,7 @@ $perspective: 200px;
     perspective: 100px;
     perspective-origin: bottom;
 
-    h1{
+    h1 {
       font-weight: 400;
       padding: 0 50px;
       color: #ffffff;
@@ -84,14 +84,14 @@ $perspective: 200px;
     }
   }
   @media screen and (max-width: 528px) {
-  .base-button {
-    left: calc(50% - 110px);
-    top: 150px;
-    h1{
-      font-size: 1.5rem;
+    .base-button {
+      left: calc(50% - 110px);
+      top: 150px;
+      h1 {
+        font-size: 1.5rem;
+      }
     }
   }
-}
 }
 
 .cube {
