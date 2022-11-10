@@ -1,7 +1,7 @@
 <template>
   <app-card class="app-card" :class="cardColor" v-on="$listeners">
     <div class="app-card-body">
-      <span class="text-3xl mr-3" :class="icon"></span>
+      <span class="icon mr-1" :class="icon"></span>
       <span>
         {{ message.text }}
       </span>
@@ -78,5 +78,9 @@ export default {
 }
 .app-card--yellow {
   background-color: #d6932f;
+}
+
+.icon {
+  font-size: 3rem;
 }
 </style>
