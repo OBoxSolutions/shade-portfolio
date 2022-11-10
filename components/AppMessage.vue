@@ -65,7 +65,6 @@ export default {
 .app-card-body {
   display: flex;
   align-items: center;
-  background-color: white;
 }
 
 .app-card--blue {
