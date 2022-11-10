@@ -1,118 +1,113 @@
 <template>
-  <div class="section-hiring-cube">
-    <div class="section-hiring-form">
-      <h1>BASIC INFORMATION</h1>
-      <form class="section-form">
-        <div class="section-form__column-left">
-          <div>
-            <label for="full-name">Full name:</label><br />
-            <input
-              id="full-name"
-              v-model="form.name"
-              type="text"
-              name="full-name"
-            /><br />
-          </div>
-          <div>
-            <label for="email-address">Email address:</label><br />
-            <input
-              id="email-address"
-              v-model="form.email"
-              type="email"
-              name="email-address"
-            /><br />
-          </div>
-          <div>
-            <label for="country">Country in which you are based:</label><br />
-            <input
-              id="country"
-              v-model="form.country"
-              type="text"
-              name="country"
-            /><br />
-          </div>
-        </div>
-        <div class="section-form__column-right">
-          <label for="applying-for">Applying for:</label><br />
-          <div class="applying-for">
+  <validation-observer ref="form">
+    <div class="section-hiring-cube">
+      <div class="section-hiring-form">
+        <h1>BASIC INFORMATION</h1>
+        <form class="section-form">
+          <div class="section-form__column-left">
             <div>
-              <input
-                id="full-stack"
-                v-model="form.applying_for"
-                type="radio"
-                name="applying-for"
-                checked
-                value="Full-Stack Web Developer"
-              />
-              <label for="full-stack">Full-Stack Web Developer</label>
+              <label for="full-name">Full name:</label><br />
+              <validation-provider v-slot="{ errors }" rules="required">
+                <input
+                  id="full-name"
+                  v-model="form.name"
+                  type="text"
+                  name="full-name"
+                />
+                <app-input-error :error="errors[0]"></app-input-error>
+              </validation-provider>
+              <br />
             </div>
             <div>
+              <label for="email-address">Email address:</label><br />
+            <validation-provider v-slot="{ errors }" rules="required|email">
               <input
-                id="general-manager"
-                v-model="form.applying_for"
-                type="radio"
-                name="applying-for"
-                value="General Manager"
+                id="email-address"
+                v-model="form.email"
+                type="email"
+                name="email-address"
               />
-              <label for="general-manager">General Manager</label>
+              <app-input-error :error="errors[0]"></app-input-error>
+            </validation-provider>
+              <br />
             </div>
             <div>
-              <input
-                id="seo-marketing"
-                v-model="form.applying_for"
-                type="radio"
-                name="applying-for"
-                value="SEO and Marketing Expert"
-              />
-              <label for="seo-marketing">SEO and Marketing Expert</label>
-            </div>
-            <div>
-              <input
-                id="vice-president"
-                v-model="form.applying_for"
-                type="radio"
-                name="applying-for"
-                value="Vice President"
-              />
-              <label for="vice-president">Vice President</label>
+              <label for="country">Country in which you are based:</label><br />
+              <validation-provider v-slot="{ errors }" rules="required">
+                <input
+                  id="country"
+                  v-model="form.country"
+                  type="text"
+                  name="country"
+                />
+                <app-input-error :error="errors[0]"></app-input-error>
+              </validation-provider>
+              <br />
             </div>
           </div>
-          <label for="birthdate">Date of Birth:</label><br />
-          <fieldset class="birthdate" name="birthdate">
-            <input
-              v-model="year"
-              class="birthdate-input year"
-              maxlength="4"
-              type="text"
-              name="birthdate-year"
-            />
-            -
-            <input
-              v-model="month"
-              class="birthdate-input month"
-              maxlength="2"
-              type="text"
-              name="birthdate-month"
-            />
-            -
-            <input
-              v-model="day"
-              class="birthdate-input day"
-              maxlength="2"
-              type="text"
-              name="birthdate-day"
-            />
-          </fieldset>
-        </div>
-      </form>
+          <div class="section-form__column-right">
+            <label for="applying-for">Applying for:</label><br />
+            <div class="applying-for">
+              <div v-for="(job, index) in applying_jobs" :key="`job-${index}`">
+                <input
+                  :id="index"
+                  v-model="form.applying_for"
+                  type="radio"
+                  name="applying-for"
+                  :value="job"
+                />
+                <label :for="index">{{job}}</label>
+              </div>
+            </div>
+            <label for="birthdate">Date of Birth:</label><br />
+            <fieldset class="birthdate" name="birthdate">
+              <validation-provider v-slot="{ errors }" rules="required|numeric">
+                <input
+                  v-model="form.year"
+                  class="__date-input year"
+                  maxlength="4"
+                  type="text"
+                  name="birthdate-year"
+                />
+                <app-input-error :error="errors[0]"></app-input-error>
+              </validation-provider>
+              -
+              <validation-provider v-slot="{ errors }" rules="required|numeric">
+                <input
+                  v-model="form.month"
+                  class="__date-input month"
+                  maxlength="2"
+                  type="text"
+                  name="birthdate-month"
+                />
+                <app-input-error :error="errors[0]"></app-input-error>
+              </validation-provider>
+              -
+              <validation-provider v-slot="{ errors }" rules="required|numeric">
+                <input
+                  v-model="form.day"
+                  class="__date-input day"
+                  maxlength="2"
+                  type="text"
+                  name="birthdate-day"
+                />
+                <app-input-error :error="errors[0]"></app-input-error>
+              </validation-provider>
+            </fieldset>
+          </div>
+        </form>
+      </div>
+      <div class="form-bottom-side" />
     </div>
-    <div class="form-bottom-side" />
-  </div>
+  </validation-observer>
 </template>
 
 <script>
+import formOperations from '@/mixins/formOperations'
+
 export default {
   name: 'SectionHiringInformationForm',
+  mixins: [formOperations],
   props: {
     value: {
       type: Object,
@@ -121,9 +116,7 @@ export default {
   },
   data() {
     return {
-      year: '',
-      month: '',
-      day: '',
+      applying_jobs: [ 'Full-Stack Web Developer', 'General Manager', 'SEO and Marketing Expert', 'Vice President' ]
     }
   },
   computed: {
@@ -136,7 +129,7 @@ export default {
       },
     },
     birthdate() {
-      return `${this.day}-${this.month}-${this.year}`
+      return `${this.form.day}-${this.form.month}-${this.form.year}`
     },
   },
   watch: {
@@ -216,7 +209,8 @@ $perspective: 100px;
         margin: 0.5rem 0 2rem;
         width: 40%;
         padding: 1rem 2rem;
-        background: #8a8a8a;
+        // background: #8a8a8a;
+        background: url('/gray-texture.svg');
         border: 2px solid #000000;
 
         div {
@@ -264,7 +258,7 @@ $perspective: 100px;
         border: none;
         padding-left: 0;
 
-        .birthdate-input {
+        .__date-input {
           width: 5rem;
           height: 1.8rem;
           text-align: center;

@@ -73,7 +73,7 @@
           :loading="loading"
           only-bottom
           class="__submit button--green"
-          @click="submitMeeting"
+          @click="onSubmit"
         >
           <h1>Submit</h1>
         </base-button>
@@ -84,10 +84,8 @@
 </template>
 
 <script>
-import { mapActions, mapMutations } from 'vuex'
-
+import { mapMutations } from 'vuex'
 import { copyTextToClipboard } from '@/utils/copyToClipboard'
-import { validateForm } from '@/utils/validateForm'
 
 export default {
   name: 'SectionGetStartedSummary',
@@ -95,6 +93,14 @@ export default {
     page: {
       type: String,
       default: '',
+    },
+    loading: {
+      type: Boolean,
+      default: false
+    },
+    disabled: {
+      type: Boolean,
+      default: false
     },
     value: {
       type: Object,
@@ -106,8 +112,6 @@ export default {
       timeList: ['15min.', '30min.', '45min.', '1h.'],
       selectedTime: '',
       meetingGeneratedLink: 'some zoom or google meets link',
-      disabled: false,
-      loading: false,
       appLinks: [
         { name: 'Discord', link: 'discord.gg/something5' },
         { name: 'Messenger', link: 'messanger.gg/something5' },
@@ -139,34 +143,14 @@ export default {
   },
   methods: {
     ...mapMutations(['addMessage']),
-    ...mapActions(['storeChatMeeting', 'storeVoiceMeeting']),
     selectTime(time) {
       this.selectedTime = time
     },
     noTimeBeforeMeeting(){
       this.selectedTime = 'Nope'
     },
-    async submitMeeting() {
-      if (validateForm(this.form)) {
-        this.disabled = true
-        this.loading = true
-
-        if (this.page === 'chat') {
-          await this.storeChatMeeting(this.form)
-        }
-        else{
-          await this.storeVoiceMeeting(this.form)
-        }
-
-        this.disabled = false
-        this.loading = false
-
-      } else {
-        this.addMessage({
-          type: 'error',
-          text: 'Some form values are missing',
-        })
-      }
+    onSubmit() {
+      this.$emit('submit')
     },
     copyTextToClipboard(text) {
       copyTextToClipboard(text)

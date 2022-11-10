@@ -19,18 +19,27 @@
       </div>
     </div>
     <section-get-started-header />
-    <section-get-started-basic-information v-model="form" :page="page" />
+    <section-get-started-basic-information ref="formBasicInfo" v-model="form" :page="page" />
     <section-get-started-chat v-if="page == 'chat'" v-model="form" />
     <section-get-started-meeting v-if="page == 'meeting'" v-model="form" />
-    <section-get-started-summary v-model="form" :page="page" />
+    <section-get-started-summary
+      v-model="form"
+      :page="page"
+      :loading="loading"
+      :disabled="disabled"
+      @submit="submitMeeting" />
   </div>
 </template>
 
 <script>
+import { mapActions, mapMutations } from 'vuex'
+
 export default {
   data() {
     return {
       page: this.$route.query.mode === 'meeting' ? 'meeting' : 'chat',
+      disabled: false,
+      loading: false,
       form: {
         // Basic info
         name: '',
@@ -62,9 +71,39 @@ export default {
     this.page = this.$route.query.mode === 'meeting' ? 'meeting' : 'chat'
   },
   methods: {
+    ...mapMutations(['addMessage']),
+    ...mapActions(['storeChatMeeting', 'storeVoiceMeeting']),
     updatePage() {
       this.page = this.$route.query.mode === 'meeting' ? 'meeting' : 'chat'
       return this.page
+    },
+    async validate() {
+      return await this.$refs.formBasicInfo.validate()
+    },
+    async submitMeeting() {
+      const isValid = await this.validate()
+      if (!isValid) return
+
+      this.disabled = true
+      this.loading = true
+
+      try{
+        if (this.page === 'chat') {
+          await this.storeChatMeeting(this.form)
+        }
+        else{
+          await this.storeVoiceMeeting(this.form)
+        }
+
+        this.disabled = false
+        this.loading = false
+
+      } catch {
+        this.addMessage({
+          type: 'error',
+          text: 'Some form values are missing',
+        })
+      }
     },
   },
 }

@@ -27,7 +27,11 @@
         <div class="side cube-front-side"></div>
         <div class="side cube-right-side"></div>
       </div>
-      <base-button class="base-button" flat> Press start </base-button>
+      <div class="button-wrapper">
+        <base-button only-bottom class="base-button button--red--side-blue">
+          <h1>Press Start</h1>
+        </base-button>
+      </div>
       <div class="cube cube-right-under-price">
         <div class="side cube-front-side"></div>
         <div class="side cube-right-side"></div>
@@ -53,12 +57,41 @@ $perspective: 200px;
   position: relative;
 }
 
-.base-button {
+.button-wrapper{
   position: absolute;
-  width: 300px;
-  left: calc(50% - 150px);
-  top: 100px;
-  font-size: 26px;
+  left: 50%;
+  bottom: 90%;
+
+  .base-button {
+    position: absolute;
+    left: calc(50% - 180px);
+    top: 100px;
+    font-size: 26px;
+
+    padding: 0 !important;
+
+    transform-style: preserve-3d;
+    perspective: 100px;
+    perspective-origin: bottom;
+
+    h1{
+      font-weight: 400;
+      padding: 0 50px;
+      color: #ffffff;
+    }
+    &:active {
+      transform: translateY(10px);
+    }
+  }
+  @media screen and (max-width: 528px) {
+  .base-button {
+    left: calc(50% - 110px);
+    top: 150px;
+    h1{
+      font-size: 1.5rem;
+    }
+  }
+}
 }
 
 .cube {

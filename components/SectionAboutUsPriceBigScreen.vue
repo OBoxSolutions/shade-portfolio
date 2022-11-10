@@ -48,12 +48,15 @@
     <div class="cube cube-left-under-price">
       <div class="side cube-front-side"></div>
       <div class="side cube-right-side"></div>
+      <button class="bottom-button button--red">Press Start</button>
     </div>
-    <div class="bottom"></div>
+    <div class="bottom">
+    </div>
   </div>
 </template>
 
 <script>
+
 export default {
   name: 'SectionAboutUsPriceBigScreen',
 }
@@ -125,7 +128,42 @@ $perspective: 200px;
     transform: rotateY(20deg) translateX(40px);
     background-color: #5a55f8;
   }
+
+  .bottom-button{
+    position: absolute;
+    width: 35rem;
+    height: 20rem;
+    bottom: 65px;
+    left: 205px;
+    border: 0;
+    padding: 2rem;
+    text-transform: uppercase;
+    font-size: 4rem;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: all 0.15s;
+
+    &::after{
+      content: '';
+      position: absolute;
+      clip-path: polygon(0 0, 20% 12%, 21% 90%, 0 100%);
+      min-width: 200px;
+      min-height: 318px;
+      right: -200px;
+      bottom: 0;
+      background: #5A55F8;
+      transition: all 0.15s;
+    }
+    &:active {
+      background: #D43737;
+      transform: translate3d(10px, 0, -.1em);
+    }
+    &:active::after {
+      transform: translate3d(-50px, 1.5em, -1em);
+    }
+  }
 }
+
 
 .bottom {
   $height: 80px;

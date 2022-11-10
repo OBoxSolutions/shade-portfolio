@@ -6,7 +6,7 @@
     <button
       class="hiring-submit__button"
       :class="{ disabled: disabled }"
-      @click="submitHiringRequest">
+      @click="onSubmit">
       <app-loader v-if="loading" class="spinner"></app-loader>
       <h1 v-else>
         SUBMIT
@@ -16,40 +16,22 @@
 </template>
 
 <script>
-import { mapMutations, mapActions } from 'vuex'
-import { validateForm } from '@/utils/validateForm'
 
 export default {
   props: {
-    form: {
-      type: Object,
-      default: null,
+    loading: {
+      type: Boolean,
+      default: false
+    },
+    disabled: {
+      type: Boolean,
+      default: false
     },
   },
-  data (){
-    return {
-      disabled: false,
-      loading: false
-    }
-  },
   methods: {
-    ...mapMutations(['addMessage']),
-    ...mapActions(['storeHiringRequest']),
-    async submitHiringRequest(){
-      this.disabled = true
-      this.loading = true
-      if (validateForm(this.form)) {
-        await this.storeHiringRequest(this.form)
-      }
-      else {
-        this.addMessage({
-          type: 'error',
-          text: 'Some form values ​​are missing',
-        })
-      }
-      this.disabled = false
-      this.loading = false
-    }
+    onSubmit() {
+      this.$emit('submit')
+    },
   }
 
 }

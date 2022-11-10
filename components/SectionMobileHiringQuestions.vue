@@ -32,7 +32,7 @@
         :loading="loading"
         only-bottom
         class="hiring-button button--green"
-        @click="submitHiringRequest"
+        @click="onSubmit"
       >
         <h1>Submit</h1>
       </base-button>
@@ -47,8 +47,7 @@
 // import vueFilePond from 'vue-filepond'
 // import 'filepond/dist/filepond.min.css'
 
-import { mapMutations, mapActions } from "vuex"
-import { validateForm } from '@/utils/validateForm'
+import { mapMutations } from "vuex"
 
 export default {
   name: 'SectionMobileHiringQuestions',
@@ -56,6 +55,14 @@ export default {
     value: {
       type: Object,
       default: () => {},
+    },
+    loading: {
+      type: Boolean,
+      default: false
+    },
+    disabled: {
+      type: Boolean,
+      default: false
     },
   },
   // components: {
@@ -74,8 +81,6 @@ export default {
         { text: 'Are you satisfied with yourself?', model: 'question_eight', file: null },
         { text: 'Maybe have anything to add? Any questions perhaps?', model: 'question_nine', file: null },
       ],
-      disabled: false,
-      loading: false
     }
   },
   computed: {
@@ -95,26 +100,13 @@ export default {
     }
   },
   methods: {
-    ...mapMutations(['setMobileFiles', 'addMessage']),
-    ...mapActions(['storeHiringRequest']),
+    ...mapMutations(['setMobileFiles']),
     setQuestionsAnswers(question, answer){
       this.form[`${question}`] = answer
     },
-    async submitHiringRequest(){
-      this.disabled = true
-      this.loading = true
-      if (validateForm(this.form)) {
-        await this.storeHiringRequest(this.form)
-      }
-      else {
-        this.addMessage({
-          type: 'error',
-          text: 'Some form values are missing',
-        })
-      }
-      this.disabled = false
-      this.loading = false
-    }
+    onSubmit() {
+      this.$emit('submit')
+    },
     // updateFiles(){
     //   const uploadFiles = []
     //   const allFiles = this.$refs.pond.getFiles()

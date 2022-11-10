@@ -20,7 +20,7 @@ extend('required', {
 
 extend('email', {
   ...email,
-  message: 'Please enter e valid email',
+  message: 'Please enter a valid email',
 })
 
 extend('confirmed', {
