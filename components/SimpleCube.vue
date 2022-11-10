@@ -9,12 +9,14 @@
       class="cube-front-side"
       :style="{ 'background-color': frontSideBackgroundColor }"
     >
-      <div class="p-5">
-        <h2>
-          {{ title }}
-        </h2>
-        <slot> </slot>
-      </div>
+      <slot name="content">
+        <div class="p-5">
+          <h2>
+            {{ title }}
+          </h2>
+          <slot> </slot>
+        </div>
+      </slot>
     </div>
     <div
       v-if="bottom"

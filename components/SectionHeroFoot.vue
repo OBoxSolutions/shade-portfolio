@@ -16,11 +16,15 @@
         front-side-background-color="#ffac06"
         other-sides-background-color="#15AAAA"
       >
-        <p>
-          We are a website design company, WebDo. The sole purpose of our
-          existence is to create something you like. Truth be told, we just love
-          making websites!
-        </p>
+        <template #content>
+          <div class="p-1">
+            <p>
+              We are a website design company, WebDo. The sole purpose of our
+              existence is to create something you like. Truth be told, we just
+              love making websites!
+            </p>
+          </div>
+        </template>
       </simple-cube>
     </div>
 
@@ -198,17 +202,21 @@ $border-style: 1px solid #877432;
   top: 160px;
 
   .cube {
-    height: 520px;
+    height: 260px;
     border: 2px solid black;
 
     @media screen and (min-width: 400px) {
-      height: 470px;
+      height: 220px;
     }
     @media screen and (min-width: 400px) {
-      height: 430px;
+      height: 210px;
     }
     @media screen and (min-width: 576px) {
-      height: 380px;
+      height: 200px;
+    }
+
+    @media screen and (min-width: 600px) {
+      height: 160px;
     }
 
     p {
