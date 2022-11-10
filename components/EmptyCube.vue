@@ -22,7 +22,12 @@
       :style="{ 'background-color': backgroundColor }"
     >
       <slot name="content">
-        <div class="px-3">
+        <div
+          :class="{
+            'px-1': breakpoints.isSmAndDown,
+            'px-3': !breakpoints.isSmAndDown,
+          }"
+        >
           <h2>
             <slot name="title"></slot>
           </h2>
@@ -38,6 +43,8 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
   name: 'EmptyCube',
   props: {
@@ -75,6 +82,7 @@ export default {
     },
   },
   computed: {
+    ...mapState(['breakpoints']),
     sideLeftStyles() {
       return {
         width: this.sideWidth,
