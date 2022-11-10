@@ -35,7 +35,7 @@
             <fieldset class="birthdate" name="birthdate">
               <validation-provider v-slot="{ errors }" rules="required|numeric">
                 <input
-                  v-model="year"
+                  v-model="form.year"
                   class="birthdate-input year"
                   maxlength="4"
                   type="text"
@@ -46,7 +46,7 @@
                 -
               <validation-provider v-slot="{ errors }" rules="required|numeric">
                 <input
-                  v-model="month"
+                  v-model="form.month"
                   class="birthdate-input month"
                   maxlength="2"
                   type="text"
@@ -57,7 +57,7 @@
               -
               <validation-provider v-slot="{ errors }" rules="required|numeric">
                 <input
-                  v-model="day"
+                  v-model="form.day"
                   class="birthdate-input day"
                   maxlength="2"
                   type="text"
@@ -118,10 +118,6 @@ export default {
   data() {
     return {
       applying_jobs: [ 'Full-Stack Web Developer', 'General Manager', 'SEO and Marketing Expert', 'Vice President' ],
-
-      year: '',
-      month: '',
-      day: '',
     }
   },
   computed: {
@@ -134,7 +130,7 @@ export default {
       },
     },
     birthdate() {
-      return `${this.day}-${this.month}-${this.year}`
+      return `${this.form.day}-${this.form.month}-${this.form.year}`
     },
   },
   watch: {

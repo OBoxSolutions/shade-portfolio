@@ -21,6 +21,8 @@
 
 <script>
 import { mapState, mapMutations, mapActions } from 'vuex'
+import { cleanForm } from '@/utils/cleanForm'
+
 
 export default {
   name: 'HiringPage',
@@ -33,6 +35,9 @@ export default {
         email: '',
         country: '',
         applying_for: 'Full-Stack Web Developer',
+        year: '',
+        month: '',
+        day: '',
         birthdate: '',
         question_one: '',
         question_two: '',
@@ -64,6 +69,11 @@ export default {
 
       try{
         await this.storeHiringRequest(this.form)
+        cleanForm(this.form)
+
+        this.$nextTick(() => {
+            this.$refs.formBasicInfo.reset();
+        })
       }
       catch {
         this.addMessage({
@@ -73,6 +83,8 @@ export default {
       }
       this.disabled = false
       this.loading = false
+
+
     }
   }
 }

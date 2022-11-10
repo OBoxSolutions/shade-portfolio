@@ -1,21 +1,21 @@
 <template>
   <validation-observer ref="form">
-    <form class="section-hiring-cube">
+    <div class="section-hiring-cube">
       <div class="section-hiring-form">
         <h1>BASIC INFORMATION</h1>
         <form class="section-form">
           <div class="section-form__column-left">
             <div>
               <label for="full-name">Full name:</label><br />
-            <validation-provider v-slot="{ errors }" rules="required">
-              <input
-                id="full-name"
-                v-model="form.name"
-                type="text"
-                name="full-name"
-              />
-              <app-input-error :error="errors[0]"></app-input-error>
-            </validation-provider>
+              <validation-provider v-slot="{ errors }" rules="required">
+                <input
+                  id="full-name"
+                  v-model="form.name"
+                  type="text"
+                  name="full-name"
+                />
+                <app-input-error :error="errors[0]"></app-input-error>
+              </validation-provider>
               <br />
             </div>
             <div>
@@ -63,8 +63,8 @@
             <fieldset class="birthdate" name="birthdate">
               <validation-provider v-slot="{ errors }" rules="required|numeric">
                 <input
-                  v-model="year"
-                  class="birthdate-input year"
+                  v-model="form.year"
+                  class="__date-input year"
                   maxlength="4"
                   type="text"
                   name="birthdate-year"
@@ -74,8 +74,8 @@
               -
               <validation-provider v-slot="{ errors }" rules="required|numeric">
                 <input
-                  v-model="month"
-                  class="birthdate-input month"
+                  v-model="form.month"
+                  class="__date-input month"
                   maxlength="2"
                   type="text"
                   name="birthdate-month"
@@ -85,8 +85,8 @@
               -
               <validation-provider v-slot="{ errors }" rules="required|numeric">
                 <input
-                  v-model="day"
-                  class="birthdate-input day"
+                  v-model="form.day"
+                  class="__date-input day"
                   maxlength="2"
                   type="text"
                   name="birthdate-day"
@@ -98,7 +98,7 @@
         </form>
       </div>
       <div class="form-bottom-side" />
-    </form>
+    </div>
   </validation-observer>
 </template>
 
@@ -116,9 +116,6 @@ export default {
   },
   data() {
     return {
-      year: '',
-      month: '',
-      day: '',
       applying_jobs: [ 'Full-Stack Web Developer', 'General Manager', 'SEO and Marketing Expert', 'Vice President' ]
     }
   },
@@ -132,7 +129,7 @@ export default {
       },
     },
     birthdate() {
-      return `${this.day}-${this.month}-${this.year}`
+      return `${this.form.day}-${this.form.month}-${this.form.year}`
     },
   },
   watch: {
@@ -261,7 +258,7 @@ $perspective: 100px;
         border: none;
         padding-left: 0;
 
-        .birthdate-input {
+        .__date-input {
           width: 5rem;
           height: 1.8rem;
           text-align: center;
