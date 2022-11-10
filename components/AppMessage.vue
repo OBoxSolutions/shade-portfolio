@@ -75,6 +75,7 @@ export default {
 }
 .app-card--red {
   background-color: #ce2929;
+  color: white;
 }
 .app-card--yellow {
   background-color: #d6932f;
