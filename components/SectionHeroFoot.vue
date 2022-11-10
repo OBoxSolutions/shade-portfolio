@@ -1,9 +1,7 @@
 <template>
   <div class="content">
     <div class="press-start-container">
-      <button class="both-side-button button--red">
-        PRESS START
-      </button>
+      <button class="both-side-button button--red">PRESS START</button>
     </div>
     <div class="divider"></div>
     <div class="hire-team-container">
@@ -76,14 +74,14 @@ $border-style: 1px solid #877432;
   padding: 5px 30px;
   font-size: 50px;
 
-  .small-button{
+  .small-button {
     padding: 0 !important;
 
     transform-style: preserve-3d;
     perspective: 100px;
     perspective-origin: bottom;
 
-    h1{
+    h1 {
       font-size: 3.75rem;
       font-weight: 400;
       margin: 1rem auto;
@@ -112,33 +110,32 @@ $border-style: 1px solid #877432;
   transform-style: preserve-3d;
   transition: transform 0.15s;
 
-  &::before{
+  &::before {
     content: '';
     height: 100px;
     min-width: calc(100% + 10%);
     position: absolute;
     clip-path: polygon(0 0, 91% 0, 93.9% 12%, 4% 12%);
-    background: #D43737;
+    background: #d43737;
     left: 0;
 
     transform: translate3d(0, 12.1rem, -1em);
     transition: transform 0.15s, min-width 0.15s;
-
   }
-  &::after{
+  &::after {
     content: '';
     width: 100px;
     min-height: calc(100% + 5%);
     position: absolute;
     clip-path: polygon(0 0, 20% 12%, 21% 100%, 0 100%);
-    background: #D43737;
+    background: #d43737;
     top: 0;
     right: -100px;
     transition: all 0.15s;
   }
   &:active {
-    background: #D43737;
-    transform: translate3d(.2em, 0.3em, -.2em);
+    background: #d43737;
+    transform: translate3d(0.2em, 0.3em, -0.2em);
   }
   &:active::before {
     min-width: 100%;
@@ -148,7 +145,6 @@ $border-style: 1px solid #877432;
     min-height: 90%;
     transform: translate3d(-50px, 0em, -20em);
   }
-
 }
 
 @media screen and (min-width: 900px) {
@@ -202,8 +198,12 @@ $border-style: 1px solid #877432;
   top: 160px;
 
   .cube {
-    height: 360px;
+    height: 440px;
     border: 2px solid black;
+
+    @media screen and (min-width: 576px) {
+      height: 380px;
+    }
 
     p {
       text-align: center;
