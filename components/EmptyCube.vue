@@ -140,38 +140,37 @@ $side-width: 130px;
   width: 100%;
 }
 
-h1 {
+h2 {
   text-align: center;
-  font-size: 1.1rem;
-  line-height: 79px;
+  font-size: 1.2rem;
 }
 
 @media screen and (min-width: 576px) {
-  h1 {
+  h2 {
     font-size: 1.4rem;
   }
 }
 
 @media screen and (min-width: 768px) {
-  h1 {
+  h2 {
     font-size: 1.8rem;
   }
 }
 
 @media screen and (min-width: 992px) {
-  h1 {
+  h2 {
     font-size: 2rem;
   }
 }
 
 @media screen and (min-width: 1200px) {
-  h1 {
+  h2 {
     font-size: 2.6rem;
   }
 }
 
 @media screen and (min-width: 1400px) {
-  .h1 {
+  .h2 {
     font-size: 3.6rem;
   }
 }
