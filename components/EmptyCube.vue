@@ -159,13 +159,13 @@ h2 {
 
 @media screen and (min-width: 992px) {
   h2 {
-    font-size: 2rem;
+    font-size: 1.6rem;
   }
 }
 
 @media screen and (min-width: 1200px) {
   h2 {
-    font-size: 2.6rem;
+    font-size: 1.8rem;
   }
 }
 
