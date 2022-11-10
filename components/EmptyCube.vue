@@ -138,12 +138,24 @@ h1 {
 
 @media screen and (min-width: 768px) {
   h1 {
-    font-size: 2.6rem;
+    font-size: 1.8rem;
   }
 }
 
 @media screen and (min-width: 992px) {
   h1 {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  h1 {
+    font-size: 2.6rem;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .h1 {
     font-size: 3.6rem;
   }
 }
