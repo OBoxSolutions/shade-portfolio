@@ -15,7 +15,10 @@
                 <input v-model="form.contact" class="section-body__input" />
                 <div class="section-body_tag">{{ form.social }}</div>
               </div>
-              <app-input-error :error="errors[0]"></app-input-error>
+              <app-input-error
+                class="input-error"
+                :error="errors[0]"
+              ></app-input-error>
             </validation-provider>
           </div>
           <div class="section-body__choose-platform-outer">
@@ -721,5 +724,10 @@ export default {
       }
     }
   }
+}
+
+.input-error {
+  position: relative;
+  top: 6px;
 }
 </style>
