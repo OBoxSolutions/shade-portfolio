@@ -84,7 +84,7 @@ export default {}
   left: 40px;
   .connector-line-right {
     right: unset;
-    width: 100px;
+    width: 9vw;
     left: calc(100% + 7px);
   }
 }
@@ -96,7 +96,7 @@ export default {}
 
   .connector-line-left {
     left: unset;
-    width: 100px;
+    width: 9vw;
     right: calc(100% + 7px);
   }
 }
