@@ -24,14 +24,21 @@
       <div class="section-header__message">
         <div class="section-header__title-box">
           <div>YOUR MESSAGE</div>
-          <validation-provider v-slot="{ errors }" rules="required">
+          <validation-provider
+            v-slot="{ errors }"
+            class="section-header__title-box-validation"
+            rules="required"
+          >
             <input
               v-model="form.subject"
               type="text"
-              class="section-header__description"
+              class="section-header__description mx-auto"
               placeholder="Insert general question"
             />
-            <app-input-error :error="errors[0]"></app-input-error>
+            <app-input-error
+              :error="errors[0]"
+              class="mx-auto mt-1 general-question-error"
+            ></app-input-error>
           </validation-provider>
         </div>
         <div class="section-header__transition"></div>
@@ -194,6 +201,17 @@ export default {
       font-size: larger;
       border: 2px solid black;
       color: black;
+
+      .section-header__title-box-validation {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .general-question-error {
+          font-size: 1rem;
+        }
+      }
 
       .section-header__description {
         font-size: 10px;
