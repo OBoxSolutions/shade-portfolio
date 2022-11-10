@@ -178,6 +178,18 @@ h1 {
 
 p {
   font-family: 'Prompt';
-  font-size: 18px;
+  font-size: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  p {
+    font-size: 1.1rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  p {
+    font-size: 1.2rem;
+  }
 }
 </style>
