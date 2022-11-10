@@ -21,14 +21,16 @@
       class="side side-front"
       :style="{ 'background-color': backgroundColor }"
     >
-      <div class="px-3">
-        <h1>
-          <slot name="title"></slot>
-        </h1>
-        <p>
-          <slot name="text"></slot>
-        </p>
-      </div>
+      <slot name="content">
+        <div class="px-3">
+          <h2>
+            <slot name="title"></slot>
+          </h2>
+          <p>
+            <slot name="text"></slot>
+          </p>
+        </div>
+      </slot>
     </div>
     <div v-if="left" class="side" :style="sideLeftStyles"></div>
     <div v-if="right" class="side" :style="sideRightStyles"></div>
