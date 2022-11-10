@@ -198,9 +198,15 @@ $border-style: 1px solid #877432;
   top: 160px;
 
   .cube {
-    height: 440px;
+    height: 520px;
     border: 2px solid black;
 
+    @media screen and (min-width: 400px) {
+      height: 470px;
+    }
+    @media screen and (min-width: 400px) {
+      height: 430px;
+    }
     @media screen and (min-width: 576px) {
       height: 380px;
     }
