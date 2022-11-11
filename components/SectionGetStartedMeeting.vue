@@ -98,6 +98,9 @@ export default {
       this.form.meeting_date = val
     },
   },
+  mounted(){
+    this.form.app = 'Discord'
+  },
   methods: {
     dateSelected(date) {
       this.selected = date
