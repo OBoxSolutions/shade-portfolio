@@ -21,9 +21,6 @@
       </div>
       <div class="side cube-down-side"></div>
     </div>
-    <div class="connector-line connector-line-middle">
-      <div>Some text</div>
-    </div>
 
     <empty-cube
       class="cube cube-right-of-price"
@@ -41,8 +38,11 @@
           />
         </div>
       </template>
-      <template #title>
-        <div class="rotated-text">Technical talk</div>
+      <template #content>
+        <h2 class="rotated-text">Technical talk</h2>
+        <div class="connector-line">
+          <h3>Coming soon...</h3>
+        </div>
       </template>
     </empty-cube>
     <div class="cube cube-left-under-price">
@@ -50,13 +50,11 @@
       <div class="side cube-right-side"></div>
       <button class="bottom-button button--red">Press Start</button>
     </div>
-    <div class="bottom">
-    </div>
+    <div class="bottom"></div>
   </div>
 </template>
 
 <script>
-
 export default {
   name: 'SectionAboutUsPriceBigScreen',
 }
@@ -129,7 +127,7 @@ $perspective: 200px;
     background-color: #5a55f8;
   }
 
-  .bottom-button{
+  .bottom-button {
     position: absolute;
     width: 35rem;
     height: 20rem;
@@ -143,7 +141,7 @@ $perspective: 200px;
     transform-style: preserve-3d;
     transition: all 0.15s;
 
-    &::after{
+    &::after {
       content: '';
       position: absolute;
       clip-path: polygon(0 0, 20% 12%, 21% 90%, 0 100%);
@@ -151,19 +149,18 @@ $perspective: 200px;
       min-height: 318px;
       right: -200px;
       bottom: 0;
-      background: #5A55F8;
+      background: #5a55f8;
       transition: all 0.15s;
     }
     &:active {
-      background: #D43737;
-      transform: translate3d(10px, 0, -.1em);
+      background: #d43737;
+      transform: translate3d(10px, 0, -0.1em);
     }
     &:active::after {
       transform: translate3d(-50px, 1.5em, -1em);
     }
   }
 }
-
 
 .bottom {
   $height: 80px;
@@ -194,27 +191,25 @@ $perspective: 200px;
 }
 
 .connector-line {
-  $connector-line-height: 820px;
-
-  height: $connector-line-height;
   position: absolute;
-  top: calc(45% - calc($connector-line-height / 2));
   background-color: #d9d9d9;
-  z-index: 10;
-}
+  top: 18%;
+  right: calc(100% + 18.5px);
+  z-index: 100;
+  height: 60%;
+  width: 55px;
 
-.connector-line-middle {
-  $width: 86px;
-
-  width: $width;
-  right: 95px;
-
-  div {
-    transform: rotateZ(270deg);
+  h3 {
+    margin: 0;
+    rotate: -90deg;
+    width: 280px;
     position: absolute;
-    width: 200px;
-    left: -50px;
-    top: 380px;
+    font-size: 1.4rem;
+    top: 40%;
+    right: -110px;
+    z-index: 500;
+    font-family: 'Prompt', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+      'Lucida Sans Unicode', Geneva, Verdana, sans-serif !important;
   }
 }
 </style>

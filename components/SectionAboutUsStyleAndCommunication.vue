@@ -82,12 +82,23 @@ export default {}
 
 .cube-wrapper.left {
   left: 40px;
+  .connector-line-right {
+    right: unset;
+    width: 9vw;
+    left: calc(100% + 7px);
+  }
 }
 
 .cube-wrapper.right {
   margin-left: auto;
   right: 40px;
   margin-top: 8em;
+
+  .connector-line-left {
+    left: unset;
+    width: 9vw;
+    right: calc(100% + 7px);
+  }
 }
 
 @media screen and (min-width: 991px) {

@@ -21,14 +21,21 @@
       class="side side-front"
       :style="{ 'background-color': backgroundColor }"
     >
-      <div class="px-3">
-        <h1>
-          <slot name="title"></slot>
-        </h1>
-        <p>
-          <slot name="text"></slot>
-        </p>
-      </div>
+      <slot name="content">
+        <div
+          :class="{
+            'px-1': breakpoints.isSmAndDown,
+            'px-3': !breakpoints.isSmAndDown,
+          }"
+        >
+          <h2>
+            <slot name="title"></slot>
+          </h2>
+          <p>
+            <slot name="text"></slot>
+          </p>
+        </div>
+      </slot>
     </div>
     <div v-if="left" class="side" :style="sideLeftStyles"></div>
     <div v-if="right" class="side" :style="sideRightStyles"></div>
@@ -36,6 +43,8 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
   name: 'EmptyCube',
   props: {
@@ -73,6 +82,7 @@ export default {
     },
   },
   computed: {
+    ...mapState(['breakpoints']),
     sideLeftStyles() {
       return {
         width: this.sideWidth,
@@ -130,44 +140,55 @@ $side-width: 130px;
   width: 100%;
 }
 
-h1 {
+h2 {
   text-align: center;
-  font-size: 1.1rem;
-  line-height: 79px;
+  font-size: 1.2rem;
 }
 
 @media screen and (min-width: 576px) {
-  h1 {
+  h2 {
     font-size: 1.4rem;
   }
 }
 
 @media screen and (min-width: 768px) {
-  h1 {
+  h2 {
     font-size: 1.8rem;
   }
 }
 
 @media screen and (min-width: 992px) {
-  h1 {
-    font-size: 2rem;
+  h2 {
+    font-size: 1.6rem;
   }
 }
 
 @media screen and (min-width: 1200px) {
-  h1 {
-    font-size: 2.6rem;
+  h2 {
+    font-size: 1.8rem;
   }
 }
 
 @media screen and (min-width: 1400px) {
-  .h1 {
+  .h2 {
     font-size: 3.6rem;
   }
 }
 
 p {
   font-family: 'Prompt';
-  font-size: 18px;
+  font-size: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  p {
+    font-size: 1.1rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  p {
+    font-size: 1.2rem;
+  }
 }
 </style>
