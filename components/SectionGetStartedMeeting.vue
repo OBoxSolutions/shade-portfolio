@@ -90,13 +90,16 @@ export default {
       },
     },
     meetingDate() {
-      return `${this.selected.day || ''}-${this.selected.month || ''}-${this.selected.year || ''}:${this.selectedHour} `
+      return `${this.selected.day || ''}-${this.selected.month || ''}-${this.selected.year || ''} | ${this.selectedHour}`
     },
   },
   watch: {
     meetingDate(val) {
       this.form.meeting_date = val
     },
+  },
+  mounted(){
+    this.form.app = 'Discord'
   },
   methods: {
     dateSelected(date) {

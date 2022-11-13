@@ -81,6 +81,8 @@
       },
     },
     mounted(){
+      this.form.app = 'Discord'
+
       const lineCounters = document.getElementsByClassName('lineCounter')
       const largeWidth = window.innerWidth >= 768
       if(largeWidth){

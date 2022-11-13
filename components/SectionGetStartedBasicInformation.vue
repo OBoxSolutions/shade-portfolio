@@ -26,17 +26,17 @@
             <div>Date of Birth:</div>
               <span>
                 <validation-provider v-slot="{ errors }" rules="required|numeric">
-                  <input v-model="year" maxlength="4" class="__date-input" /> -
+                  <input v-model="form.year" maxlength="4" class="__date-input" /> -
                   <app-input-error :error="errors[0]"></app-input-error>
                 </validation-provider>
 
                 <validation-provider v-slot="{ errors }" rules="required|numeric">
-                  <input v-model="month" maxlength="2" class="__date-input" /> -
+                  <input v-model="form.month" maxlength="2" class="__date-input" /> -
                   <app-input-error :error="errors[0]"></app-input-error>
                 </validation-provider>
 
                 <validation-provider v-slot="{ errors }" rules="required|numeric">
-                  <input v-model="day" maxlength="2" class="__date-input" />
+                  <input v-model="form.day" maxlength="2" class="__date-input" />
                   <app-input-error :error="errors[0]"></app-input-error>
                 </validation-provider>
               </span>
@@ -69,7 +69,7 @@
               <div
                 v-for="(social, index) in socials[page]"
                 :key="`chat-${index}`"
-                :style="`${social == selectedSocial ? 'background:#352FCF' : ''}`"
+                :style="`${social == form.app ? 'background:#352FCF' : ''}`"
                 @click="selectSocial(social)"
               >
                 {{ social }}
@@ -106,10 +106,6 @@ export default {
         chat: ['Discord', 'Messenger', 'Twitter', 'Instagram'],
         meeting: ['Discord', 'Zoom', 'Google Meet'],
       },
-      selectedSocial: 'Discord',
-      year: '',
-      month: '',
-      day: '',
     }
   },
   computed: {
@@ -122,7 +118,7 @@ export default {
       },
     },
     birthdate() {
-      return `${this.day}-${this.month}-${this.year}`
+      return `${this.form.day}-${this.form.month}-${this.form.year}`
     },
   },
   watch: {
@@ -132,8 +128,7 @@ export default {
   },
   methods: {
     selectSocial(social) {
-      this.selectedSocial = social
-      this.form.app = this.selectedSocial
+      this.form.app = social
     },
   },
 }
