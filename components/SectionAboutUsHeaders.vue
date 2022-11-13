@@ -53,6 +53,20 @@ $headers-rotation-x-degrees: 2deg;
     transform: rotateX(-165deg) translateY(calc($top-side-height/2));
   }
 
+  @media screen and (min-width: 768px) {
+    .first-header__top-side,
+    .second-header__top-side {
+      transform: rotateX(-145deg) translateY(calc($top-side-height/2));
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    .first-header__top-side,
+    .second-header__top-side {
+      transform: rotateX(-155deg) translateY(calc($top-side-height/2));
+    }
+  }
+
   .first-header__top-side {
     border-right: 26px solid black;
   }
