@@ -26,7 +26,7 @@ export default {
 
 .hero-foot {
   position: absolute;
-  bottom: -280px;
+  bottom: -240px;
 }
 
 @media screen and (min-width: 700px) {
