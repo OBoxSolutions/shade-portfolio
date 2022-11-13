@@ -24,7 +24,7 @@
 
     <empty-cube
       class="cube cube-right-of-price"
-      side-width="30px"
+      :side-width="width"
       perspective="initial"
       rotation="130deg"
       background-color="#ffac06"
@@ -55,8 +55,27 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
   name: 'SectionAboutUsPriceBigScreen',
+  computed: {
+    ...mapState(['breakpoints']),
+
+    width() {
+      if (this.breakpoints.isXsAndDown) return '120px'
+
+      if (this.breakpoints.isSmAndDown) return '380px'
+
+      if (this.breakpoints.isMdAndDown) return '80px'
+
+      if (this.breakpoints.isLgAndDown) return '40px'
+
+      if (this.breakpoints.isXlAndDown) return '60px'
+
+      return '60px'
+    },
+  },
 }
 </script>
 
