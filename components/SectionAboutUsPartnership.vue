@@ -4,7 +4,7 @@
       <empty-cube
         class="content"
         :perspective="breakpoints.isSmAndDown ? '400px' : '600px'"
-        :side-width="breakpoints.isSmAndDown ? '120px' : '190px'"
+        :side-width="width"
         :left="false"
       >
         <template #title> Partnership </template>
@@ -37,6 +37,19 @@ export default {
   name: 'SectionAboutUsPartnership',
   computed: {
     ...mapState(['breakpoints']),
+    width() {
+      if (this.breakpoints.isXsAndDown) return '120px'
+
+      if (this.breakpoints.isSmAndDown) return '380px'
+
+      if (this.breakpoints.isMdAndDown) return '100px'
+
+      if (this.breakpoints.isLgAndDown) return '100px'
+
+      if (this.breakpoints.isXlAndDown) return '120px'
+
+      return '160px'
+    },
   },
 }
 </script>
