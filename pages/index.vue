@@ -35,6 +35,24 @@ export default {
   }
 }
 
+@media screen and (min-width: 1024px) {
+  .hero-foot {
+    bottom: -440px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .hero-foot {
+    bottom: -410px;
+  }
+}
+
+@media screen and (min-width: 1536px) {
+  .hero-foot {
+    bottom: -380px;
+  }
+}
+
 .section-about-us {
   padding-top: 660px;
 }
