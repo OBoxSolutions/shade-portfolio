@@ -54,12 +54,12 @@ export default {
 }
 
 .section-about-us {
-  padding-top: 660px;
+  padding-top: 560px;
 }
 
 @media screen and (min-width: 640px) {
   .section-about-us {
-    padding-top: 760px;
+    padding-top: 560px;
   }
 }
 

@@ -73,7 +73,7 @@ $border-style: 1px solid #877432;
 
 .base-button-small-wrapper {
   position: absolute;
-  top: 700px;
+  top: 520px;
   width: calc(100% - 60px);
   padding: 5px 30px;
   font-size: 50px;
