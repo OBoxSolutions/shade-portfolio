@@ -33,6 +33,7 @@
 
 <script>
 import { mapActions, mapMutations } from 'vuex'
+import { cleanForm } from '@/utils/cleanForm'
 
 export default {
   data() {
@@ -45,6 +46,9 @@ export default {
         name: '',
         email: '',
         country: '',
+        year: '',
+        month: '',
+        day: '',
         birthdate: '',
         app: 'Discord',
         // Chat info
@@ -80,9 +84,26 @@ export default {
     async validate() {
       return await this.$refs.formBasicInfo.validate()
     },
+    validateMeetingDate(){
+      if(this.form.meeting_date === ''){
+          return true
+      }
+      else{
+        const [date, hour] = this.form.meeting_date.split('|')
+        return date === '-- ' || hour === ' '
+      }
+    },
     async submitMeeting() {
       const isValid = await this.validate()
       if (!isValid) return
+
+      if(this.page === 'meeting' && this.validateMeetingDate()){
+        this.addMessage({
+          type: 'warning',
+          text: 'Please select date and hour for the meeting',
+        })
+        return
+      }
 
       this.disabled = true
       this.loading = true
@@ -95,15 +116,21 @@ export default {
           await this.storeVoiceMeeting(this.form)
         }
 
-        this.disabled = false
-        this.loading = false
+
+        cleanForm(this.form)
+
+        this.$nextTick(() => {
+            this.$refs.formBasicInfo.reset();
+        })
 
       } catch {
         this.addMessage({
           type: 'error',
-          text: 'Some form values are missing',
+          text: 'There was an error. Try again later',
         })
       }
+      this.disabled = false
+      this.loading = false
     },
   },
 }
