@@ -62,7 +62,13 @@ export default {
     },
     async submitHiringRequest(){
       const isValid = await this.validate()
-      if (!isValid) return
+      if (!isValid){
+        this.addMessage({
+          type: 'warning',
+          text: 'Some form values are missing',
+        })
+        return
+      }
 
       this.disabled = true
       this.loading = true
@@ -78,7 +84,7 @@ export default {
       catch {
         this.addMessage({
           type: 'error',
-          text: 'Some form values are missing',
+          text: 'There was an error. Try again later',
         })
       }
       this.disabled = false

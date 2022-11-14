@@ -95,7 +95,13 @@ export default {
     },
     async submitMeeting() {
       const isValid = await this.validate()
-      if (!isValid) return
+      if (!isValid){
+        this.addMessage({
+          type: 'warning',
+          text: 'Some form values are missing',
+        })
+        return
+      }
 
       if(this.page === 'meeting' && this.validateMeetingDate()){
         this.addMessage({
@@ -115,10 +121,7 @@ export default {
         else{
           await this.storeVoiceMeeting(this.form)
         }
-
-
         cleanForm(this.form)
-
         this.$nextTick(() => {
             this.$refs.formBasicInfo.reset();
         })
