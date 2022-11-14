@@ -303,9 +303,10 @@ export default {
             display: flex;
             background-color: #4e49de;
             width: 100%;
+            gap: 1rem;
             .__time {
               width: 100%;
-              padding: 0.5rem 1rem;
+              padding: 0.5rem 0;
               font-size: 0.8rem;
               cursor: pointer;
             }
