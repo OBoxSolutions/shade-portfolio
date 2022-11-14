@@ -7,7 +7,7 @@
       </div>
 
       <div class="portfolio-previews__content">
-        <div v-for="(preview, index) in getPortfolio" :key="`preview-${index}`" class="portfolio-preview">
+        <div v-for="(preview, index) in portfolio" :key="`preview-${index}`" class="portfolio-preview">
           <div class="portfolio-preview__image">
             <img :src="preview.image" alt="preview-image">
           </div>
@@ -43,11 +43,17 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex"
 export default {
-  computed: {
-    ...mapGetters(['getPortfolio']),
-  },
+  data(){
+    return {
+      portfolio: [
+        { name: 'Unborder', image: '/portfolio/unborder.png', link: '#' },
+        { name: 'Cleaning Services', image: '/portfolio/cleaning-services.png', link: '#' },
+        { name: 'Caboo', image: '/portfolio/cabbo.png', link: '#' },
+        { name: 'Flowers', image: '/portfolio/flowers.png', link: '#' },
+      ],
+    }
+  }
 
 }
 </script>

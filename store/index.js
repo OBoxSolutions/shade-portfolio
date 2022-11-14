@@ -5,12 +5,7 @@ import adminApi from '~/api/admin'
 export const plugins = [plugin]
 
 export const state = () => ({
-  // Cantact me data
-  userName: '',
-  message: '',
   messages: [],
-
-  // Get started data
 
   breakpoints: {
     isSmAndDown: false,
@@ -37,67 +32,11 @@ export const state = () => ({
       link: '#',
     },
   ],
-  questions: [
-    {
-      text: 'What is your proudest accomplishment?',
-      answer: '',
-      file: null,
-    },
-    {
-      text: 'What moral value do you value the most?',
-      answer: '',
-      file: null,
-    },
-    {
-      text: 'Are you ever justified to kill?',
-      answer: '',
-      file: null,
-    },
-    {
-      text: 'Is morality subjective or objective?',
-      answer: '',
-      file: null,
-    },
-    {
-      text: 'If you could live forever, would do you want to?',
-      answer: '',
-      file: null,
-    },
-    {
-      text: 'If you could change the world, what would you change?',
-      answer: '',
-      file: null,
-    },
-    {
-      text: 'Some questions?',
-      answer: '',
-      file: null,
-    },
-    {
-      text: 'Are you satisfied with yourself?',
-      answer: '',
-      file: null,
-    },
-    {
-      text: 'Maybe have anything to add? Any questions perhaps?',
-      answer: '',
-      file: null,
-    },
-  ],
   mobileFiles: [],
 })
 
 export const mutations = {
   addMessage: (state, message) => state.messages.push(message),
-  setHiringName: (state, name) => {
-    state.hiringName = name
-  },
-  setUserName: (state, name) => {
-    state.userName = name
-  },
-  setMessage: (state, message) => {
-    state.message = message
-  },
   setAnswerToQuestion: (state, { question, answer }) => {
     const index = state.questions.indexOf(question)
     state.questions[index].answer = answer
@@ -129,18 +68,9 @@ const uploadFileToFirebase = async (user, file) => {
   return downloadUrl
 }
 export const getters = {
-  getHiringName: (state) => {
-    return state.hiringName
-  },
-  getUserName: (state) => {
-    return state.userName
-  },
-  getMessage: (state) => {
-    return state.message
-  },
   getPortfolio: (state) => {
     return state.portfolio
-  },
+  }
 }
 export const actions = {
   storeContactMessage: async (_, message) => {
