@@ -10,28 +10,6 @@ export const state = () => ({
   breakpoints: {
     isSmAndDown: false,
   },
-  portfolio: [
-    {
-      name: 'Unborder',
-      image: '/portfolio/unborder.png',
-      link: '#',
-    },
-    {
-      name: 'Cleaning Services',
-      image: '/portfolio/cleaning-services.png',
-      link: '#',
-    },
-    {
-      name: 'Caboo',
-      image: '/portfolio/cabbo.png',
-      link: '#',
-    },
-    {
-      name: 'Flowers',
-      image: '/portfolio/flowers.png',
-      link: '#',
-    },
-  ],
   mobileFiles: [],
 })
 
@@ -66,11 +44,6 @@ const uploadFileToFirebase = async (user, file) => {
     })
   }
   return downloadUrl
-}
-export const getters = {
-  getPortfolio: (state) => {
-    return state.portfolio
-  }
 }
 export const actions = {
   storeContactMessage: async (_, message) => {
