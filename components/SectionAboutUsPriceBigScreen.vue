@@ -108,7 +108,17 @@ $perspective: 200px;
   text-align: center;
 
   h2 {
+    text-align: center;
     font-size: 50px;
+    font-weight: 400;
+    color: #000000;
+  }
+  p {
+    font-family: 'Consolas' !important;
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 25px;
+    color: #000000;
   }
 
   .cube-front-side {
@@ -227,8 +237,11 @@ $perspective: 200px;
     top: 40%;
     right: -110px;
     z-index: 500;
-    font-family: 'Prompt', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
-      'Lucida Sans Unicode', Geneva, Verdana, sans-serif !important;
+
+    font-family: 'Consolas' !important;
+    font-weight: 400;
+    line-height: 35px;
+    color: #000000;
   }
 }
 </style>

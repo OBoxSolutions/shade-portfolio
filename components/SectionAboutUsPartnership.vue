@@ -108,4 +108,16 @@ export default {
   align-items: center;
   z-index: 20;
 }
+h2{
+  font-family: 'Press Start 2P';
+font-style: normal;
+font-weight: 400;
+font-size: 50px;
+line-height: 79px;
+/* or 158% */
+
+text-align: center;
+
+color: #000000;
+}
 </style>

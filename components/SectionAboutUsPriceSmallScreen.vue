@@ -114,6 +114,14 @@ $perspective: 200px;
 
   h2 {
     font-size: 50px;
+    margin-bottom: 0;
+    font-weight: 400;
+    color: #000000;
+  }
+  p {
+    font-family: 'Consolas' !important;
+    font-weight: 600;
+    color: #000000;
   }
 
   .cube-front-side {

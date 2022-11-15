@@ -187,6 +187,13 @@ $border-style: 1px solid #877432;
   margin-top: 30px;
   border-radius: 10px;
   padding: 5px 0 0px 20px;
+
+  p{
+    font-family: 'Press Start 2P'!important;
+    font-size: 2.1875rem;
+    line-height: 55px;
+    color: #000000;
+  }
 }
 
 @media screen and (min-width: 900px) {

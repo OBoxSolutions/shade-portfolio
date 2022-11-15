@@ -31,6 +31,10 @@ $headers-rotation-x-degrees: 2deg;
   transform: rotateX(-24deg);
   perspective-origin: top;
 }
+h2{
+  font-weight: 400;
+  color: #000000;
+}
 
 .first-header-cube,
 .second-header-cube {

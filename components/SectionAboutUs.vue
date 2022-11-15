@@ -72,7 +72,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .about-us-section {
   display: flex;
   flex-direction: column;
@@ -103,5 +103,11 @@ export default {
 .section {
   width: 100%;
   margin: 0;
+}
+p{
+  font-family: 'Consolas' !important;
+  font-size: 1em;
+  line-height: 25px;
+  color: #000000;
 }
 </style>

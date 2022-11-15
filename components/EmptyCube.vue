@@ -143,11 +143,17 @@ $side-width: 130px;
 h2 {
   text-align: center;
   font-size: 1.2rem;
+
+  font-weight: 400;
+  color: #000000;
 }
 
 @media screen and (min-width: 576px) {
   h2 {
     font-size: 1.4rem;
+  }
+  p{
+    line-height: unset !important;
   }
 }
 
@@ -176,10 +182,18 @@ h2 {
 }
 
 p {
-  font-family: 'Prompt';
+  font-family: 'Consolas' !important;
   font-size: 1rem;
+  font-weight: 600;
+  line-height: 25px;
+  color: #000000;
 }
 
+@media screen and (max-width: 460px) {
+  p {
+    line-height: 18px;
+  }
+}
 @media screen and (min-width: 768px) {
   p {
     font-size: 1.1rem;
