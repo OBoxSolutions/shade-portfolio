@@ -307,7 +307,7 @@ export default {
             .__time {
               width: 100%;
               padding: 0.5rem 0;
-              font-size: 0.8rem;
+              font-size: 0.7rem;
               cursor: pointer;
             }
           }
@@ -350,17 +350,21 @@ export default {
         overflow: hidden;
         .__copy {
           color: #ffffff;
-          padding: 0.5rem 1rem;
+          padding: 0.5rem 0;
           background-color: #071c50;
           cursor: pointer;
           width: 20%;
+          font-size: 10px;
+          border: none;
         }
         .__link {
           font-family: 'Lucida Console', sans-serif !important;
-          margin: 0 1.5rem;
+          // margin: 0 1.5rem;
           font-size: small;
           width: 80%;
           white-space: nowrap;
+          font-size: 10px
+
         }
       }
 
@@ -465,6 +469,12 @@ export default {
             padding: 0 4rem;
           }
         }
+      }
+      .__copy {
+        font-size: 1em !important;
+      }
+      .__link {
+        font-size: 1em !important;
       }
     }
   }
