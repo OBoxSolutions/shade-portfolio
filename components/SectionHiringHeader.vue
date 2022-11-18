@@ -7,9 +7,6 @@
         </div>
       </div>
     </div>
-    <!-- <div class="section-header__image">
-      <img src="/retro-macintosh.png" alt="retro-macintosh" />
-    </div> -->
   </div>
 </template>
 
@@ -37,8 +34,8 @@ export default {
 
       background-color: #FFAC06;
       width: 25em;
-      height: 97%;
-      margin: 7.5% 0 0 4em;
+      height: 100%;
+      margin: 8.5% 0 0 4em;
       border: 1px solid #000000;
     }
 
@@ -55,7 +52,7 @@ export default {
 
       p{
         padding: 1px .5rem;
-        font-family: 'Lucida Console', sans-serif;
+        font-family: 'Lucida Console', sans-serif !important;
         font-style: normal;
         font-weight: 400;
         font-size: 1.4rem;

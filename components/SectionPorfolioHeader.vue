@@ -59,6 +59,7 @@ export default {
       border: 1px solid #000000;
 
       .title{
+        font-family: 'Press Start 2P' !important;
         margin-top: 6rem;
         padding: 0 1rem;
         text-align: center;
@@ -80,7 +81,7 @@ export default {
 
       p{
         padding: 1px .5rem;
-        font-family: 'Lucida Console', sans-serif;
+        font-family: 'Lucida Console', sans-serif !important;
         font-style: normal;
         font-weight: 400;
         font-size: 1.3rem;

@@ -150,7 +150,7 @@ export default {
 
         p {
           padding: 1px 0.5rem;
-          font-family: 'Lucida Console', sans-serif;
+          font-family: 'Lucida Console', sans-serif !important;
           font-style: normal;
           font-weight: 400;
           font-size: small;

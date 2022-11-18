@@ -399,6 +399,7 @@ export default {
         }
 
         .section-body__text {
+          font-family: 'Press Start 2P' !important;
           border: 2px solid black;
           padding: 6px;
           width: 80%;
