@@ -49,7 +49,7 @@ export default {
 
 @media screen and (min-width: 1536px) {
   .hero-foot {
-    bottom: -380px;
+    bottom: 0px;
   }
 }
 
