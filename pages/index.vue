@@ -26,12 +26,18 @@ export default {
 
 .hero-foot {
   position: absolute;
-  bottom: -240px;
+  bottom: -280px;
+}
+
+@media screen and (min-width: 576px) {
+  .hero-foot {
+    bottom: 0px;
+  }
 }
 
 @media screen and (min-width: 700px) {
   .hero-foot {
-    bottom: -290px;
+    bottom: -20px;
   }
 }
 
@@ -43,7 +49,7 @@ export default {
 
 @media screen and (min-width: 1280px) {
   .hero-foot {
-    bottom: -410px;
+    bottom: -210px;
   }
 }
 
