@@ -74,11 +74,11 @@ export default {
       if (typeof window !== 'undefined') {
         const page = window.location.pathname.replaceAll('/', '') || 'home'
         const positions = {
-          home: 'translateX(calc(100% * 0.15))',
-          portfolio: 'translateX(calc(100% * 1.42))',
+          home: 'translateX(-25%)',
+          portfolio: 'translateX(calc(100% * 1.2))',
           contact: 'translateX(calc(100% * 2.7))',
           'get-started': 'translateX(calc(100% * 4.2))',
-          hiring: 'translateX(calc(100% * 5.7))',
+          hiring: 'translateX(calc(100% * 6))',
         }
         this.position = positions[page]
       }
@@ -138,6 +138,7 @@ $border-size: 2px;
   top: 0;
   left: 0;
   z-index: 2;
+  border-bottom: $border-size solid black;
 }
 
 .footer-content {
@@ -153,6 +154,7 @@ $border-size: 2px;
   align-content: center;
   align-items: center;
   font-size: 0.8rem;
+  border-top: 0;
 }
 
 .img-content {
@@ -180,7 +182,7 @@ $border-size: 2px;
   transform-style: preserve-3d;
   perspective: 200px;
   perspective-origin: center -100%;
-  width: 100%;
+  width: calc(100% + 4px);
   display: flex;
   justify-content: center;
   background-color: #5a55f8;
@@ -192,20 +194,20 @@ $border-size: 2px;
     border: $border-size solid #222940;
     background-color: #5a55f8;
     position: absolute;
-    height: calc(100% - ($border-size));
+    height: 100%;
     width: 100%;
     top: -($border-size);
     border-bottom: 0;
   }
 
   .nav-bar-left-side {
-    left: calc(-39% - 3px);
-    transform: rotateY(110deg) translateX(-50%);
+    left: calc(-39% - 1px);
+    transform: rotateY(139deg) translateX(-50%);
     border-right: 2px solid black;
   }
   .nav-bar-right-side {
-    right: calc(-39% - 3px);
-    transform: rotateY(250deg) translateX(50%);
+    right: calc(-39% - 1px);
+    transform: rotateY(219deg) translateX(50%);
     border-left: 1px solid black;
   }
 }
@@ -221,7 +223,7 @@ $border-size: 2px;
   position: relative;
   border-bottom: $border-size solid #222940;
   border-bottom: 0;
-  width: calc(100% / 1.5);
+  width: 75%;
 
   .nav-bar__link {
     padding: 0.8em 0;
@@ -300,7 +302,7 @@ $border-size: 2px;
     border-right: 1px solid black !important;
   }
   .section-change-marker {
-    height: 200px;
+    height: 202px;
   }
   .img-wrapper {
     display: block !important;
