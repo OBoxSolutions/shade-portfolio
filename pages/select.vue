@@ -167,7 +167,7 @@ export default {
             font-weight: 400;
             text-align: center;
             color: white;
-            font-size: 2.4rem;
+            font-size: 3.1rem;
             padding: 5px;
           }
         }
