@@ -48,7 +48,7 @@
     <div class="cube cube-left-under-price">
       <div class="side cube-front-side"></div>
       <div class="side cube-right-side"></div>
-      <button class="bottom-button button--red">Press Start</button>
+      <button class="bottom-button button--red" @click="$router.push('/select')">Press Start</button>
     </div>
     <div class="bottom"></div>
   </div>

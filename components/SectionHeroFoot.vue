@@ -1,7 +1,7 @@
 <template>
   <div class="content">
     <div class="press-start-container">
-      <button class="both-side-button button--red">PRESS START</button>
+      <button class="both-side-button button--red" @click="$router.push('/select')">PRESS START</button>
     </div>
     <div class="divider"></div>
     <div class="hire-team-container">
@@ -29,7 +29,7 @@
     </div>
 
     <div class="base-button-small-wrapper">
-      <base-button only-bottom class="small-button button--red">
+      <base-button only-bottom class="small-button button--red" @click="$router.push('/select')">
         <h1>Press Start</h1>
       </base-button>
     </div>

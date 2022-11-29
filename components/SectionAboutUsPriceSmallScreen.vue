@@ -28,7 +28,7 @@
         <div class="side cube-right-side"></div>
       </div>
       <div class="button-wrapper">
-        <base-button only-bottom class="base-button button--red--side-blue">
+        <base-button only-bottom class="base-button button--red--side-blue" @click="$router.push('/select')">
           <h1>Press Start</h1>
         </base-button>
       </div>

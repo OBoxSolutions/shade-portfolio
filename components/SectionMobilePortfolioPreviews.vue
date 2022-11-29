@@ -29,7 +29,7 @@
 
         </div>
 
-        <base-button only-bottom class="portfolio-button button--red">
+        <base-button only-bottom class="portfolio-button button--red" @click="$router.push('/select')">
           <h1>Press Start</h1>
         </base-button>
 
@@ -211,6 +211,6 @@ export default {
     }
   }
 
- 
+
 
 </style>
