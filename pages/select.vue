@@ -7,13 +7,27 @@
         </h1>
       </div>
     </div>
-    <div class="select-bottom">
+    <div v-if="breakpoints.isSmAndDown" class="select-bottom-mobile">
+      <div class="title-mobile">
+        <h1>
+          Choose how will we get in touch to discuss your project
+        </h1>
+      </div>
+      <button class="voice-button" @click="$router.push('/get-started?mode=meeting')">
+        Voice Call
+      </button>
+      <button class="chat-button" @click="$router.push('/get-started?mode=chat')">
+        Chat
+      </button>
+    </div>
+
+    <div v-else class="select-bottom">
       <div class="__options">
         <!-- <button  @click="$router.push('/get-started?mode=meeting')"></button> -->
-        <button class="voice-button">
+        <button class="voice-button" @click="$router.push('/get-started?mode=meeting')">
           Voice Call
         </button>
-        <button class="chat-button">
+        <button class="chat-button" @click="$router.push('/get-started?mode=chat')">
           Chat
         </button>
       </div>
@@ -29,8 +43,13 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
   layout: 'empty',
+  computed: {
+    ...mapState(['breakpoints']),
+  },
 }
 </script>
 
@@ -41,7 +60,7 @@ export default {
 
     .title-top{
       color: white;
-      height: 48%;
+      height: calc(50% - 3rem);
       margin-left: auto;
       .wraper{
         width: 50%;
@@ -70,8 +89,33 @@ export default {
         align-items: center;
         justify-content: center;
         gap: 50px;
+      }
 
-        .voice-button, .chat-button {
+      .__title{
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .title-wraper{
+          background: #222940;
+          height: 83%;
+          width: 90%;
+          margin-right: auto;
+          display: flex;
+          h1{
+            margin: auto;
+            font-weight: 400;
+            text-align: center;
+            color: white;
+            font-size: 3rem;
+            padding: 5px;
+          }
+        }
+      }
+    }
+    .voice-button, .chat-button {
           background-color: #FFAC06;
           color: #ffffff;
           padding: 45px 20px;
@@ -147,30 +191,54 @@ export default {
             transform: translate3d(-50px, .3em, -20em);
           }
         }
+
+  }
+
+  /* Breakpoints begin here  */
+    @media (max-width: 1400px) {
+      .title-wraper > h1{
+        font-size: 2.4rem !important;
       }
+    }
+  @media (max-width: 990px) {
+    .title-top > .wraper {
+      width: 90% !important;
+      margin: auto;
+      h1{
+        margin-right: 0 !important;
+        font-size: 1.2rem !important;
+      }
+    }
+    .select-bottom-mobile{
+      height: calc(50% + 3rem);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
 
-      .__title{
-        width: 50%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-
-        .title-wraper{
-          background: #222940;
-          height: 83%;
-          width: 90%;
-          margin-right: auto;
-          display: flex;
-          h1{
-            margin: auto;
-            font-weight: 400;
-            text-align: center;
-            color: white;
-            font-size: 3.1rem;
-            padding: 5px;
-          }
+      .title-mobile{
+        background: #222940;
+        h1{
+          margin: 1.5rem;
+          color: #FFFFFF;
+          font-size: 1.4rem;
+          text-align: center;
         }
+      }
+      .voice-button, .chat-button {
+        width: 260px;
+        padding: 40px 5px;
+        font-size: 1.2rem;
+      }
+      .voice-button::before{
+        transform: translate3d(0, 3.9rem, -1em);
+      }
+      .voice-button::after{
+        min-height: 107%;
+      }
+      .chat-button::before{
+        transform: translate3d(0, -2.8rem, -1em);
       }
     }
   }
