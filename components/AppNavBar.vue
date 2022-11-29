@@ -2,7 +2,7 @@
   <div>
     <!-- <div v-if="contactPage" :class="contactPage && 'contactPage'">testing</div> -->
     <div class="nav" :style="contactPage ? 'top:100px' : 'top:0px'">
-      <div class="logo-container">
+      <div :style="aboutUsPage ? 'width:0px; opacity:0' : 'display:block' " class="logo-container" >
         <div class="logo"></div>
         <div class="clip">
           <div class="top"></div>
@@ -15,6 +15,7 @@
           :key="`navbar-${index}`"
           class="nav-bar__link"
         >
+          <span v-if="index === 4" class="nav-bar__new-tag">New</span>
           <NuxtLink :to="link.url"> {{ link.text }} </NuxtLink>
         </li>
         <div class="location-line">
@@ -26,7 +27,7 @@
 
       <!-- mobile menu  -->
       <div :class="toggleMenu ? 'mobile-menu' : 'hidden'">
-        <button @click="toggleMenu = false" class="close-btn">x</button>
+        <button class="close-btn" @click="toggleMenu = false" >x</button>
 
         <li
           v-for="(link, index) in links"
@@ -36,8 +37,8 @@
           <NuxtLink :to="link.url"> {{ link.text }} </NuxtLink>
 
           <div
-            class="get-started-submenu"
             v-if="getStartedPage === true && link.url === '/get-started'"
+            class="get-started-submenu"
           >
             <li>
               <div
@@ -68,12 +69,13 @@ export default {
         { text: 'Portfolio', url: '/portfolio' },
         { text: 'Contacts', url: '/contact' },
         { text: 'Get started', url: '/get-started' },
-        { text: "We're hiring", url: '/hiring' },
+        { text: "We're hiring!", url: '/hiring' },
       ],
       position: '',
       toggleMenu: false,
       contactPage: false,
       getStartedPage: false,
+      aboutUsPage: false
     }
   },
   watch: {
@@ -106,16 +108,23 @@ export default {
         if (window.location.pathname.replaceAll('/', '') === 'contact') {
           this.contactPage = true
           this.getStartedPage = false
+          this.aboutUsPage = false
         }
         if (window.location.pathname.replaceAll('/', '') === 'get-started') {
           this.contactPage = false
           this.getStartedPage = true
+          this.aboutUsPage = false
+        }
+        if(window.location.pathname.replaceAll('/', '') === ''){
+          this.contactPage = false
+          this.getStartedPage = false
+          this.aboutUsPage = true
         } else {
           this.getStartedPage = false
           this.contactPage = false
+          this.aboutUsPage = false
         }
 
-        console.log('getstarted : ', this.$route.query.mode)
       }
     },
   },
@@ -222,7 +231,6 @@ export default {
     perspective-origin: right;
     transform-style: preserve-3d;
     position: relative;
-    z-index: 30;
 
     .logo {
       width: 100%;
@@ -237,7 +245,7 @@ export default {
     .clip {
       width: 10%;
       height: 95%;
-      transform: rotateY(59deg) translateX(10px);
+      transform: rotateY(48deg) rotateX(4deg) translateX(10px);
       position: absolute;
       right: 0;
       display: none;
@@ -275,7 +283,7 @@ export default {
       flex-grow: 1;
       border: solid #222940;
       border-width: 0 2px;
-      padding: 0 2rem;
+      padding: 0.5rem 2rem;
       cursor: pointer;
       &:first-child {
         border: solid #222940;
@@ -284,6 +292,11 @@ export default {
       &:last-of-type {
         border: solid #222940;
         border-width: 0 4px 0 2px;
+      }
+      .nav-bar__new-tag{
+        font-size: 0.5rem;
+        color:red;
+        text-transform: capitalize;
       }
     }
     .location-line {
@@ -350,7 +363,6 @@ export default {
     .nav-bar {
       display: flex;
     }
-
     .menu {
       display: none;
     }

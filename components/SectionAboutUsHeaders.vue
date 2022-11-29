@@ -6,7 +6,7 @@
     </div>
     <div class="second-header-cube">
       <div class="second-header__top-side"></div>
-      <h2 class="px-5 m-0">Why we're here</h2>
+      <h2 class=" m-0 __top-side__text">Why <span>we're</span><div>here</div></h2>
     </div>
   </div>
 </template>
@@ -55,6 +55,9 @@ h2{
     background: linear-gradient(90deg, #f8981d 7.29%, #fec111 48.61%);
     top: -(calc($top-side-height/2));
     transform: rotateX(-165deg) translateY(calc($top-side-height/2));
+    __top-side__text{
+      
+    }
   }
 
   @media screen and (min-width: 768px) {
@@ -85,39 +88,15 @@ h2{
   border-left: 0;
   transform: rotateY($headers-rotation-x-degrees) translateX(1.5px);
   perspective-origin: -1700%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   h2 {
-    padding-left: 0.1em;
-    font-size: 2.2rem;
+    padding-left: 1em;
+    font-size: 1rem;
   }
 
-  @media screen and (min-width: 640px) {
-    h2 {
-      padding-left: 0.5em;
-      font-size: 3.2rem;
-    }
-  }
-
-  @media screen and (min-width: 700px) {
-    h2 {
-      padding-left: 0.5em;
-      font-size: 4rem;
-    }
-  }
-
-  @media screen and (min-width: 768px) {
-    h2 {
-      padding-left: 0.4em;
-      font-size: 4.6rem;
-    }
-  }
-
-  @media screen and (min-width: 1024px) {
-    h2 {
-      padding-left: 1em;
-      font-size: 6.2rem;
-    }
-  }
 }
 
 @media screen and (min-width: 700px) {
@@ -131,49 +110,24 @@ h2{
   text-align: left;
   transform: rotateY(-($headers-rotation-x-degrees)) translateX(-1.5px);
   perspective-origin: 1700%;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #D43737;
   h2 {
-    font-size: 1.4rem;
-    padding-top: 20px;
-    padding-left: 20px !important;
-    padding-right: 10px !important;
-  }
-
-  @media screen and (min-width: 640px) {
-    h2 {
-      padding-left: 2em !important;
-      padding-right: 2em !important;
-      font-size: 2rem;
+    font-size: 1rem;
+    width: fit-content;
+    span{
+      text-decoration: underline;
+    }
+    div{
+      text-decoration: underline;
+      border-right: 0.2rem solid black;
+      width: fit-content;
     }
   }
 
-  @media screen and (min-width: 768px) {
-    h2 {
-      padding-left: 0.2em;
-      font-size: 2.4rem;
-    }
-  }
-
-  @media screen and (min-width: 1024px) {
-    h2 {
-      padding-left: 1em;
-      font-size: 3em;
-    }
-  }
-
-  @media screen and (min-width: 1280px) {
-    h2 {
-      padding-left: 1em;
-      font-size: 3.6em;
-    }
-  }
-
-  @media screen and (min-width: 1536px) {
-    h2 {
-      padding-left: 1em;
-      font-size: 4rem;
-    }
-  }
+ 
 }
 
 @media screen and (min-width: 700px) {
@@ -181,4 +135,17 @@ h2{
     perspective-origin: 400%;
   }
 }
+@media screen and (min-width: 500px) {
+  .first-header-cube{
+    h2{
+      font-size: 3rem !important;
+    }
+  } 
+  .second-header-cube{
+    h2{
+      font-size: 2rem !important;
+    }
+  }
+}
+
 </style>

@@ -51,7 +51,7 @@ export default {
       gap: 2.5rem;
       justify-content: center;
       align-items: center;
-
+      margin-top: -4rem;
       background-color: #FFAC06;
       width: 25em;
       height: 99%;

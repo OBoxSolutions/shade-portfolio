@@ -258,6 +258,8 @@
                     }
                     .__description{
                         font-family: 'Lucida Console', sans-serif !important;
+                        font-weight: bold;
+                        color:black;
                     }
                     .__file-container{
                         width: 100%;

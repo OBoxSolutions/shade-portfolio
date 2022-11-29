@@ -165,10 +165,12 @@ export default {
       width: 100%;
       transform: skewY(-5deg) translateY(2rem);
       .section-header__page-title-clip {
-        background-image: url('/contact/top-clip.png');
+        background-image: url(/contact/top-clip.png);
         background-size: cover;
-        height: calc(100vw / 4);
+        height: 25vw;
+        background-position-x: right;
         width: 100%;
+
       }
       .section-header__page-title-text {
         color: white;
@@ -304,10 +306,12 @@ export default {
     height: 840px;
     .section-header__description {
       flex-direction: column !important;
+      
       .section-header__outside-box {
         margin-left: 3rem;
         width: 25rem;
         height: 70%;
+        margin-top: -4rem ;
 
         .section-header__inside-box {
           margin-bottom: 0;
@@ -321,12 +325,13 @@ export default {
       }
       .section-header__page-title {
         width: fit-content;
-        transform: translateY(-7.4rem) skewY(-5deg);
+        transform: translateY(-7.4rem) skewY(-9deg);
         .section-header__page-title-clip {
-          height: 98px;
+          height: 150px;
+          transform: translateY(25px) skewY(6deg);
         }
         .section-header__page-title-text {
-          padding: 15px;
+          padding: 1.5rem;
           width: fit-content;
           font-size: 3rem;
         }
@@ -342,6 +347,7 @@ export default {
           width: 70%;
           padding: 4px 0;
           height: fit-content;
+          
         }
       }
 

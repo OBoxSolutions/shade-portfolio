@@ -69,7 +69,7 @@ $perspective: 200px;
   transform-style: preserve-3d;
   perspective: $perspective;
   perspective-origin: bottom;
-
+  
   .cube-front-side,
   .cube-top-side,
   .cube-down-side {
@@ -77,6 +77,9 @@ $perspective: 200px;
     height: 100%;
     position: absolute;
     z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .cube-down-side {

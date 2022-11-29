@@ -21,13 +21,6 @@
               ></app-input-error>
             </validation-provider>
           </div>
-          <div class="section-body__choose-platform-outer">
-            <div class="section-body__choose-platform-inner">
-              <div class="section-body__button"></div>
-              <div class="section-body__arrow"></div>
-              <div>Choose a platform!</div>
-            </div>
-          </div>
         </div>
       </div>
 
@@ -193,6 +186,8 @@ export default {
   gap: 5px;
   justify-content: center;
   align-items: center;
+
+  line-height: 2;
 }
 
 .section-body {
@@ -280,7 +275,9 @@ export default {
           width: 70%;
           color: white;
         }
+        
       }
+     
 
       .section-body__email-box-outer {
         background-color: #ef4242;
@@ -320,45 +317,6 @@ export default {
         }
       }
 
-      .section-body__choose-platform-outer {
-        background-color: #ef4242;
-        padding: 0 10px 10px 10px;
-        transform: skewX(5deg) translateX(15px) translateY(-11px);
-        margin-left: 1.2rem;
-        border: 1px solid black;
-        border-bottom-left-radius: 5px;
-
-        .section-body__choose-platform-inner {
-          background-color: #d43737;
-          padding: 0 10px 5px 10px;
-          border: 1px solid black;
-          border: 0 0 5px 5px;
-          display: flex;
-          gap: 10px;
-          align-items: center;
-
-          .section-body__button {
-            background-image: url('/contact/polygon.png');
-            height: 20px;
-            width: 20px;
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: 60%;
-            cursor: pointer;
-            background-color: #f06666;
-            padding: 10px;
-            border: 1px solid black;
-            border-radius: 0 0 5px 5px;
-          }
-
-          .section-body__arrow {
-            background-image: url('/contact/arrow-left.png');
-            height: 40px;
-            width: 40px;
-            background-size: cover;
-          }
-        }
-      }
     }
   }
   .section-body__choose-platform-mobile {
@@ -366,6 +324,9 @@ export default {
     display: flex;
     align-items: center;
     flex-direction: column;
+    span{
+      width: 100%;
+    }
     .section-body__top-clip {
       height: 9rem;
       width: 100%;
@@ -414,7 +375,6 @@ export default {
       background-color: #ef4242;
       justify-content: center;
       display: flex;
-
       .section-body__input {
         background-color: #d43737;
         outline: 0;
@@ -431,7 +391,7 @@ export default {
     }
 
     .section-body__popup {
-      height: 9rem;
+      height: 10rem;
       background-color: #ddd6bf;
       border-radius: 0 0 10px 10px;
       border: 2px solid black;
@@ -490,8 +450,8 @@ export default {
       position: relative;
 
       .section-body__popup-container {
-        height: 2rem;
-        width: 14rem;
+        height: 4rem;
+        width: calc(100%/2.5);
         margin: 5% 0 0 25%;
         position: relative;
         display: none;
@@ -506,9 +466,9 @@ export default {
           z-index: 10;
         }
         .section-body__popup {
-          height: 9rem;
-          width: 70%;
-          max-width: 70%;
+          height: 12rem;
+          width: 60%;
+          max-width: 60%;
 
           background-color: #ddd6bf;
           z-index: 11;

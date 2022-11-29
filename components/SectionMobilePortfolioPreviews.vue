@@ -64,21 +64,23 @@ export default {
     perspective: 300px;
     perspective-origin: bottom;
     img{
-      position: absolute;
+      position: relative;
       width: 100%;
       z-index: 10;
-      margin-top: 5px;
     }
 
     .section-portfolio-previews__title-top{
       background-color: #00D2F9;
-      height: 60px;
+      height: 80%;
+      top: 0;
+      width: 100%;
+      position: absolute;
     }
     .section-portfolio-previews__title-bottom{
       position: absolute;
       width: 100%;
-
-      height: 19px;
+      bottom: 0;
+      height: 20%;
       background-color: #5A55F8;
       border-top: 1px solid #000000;
     }
@@ -209,31 +211,6 @@ export default {
     }
   }
 
-  @media(max-width: 640px) {
-  .section-portfolio-previews__title{
-    height: 80px !important;
-    .section-portfolio-previews__title-top{
-      height: 60px !important;
-    }
-  }
-}
-  @media(max-width: 500px) {
-  .section-portfolio-previews__title{
-    height: 50px !important;
-    .section-portfolio-previews__title-top{
-      height: 40px !important;
-    }
-  }
-}
-  @media(max-width: 390px) {
-  .section-portfolio-previews__title{
-    height: 40px !important;
-    .section-portfolio-previews__title-top{
-      height: 30px !important;
-    }
-    .section-portfolio-previews__title-bottom{
-      height: 10px !important;
-    }
-  }
-}
+ 
+
 </style>

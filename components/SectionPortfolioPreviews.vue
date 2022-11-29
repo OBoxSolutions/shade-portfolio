@@ -55,21 +55,24 @@ export default {
     perspective: 300px;
     perspective-origin: bottom;
     img{
-      position: absolute;
+      position: relative;
       width: 100%;
       z-index: 10;
-      margin-top: 5px;
     }
 
     .section-portfolio-previews__title-top{
       background-color: #00D2F9;
-      height: 150px;
+      position: absolute;
+      top: 0;
+      height: 80%;
+      width: 100%;
+
     }
     .section-portfolio-previews__title-bottom{
       position: absolute;
       width: 100%;
-
-      height: 30px;
+      height: 20%;
+      bottom: 0;
       background-color: #5A55F8;
       border-top: 1px solid #000000;
     }
@@ -170,20 +173,5 @@ export default {
   }
 }
 
-  /* Breakpoints begin here  */
-@media(max-width: 1285px) {
-  .section-portfolio-previews__title-top{
-    height: 110px !important;
-  }
-}
-@media(max-width: 1145px) {
-  .portfolio-button > h1{
-    font-size: 2rem !important;
-  }
-}
-@media(max-width: 850px) {
-  .section-portfolio-previews__title-top{
-    height: 70px !important;
-  }
-}
+
 </style>

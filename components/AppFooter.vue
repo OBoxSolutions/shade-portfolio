@@ -1,6 +1,6 @@
 <template>
   <footer class="footer">
-    <div class="section-change-marker"></div>
+    <div class="section-change-marker" :style="'background-color:'+color " > </div>
     <div class="footer-content">
       <div class="nav-bar-wrapper">
         <ul class="nav-bar my-0 mx-auto">
@@ -9,6 +9,7 @@
             :key="`navbar-${index}`"
             class="nav-bar__link"
           >
+            <span v-if="index === 4" class="__new-tag">New</span>
             <NuxtLink :to="link.url"> {{ link.text }} </NuxtLink>
           </li>
         </ul>
@@ -26,6 +27,7 @@
             class="nav-bar__link"
             :style="`${link.id === page ? 'background-color:red;' : ''}`"
           >
+            <span v-if="index === 4" :style="`${page == 'hiring' ? outline : ''}`" class="__new-tag">New</span>
             <NuxtLink :to="link.url"> {{ link.text }} </NuxtLink>
           </li>
         </ul>
@@ -57,6 +59,8 @@ export default {
       ],
       page: '',
       position: '',
+      color:'',
+      outline:'text-shadow: 2px 0 rgb(0, 0, 0), -2px 0 rgb(0, 0, 0), 0 2px rgb(0, 0, 0), 0 -2px rgb(0, 0, 0),1px 1px rgb(0, 0, 0), -1px -1px rgb(0, 0, 0), 1px -1px rgb(0, 0, 0), -1px 1px rgb(0, 0, 0);'
     }
   },
   watch: {
@@ -72,15 +76,23 @@ export default {
   methods: {
     updatePosition() {
       if (typeof window !== 'undefined') {
-        const page = window.location.pathname.replaceAll('/', '') || 'home'
+        const page = window.location.pathname.replaceAll('/', '') || 'home';
+        const colors = {
+          home: '#15AAAA',
+          portfolio:'#15AAAA',
+          contact: '#8C6B4C',
+          'get-started':'#09FFF0; height:30px',
+          hiring:'#49EA76'
+        }
         const positions = {
-          home: 'translateX(calc(100% * 0.15))',
-          portfolio: 'translateX(calc(100% * 1.42))',
+          home: 'translateX(-25%)',
+          portfolio: 'translateX(calc(100% * 1.2))',
           contact: 'translateX(calc(100% * 2.7))',
           'get-started': 'translateX(calc(100% * 4.2))',
-          hiring: 'translateX(calc(100% * 5.7))',
+          hiring: 'translateX(calc(100% * 6))',
         }
         this.position = positions[page]
+        this.color = colors[page]
       }
     },
     updatePage() {
@@ -95,11 +107,9 @@ export default {
 
 <style scoped lang="scss">
 $border-size: 2px;
-
 .footer {
   position: relative;
   overflow-x: hidden;
-  background-color: #e39e15;
 }
 
 .content {
@@ -131,13 +141,13 @@ $border-size: 2px;
 }
 
 .section-change-marker {
-  background-color: #15aaaa;
   width: 100%;
   height: 100px;
   position: relative;
   top: 0;
   left: 0;
   z-index: 2;
+  border-bottom: $border-size solid black;
 }
 
 .footer-content {
@@ -153,6 +163,8 @@ $border-size: 2px;
   align-content: center;
   align-items: center;
   font-size: 0.8rem;
+  border-top: 0;
+  background-color: #e39e15;
 }
 
 .img-content {
@@ -180,7 +192,7 @@ $border-size: 2px;
   transform-style: preserve-3d;
   perspective: 200px;
   perspective-origin: center -100%;
-  width: 100%;
+  width: calc(100% + 4px);
   display: flex;
   justify-content: center;
   background-color: #5a55f8;
@@ -192,20 +204,20 @@ $border-size: 2px;
     border: $border-size solid #222940;
     background-color: #5a55f8;
     position: absolute;
-    height: calc(100% - ($border-size));
+    height: 100%;
     width: 100%;
     top: -($border-size);
     border-bottom: 0;
   }
 
   .nav-bar-left-side {
-    left: calc(-39% - 3px);
-    transform: rotateY(110deg) translateX(-50%);
+    left: calc(-39% - 1px);
+    transform: rotateY(139deg) translateX(-50%);
     border-right: 2px solid black;
   }
   .nav-bar-right-side {
-    right: calc(-39% - 3px);
-    transform: rotateY(250deg) translateX(50%);
+    right: calc(-39% - 1px);
+    transform: rotateY(219deg) translateX(50%);
     border-left: 1px solid black;
   }
 }
@@ -221,7 +233,7 @@ $border-size: 2px;
   position: relative;
   border-bottom: $border-size solid #222940;
   border-bottom: 0;
-  width: calc(100% / 1.5);
+  width: 75%;
 
   .nav-bar__link {
     padding: 0.8em 0;
@@ -231,6 +243,12 @@ $border-size: 2px;
     border: solid #222940;
     border-width: 0 $border-size;
     padding: 0.5rem 1rem;
+    .__new-tag{
+      font-size: 0.5rem;
+      color: red;
+      margin-right: 0.3rem;
+      text-transform: capitalize;
+    }
     &:first-child {
       border: solid #222940;
       border-width: 0 $border-size 0 ($border-size * 2);
@@ -254,6 +272,12 @@ $border-size: 2px;
     color: white;
     margin: 0.5rem 0;
     text-transform: uppercase;
+  }
+  .__new-tag{
+    font-size: 0.5rem;
+    color: red;
+    margin-right: 0.3rem;
+    text-transform: capitalize;
   }
 }
 .bottom-clip {
@@ -300,7 +324,7 @@ $border-size: 2px;
     border-right: 1px solid black !important;
   }
   .section-change-marker {
-    height: 200px;
+    height: 202px;
   }
   .img-wrapper {
     display: block !important;

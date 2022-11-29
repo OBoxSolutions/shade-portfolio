@@ -209,7 +209,7 @@ export default {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 1rem;
+      gap: 4rem;
       padding: 3rem 0;
       color: white;
       position: relative;
@@ -227,6 +227,7 @@ export default {
         border-radius: 0.5rem;
         font-size: small;
         z-index: 2;
+        line-height: 2;
       }
       .__software-list {
         background-color: #15aaaa;
@@ -239,6 +240,7 @@ export default {
         .__title {
           font-size: smaller;
           text-align: center;
+          line-height: 2;
         }
         .__list {
           background-color: #0f7d7d;
@@ -296,12 +298,15 @@ export default {
       }
     }
     .__sidebar {
-      width: 300px;
+      width: 400px;
       position: absolute;
       transform: translateY(-12rem) skewY(5deg);
       top: 0;
       bottom: 0;
       right: 0;
+      height: 150%;
+      margin: auto;
+      overflow: visible;
       .__top-clip {
         height: 10rem;
       }

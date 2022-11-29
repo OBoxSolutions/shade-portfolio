@@ -43,7 +43,7 @@ export default {
   position: relative;
 
   .first-section {
-    height: calc(100vh + 100px);
+    height: calc(50vw + 100px)
   }
 
   .content {
