@@ -1,7 +1,12 @@
 <template>
   <div class="content">
     <div class="press-start-container">
-      <button class="both-side-button button--red" @click="$router.push('/select')">PRESS START</button>
+      <button
+        class="both-side-button button--red"
+        @click="$router.push('/select')"
+      >
+        PRESS START
+      </button>
     </div>
     <div class="divider"></div>
     <div class="hire-team-container">
@@ -29,7 +34,11 @@
     </div>
 
     <div class="base-button-small-wrapper">
-      <base-button only-bottom class="small-button button--red" @click="$router.push('/select')">
+      <base-button
+        only-bottom
+        class="small-button button--red"
+        @click="$router.push('/select')"
+      >
         <h1>Press Start</h1>
       </base-button>
     </div>
@@ -50,7 +59,6 @@ $border-style: 1px solid #877432;
   display: flex;
   width: 100%;
   align-items: flex-end;
-  position: relative;
 }
 
 .press-start-container {
@@ -188,8 +196,8 @@ $border-style: 1px solid #877432;
   border-radius: 10px;
   padding: 5px 0 0px 20px;
 
-  p{
-    font-family: 'Press Start 2P'!important;
+  p {
+    font-family: 'Press Start 2P' !important;
     font-size: 2.1875rem;
     line-height: 55px;
     color: #000000;
