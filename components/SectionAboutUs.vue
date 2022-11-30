@@ -76,4 +76,9 @@ p{
   line-height: 25px;
   color: #000000;
 }
+@media (min-width: 1800px) {
+  .about-us-section{
+    margin-top:calc(100vw / -6);
+  }
+}
 </style>
