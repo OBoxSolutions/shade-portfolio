@@ -214,7 +214,6 @@ export default {
   .section-meeting {
     .__title {
       width: 25rem;
-      margin: 0;
     }
     .__date-container {
       flex-direction: row;
