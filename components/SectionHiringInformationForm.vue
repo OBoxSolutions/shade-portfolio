@@ -40,6 +40,16 @@
                   type="text"
                   name="country"
                 />
+                <ul v-if="countryFilled" class="countries-list">
+                  <li
+                    v-for="country in searchCountries"
+                    :key="country.name"
+                    class="country-item"
+                    @click="selectCountry(country.name)"
+                  >
+                    {{ country.name }}
+                  </li>
+                </ul>
                 <app-input-error :error="errors[0]"></app-input-error>
               </validation-provider>
               <br />
@@ -104,6 +114,7 @@
 
 <script>
 import formOperations from '@/mixins/formOperations'
+import countries from '@/utils/countries.json'
 
 export default {
   name: 'SectionHiringInformationForm',
@@ -116,6 +127,9 @@ export default {
   },
   data() {
     return {
+      countries,
+      countryFilled: true,
+      selectedCountry: '',
       applying_jobs: [ 'Full-Stack Web Developer', 'General Manager', 'SEO and Marketing Expert', 'Vice President' ]
     }
   },
@@ -131,12 +145,41 @@ export default {
     birthdate() {
       return `${this.form.day}-${this.form.month}-${this.form.year}`
     },
+    formCountry(){
+      return this.form.country
+    },
+    searchCountries(){
+      if (this.form.country === '') {
+        return []
+      }
+
+      let matches = 0
+
+      // eslint-disable-next-line array-callback-return
+      return countries.filter(country => {
+        if (country.name.toLowerCase().includes(this.form.country.toLowerCase()) && matches < 10) {
+          matches++
+          return country
+        }
+      })
+
+    }
   },
   watch: {
     birthdate(val) {
       this.form.birthdate = val
     },
+    formCountry(val) {
+      this.countryFilled = val !== ''
+
+    },
   },
+  methods: {
+    selectCountry(country){
+      this.form.country = country
+      this.countryFilled = false
+    },
+  }
 }
 </script>
 
@@ -189,12 +232,32 @@ $perspective: 100px;
         margin-left: 3rem;
 
         input {
+          position: relative;
           margin-top: 5px;
           height: 1.8rem;
           width: 85%;
           background: #d43737;
           border: 2px solid #000000;
           color: #ffffff;
+        }
+        .countries-list{
+          position: absolute;
+          list-style-type: none;
+          background: #8A8A8A;
+          margin: 0;
+          padding: 0;
+          width: 25%;
+          :last-child{
+            border-bottom: 2px solid #000000;
+          }
+          .country-item{
+            cursor: pointer;
+            color: #FFAC06;
+            padding-top: 5px;
+            padding-left: 5px;
+            border-left: 2px solid #000000;
+            border-right: 2px solid #000000;
+          }
         }
       }
     }
@@ -209,7 +272,6 @@ $perspective: 100px;
         margin: 0.5rem 0 2rem;
         width: 40%;
         padding: 1rem 2rem;
-        // background: #8a8a8a;
         background: url('/gray-texture.svg');
         border: 2px solid #000000;
 
